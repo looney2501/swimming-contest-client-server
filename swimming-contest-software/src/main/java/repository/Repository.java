@@ -12,6 +12,4 @@ public interface Repository<Tid, T> {
     void delete(T elem);
     void update(T elem, Tid id);
     T findById(Tid id);
-    Iterable<T> findAll();
-    Collection<T> getAll();
 }

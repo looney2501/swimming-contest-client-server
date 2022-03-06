@@ -3,7 +3,7 @@ package domain;
 /**
  * Available swimming styles for races.
  */
-public enum SwimStyles {
+public enum SwimmingStyles {
     _MIXED("mixed"),
     _FREESTYLE("freestyle"),
     _BUTTERFLY("butterfly"),
@@ -11,7 +11,7 @@ public enum SwimStyles {
 
     private final String style;
 
-    SwimStyles(String style) {
+    SwimmingStyles(String style) {
         this.style = style;
     }
 

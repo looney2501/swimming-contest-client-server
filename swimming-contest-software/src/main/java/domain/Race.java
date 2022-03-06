@@ -1,6 +1,8 @@
 package domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Race implements Identifiable<Integer>, Serializable {
@@ -9,18 +11,31 @@ public class Race implements Identifiable<Integer>, Serializable {
     private SwimmingDistances distance;
     private SwimmingStyles style;
     private Integer swimmersNumber;
+    private List<Swimmer> swimmers;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Race race = (Race) o;
-        return Objects.equals(ID, race.ID) && distance == race.distance && style == race.style && Objects.equals(swimmersNumber, race.swimmersNumber);
+    public Race(Integer ID, SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
+        this.ID = ID;
+        this.distance = distance;
+        this.style = style;
+        this.swimmersNumber = swimmersNumber;
+        this.swimmers = new ArrayList<>();
+    }
+
+    public Race(SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
+        this.distance = distance;
+        this.style = style;
+        this.swimmersNumber = swimmersNumber;
+        this.swimmers = new ArrayList<>();
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(ID, distance, style, swimmersNumber);
+    public Integer getID() {
+        return ID;
+    }
+
+    @Override
+    public void setID(Integer id) {
+        ID = id;
     }
 
     public SwimmingDistances getDistance() {
@@ -48,12 +63,15 @@ public class Race implements Identifiable<Integer>, Serializable {
     }
 
     @Override
-    public Integer getID() {
-        return null;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Race race = (Race) o;
+        return Objects.equals(ID, race.ID) && distance == race.distance && style == race.style && Objects.equals(swimmersNumber, race.swimmersNumber);
     }
 
     @Override
-    public void setID(Integer id) {
-
+    public int hashCode() {
+        return Objects.hash(ID);
     }
 }

@@ -48,6 +48,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Domain\Identifiable.cs" />
+        <Compile Include="Domain\SwimmingStyles.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>

@@ -49,6 +49,7 @@
     <ItemGroup>
         <Compile Include="Domain\Admin.cs" />
         <Compile Include="Domain\Identifiable.cs" />
+        <Compile Include="Domain\Race.cs" />
         <Compile Include="Domain\SwimmingDistances.cs" />
         <Compile Include="Domain\SwimmingStyles.cs" />
         <Compile Include="Form1.cs">

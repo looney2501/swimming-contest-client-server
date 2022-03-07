@@ -10,10 +10,10 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
     private Integer ID;
     private String firstName;
     private String lastName;
-    private String age;
+    private Integer age;
     private List<Race> races;
 
-    public Swimmer(Integer ID, String firstName, String lastName, String age) {
+    public Swimmer(Integer ID, String firstName, String lastName, Integer age) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -21,7 +21,7 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
         races = new ArrayList<>();
     }
 
-    public Swimmer(String firstName, String lastName, String age) {
+    public Swimmer(String firstName, String lastName, Integer age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -54,11 +54,11 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
         this.lastName = lastName;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

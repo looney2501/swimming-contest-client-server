@@ -6,4 +6,5 @@ import domain.SwimmingStyles;
 
 public interface RaceRepository extends Repository<Integer, Race> {
     Race findRaceByDistanceAndStyle(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle);
+    //TODO getAll
 }

@@ -11,21 +11,19 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
     private String firstName;
     private String lastName;
     private Integer age;
-    private List<Race> races;
 
     public Swimmer(Integer ID, String firstName, String lastName, Integer age) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        races = new ArrayList<>();
     }
 
     public Swimmer(String firstName, String lastName, Integer age) {
+        this.ID = null;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        races = new ArrayList<>();
     }
 
     @Override
@@ -60,14 +58,6 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
-    }
-
-    public List<Race> getRaces() {
-        return races;
-    }
-
-    public void setRaces(List<Race> races) {
-        this.races = races;
     }
 
     @Override

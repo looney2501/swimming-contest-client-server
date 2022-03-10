@@ -11,21 +11,19 @@ public class Race implements Identifiable<Integer>, Serializable {
     private SwimmingDistances distance;
     private SwimmingStyles style;
     private Integer swimmersNumber;
-    private List<Swimmer> swimmers;
 
     public Race(Integer ID, SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
         this.ID = ID;
         this.distance = distance;
         this.style = style;
         this.swimmersNumber = swimmersNumber;
-        this.swimmers = new ArrayList<>();
     }
 
     public Race(SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
+        this.ID = null;
         this.distance = distance;
         this.style = style;
         this.swimmersNumber = swimmersNumber;
-        this.swimmers = new ArrayList<>();
     }
 
     @Override

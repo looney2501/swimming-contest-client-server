@@ -75,7 +75,7 @@ public class Swimmer implements Identifiable<Integer>, Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Swimmer swimmer = (Swimmer) o;
-        return Objects.equals(ID, swimmer.ID) && Objects.equals(firstName, swimmer.firstName) && Objects.equals(lastName, swimmer.lastName) && Objects.equals(age, swimmer.age);
+        return Objects.equals(firstName, swimmer.firstName) && Objects.equals(lastName, swimmer.lastName) && Objects.equals(age, swimmer.age);
     }
 
     @Override

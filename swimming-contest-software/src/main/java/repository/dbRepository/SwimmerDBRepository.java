@@ -8,6 +8,7 @@ import utils.JdbcUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -23,7 +24,7 @@ public class SwimmerDBRepository implements SwimmerRepository {
 
     @Override
     public void add(Swimmer elem) {
-        logger.traceEntry("add(swimmer {})", elem);
+        logger.traceEntry("add(Swimmer = {})", elem);
         Connection connection = jdbcUtils.getConnection();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(
@@ -52,6 +53,26 @@ public class SwimmerDBRepository implements SwimmerRepository {
 
     @Override
     public Swimmer findById(Integer id) {
-        return null;
+        logger.traceEntry("findById(id = {})", id);
+        Swimmer foundSwimmer = null;
+
+        Connection connection = jdbcUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "select firstName, lastName, age from main.Swimmers where id = ?;"
+        )) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                String firstName = resultSet.getString("firstName");
+                String lastName = resultSet.getString("lastName");
+                Integer age = resultSet.getInt("age");
+                foundSwimmer = new Swimmer(id, firstName, lastName, age);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return logger.traceExit("Result: Swimmer = {}", foundSwimmer);
     }
 }

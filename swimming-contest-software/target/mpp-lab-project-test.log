@@ -1,0 +1,38 @@
+11 mar. 2022 10:52:15,179 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+11 mar. 2022 10:52:15,188 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter saving swimmer Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43}
+11 mar. 2022 10:52:15,188 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:52:15,188 TRACE utils.JdbcUtils 22 getNewConnection - Enter
+11 mar. 2022 10:52:15,189 INFO  utils.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+11 mar. 2022 10:52:15,189 INFO  utils.JdbcUtils 29 getNewConnection - user: null
+11 mar. 2022 10:52:15,190 INFO  utils.JdbcUtils 30 getNewConnection - pass: null
+11 mar. 2022 10:52:15,246 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5fe8b721)
+11 mar. 2022 10:52:15,254 TRACE repository.dbRepository.SwimmerDBRepository 38 add - Saved 1 instances
+11 mar. 2022 10:52:15,255 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:52:15,255 TRACE utils.JdbcUtils 22 getNewConnection - Enter
+11 mar. 2022 10:52:15,255 INFO  utils.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+11 mar. 2022 10:52:15,256 INFO  utils.JdbcUtils 29 getNewConnection - user: null
+11 mar. 2022 10:52:15,256 INFO  utils.JdbcUtils 30 getNewConnection - pass: null
+11 mar. 2022 10:52:15,260 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@182f1e9a)
+11 mar. 2022 10:52:15,263 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter saving swimmer Swimmer{ID=null, firstName='aaa', lastName='aaa', age=21}
+11 mar. 2022 10:52:15,263 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:52:15,263 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5fe8b721)
+11 mar. 2022 10:52:15,270 TRACE repository.dbRepository.SwimmerDBRepository 38 add - Saved 1 instances
+11 mar. 2022 10:55:44,898 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+11 mar. 2022 10:55:44,906 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(swimmer Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43})
+11 mar. 2022 10:55:44,907 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:55:44,907 TRACE utils.JdbcUtils 22 getNewConnection - Enter
+11 mar. 2022 10:55:44,907 INFO  utils.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+11 mar. 2022 10:55:44,907 INFO  utils.JdbcUtils 29 getNewConnection - user: null
+11 mar. 2022 10:55:44,908 INFO  utils.JdbcUtils 30 getNewConnection - pass: null
+11 mar. 2022 10:55:44,973 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5fe8b721)
+11 mar. 2022 10:55:45,003 TRACE repository.dbRepository.SwimmerDBRepository 38 add - Saved 1 instances
+11 mar. 2022 10:55:45,003 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:55:45,003 TRACE utils.JdbcUtils 22 getNewConnection - Enter
+11 mar. 2022 10:55:45,004 INFO  utils.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+11 mar. 2022 10:55:45,004 INFO  utils.JdbcUtils 29 getNewConnection - user: null
+11 mar. 2022 10:55:45,004 INFO  utils.JdbcUtils 30 getNewConnection - pass: null
+11 mar. 2022 10:55:45,008 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@182f1e9a)
+11 mar. 2022 10:55:45,012 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(swimmer Swimmer{ID=null, firstName='aaa', lastName='aaa', age=21})
+11 mar. 2022 10:55:45,012 TRACE utils.JdbcUtils 46 getConnection - Enter
+11 mar. 2022 10:55:45,012 TRACE utils.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5fe8b721)
+11 mar. 2022 10:55:45,019 TRACE repository.dbRepository.SwimmerDBRepository 38 add - Saved 1 instances

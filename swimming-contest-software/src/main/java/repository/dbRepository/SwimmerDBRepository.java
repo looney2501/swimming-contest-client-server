@@ -23,7 +23,7 @@ public class SwimmerDBRepository implements SwimmerRepository {
 
     @Override
     public void add(Swimmer elem) {
-        logger.traceEntry("saving swimmer {}", elem);
+        logger.traceEntry("add(swimmer {})", elem);
         Connection connection = jdbcUtils.getConnection();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(

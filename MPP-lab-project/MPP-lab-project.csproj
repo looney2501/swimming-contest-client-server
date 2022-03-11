@@ -59,9 +59,10 @@
         <Compile Include="src\Domain\Identifiable.cs" />
         <Compile Include="src\Domain\Race.cs" />
         <Compile Include="src\Domain\Swimmer.cs" />
+        <Compile Include="src\Domain\SwimmerRace.cs" />
         <Compile Include="src\Domain\SwimmingDistances.cs" />
         <Compile Include="src\Domain\SwimmingStyles.cs" />
-        <Compile Include="src\Repository\IRepository.cs" />
+        <Compile Include="src\Repository\Interfaces\IRepository.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -9,4 +9,5 @@ import java.util.List;
 public interface SwimmerRaceRepository extends Repository<Integer, SwimmerRace> {
     Integer getNumberOfSwimmersForRace(Race race);
     List<Swimmer> findAllSwimmersForRace(Race race);
+    List<Race> findAllRacesForSwimmer(Swimmer swimmer);
 }

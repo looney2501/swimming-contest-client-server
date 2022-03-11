@@ -81,8 +81,8 @@ public class RaceDBRepository implements RaceRepository {
     }
 
     @Override
-    public void add(Race elem) {
-
+    public Integer add(Race elem) {
+        return null;
     }
 
     @Override

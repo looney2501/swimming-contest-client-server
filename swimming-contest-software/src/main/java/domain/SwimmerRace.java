@@ -29,4 +29,13 @@ public class SwimmerRace implements Identifiable<Integer>, Serializable {
     public Race getRace() {
         return race;
     }
+
+    @Override
+    public String toString() {
+        return "SwimmerRace{" +
+                "ID=" + ID +
+                ", swimmer=" + swimmer +
+                ", race=" + race +
+                '}';
+    }
 }

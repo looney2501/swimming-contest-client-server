@@ -72,4 +72,14 @@ public class Race implements Identifiable<Integer>, Serializable {
     public int hashCode() {
         return Objects.hash(ID);
     }
+
+    @Override
+    public String toString() {
+        return "Race{" +
+                "ID=" + ID +
+                ", distance=" + distance +
+                ", style=" + style +
+                ", swimmersNumber=" + swimmersNumber +
+                '}';
+    }
 }

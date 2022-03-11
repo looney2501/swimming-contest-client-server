@@ -23,9 +23,10 @@ public class SwimmerDBRepository implements SwimmerRepository {
     }
 
     @Override
-    public void add(Swimmer elem) {
+    public Integer add(Swimmer elem) {
         logger.traceEntry("add(Swimmer = {})", elem);
         Connection connection = jdbcUtils.getConnection();
+        Integer id = null;
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(
                 "insert into Swimmers (firstName, lastName, age) values (?, ?, ?)"
@@ -35,12 +36,14 @@ public class SwimmerDBRepository implements SwimmerRepository {
             preparedStatement.setString(2, elem.getLastName());
             preparedStatement.setInt(3, elem.getAge());
             int result = preparedStatement.executeUpdate();
-
-            logger.trace("Saved {} instances", result);
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            resultSet.next();
+            id = resultSet.getInt(1);
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+        return logger.traceExit("Result: id = {}", id);
     }
 
     @Override

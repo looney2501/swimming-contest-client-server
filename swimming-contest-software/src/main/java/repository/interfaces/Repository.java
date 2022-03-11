@@ -8,7 +8,7 @@ import java.util.Collection;
  * @param <T> Type of the objects stored in repository
  */
 public interface Repository<Tid, T> {
-    void add(T elem);
+    Tid add(T elem);
     void delete(T elem);
     void update(T elem, Tid id);
     T findById(Tid id);

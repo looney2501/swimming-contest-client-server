@@ -1,6 +1,6 @@
 ﻿namespace MPP_lab_project.Repository;
 
-public interface Repository<Tid, T>
+public interface IRepository<Tid, T>
 {
     void Add(T elem);
     void Delete(T elem);

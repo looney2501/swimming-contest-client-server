@@ -1,4 +1,4 @@
-﻿namespace MPP_lab_project.Repository;
+﻿namespace MPP_lab_project.Repository.Interfaces;
 
 public interface IRepository<Tid, T>
 {

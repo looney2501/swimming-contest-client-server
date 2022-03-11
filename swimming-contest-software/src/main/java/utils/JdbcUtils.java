@@ -50,7 +50,7 @@ public class JdbcUtils {
 
         } catch (SQLException e) {
             logger.error(e);
-            System.out.println("Error DB "+e);
+            System.out.println("Error DB " + e);
         }
         logger.traceExit(instance);
         return instance;

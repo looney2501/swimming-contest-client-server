@@ -65,7 +65,7 @@ public class Race implements Identifiable<Integer>, Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Race race = (Race) o;
-        return Objects.equals(ID, race.ID) && distance == race.distance && style == race.style && Objects.equals(swimmersNumber, race.swimmersNumber);
+        return distance == race.distance && style == race.style && Objects.equals(swimmersNumber, race.swimmersNumber);
     }
 
     @Override

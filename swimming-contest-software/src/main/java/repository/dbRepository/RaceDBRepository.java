@@ -76,6 +76,7 @@ public class RaceDBRepository implements RaceRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return logger.traceExit("Result: allRaces  = {}", races);
     }
 
@@ -96,6 +97,25 @@ public class RaceDBRepository implements RaceRepository {
 
     @Override
     public Race findById(Integer id) {
-        return null;
+        logger.traceEntry("findById(id = {})", id);
+        Race race = null;
+
+        Connection connection = jdbcUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "select distance, style, swimmersNumber from main.Races where id = ?;"
+        )) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                Integer distance = resultSet.getInt("distance");
+                Integer style = resultSet.getInt("style");
+                Integer swimmersNo = resultSet.getInt("swimmersNumber");
+                race = new Race(id, SwimmingDistances.distanceFromInteger(distance), SwimmingStyles.styleFromInteger(style), swimmersNo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return logger.traceExit("Result: race = {}", race);
     }
 }

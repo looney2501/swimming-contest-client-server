@@ -25,4 +25,14 @@ public class Race: Identifiable<Int32>
         Style = style;
         SwimmersNumber = swimmersNumber;
     }
+
+    public override string ToString()
+    {
+        return "Race{" +
+               "ID=" + ID +
+               ", distance=" + Distance +
+               ", style=" + Style +
+               ", swimmersNumber=" + SwimmersNumber +
+               '}';
+    }
 }

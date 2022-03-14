@@ -7,10 +7,10 @@ using log4net.Repository.Hierarchy;
 
 namespace MPP_lab_project.Utils;
 
-public static class DBUtils
+public static class DbUtils
 {
     private static IDbConnection _instance = null;
-    private static ILog _logger = LogManager.GetLogger("DBUtils");
+    private static readonly ILog Logger = LogManager.GetLogger("DBUtils");
     
     public static IDbConnection GetConnection(IDictionary<string,string> props)
     {
@@ -20,13 +20,13 @@ public static class DBUtils
             String user = props["user"];
             String password = props["password"];
             
-            _logger.InfoFormat("trying to connect to database ... {0}", connectionString);
+            Logger.InfoFormat("trying to connect to database ... {0}", connectionString);
             
             _instance = GetNewConnection(props);
             _instance.Open();
             if (_instance.State != ConnectionState.Open)
             {
-                _logger.Error("Connection could not be established");
+                Logger.Error("Connection could not be established");
             }
         }
         return _instance;

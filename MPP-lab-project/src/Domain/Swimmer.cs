@@ -25,4 +25,14 @@ public class Swimmer: Identifiable<Int32>
         LastName = lastName;
         Age = age;
     }
+
+    public override string ToString()
+    {
+        return "Swimmer{" +
+               "ID=" + ID +
+               ", firstName='" + FirstName + '\'' +
+               ", lastName='" + LastName + '\'' +
+               ", age=" + Age +
+               '}';
+    }
 }

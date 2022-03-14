@@ -14,4 +14,13 @@ public class SwimmerRace
         Swimmer = swimmer;
         Race = race;
     }
+
+    public override string ToString()
+    {
+        return "SwimmerRace{" +
+               "ID=" + ID +
+               ", swimmer=" + Swimmer +
+               ", race=" + Race +
+               '}';
+    }
 }

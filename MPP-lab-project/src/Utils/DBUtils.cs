@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using log4net;
 using log4net.Repository.Hierarchy;
@@ -15,11 +16,11 @@ public static class DBUtils
     {
         if (_instance == null || _instance.State == System.Data.ConnectionState.Closed)
         {
-            String url = props["url"];
+            String connectionString = props["connectionString"];
             String user = props["user"];
             String password = props["password"];
             
-            _logger.InfoFormat("trying to connect to database ... {0}", url);
+            _logger.InfoFormat("trying to connect to database ... {0}", connectionString);
             _logger.InfoFormat("user: {0}", user);
             _logger.InfoFormat("password: {0}", password);
             

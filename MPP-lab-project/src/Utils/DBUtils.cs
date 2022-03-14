@@ -21,8 +21,6 @@ public static class DBUtils
             String password = props["password"];
             
             _logger.InfoFormat("trying to connect to database ... {0}", connectionString);
-            _logger.InfoFormat("user: {0}", user);
-            _logger.InfoFormat("password: {0}", password);
             
             _instance = GetNewConnection(props);
             _instance.Open();
@@ -37,5 +35,27 @@ public static class DBUtils
     private static IDbConnection GetNewConnection(IDictionary<string,string> props)
     {
         return ConnectionUtils.ConnectionFactory.GetInstance().CreateConnection(props);
+    }
+    
+    private static string GetConnectionStringByName(string name)
+    {
+        // Assume failure.
+        string returnValue = null;
+
+        // Look for the name in the connectionStrings section.
+        ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[name];
+        
+        // If found, return the connection string.
+        if (settings != null)
+            returnValue = settings.ConnectionString;
+
+        return returnValue;
+    }
+
+    public static IDictionary<String, String> GetDBPropertiesByName(string name)
+    {
+        IDictionary<String, string> props = new SortedList<String, String>();
+        props.Add("ConnectionString", GetConnectionStringByName("tasksDB"));
+        return props;
     }
 }

@@ -29,7 +29,7 @@ public class SwimmerDBRepository implements SwimmerRepository {
         Integer id = null;
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "insert into Swimmers (firstName, lastName, age) values (?, ?, ?)"
+                "insert into Swimmers (firstName, lastName, age) values (?, ?, ?);"
         ))
         {
             preparedStatement.setString(1, elem.getFirstName());

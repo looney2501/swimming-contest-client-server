@@ -46,7 +46,7 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
         Connection connection = jdbcUtils.getConnection();
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "insert into main.SwimmersRaces (id_swimmer, id_race) values (?, ?)"
+                "insert into main.SwimmersRaces (id_swimmer, id_race) values (?, ?);"
         ))
         {
             preparedStatement.setInt(1, elem.getSwimmer().getID());

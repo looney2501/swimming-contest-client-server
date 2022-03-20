@@ -21,7 +21,7 @@ public class AdminDBRepository implements AdminRepository {
     private static final Logger logger = LogManager.getLogger();
 
     public AdminDBRepository(Properties properties) {
-        logger.info("Initialising AdmingDBRepository with properties {}", properties);
+        logger.info("Initialising AdminDBRepository with properties {}", properties);
         this.jdbcUtils = new JdbcUtils(properties);
     }
 

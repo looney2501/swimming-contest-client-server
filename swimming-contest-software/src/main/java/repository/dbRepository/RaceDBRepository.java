@@ -36,7 +36,7 @@ public class RaceDBRepository implements RaceRepository {
 
         Connection connection = jdbcUtils.getConnection();
         try (PreparedStatement preparedStatement = connection.prepareStatement(
-                "select id, swimmersNumber from main.Races where distance = ? and style = ?"
+                "select id, swimmersNumber from main.Races where distance = ? and style = ?;"
         )) {
             preparedStatement.setInt(1, SwimmingDistances.integerFromDistance(swimmingDistance));
             preparedStatement.setInt(2, SwimmingStyles.integerFromStyle(swimmingStyle));

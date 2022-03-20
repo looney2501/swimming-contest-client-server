@@ -10,7 +10,7 @@ namespace ConnectionUtils
     {
         public override IDbConnection CreateConnection(IDictionary<string, string> props)
         {
-            String connectionString = props["connectionString"];
+            String connectionString = props["ConnectionString"];
             return new SQLiteConnection(connectionString);
         }
     }

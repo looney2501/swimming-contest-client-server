@@ -16,9 +16,7 @@ public static class DbUtils
     {
         if (_instance == null || _instance.State == System.Data.ConnectionState.Closed)
         {
-            String connectionString = props["connectionString"];
-            String user = props["user"];
-            String password = props["password"];
+            String connectionString = props["ConnectionString"];
             
             Logger.InfoFormat("trying to connect to database ... {0}", connectionString);
             
@@ -55,7 +53,7 @@ public static class DbUtils
     public static IDictionary<String, String> GetDBPropertiesByName(string name)
     {
         IDictionary<String, string> props = new SortedList<String, String>();
-        props.Add("ConnectionString", GetConnectionStringByName("tasksDB"));
+        props.Add("ConnectionString", GetConnectionStringByName(name));
         return props;
     }
 }

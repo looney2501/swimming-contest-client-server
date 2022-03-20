@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using log4net;
+using log4net.Config;
 using log4net.Util;
 using MPP_lab_project.Domain;
 using MPP_lab_project.Repository.Interfaces;
@@ -16,6 +17,7 @@ public class AdminDBRepository : IAdminRepository
 
     public AdminDBRepository(IDictionary<String, String> properties)
     {
+        //XmlConfigurator.Configure();
         Logger.InfoFormat("Initialising AdminDBRepository with properties {0}", properties);
         this.properties = properties;
     }
@@ -64,7 +66,7 @@ public class AdminDBRepository : IAdminRepository
             {
                 if (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(1);
+                    Int32 id = dataReader.GetInt32(0);
                     admin = new Admin(id, username, password);
                 }
             }

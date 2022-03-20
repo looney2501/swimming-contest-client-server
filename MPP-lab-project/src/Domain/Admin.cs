@@ -18,8 +18,21 @@ public class Admin: Identifiable<Int32>
 
     public Admin(string username, string password)
     {
-        this.Username = username;
+        Username = username;
         Password = password;
+    }
+
+    protected bool Equals(Admin other)
+    {
+        return Username == other.Username && Password == other.Password;
+    }
+
+    public override int GetHashCode()
+    {
+        unchecked
+        {
+            return ((Username != null ? Username.GetHashCode() : 0) * 397) ^ (Password != null ? Password.GetHashCode() : 0);
+        }
     }
 
     public override string ToString()

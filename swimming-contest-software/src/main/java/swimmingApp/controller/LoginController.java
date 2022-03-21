@@ -1,7 +1,6 @@
 package swimmingApp.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import swimmingApp.Main;
 
@@ -14,12 +13,12 @@ public class LoginController extends Controller {
     @FXML
     private TextField usernameTextField;
     @FXML
-    private TextField passwordTextField;
+    private TextField passwordField;
 
     @FXML
     public void loginButtonAction() throws NoSuchAlgorithmException, IOException {
         String username = usernameTextField.getText();
-        String password = passwordTextField.getText();
+        String password = passwordField.getText();
         if (username.isEmpty()) {
             MessageAlert.showErrorMessage(null, "Introduceti un nume de utilizator!");
         }

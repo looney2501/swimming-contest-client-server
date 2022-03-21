@@ -4,17 +4,20 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.util.converter.IntegerStringConverter;
 import swimmingApp.Main;
 import swimmingApp.domain.SwimmingDistances;
 import swimmingApp.domain.SwimmingStyles;
 import swimmingApp.domain.dtos.RaceDTO;
+import swimmingApp.domain.dtos.RaceDetailsDTO;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.function.UnaryOperator;
 
 
 public class MainController extends Controller {
@@ -37,6 +40,12 @@ public class MainController extends Controller {
     private final ObservableList<SwimmingDistances> distances = FXCollections.observableArrayList();
     @FXML
     private final ObservableList<SwimmingStyles> styles = FXCollections.observableArrayList();
+    @FXML
+    private TextField firstNameTextField;
+    @FXML
+    private TextField lastNameTextField;
+    @FXML
+    private TextField ageTextField;
 
     @FXML
     public void logoutButtonAction() throws IOException {
@@ -55,14 +64,53 @@ public class MainController extends Controller {
         }
     }
 
+    @FXML
+    public void addSwimmerAction() {
+        String firstName = firstNameTextField.getText();
+        String lastName = lastNameTextField.getText();
+        String age = ageTextField.getText();
+        ObservableList<RaceDTO> selectedIndices = racesTableView.getSelectionModel().getSelectedItems();
+        if (firstName.isEmpty()) {
+            MessageAlert.showErrorMessage(null, "Introduceti prenume!");
+        }
+        else if (lastName.isEmpty()) {
+            MessageAlert.showErrorMessage(null, "Introduceti nume!");
+        }
+        else if (age.isEmpty()) {
+            MessageAlert.showErrorMessage(null, "Introduceti varsta!");
+        }
+        else if (selectedIndices.size() < 1) {
+            MessageAlert.showErrorMessage(null, "Selectati cel putin o cursa!");
+        }
+        else {
+            List<RaceDetailsDTO> raceDetailsDTOs = selectedIndices.stream()
+                            .map(raceDTO -> new RaceDetailsDTO(raceDTO.getRace().getDistance(), raceDTO.getRace().getStyle()))
+                            .toList();
+            service.addSwimmer(firstName, lastName, Integer.parseInt(age), raceDetailsDTOs);
+            initializeModels();
+        }
+    }
+
     public void initialize() {
         initializeModels();
         initializeRacesTableView();
         initializeComboBoxes();
+        UnaryOperator<TextFormatter.Change> integerFilter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("-?([1-9][0-9]*)?")) {
+                return change;
+            }
+            return null;
+        };
+
+        ageTextField.setTextFormatter(
+                new TextFormatter<>(new IntegerStringConverter(), 0, integerFilter));
+        ageTextField.clear();
     }
 
     private void initializeRacesTableView() {
         racesTableView.setItems(raceDTOsModel);
+        racesTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         raceDistanceColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRace().getDistance().toString()));
         raceStyleColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRace().getStyle().toString()));
         raceSwimmersNoColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getNoSwimmers().toString()));

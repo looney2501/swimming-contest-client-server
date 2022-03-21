@@ -10,5 +10,6 @@ module com.map_toysocialnetwork_gui {
     requires org.apache.logging.log4j;
 
     opens swimmingApp to javafx.fxml;
+    opens swimmingApp.controller to javafx.fxml;
     exports swimmingApp;
 }

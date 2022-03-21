@@ -12,7 +12,6 @@ public class LoginController extends Controller {
 
     @FXML
     private TextField usernameTextField;
-
     @FXML
     private TextField passwordTextField;
 

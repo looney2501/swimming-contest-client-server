@@ -8,7 +8,9 @@ import swimmingApp.repository.interfaces.AdminRepository;
 import swimmingApp.repository.interfaces.RaceRepository;
 import swimmingApp.repository.interfaces.SwimmerRaceRepository;
 import swimmingApp.repository.interfaces.SwimmerRepository;
+import swimmingApp.utils.PasswordHashingUtils;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +37,8 @@ public class Service {
         this.swimmerRaceRepository = swimmerRaceRepository;
     }
 
-    public boolean isExistingUser(String username, String password) {
-        return adminRepository.findByUsernameAndPassword(username, password) != null;
+    public boolean isExistingUser(String username, String password) throws NoSuchAlgorithmException {
+        return adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password)) != null;
     }
 
     public List<RaceDTO> findAllRacesDetails() {

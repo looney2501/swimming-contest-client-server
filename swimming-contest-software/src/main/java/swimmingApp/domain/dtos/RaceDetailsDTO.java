@@ -19,4 +19,9 @@ public class RaceDetailsDTO {
     public SwimmingStyles getSwimmingStyle() {
         return swimmingStyle;
     }
+
+    @Override
+    public String toString() {
+        return swimmingDistance + ", " + swimmingStyle + "; ";
+    }
 }

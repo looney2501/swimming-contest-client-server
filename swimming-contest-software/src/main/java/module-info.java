@@ -11,5 +11,7 @@ module com.map_toysocialnetwork_gui {
 
     opens swimmingApp to javafx.fxml;
     opens swimmingApp.controller to javafx.fxml;
+
     exports swimmingApp;
+    exports swimmingApp.domain;
 }

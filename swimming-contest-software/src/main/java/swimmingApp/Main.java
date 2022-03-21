@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 import swimmingApp.controller.Controller;
 import swimmingApp.controller.LoginController;
 import swimmingApp.controller.MainController;
+import swimmingApp.controller.RaceViewController;
+import swimmingApp.domain.SwimmingDistances;
+import swimmingApp.domain.SwimmingStyles;
 import swimmingApp.repository.dbRepository.AdminDBRepository;
 import swimmingApp.repository.dbRepository.RaceDBRepository;
 import swimmingApp.repository.dbRepository.SwimmerDBRepository;
@@ -29,7 +32,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         service = loadService();
-        this.primaryStage = primaryStage;
+        Main.primaryStage = primaryStage;
         initView();
     }
 
@@ -82,6 +85,16 @@ public class Main extends Application {
         currentController = new MainController();
         currentController.setService(service);
         URL path = Main.class.getResource("fxml/main-view.fxml");
+        fxmlLoader = new FXMLLoader(path);
+        fxmlLoader.setController(currentController);
+        Parent root = fxmlLoader.load();
+        primaryStage.setScene(new Scene(root));
+    }
+
+    public static void changeSceneToRaceView(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) throws IOException {
+        currentController = new RaceViewController(swimmingDistance, swimmingStyle);
+        currentController.setService(service);
+        URL path = Main.class.getResource("fxml/race-view.fxml");
         fxmlLoader = new FXMLLoader(path);
         fxmlLoader.setController(currentController);
         Parent root = fxmlLoader.load();

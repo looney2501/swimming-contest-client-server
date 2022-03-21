@@ -3,8 +3,9 @@ package swimmingApp.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import swimmingApp.utils.PasswordHashingUtils;
+import swimmingApp.Main;
 
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 
@@ -16,7 +17,7 @@ public class LoginController extends Controller {
     private TextField passwordTextField;
 
     @FXML
-    public void loginButtonAction() throws NoSuchAlgorithmException {
+    public void loginButtonAction() throws NoSuchAlgorithmException, IOException {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         if (username.isEmpty()) {
@@ -26,7 +27,7 @@ public class LoginController extends Controller {
             MessageAlert.showErrorMessage(null, "Introduceti o parola!");
         }
         else if (service.isExistingUser(username, password)){
-            MessageAlert.showMessage(null, Alert.AlertType.CONFIRMATION, "ok", "ok");
+            Main.changeSceneToMainView();
         }
         else {
             MessageAlert.showErrorMessage(null, "Username sau parola sunt gresite!");

@@ -5,7 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import swimmingApp.controller.Controller;
 import swimmingApp.controller.LoginController;
+import swimmingApp.controller.MainController;
 import swimmingApp.repository.dbRepository.AdminDBRepository;
 import swimmingApp.repository.dbRepository.RaceDBRepository;
 import swimmingApp.repository.dbRepository.SwimmerDBRepository;
@@ -22,6 +24,7 @@ public class Main extends Application {
     private static Service service;
     private static Stage primaryStage;
     private static FXMLLoader fxmlLoader;
+    private static Controller currentController;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -66,9 +69,19 @@ public class Main extends Application {
     }
 
     public static void changeSceneToLogin() throws IOException {
-        LoginController currentController = new LoginController();
+        currentController = new LoginController();
         currentController.setService(service);
         URL path = Main.class.getResource("fxml/login-view.fxml");
+        fxmlLoader = new FXMLLoader(path);
+        fxmlLoader.setController(currentController);
+        Parent root = fxmlLoader.load();
+        primaryStage.setScene(new Scene(root));
+    }
+
+    public static void changeSceneToMainView() throws IOException {
+        currentController = new MainController();
+        currentController.setService(service);
+        URL path = Main.class.getResource("fxml/main-view.fxml");
         fxmlLoader = new FXMLLoader(path);
         fxmlLoader.setController(currentController);
         Parent root = fxmlLoader.load();

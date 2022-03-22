@@ -13,8 +13,6 @@ import swimmingApp.domain.dtos.RaceDTO;
 import swimmingApp.domain.dtos.RaceDetailsDTO;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.UnaryOperator;
@@ -88,6 +86,9 @@ public class MainController extends Controller {
                             .toList();
             service.addSwimmer(firstName, lastName, Integer.parseInt(age), raceDetailsDTOs);
             initializeModels();
+            firstNameTextField.clear();
+            lastNameTextField.clear();
+            ageTextField.clear();
         }
     }
 
@@ -118,7 +119,7 @@ public class MainController extends Controller {
 
     private void initializeModels() {
         raceDTOsModel.setAll(service.findAllRacesDetails());
-        distances.setAll(Arrays.asList(SwimmingDistances._50, SwimmingDistances._200, SwimmingDistances._800, SwimmingDistances._1500));
+        distances.setAll(Arrays.asList(SwimmingDistances._50m, SwimmingDistances._200m, SwimmingDistances._800m, SwimmingDistances._1500m));
         styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
     }
 

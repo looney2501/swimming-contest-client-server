@@ -29,7 +29,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id = swimmerDBRepository.add(swimmer);
         swimmer.setID(id);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
 
         SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
         swimmerRaceDBRepository.add(swimmerRace);
@@ -77,7 +77,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id = swimmerDBRepository.add(swimmer);
         swimmer.setID(id);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
 
         assertEquals(0, swimmerRaceDBRepository.getNumberOfSwimmersForRace(race));
 
@@ -119,7 +119,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id2 = swimmerDBRepository.add(swimmer2);
         swimmer2.setID(id2);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
 
         SwimmerRace swimmerRace1 = new SwimmerRace(swimmer1, race);
         swimmerRaceDBRepository.add(swimmerRace1);
@@ -159,8 +159,8 @@ class SwimmerRaceDBRepositoryTest {
         Integer id1 = swimmerDBRepository.add(swimmer1);
         swimmer1.setID(id1);
 
-        Race race1 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200, SwimmingStyles._BACKSTROKE);
-        Race race2 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50, SwimmingStyles._BACKSTROKE);
+        Race race1 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
+        Race race2 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles._BACKSTROKE);
 
         SwimmerRace swimmerRace1 = new SwimmerRace(swimmer1, race1);
         swimmerRaceDBRepository.add(swimmerRace1);

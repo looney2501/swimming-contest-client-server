@@ -20,8 +20,8 @@ class RaceDBRepositoryTest {
 
         RaceDBRepository raceDBRepository = new RaceDBRepository(properties);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50, SwimmingStyles._FREESTYLE);
-        assertEquals(SwimmingDistances._50, race.getDistance());
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles._FREESTYLE);
+        assertEquals(SwimmingDistances._50m, race.getDistance());
         assertEquals(SwimmingStyles._FREESTYLE, race.getStyle());
     }
 
@@ -43,7 +43,7 @@ class RaceDBRepositoryTest {
         RaceDBRepository raceDBRepository = new RaceDBRepository(properties);
         assertNull(raceDBRepository.findById(30));
 
-        Race race = new Race(SwimmingDistances._50, SwimmingStyles._MIXED, 0);
+        Race race = new Race(SwimmingDistances._50m, SwimmingStyles._MIXED, 0);
         Race race1 = raceDBRepository.findById(1);
         assertEquals(race, raceDBRepository.findById(1));
     }

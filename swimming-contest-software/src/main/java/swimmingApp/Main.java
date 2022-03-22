@@ -53,7 +53,6 @@ public class Main extends Application {
     private Properties loadProperties() {
         Properties properties = new Properties();
         try {
-            //TODO nu gaseste calea
             properties.load(new FileReader("D:\\Proiecte\\Java\\MPP-lab-project\\swimming-contest-software\\bd.config"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,6 +66,7 @@ public class Main extends Application {
 
     private static void initView() throws IOException {
         primaryStage.setResizable(false);
+        primaryStage.setTitle("Swimming Contest");
         changeSceneToLogin();
         primaryStage.show();
     }

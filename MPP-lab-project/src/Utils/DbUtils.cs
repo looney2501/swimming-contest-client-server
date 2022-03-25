@@ -21,7 +21,6 @@ public static class DbUtils
             Logger.InfoFormat("trying to connect to database ... {0}", connectionString);
             
             _instance = GetNewConnection(props);
-            _instance.Open();
             if (_instance.State != ConnectionState.Open)
             {
                 Logger.Error("Connection could not be established");

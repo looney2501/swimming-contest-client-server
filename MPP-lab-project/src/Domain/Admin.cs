@@ -22,17 +22,25 @@ public class Admin: Identifiable<Int32>
         Password = password;
     }
 
-    protected bool Equals(Admin other)
+    public override bool Equals(object obj)
     {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        Admin other = obj as Admin;
         return Username == other.Username && Password == other.Password;
     }
 
-    public override int GetHashCode()
+    public bool Equals(Admin other)
     {
-        unchecked
+        if (other == null)
         {
-            return ((Username != null ? Username.GetHashCode() : 0) * 397) ^ (Password != null ? Password.GetHashCode() : 0);
+            return false;
         }
+        
+        return Username == other.Username && Password == other.Password;
     }
 
     public override string ToString()

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPP-lab-project", "MPP-lab-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionUtils", "ConnectionUtils\ConnectionUtils.csproj", "{49A98D04-9BAD-4C21-B481-06BDE1D5FE1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{754CE817-988B-46F4-B0A0-6D62073CE39D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{49A98D04-9BAD-4C21-B481-06BDE1D5FE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49A98D04-9BAD-4C21-B481-06BDE1D5FE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49A98D04-9BAD-4C21-B481-06BDE1D5FE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{754CE817-988B-46F4-B0A0-6D62073CE39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{754CE817-988B-46F4-B0A0-6D62073CE39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{754CE817-988B-46F4-B0A0-6D62073CE39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{754CE817-988B-46F4-B0A0-6D62073CE39D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

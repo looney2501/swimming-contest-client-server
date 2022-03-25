@@ -17,8 +17,7 @@ public class AdminDBRepository : IAdminRepository
 
     public AdminDBRepository(IDictionary<String, String> properties)
     {
-        //XmlConfigurator.Configure();
-        Logger.InfoFormat("Initialising AdminDBRepository with properties {0}", properties);
+        Logger.InfoFormat("Initialising AdminDBRepository...");
         this.properties = properties;
     }
 
@@ -47,32 +46,34 @@ public class AdminDBRepository : IAdminRepository
         Logger.InfoFormat("FindByUsernameAndPassword(username = {0}, password = {1})", username, password);
         Admin admin = null;
         
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand comm = connection.CreateCommand())
+        using (IDbConnection connection = DbUtils.GetConnection(properties))
         {
-            comm.CommandText = "select id from Admins where username = @username and password = @password;";
-            
-            IDbDataParameter paramUsername = comm.CreateParameter();
-            paramUsername.ParameterName = "@username";
-            paramUsername.Value = username;
-            comm.Parameters.Add(paramUsername);
-            
-            IDbDataParameter paramPassword = comm.CreateParameter();
-            paramPassword.ParameterName = "@password";
-            paramPassword.Value = password;
-            comm.Parameters.Add(paramPassword);
-
-            using (IDataReader dataReader = comm.ExecuteReader())
+            using (IDbCommand comm = connection.CreateCommand())
             {
-                if (dataReader.Read())
+                connection.Open();
+                comm.CommandText = "select id from Admins where username = @username and password = @password;";
+            
+                IDbDataParameter paramUsername = comm.CreateParameter();
+                paramUsername.ParameterName = "@username";
+                paramUsername.Value = username;
+                comm.Parameters.Add(paramUsername);
+            
+                IDbDataParameter paramPassword = comm.CreateParameter();
+                paramPassword.ParameterName = "@password";
+                paramPassword.Value = password;
+                comm.Parameters.Add(paramPassword);
+
+                using (IDataReader dataReader = comm.ExecuteReader())
                 {
-                    Int32 id = dataReader.GetInt32(0);
-                    admin = new Admin(id, username, password);
+                    if (dataReader.Read())
+                    {
+                        Int32 id = dataReader.GetInt32(0);
+                        admin = new Admin(id, username, password);
+                    }
                 }
             }
-            
         }
-        
+
         Logger.InfoFormat("Result: admin = {0}", admin);
         
         return admin;

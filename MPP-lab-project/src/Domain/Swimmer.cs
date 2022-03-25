@@ -26,6 +26,29 @@ public class Swimmer: Identifiable<Int32>
         Age = age;
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        Swimmer other = obj as Swimmer;
+        if (other == null)
+        {
+            return false;
+        }
+        return other.FirstName == FirstName && other.LastName == LastName && other.Age == Age;
+    }
+
+    public bool Equals(Swimmer other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+        return other.FirstName == FirstName && other.LastName == LastName && other.Age == Age;
+    }
+
     public override string ToString()
     {
         return "Swimmer{" +

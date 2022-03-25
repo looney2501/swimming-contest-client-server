@@ -28,8 +28,11 @@ public class Admin: Identifiable<Int32>
         {
             return false;
         }
-
         Admin other = obj as Admin;
+        if (other == null)
+        {
+            return false;
+        }
         return Username == other.Username && Password == other.Password;
     }
 

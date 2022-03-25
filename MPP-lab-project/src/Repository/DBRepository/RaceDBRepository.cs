@@ -15,7 +15,7 @@ public class RaceDBRepository : IRaceRepository
 
     public RaceDBRepository(IDictionary<string, string> properties)
     {
-        Logger.InfoFormat("Initialising RaceDBRepository with properties {0}", properties);
+        Logger.InfoFormat("Initialising RaceDBRepository...");
         this.properties = properties;
     }
 
@@ -38,7 +38,7 @@ public class RaceDBRepository : IRaceRepository
     {
         Logger.InfoFormat("FindById(id = {0})", id);
         Race race = null;
-        
+
         IDbConnection connection = DbUtils.GetConnection(properties);
         using (IDbCommand command = connection.CreateCommand())
         {
@@ -55,14 +55,14 @@ public class RaceDBRepository : IRaceRepository
                 if (dataReader.Read())
                 {
                     SwimmingDistances swimmingDistances =
-                        SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
-                    SwimmingStyles swimmingStyles = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
-                    Int32 swimmersNumber = dataReader.GetInt32(3);
+                        SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(0));
+                    SwimmingStyles swimmingStyles = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(1));
+                    Int32 swimmersNumber = dataReader.GetInt32(2);
                     race = new Race(id, swimmingDistances, swimmingStyles, swimmersNumber);
                 }
             }
         }
-        
+
         Logger.InfoFormat("Result: race = {0}", race);
         
         return race;
@@ -92,8 +92,8 @@ public class RaceDBRepository : IRaceRepository
             {
                 if (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(1);
-                    Int32 swimmersNumber = dataReader.GetInt32(2);
+                    Int32 id = dataReader.GetInt32(0);
+                    Int32 swimmersNumber = dataReader.GetInt32(1);
                     race = new Race(id, swimmingDistance, swimmingStyle, swimmersNumber);
                 }
             }

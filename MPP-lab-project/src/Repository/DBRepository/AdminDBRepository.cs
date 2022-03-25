@@ -45,35 +45,31 @@ public class AdminDBRepository : IAdminRepository
     {
         Logger.InfoFormat("FindByUsernameAndPassword(username = {0}, password = {1})", username, password);
         Admin admin = null;
-        
-        using (IDbConnection connection = DbUtils.GetConnection(properties))
-        {
-            using (IDbCommand comm = connection.CreateCommand())
-            {
-                connection.Open();
-                comm.CommandText = "select id from Admins where username = @username and password = @password;";
-            
-                IDbDataParameter paramUsername = comm.CreateParameter();
-                paramUsername.ParameterName = "@username";
-                paramUsername.Value = username;
-                comm.Parameters.Add(paramUsername);
-            
-                IDbDataParameter paramPassword = comm.CreateParameter();
-                paramPassword.ParameterName = "@password";
-                paramPassword.Value = password;
-                comm.Parameters.Add(paramPassword);
 
-                using (IDataReader dataReader = comm.ExecuteReader())
+        IDbConnection connection = DbUtils.GetConnection(properties);
+        using (IDbCommand comm = connection.CreateCommand())
+        {
+            comm.CommandText = "select id from Admins where username = @username and password = @password;";
+        
+            IDbDataParameter paramUsername = comm.CreateParameter();
+            paramUsername.ParameterName = "@username";
+            paramUsername.Value = username;
+            comm.Parameters.Add(paramUsername);
+        
+            IDbDataParameter paramPassword = comm.CreateParameter();
+            paramPassword.ParameterName = "@password";
+            paramPassword.Value = password;
+            comm.Parameters.Add(paramPassword);
+
+            using (IDataReader dataReader = comm.ExecuteReader())
+            {
+                if (dataReader.Read())
                 {
-                    if (dataReader.Read())
-                    {
-                        Int32 id = dataReader.GetInt32(0);
-                        admin = new Admin(id, username, password);
-                    }
+                    Int32 id = dataReader.GetInt32(0);
+                    admin = new Admin(id, username, password);
                 }
             }
         }
-
         Logger.InfoFormat("Result: admin = {0}", admin);
         
         return admin;

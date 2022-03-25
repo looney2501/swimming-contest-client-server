@@ -72,3 +72,48 @@
 2022-03-25 19:38:25,964 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
 2022-03-25 19:38:25,964 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
 2022-03-25 19:38:25,970 [Worker#STA_NP] INFO AdminDBRepository - Result: admin = Admin{ID=34, username='admin', password='admin'}
+2022-03-25 20:05:03,437 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 20:05:03,449 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 20:05:03,450 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... 
+2022-03-25 20:05:03,470 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 20:05:59,996 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 20:06:00,009 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 20:06:00,009 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 20:06:00,030 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 20:06:00,086 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 20:06:00,087 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 20:06:49,752 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 20:06:49,765 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 20:06:49,765 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 20:06:49,786 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 20:06:49,843 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 20:06:49,845 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 20:06:53,411 [Worker#STA_NP] INFO AdminDBRepository - Initialising AdminDBRepository...
+2022-03-25 20:06:53,420 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 20:06:53,440 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 20:06:53,517 [Worker#STA_NP] INFO AdminDBRepository - FindByUsernameAndPassword(username = admin, password = admin)
+2022-03-25 20:06:53,517 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 20:06:53,517 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 20:06:53,522 [Worker#STA_NP] INFO AdminDBRepository - Result: admin = Admin{ID=35, username='admin', password='admin'}
+2022-03-25 21:10:15,288 [Worker#STA_NP] INFO AdminDBRepository - Initialising AdminDBRepository...
+2022-03-25 21:10:15,297 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 21:10:15,318 [Worker#STA_NP] ERROR DBUtils - Connection could not be established
+2022-03-25 21:11:51,280 [Worker#STA_NP] INFO AdminDBRepository - Initialising AdminDBRepository...
+2022-03-25 21:11:51,288 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 21:11:51,373 [Worker#STA_NP] INFO AdminDBRepository - FindByUsernameAndPassword(username = admin, password = admin)
+2022-03-25 21:11:51,377 [Worker#STA_NP] INFO AdminDBRepository - Result: admin = Admin{ID=36, username='admin', password='admin'}
+2022-03-25 21:12:33,104 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 21:12:33,116 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 21:12:33,117 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 21:12:33,192 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 21:12:33,194 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 21:13:07,656 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 21:13:07,668 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 21:13:07,669 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 21:13:07,745 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 21:13:07,747 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 21:13:07,749 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=1, distance=_50m, style=Mixed, swimmersNumber=0}
+2022-03-25 21:17:38,666 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 21:17:38,679 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Freestyle)
+2022-03-25 21:17:38,680 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 21:17:38,757 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=2, distance=_50m, style=Freestyle, swimmersNumber=0}

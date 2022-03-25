@@ -21,7 +21,6 @@ namespace Tests.tests.Repository.DBRepository
 
             using (IDbCommand command = connection.CreateCommand())
             {
-                connection.Open();
                 command.CommandText = "select count(*) from Admins;";
 
                 using (IDataReader dataReader = command.ExecuteReader())
@@ -32,15 +31,12 @@ namespace Tests.tests.Repository.DBRepository
                         Assert.True(0 == noAdmins);
                     }
                 }
-                connection.Close();
             }
 
             using (IDbCommand command = connection.CreateCommand())
             {
-                connection.Open();
                 command.CommandText = "insert into Admins (username, password) values ('admin', 'admin');";
                 command.ExecuteNonQuery();
-                connection.Close();
             }
             
             Admin admin = new Admin("admin", "admin");
@@ -49,10 +45,8 @@ namespace Tests.tests.Repository.DBRepository
             
             using (IDbCommand command = connection.CreateCommand())
             {
-                connection.Open();
                 command.CommandText = "delete from Admins;";
                 command.ExecuteNonQuery();
-                connection.Close();
             }
         }
     }

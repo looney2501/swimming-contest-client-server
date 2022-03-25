@@ -14,13 +14,14 @@ public static class DbUtils
     
     public static IDbConnection GetConnection(IDictionary<string,string> props)
     {
-        if (_instance == null || _instance.State == System.Data.ConnectionState.Closed)
+        if (_instance == null || _instance.State == ConnectionState.Closed)
         {
             String connectionString = props["ConnectionString"];
             
             Logger.InfoFormat("trying to connect to database ... {0}", connectionString);
             
             _instance = GetNewConnection(props);
+            _instance.Open();
             if (_instance.State != ConnectionState.Open)
             {
                 Logger.Error("Connection could not be established");

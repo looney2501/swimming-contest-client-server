@@ -1,4 +1,5 @@
-﻿using MPP_lab_project.Domain;
+﻿using System.Collections.Generic;
+using MPP_lab_project.Domain;
 using MPP_lab_project.Repository.Interfaces;
 using MPP_lab_project.Repository.DBRepository;
 using MPP_lab_project.Utils;
@@ -31,6 +32,17 @@ namespace Tests.tests.Repository.DBRepository
             Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles.Freestyle);
             Assert.AreEqual(SwimmingDistances._50m, race.Distance);
             Assert.AreEqual(SwimmingStyles.Freestyle, race.Style);
+        }
+
+        [Test]
+        public void FindAllRaces()
+        {
+            var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project_test.db");
+            
+            IRaceRepository raceRepository = new RaceDBRepository(properties);
+            List<Race> races = raceRepository.FindAllRaces();
+            
+            Assert.AreEqual(16, races.Count);
         }
     }
 }

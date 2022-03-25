@@ -117,10 +117,10 @@ public class RaceDBRepository : IRaceRepository
             {
                 while (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(1);
-                    SwimmingDistances distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(2));
-                    SwimmingStyles style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(3));
-                    Int32 swimmersNumber = dataReader.GetInt32(4);
+                    Int32 id = dataReader.GetInt32(0);
+                    SwimmingDistances distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
+                    SwimmingStyles style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
+                    Int32 swimmersNumber = dataReader.GetInt32(3);
                     races.Add(new Race(id, distance, style, swimmersNumber));
                 }
             }

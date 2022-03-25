@@ -13,25 +13,27 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
     private static readonly ILog Logger = LogManager.GetLogger("RaceDbRepository");
     IDictionary<String, String> properties;
     
-    public SwimmerDBRepository SwimmerDbRepository { get; set; }
-    public RaceDBRepository RaceDbRepository { get; set; }
+    public ISwimmerRepository SwimmerRepository { get; set; }
+    public IRaceRepository RaceRepository { get; set; }
 
-    public SwimmerRaceDBRepository(SwimmerDBRepository swimmerDbRepository, RaceDBRepository raceDbRepository, IDictionary<string, string> properties)
+    public SwimmerRaceDBRepository(ISwimmerRepository swimmerRepository, IRaceRepository raceRepository, IDictionary<string, string> properties)
     {
-        Logger.InfoFormat("Initialising RaceDBRepository with properties {0}", properties);
+        Logger.InfoFormat("Initialising RaceDBRepository...");
         this.properties = properties;
+        SwimmerRepository = swimmerRepository;
+        RaceRepository = raceRepository;
     }
 
     public int Add(SwimmerRace elem)
     {
         Logger.InfoFormat("Add(swimmer = {0})", elem);
         
-        int id;
+        int id = -1;
         
         IDbConnection connection = DbUtils.GetConnection(properties);
         using (IDbCommand comm = connection.CreateCommand())
         {
-            comm.CommandText = "insert into SwimmersRaces (id_swimmer, id_race) values (@idSwimmer, @idRace);";
+            comm.CommandText = "insert into SwimmersRaces (id_swimmer, id_race) values (@idSwimmer, @idRace) returning id;";
             
             IDbDataParameter paramIDSwimmer = comm.CreateParameter();
             paramIDSwimmer.ParameterName = "@idSwimmer";
@@ -43,7 +45,7 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
             paramIDRace.Value = elem.Race.ID;
             comm.Parameters.Add(paramIDRace);
 
-            id = (int) comm.ExecuteScalar();
+            id = Convert.ToInt32(comm.ExecuteScalar());
         }
         
         Logger.InfoFormat("Result: id = {0}", id);
@@ -85,7 +87,7 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
             {
                 if (dataReader.Read())
                 {
-                    noSwimmers = dataReader.GetInt32(1);
+                    noSwimmers = dataReader.GetInt32(0);
                 }
             }
         }
@@ -115,10 +117,10 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
             {
                 while (dataReader.Read())
                 {
-                    int id = dataReader.GetInt32(1);
-                    String firstName = dataReader.GetString(2);
-                    String lastName = dataReader.GetString(3);
-                    int age = dataReader.GetInt32(4);
+                    int id = dataReader.GetInt32(0);
+                    String firstName = dataReader.GetString(1);
+                    String lastName = dataReader.GetString(2);
+                    int age = dataReader.GetInt32(3);
                     swimmers.Add(new Swimmer(id, firstName, lastName, age));
                 }
             }
@@ -149,11 +151,11 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
             {
                 while (dataReader.Read())
                 {
-                    int id = dataReader.GetInt32(1);
+                    int id = dataReader.GetInt32(0);
                     SwimmingDistances swimmingDistances =
                         SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
                     SwimmingStyles swimmingStyles = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
-                    int swimmersNumber = dataReader.GetInt32(4);
+                    int swimmersNumber = dataReader.GetInt32(3);
                     allRaces.Add(new Race(id, swimmingDistances, swimmingStyles, swimmersNumber));
                 }
             }

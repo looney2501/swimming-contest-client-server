@@ -170,3 +170,305 @@
 2022-03-25 22:26:35,304 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 290
 2022-03-25 22:26:35,305 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 290)
 2022-03-25 22:26:35,307 [Worker#STA_NP] INFO RaceDbRepository - Result: swimmer = Swimmer{ID=290, firstName='Gigi', lastName='Ursu', age=43}
+2022-03-25 23:06:58,137 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:06:58,146 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:06:58,146 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:06:58,147 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:06:58,147 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:06:58,231 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 291
+2022-03-25 23:06:58,232 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:06:58,233 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:06:58,234 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=291, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:08:02,913 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:08:02,922 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:08:02,922 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:08:02,923 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:08:02,924 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:08:03,008 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 292
+2022-03-25 23:08:03,009 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:08:03,010 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:08:03,011 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=292, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:08:03,018 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 155
+2022-03-25 23:10:31,697 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:10:31,706 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:10:31,706 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:10:31,707 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:10:31,708 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:10:31,790 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 293
+2022-03-25 23:10:31,791 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:10:31,793 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:10:31,793 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:17:42,834 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:17:42,842 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:17:42,843 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:17:42,843 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:17:42,844 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:17:42,926 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 294
+2022-03-25 23:17:42,927 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:17:42,929 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:17:42,929 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:17:42,930 [Worker#STA_NP] INFO RaceDbRepository - Result: numberOfSwimmers = 0
+2022-03-25 23:17:42,937 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=294, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:17:42,945 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 156
+2022-03-25 23:17:42,945 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:17:42,945 [Worker#STA_NP] INFO RaceDbRepository - Result: numberOfSwimmers = 1
+2022-03-25 23:25:54,470 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:25:54,478 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:25:54,478 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:25:54,479 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:25:54,480 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:25:54,562 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 295
+2022-03-25 23:25:54,562 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:25:54,569 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 296
+2022-03-25 23:25:54,570 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:25:54,571 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:25:54,572 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=296, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:25:54,576 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 157
+2022-03-25 23:25:54,576 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:25:54,577 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:25:54,584 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:25:54,586 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 158
+2022-03-25 23:25:54,586 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:25:54,587 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:27:42,268 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:27:42,276 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:27:42,277 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:27:42,277 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:27:42,278 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:27:42,358 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 297
+2022-03-25 23:27:42,358 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi2', lastName='Ursu2', age=22})
+2022-03-25 23:27:42,366 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 298
+2022-03-25 23:27:42,367 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:27:42,368 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:27:42,369 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=297, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:27:42,385 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 159
+2022-03-25 23:27:42,385 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:27:42,386 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:27:42,393 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=298, firstName='Gigi2', lastName='Ursu2', age=22}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:27:42,396 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 160
+2022-03-25 23:27:42,396 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:27:42,396 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:33:56,445 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:33:56,453 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:33:56,454 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:33:56,454 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:33:56,455 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:33:56,544 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 299
+2022-03-25 23:33:56,545 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:33:56,547 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:33:56,547 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:33:56,547 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:33:56,548 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=299, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:33:56,555 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 161
+2022-03-25 23:33:56,556 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=299, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:21,507 [Worker#STA_NP] INFO AdminDBRepository - Initialising AdminDBRepository...
+2022-03-25 23:34:21,516 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:34:21,597 [Worker#STA_NP] INFO AdminDBRepository - FindByUsernameAndPassword(username = admin, password = admin)
+2022-03-25 23:34:21,602 [Worker#STA_NP] INFO AdminDBRepository - Result: admin = Admin{ID=38, username='admin', password='admin'}
+2022-03-25 23:34:21,667 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:21,668 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Freestyle)
+2022-03-25 23:34:21,669 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=2, distance=_50m, style=Freestyle, swimmersNumber=0}
+2022-03-25 23:34:21,698 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:21,698 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 23:34:21,699 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 23:34:21,699 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 23:34:21,700 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=1, distance=_50m, style=Mixed, swimmersNumber=0}
+2022-03-25 23:34:21,762 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,762 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=43})
+2022-03-25 23:34:21,770 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 300
+2022-03-25 23:34:21,772 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='aaa', lastName='aaa', age=21})
+2022-03-25 23:34:21,779 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 301
+2022-03-25 23:34:21,808 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,808 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=43})
+2022-03-25 23:34:21,816 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 302
+2022-03-25 23:34:21,817 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 302)
+2022-03-25 23:34:21,817 [Worker#STA_NP] INFO RaceDbRepository - Result: swimmer = Swimmer{ID=302, firstName='Gigi', lastName='Ursu', age=43}
+2022-03-25 23:34:21,872 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,873 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:21,873 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,873 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:21,881 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 303
+2022-03-25 23:34:21,881 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:34:21,881 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:34:21,881 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=303, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:34:21,887 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 162
+2022-03-25 23:34:21,918 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,918 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:21,919 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,919 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:21,921 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 304
+2022-03-25 23:34:21,921 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:34:21,921 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:34:21,921 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:34:21,922 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:34:21,922 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=304, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:34:21,924 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 163
+2022-03-25 23:34:21,924 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=304, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:21,925 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:34:21,966 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,966 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:21,967 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:21,967 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:21,969 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 305
+2022-03-25 23:34:21,969 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi2', lastName='Ursu2', age=22})
+2022-03-25 23:34:21,972 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 306
+2022-03-25 23:34:21,972 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:34:21,972 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:34:21,972 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=305, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:34:21,975 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 164
+2022-03-25 23:34:21,975 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:34:21,975 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:34:22,013 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:22,013 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:34:22,013 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:34:22,014 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:34:22,016 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 307
+2022-03-25 23:34:22,016 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:34:22,016 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:34:22,017 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:34:22,017 [Worker#STA_NP] INFO RaceDbRepository - Result: numberOfSwimmers = 2
+2022-03-25 23:35:12,801 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:35:12,810 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:35:12,810 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:35:12,811 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:35:12,811 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:35:12,902 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 308
+2022-03-25 23:35:12,903 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:35:12,904 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:35:12,905 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:35:12,905 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:35:12,906 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=308, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:35:12,914 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 165
+2022-03-25 23:35:12,915 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=308, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:35:12,915 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:35:48,014 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:35:48,022 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:35:48,022 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:35:48,023 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:35:48,024 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:35:48,115 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 309
+2022-03-25 23:35:48,116 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:35:48,117 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:35:48,117 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:35:48,118 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:35:48,118 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=309, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:35:48,125 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 166
+2022-03-25 23:35:48,125 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=309, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:35:48,126 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:37:40,766 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:37:40,775 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:37:40,775 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:37:40,776 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:37:40,777 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:37:40,860 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 310
+2022-03-25 23:37:40,860 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:37:40,862 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:37:40,862 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:37:40,863 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:37:40,863 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=310, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:37:40,870 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 167
+2022-03-25 23:37:40,871 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=310, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:37:40,871 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:39:36,093 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:36,102 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:36,102 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:36,102 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:36,103 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:39:36,191 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 311
+2022-03-25 23:39:36,192 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:39:36,194 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:36,194 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:39:36,194 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:36,195 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=311, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:36,204 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 168
+2022-03-25 23:39:36,205 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=311, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:36,205 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:39:36,213 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=311, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:36,220 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 169
+2022-03-25 23:39:36,220 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=311, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:36,220 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:39:39,713 [Worker#STA_NP] INFO AdminDBRepository - Initialising AdminDBRepository...
+2022-03-25 23:39:39,723 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:39:39,818 [Worker#STA_NP] INFO AdminDBRepository - FindByUsernameAndPassword(username = admin, password = admin)
+2022-03-25 23:39:39,823 [Worker#STA_NP] INFO AdminDBRepository - Result: admin = Admin{ID=39, username='admin', password='admin'}
+2022-03-25 23:39:39,892 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:39,893 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Freestyle)
+2022-03-25 23:39:39,894 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=2, distance=_50m, style=Freestyle, swimmersNumber=0}
+2022-03-25 23:39:39,923 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:39,923 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 30)
+2022-03-25 23:39:39,924 [Worker#STA_NP] INFO RaceDbRepository - Result: race = 
+2022-03-25 23:39:39,924 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 1)
+2022-03-25 23:39:39,925 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=1, distance=_50m, style=Mixed, swimmersNumber=0}
+2022-03-25 23:39:39,987 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:39,987 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=43})
+2022-03-25 23:39:39,995 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 312
+2022-03-25 23:39:39,997 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='aaa', lastName='aaa', age=21})
+2022-03-25 23:39:40,004 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 313
+2022-03-25 23:39:40,033 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:40,033 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=43})
+2022-03-25 23:39:40,040 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 314
+2022-03-25 23:39:40,041 [Worker#STA_NP] INFO RaceDbRepository - FindById(id = 314)
+2022-03-25 23:39:40,041 [Worker#STA_NP] INFO RaceDbRepository - Result: swimmer = Swimmer{ID=314, firstName='Gigi', lastName='Ursu', age=43}
+2022-03-25 23:39:40,095 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:40,096 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,096 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,096 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,104 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 315
+2022-03-25 23:39:40,104 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:39:40,104 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:40,105 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=315, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,108 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 170
+2022-03-25 23:39:40,142 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:40,142 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,143 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,143 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,145 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 316
+2022-03-25 23:39:40,145 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:39:40,145 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:40,146 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _50m, style = Backstroke)
+2022-03-25 23:39:40,146 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:40,146 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=316, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,148 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 171
+2022-03-25 23:39:40,149 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=316, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,149 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:39:40,149 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=316, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,151 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 172
+2022-03-25 23:39:40,151 [Worker#STA_NP] INFO RaceDbRepository - FindAllRacesForSwimmer(swimmer = Swimmer{ID=316, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,151 [Worker#STA_NP] INFO RaceDbRepository - Result: allRacesForSwimmer = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]
+2022-03-25 23:39:40,188 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:40,189 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,189 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,189 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,191 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 317
+2022-03-25 23:39:40,192 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi2', lastName='Ursu2', age=22})
+2022-03-25 23:39:40,194 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 318
+2022-03-25 23:39:40,194 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:39:40,194 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:40,194 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=317, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,197 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 173
+2022-03-25 23:39:40,197 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:39:40,198 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:39:40,198 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=318, firstName='Gigi2', lastName='Ursu2', age=22}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,200 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 174
+2022-03-25 23:39:40,200 [Worker#STA_NP] INFO RaceDbRepository - FindAllSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:39:40,200 [Worker#STA_NP] INFO RaceDbRepository - Result: allSwimmersForRace = System.Collections.Generic.List`1[MPP_lab_project.Domain.Swimmer]
+2022-03-25 23:39:40,234 [Worker#STA_NP] INFO RaceDbRepository - Initialising SwimmerDBRepository with properties System.Collections.Generic.SortedList`2[System.String,System.String]
+2022-03-25 23:39:40,234 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,234 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:39:40,235 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = Swimmer{ID=0, firstName='Gigi', lastName='Ursu', age=32})
+2022-03-25 23:39:40,237 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 319
+2022-03-25 23:39:40,237 [Worker#STA_NP] INFO RaceDbRepository - FindRaceByDistanceAndStyle(distance = _200m, style = Backstroke)
+2022-03-25 23:39:40,237 [Worker#STA_NP] INFO RaceDbRepository - Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+2022-03-25 23:39:40,238 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:39:40,238 [Worker#STA_NP] INFO RaceDbRepository - Result: numberOfSwimmers = 0
+2022-03-25 23:39:40,238 [Worker#STA_NP] INFO RaceDbRepository - Add(swimmer = SwimmerRace{ID=0, swimmer=Swimmer{ID=319, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+2022-03-25 23:39:40,241 [Worker#STA_NP] INFO RaceDbRepository - Result: id = 175
+2022-03-25 23:39:40,241 [Worker#STA_NP] INFO RaceDbRepository - GetNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+2022-03-25 23:39:40,241 [Worker#STA_NP] INFO RaceDbRepository - Result: numberOfSwimmers = 1
+2022-03-25 23:45:06,442 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:45:06,454 [Worker#STA_NP] INFO RaceDbRepository - FindAllRaces()
+2022-03-25 23:45:06,455 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:45:33,106 [Worker#STA_NP] INFO RaceDbRepository - Initialising RaceDBRepository...
+2022-03-25 23:45:33,119 [Worker#STA_NP] INFO RaceDbRepository - FindAllRaces()
+2022-03-25 23:45:33,120 [Worker#STA_NP] INFO DBUtils - trying to connect to database ... Data Source=D:\\Proiecte\\databases\\mpp_lab_project_test.db;Version=3;
+2022-03-25 23:45:33,202 [Worker#STA_NP] INFO RaceDbRepository - Result: races = System.Collections.Generic.List`1[MPP_lab_project.Domain.Race]

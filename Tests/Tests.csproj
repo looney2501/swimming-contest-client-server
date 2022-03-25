@@ -74,6 +74,7 @@
         <Compile Include="Tests\Repository\DBRepository\AdminDBRepositoryTests.cs" />
         <Compile Include="Tests\Repository\DBRepository\RaceDBRepositoryTests.cs" />
         <Compile Include="Tests\Repository\DBRepository\SwimmerDBRepositoryTests.cs" />
+        <Compile Include="Tests\Repository\DBRepository\SwimmerRaceDBRepositoryTests.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />

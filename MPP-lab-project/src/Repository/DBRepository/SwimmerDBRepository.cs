@@ -15,7 +15,7 @@ public class SwimmerDBRepository : ISwimmerRepository
 
     public SwimmerDBRepository(IDictionary<string, string> properties)
     {
-        Logger.InfoFormat("Initialising SwimmerDBRepository with properties {0}", properties);
+        Logger.InfoFormat("Initialising SwimmerDBRepository...");
         this.properties = properties;
     }
 

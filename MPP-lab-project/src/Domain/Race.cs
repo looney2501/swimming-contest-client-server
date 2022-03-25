@@ -26,6 +26,29 @@ public class Race: Identifiable<Int32>
         SwimmersNumber = swimmersNumber;
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+        Race other = obj as Race;
+        if (other == null)
+        {
+            return false;
+        }
+        return other.Distance == Distance && other.Style == Style && other.SwimmersNumber == SwimmersNumber;
+    }
+
+    public bool Equals(Race other)
+    {
+        if (other == null)
+        {
+            return false;
+        }
+        return other.Distance == Distance && other.Style == Style && other.SwimmersNumber == SwimmersNumber;
+    }
+
     public override string ToString()
     {
         return "Race{" +

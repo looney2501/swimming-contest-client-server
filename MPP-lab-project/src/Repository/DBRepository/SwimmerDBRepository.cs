@@ -15,7 +15,7 @@ public class SwimmerDBRepository : ISwimmerRepository
 
     public SwimmerDBRepository(IDictionary<string, string> properties)
     {
-        Logger.InfoFormat("Initialising SwimmerDBRepository with properties {0}", properties);
+        Logger.InfoFormat("Initialising SwimmerDBRepository...");
         this.properties = properties;
     }
 
@@ -23,12 +23,12 @@ public class SwimmerDBRepository : ISwimmerRepository
     {
         Logger.InfoFormat("Add(swimmer = {0})", elem);
 
-        int id;
+        int id = -1;
         
         IDbConnection connection = DbUtils.GetConnection(properties);
         using (IDbCommand comm = connection.CreateCommand())
         {
-            comm.CommandText = "insert into Swimmers (firstName, lastName, age) values (@firstName, @lastName, @age);";
+            comm.CommandText = "insert into Swimmers (firstName, lastName, age) values (@firstName, @lastName, @age) returning id;";
             
             IDbDataParameter paramFirstName = comm.CreateParameter();
             paramFirstName.ParameterName = "@firstName";
@@ -45,7 +45,7 @@ public class SwimmerDBRepository : ISwimmerRepository
             paramAge.Value = elem.Age;
             comm.Parameters.Add(paramAge);
 
-            id = (int) comm.ExecuteScalar();
+            id = Convert.ToInt32(comm.ExecuteScalar());
         }
         
         Logger.InfoFormat("Result: id = {0}", id);
@@ -81,9 +81,9 @@ public class SwimmerDBRepository : ISwimmerRepository
             {
                 if (dataReader.Read())
                 {
-                    String firstName = dataReader.GetString(1);
-                    String lastName = dataReader.GetString(2);
-                    Int32 age = dataReader.GetInt32(3);
+                    String firstName = dataReader.GetString(0);
+                    String lastName = dataReader.GetString(1);
+                    Int32 age = dataReader.GetInt32(2);
                     swimmer = new Swimmer(id, firstName, lastName, age);
                 }
             }

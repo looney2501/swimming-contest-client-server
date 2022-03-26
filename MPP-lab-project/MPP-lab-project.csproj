@@ -85,13 +85,16 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="src\Domain\Admin.cs" />
-        <Compile Include="src\Domain\Identifiable.cs" />
-        <Compile Include="src\Domain\Race.cs" />
-        <Compile Include="src\Domain\Swimmer.cs" />
-        <Compile Include="src\Domain\SwimmerRace.cs" />
-        <Compile Include="src\Domain\SwimmingDistances.cs" />
-        <Compile Include="src\Domain\SwimmingStyles.cs" />
+        <Compile Include="src\Domain\DTOs\RaceDetailsDTO.cs" />
+        <Compile Include="src\Domain\DTOs\RaceDTO.cs" />
+        <Compile Include="src\Domain\DTOs\SwimmerDTO.cs" />
+        <Compile Include="src\Domain\Entities\Admin.cs" />
+        <Compile Include="src\Domain\Entities\Identifiable.cs" />
+        <Compile Include="src\Domain\Entities\Race.cs" />
+        <Compile Include="src\Domain\Entities\Swimmer.cs" />
+        <Compile Include="src\Domain\Entities\SwimmerRace.cs" />
+        <Compile Include="src\Domain\Enums\SwimmingDistances.cs" />
+        <Compile Include="src\Domain\Enums\SwimmingStyles.cs" />
         <Compile Include="src\Repository\DBRepository\AdminDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\RaceDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\SwimmerDBRepository.cs" />
@@ -101,6 +104,7 @@
         <Compile Include="src\Repository\Interfaces\IRepository.cs" />
         <Compile Include="src\Repository\Interfaces\ISwimmerRaceRepository.cs" />
         <Compile Include="src\Repository\Interfaces\ISwimmerRepository.cs" />
+        <Compile Include="src\Service\Service.cs" />
         <Compile Include="src\Utils\DbUtils.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

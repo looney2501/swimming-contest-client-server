@@ -3,6 +3,7 @@ using System.Linq;
 using MPP_lab_project.Domain;
 using MPP_lab_project.Domain.DTOs;
 using MPP_lab_project.Repository.Interfaces;
+using MPP_lab_project.Utils;
 
 namespace MPP_lab_project.Service;
 
@@ -21,9 +22,9 @@ public class Service
         SwimmerRaceRepository = swimmerRaceRepository;
     }
 
-    public bool IsExistingUser(string username, string pasword)
+    public bool IsExistingUser(string username, string password)
     {
-        return true;
+        return AdminRepository.FindByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password)) != null;
     }
 
     public List<RaceDTO> FindAllRacesDetails()

@@ -1,7 +1,7 @@
 package swimmingApp.domain.dtos;
 
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 
 public class RaceDetailsDTO {
     SwimmingDistances swimmingDistance;

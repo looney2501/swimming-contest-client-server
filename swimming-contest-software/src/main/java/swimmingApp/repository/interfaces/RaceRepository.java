@@ -1,8 +1,8 @@
 package swimmingApp.repository.interfaces;
 
-import swimmingApp.domain.Race;
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
+import swimmingApp.domain.entities.Race;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 
 import java.util.List;
 

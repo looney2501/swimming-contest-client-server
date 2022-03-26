@@ -1,8 +1,8 @@
 package swimmingApp.repository.dbRepository;
 
-import swimmingApp.domain.Race;
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
+import swimmingApp.domain.entities.Race;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 import org.junit.jupiter.api.Test;
 import swimmingApp.utils.JdbcUtils;
 
@@ -44,7 +44,6 @@ class RaceDBRepositoryTest {
         assertNull(raceDBRepository.findById(30));
 
         Race race = new Race(SwimmingDistances._50m, SwimmingStyles._MIXED, 0);
-        Race race1 = raceDBRepository.findById(1);
         assertEquals(race, raceDBRepository.findById(1));
     }
 }

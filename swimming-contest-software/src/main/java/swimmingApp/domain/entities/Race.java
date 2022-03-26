@@ -1,4 +1,7 @@
-package swimmingApp.domain;
+package swimmingApp.domain.entities;
+
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 
 import java.io.Serializable;
 import java.util.Objects;

@@ -1,6 +1,6 @@
 package swimmingApp.repository.dbRepository;
 
-import swimmingApp.domain.Swimmer;
+import swimmingApp.domain.entities.Swimmer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import swimmingApp.repository.interfaces.SwimmerRepository;

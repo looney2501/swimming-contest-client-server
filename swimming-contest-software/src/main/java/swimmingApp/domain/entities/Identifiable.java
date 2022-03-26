@@ -1,4 +1,4 @@
-package swimmingApp.domain;
+package swimmingApp.domain.entities;
 
 public interface Identifiable<Tid> {
     Tid getID();

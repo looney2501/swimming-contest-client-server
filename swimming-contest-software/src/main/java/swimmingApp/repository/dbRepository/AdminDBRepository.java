@@ -2,7 +2,7 @@ package swimmingApp.repository.dbRepository;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import swimmingApp.domain.Admin;
+import swimmingApp.domain.entities.Admin;
 import swimmingApp.repository.interfaces.AdminRepository;
 import swimmingApp.utils.JdbcUtils;
 

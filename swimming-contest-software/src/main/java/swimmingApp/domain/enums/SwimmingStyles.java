@@ -1,4 +1,4 @@
-package swimmingApp.domain;
+package swimmingApp.domain.enums;
 
 /**
  * Available swimming styles for races.

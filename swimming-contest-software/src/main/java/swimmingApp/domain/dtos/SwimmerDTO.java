@@ -1,7 +1,6 @@
 package swimmingApp.domain.dtos;
 
-import swimmingApp.domain.Race;
-import swimmingApp.domain.Swimmer;
+import swimmingApp.domain.entities.Swimmer;
 
 import java.util.List;
 

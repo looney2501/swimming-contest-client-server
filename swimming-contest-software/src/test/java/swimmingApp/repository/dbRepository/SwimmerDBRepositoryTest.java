@@ -1,6 +1,6 @@
 package swimmingApp.repository.dbRepository;
 
-import swimmingApp.domain.Swimmer;
+import swimmingApp.domain.entities.Swimmer;
 import org.junit.jupiter.api.Test;
 import swimmingApp.utils.JdbcUtils;
 
@@ -13,7 +13,7 @@ import java.util.Properties;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-class SwimmerDBRepositoryTest {
+class       SwimmerDBRepositoryTest {
     @Test
     void add() {
         Properties properties = PropertiesDB.getDBProperties("bd_test.config");

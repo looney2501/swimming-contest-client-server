@@ -77,12 +77,6 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Form1.cs">
-            <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
-        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="src\Domain\DTOs\RaceDetailsDTO.cs" />
@@ -95,6 +89,24 @@
         <Compile Include="src\Domain\Entities\SwimmerRace.cs" />
         <Compile Include="src\Domain\Enums\SwimmingDistances.cs" />
         <Compile Include="src\Domain\Enums\SwimmingStyles.cs" />
+        <Compile Include="src\Forms\GenericForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="src\Forms\GenericForm.Designer.cs">
+          <DependentUpon>GenericForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="src\Forms\LoginForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="src\Forms\LoginForm.Designer.cs">
+          <DependentUpon>LoginForm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="src\Forms\MainForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="src\Forms\MainForm.Designer.cs">
+          <DependentUpon>MainForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="src\Repository\DBRepository\AdminDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\RaceDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\SwimmerDBRepository.cs" />
@@ -116,6 +128,9 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="src\Forms\LoginForm.resx">
+          <DependentUpon>LoginForm.cs</DependentUpon>
+        </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>

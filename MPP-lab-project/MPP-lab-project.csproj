@@ -128,8 +128,14 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="src\Forms\GenericForm.resx">
+          <DependentUpon>GenericForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="src\Forms\LoginForm.resx">
           <DependentUpon>LoginForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="src\Forms\MainForm.resx">
+          <DependentUpon>MainForm.cs</DependentUpon>
         </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">

@@ -109,6 +109,22 @@ public partial class MainForm : GenericForm
             }
             service.AddSwimmer(firstName, lastName, Int32.Parse(age), raceDetailsDTOs);
             RefreshRacesDataGridView();
+            RefreshTextBoxes();
+        }
+    }
+
+    private void searchRaceButton_Click(object sender, EventArgs e)
+    {
+        var selectedDistance = distanceComboBox.SelectedItem;
+        var selectedStyle = styleComboBox.SelectedItem;
+        if (selectedDistance == null || selectedStyle == null)
+        {
+            MessageBox.Show(@"Valori invalide!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        else
+        {
+            Close();
+            new RaceForm(service, (SwimmingDistances) selectedDistance, (SwimmingStyles) selectedStyle).Show();
         }
     }
 }

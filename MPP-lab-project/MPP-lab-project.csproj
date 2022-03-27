@@ -107,6 +107,12 @@
         <Compile Include="src\Forms\MainForm.Designer.cs">
           <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="src\Forms\RaceForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="src\Forms\RaceForm.Designer.cs">
+          <DependentUpon>RaceForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="src\Repository\DBRepository\AdminDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\RaceDBRepository.cs" />
         <Compile Include="src\Repository\DBRepository\SwimmerDBRepository.cs" />
@@ -136,6 +142,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="src\Forms\MainForm.resx">
           <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="src\Forms\RaceForm.resx">
+          <DependentUpon>RaceForm.cs</DependentUpon>
         </EmbeddedResource>
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">

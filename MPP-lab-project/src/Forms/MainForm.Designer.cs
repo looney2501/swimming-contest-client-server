@@ -46,6 +46,7 @@ partial class MainForm
         this.label5 = new System.Windows.Forms.Label();
         this.distanceComboBox = new System.Windows.Forms.ComboBox();
         this.styleComboBox = new System.Windows.Forms.ComboBox();
+        this.searchRaceButton = new System.Windows.Forms.Button();
         ((System.ComponentModel.ISupportInitialize) (this.racesDataGridView)).BeginInit();
         this.SuspendLayout();
         // 
@@ -191,11 +192,22 @@ partial class MainForm
         this.styleComboBox.Size = new System.Drawing.Size(181, 28);
         this.styleComboBox.TabIndex = 14;
         // 
+        // searchRaceButton
+        // 
+        this.searchRaceButton.Location = new System.Drawing.Point(699, 173);
+        this.searchRaceButton.Name = "searchRaceButton";
+        this.searchRaceButton.Size = new System.Drawing.Size(181, 30);
+        this.searchRaceButton.TabIndex = 15;
+        this.searchRaceButton.Text = "Search";
+        this.searchRaceButton.UseVisualStyleBackColor = true;
+        this.searchRaceButton.Click += new System.EventHandler(this.searchRaceButton_Click);
+        // 
         // MainForm
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(913, 581);
+        this.Controls.Add(this.searchRaceButton);
         this.Controls.Add(this.styleComboBox);
         this.Controls.Add(this.distanceComboBox);
         this.Controls.Add(this.label5);
@@ -218,6 +230,8 @@ partial class MainForm
         this.ResumeLayout(false);
         this.PerformLayout();
     }
+
+    private System.Windows.Forms.Button searchRaceButton;
 
     private System.Windows.Forms.ComboBox styleComboBox;
 

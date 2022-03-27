@@ -32,7 +32,7 @@ public class Service
         List<RaceDTO> raceDTOs = new List<RaceDTO>();
         foreach (Race race in RaceRepository.FindAllRaces())
         {
-            raceDTOs.Add(new RaceDTO(race, SwimmerRaceRepository.GetNumberOfSwimmersForRace(race)));
+            raceDTOs.Add(new RaceDTO(race.Distance, race.Style, SwimmerRaceRepository.GetNumberOfSwimmersForRace(race)));
         }
 
         return raceDTOs;

@@ -2,12 +2,14 @@
 
 public class RaceDTO
 {
-    public Race Race { get; }
+    public SwimmingDistances SwimmingDistance { get; }
+    public SwimmingStyles SwimmingStyle { get; }
     public int NoSwimmers { get; }
 
-    public RaceDTO(Race race, int noSwimmers)
+    public RaceDTO(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle, int noSwimmers)
     {
-        Race = race;
+        SwimmingDistance = swimmingDistance;
+        SwimmingStyle = swimmingStyle;
         NoSwimmers = noSwimmers;
     }
 }

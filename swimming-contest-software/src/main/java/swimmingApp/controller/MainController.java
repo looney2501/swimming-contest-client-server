@@ -82,7 +82,7 @@ public class MainController extends Controller {
         }
         else {
             List<RaceDetailsDTO> raceDetailsDTOs = selectedIndices.stream()
-                            .map(raceDTO -> new RaceDetailsDTO(raceDTO.getRace().getDistance(), raceDTO.getRace().getStyle()))
+                            .map(raceDTO -> new RaceDetailsDTO(raceDTO.getDistance(), raceDTO.getStyle()))
                             .toList();
             service.addSwimmer(firstName, lastName, Integer.parseInt(age), raceDetailsDTOs);
             initializeModels();
@@ -112,8 +112,8 @@ public class MainController extends Controller {
     private void initializeRacesTableView() {
         racesTableView.setItems(raceDTOsModel);
         racesTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        raceDistanceColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRace().getDistance().toString()));
-        raceStyleColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRace().getStyle().toString()));
+        raceDistanceColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getDistance().toString()));
+        raceStyleColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getStyle().toString()));
         raceSwimmersNoColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getNoSwimmers().toString()));
     }
 

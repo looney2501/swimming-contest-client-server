@@ -48,7 +48,7 @@ public class Service {
     public List<RaceDTO> findAllRacesDetails() {
         List<RaceDTO> raceDTOS = new ArrayList<>();
         for (Race race: raceRepository.findAllRaces()) {
-            raceDTOS.add(new RaceDTO(race, swimmerRaceRepository.getNumberOfSwimmersForRace(race)));
+            raceDTOS.add(new RaceDTO(race.getDistance(), race.getStyle(), swimmerRaceRepository.getNumberOfSwimmersForRace(race)));
         }
         return raceDTOS;
     }

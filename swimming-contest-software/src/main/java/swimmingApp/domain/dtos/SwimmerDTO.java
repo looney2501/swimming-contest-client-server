@@ -5,8 +5,8 @@ import swimmingApp.domain.entities.Swimmer;
 import java.util.List;
 
 public class SwimmerDTO {
-    private Swimmer swimmer;
-    private List<RaceDetailsDTO> raceDetailsDTOS;
+    private final Swimmer swimmer;
+    private final List<RaceDetailsDTO> raceDetailsDTOS;
 
     public SwimmerDTO(Swimmer swimmer, List<RaceDetailsDTO> races) {
         this.swimmer = swimmer;
@@ -19,5 +19,11 @@ public class SwimmerDTO {
 
     public List<RaceDetailsDTO> getRaceDetailsDTOS() {
         return raceDetailsDTOS;
+    }
+
+    public String getRaces() {
+        return raceDetailsDTOS.stream()
+                .map(RaceDetailsDTO::toString)
+                .reduce("", (subtotal, element) -> subtotal + element);
     }
 }

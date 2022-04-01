@@ -55,10 +55,6 @@ public class RaceViewController extends Controller {
         firstNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getFirstName()));
         lastNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getLastName()));
         ageColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getAge().toString()));
-        racesEnrolledColumn.setCellValueFactory(param -> new SimpleStringProperty(
-                param.getValue().getRaceDetailsDTOS().stream()
-                        .map(RaceDetailsDTO::toString)
-                        .reduce("", (subtotal, element) -> subtotal + element)
-        ));
+        racesEnrolledColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRaces()));
     }
 }

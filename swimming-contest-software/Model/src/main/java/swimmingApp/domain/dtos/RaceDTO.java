@@ -4,9 +4,9 @@ import swimmingApp.domain.enums.SwimmingDistances;
 import swimmingApp.domain.enums.SwimmingStyles;
 
 public class RaceDTO {
-    private SwimmingDistances swimmingDistance;
-    private SwimmingStyles swimmingStyle;
-    private Integer noSwimmers;
+    private final SwimmingDistances swimmingDistance;
+    private final SwimmingStyles swimmingStyle;
+    private final Integer noSwimmers;
 
     public RaceDTO(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle, Integer noSwimmers) {
         this.swimmingDistance = swimmingDistance;

@@ -1,6 +1,6 @@
 package swimmingApp.repository.dbRepository;
 
-import swimmingApp.domain.Admin;
+import swimmingApp.domain.entities.Admin;
 import org.junit.jupiter.api.Test;
 import swimmingApp.utils.JdbcUtils;
 

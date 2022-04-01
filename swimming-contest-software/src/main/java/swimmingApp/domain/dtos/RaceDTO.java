@@ -1,6 +1,6 @@
 package swimmingApp.domain.dtos;
 
-import swimmingApp.domain.Race;
+import swimmingApp.domain.entities.Race;
 
 public class RaceDTO {
     private Race race;

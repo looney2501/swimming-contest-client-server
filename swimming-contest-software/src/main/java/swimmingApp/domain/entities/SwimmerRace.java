@@ -1,4 +1,4 @@
-package swimmingApp.domain;
+package swimmingApp.domain.entities;
 
 import java.io.Serializable;
 

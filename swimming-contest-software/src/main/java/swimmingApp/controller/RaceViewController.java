@@ -7,14 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import swimmingApp.Main;
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
-import swimmingApp.domain.dtos.RaceDTO;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 import swimmingApp.domain.dtos.RaceDetailsDTO;
 import swimmingApp.domain.dtos.SwimmerDTO;
 
 import java.io.IOException;
-import java.util.List;
 
 public class RaceViewController extends Controller {
 

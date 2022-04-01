@@ -1,8 +1,8 @@
 package swimmingApp.repository.dbRepository;
 
-import swimmingApp.domain.Race;
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
+import swimmingApp.domain.entities.Race;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import swimmingApp.repository.interfaces.RaceRepository;

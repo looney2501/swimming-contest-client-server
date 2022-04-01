@@ -7,8 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.converter.IntegerStringConverter;
 import swimmingApp.Main;
-import swimmingApp.domain.SwimmingDistances;
-import swimmingApp.domain.SwimmingStyles;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 import swimmingApp.domain.dtos.RaceDTO;
 import swimmingApp.domain.dtos.RaceDetailsDTO;
 

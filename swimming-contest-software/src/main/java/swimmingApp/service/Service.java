@@ -1,9 +1,13 @@
 package swimmingApp.service;
 
-import swimmingApp.domain.*;
 import swimmingApp.domain.dtos.RaceDTO;
 import swimmingApp.domain.dtos.RaceDetailsDTO;
 import swimmingApp.domain.dtos.SwimmerDTO;
+import swimmingApp.domain.entities.Race;
+import swimmingApp.domain.entities.Swimmer;
+import swimmingApp.domain.entities.SwimmerRace;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 import swimmingApp.repository.interfaces.AdminRepository;
 import swimmingApp.repository.interfaces.RaceRepository;
 import swimmingApp.repository.interfaces.SwimmerRaceRepository;

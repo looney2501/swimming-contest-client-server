@@ -11,6 +11,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/swimming-contest-software" />
+            <option value="$PROJECT_DIR$/swimming-contest-software/Client" />
+            <option value="$PROJECT_DIR$/swimming-contest-software/Model" />
+            <option value="$PROJECT_DIR$/swimming-contest-software/Server" />
           </set>
         </option>
       </GradleProjectSettings>

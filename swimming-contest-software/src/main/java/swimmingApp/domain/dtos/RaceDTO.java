@@ -1,18 +1,25 @@
 package swimmingApp.domain.dtos;
 
-import swimmingApp.domain.entities.Race;
+import swimmingApp.domain.enums.SwimmingDistances;
+import swimmingApp.domain.enums.SwimmingStyles;
 
 public class RaceDTO {
-    private Race race;
+    private SwimmingDistances swimmingDistance;
+    private SwimmingStyles swimmingStyle;
     private Integer noSwimmers;
 
-    public RaceDTO(Race race, Integer noSwimmers) {
-        this.race = race;
+    public RaceDTO(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle, Integer noSwimmers) {
+        this.swimmingDistance = swimmingDistance;
+        this.swimmingStyle = swimmingStyle;
         this.noSwimmers = noSwimmers;
     }
 
-    public Race getRace() {
-        return race;
+    public SwimmingDistances getDistance() {
+        return swimmingDistance;
+    }
+
+    public SwimmingStyles getStyle() {
+        return swimmingStyle;
     }
 
     public Integer getNoSwimmers() {

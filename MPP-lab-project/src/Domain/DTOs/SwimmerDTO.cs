@@ -5,8 +5,8 @@ namespace MPP_lab_project.Domain.DTOs;
 
 public class SwimmerDTO
 {
-    private Swimmer _swimmer { get; }
-    private List<RaceDetailsDTO> _raceDetailsDTOs { get; }
+    private readonly Swimmer _swimmer;
+    private readonly List<RaceDetailsDTO> _raceDetailsDTOs;
 
     public string FirstName => _swimmer.FirstName;
 

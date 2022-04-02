@@ -5,8 +5,8 @@ module swimming.contest.software.Client.main {
     requires swimming.contest.software.Model.main;
     requires swimming.contest.software.Server.main;
 
-    opens swimmingApp to javafx.fxml;
-    opens swimmingApp.controller to javafx.fxml;
+    opens client to javafx.fxml;
+    opens client.controller to javafx.fxml;
 
-    exports swimmingApp;
+    exports client;
 }

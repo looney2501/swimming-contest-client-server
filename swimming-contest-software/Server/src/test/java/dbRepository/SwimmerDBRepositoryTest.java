@@ -1,9 +1,9 @@
 package dbRepository;
 
-import swimmingApp.domain.entities.Swimmer;
+import model.domain.entities.Swimmer;
 import org.junit.jupiter.api.Test;
-import swimmingApp.repository.dbRepository.JdbcUtils;
-import swimmingApp.repository.dbRepository.SwimmerDBRepository;
+import server.repository.dbRepository.JdbcUtils;
+import server.repository.dbRepository.SwimmerDBRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

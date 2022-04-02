@@ -1,5 +1,6 @@
 module swimming.contest.software.Model.main {
-    exports swimmingApp.domain.entities;
-    exports swimmingApp.domain.enums;
-    exports swimmingApp.domain.dtos;
+    exports model.domain.entities;
+    exports model.domain.enums;
+    exports model.domain.dtos;
+    exports model.service;
 }

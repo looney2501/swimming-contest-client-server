@@ -1,9 +1,9 @@
 package dbRepository;
 
-import swimmingApp.domain.entities.Admin;
+import model.domain.entities.Admin;
 import org.junit.jupiter.api.Test;
-import swimmingApp.repository.dbRepository.AdminDBRepository;
-import swimmingApp.repository.dbRepository.JdbcUtils;
+import server.repository.dbRepository.AdminDBRepository;
+import server.repository.dbRepository.JdbcUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

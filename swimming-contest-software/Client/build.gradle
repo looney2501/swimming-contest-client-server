@@ -17,8 +17,8 @@ dependencies {
 }
 
 application {
-    mainClass = 'swimmingApp.Main'
-    mainModule = 'swimmingApp'
+    mainClass = 'client.Main'
+    mainModule = 'client'
 
 }
 

@@ -3,11 +3,13 @@ package server.service;
 import model.domain.dtos.RaceDTO;
 import model.domain.dtos.RaceDetailsDTO;
 import model.domain.dtos.SwimmerDTO;
+import model.domain.entities.Admin;
 import model.domain.entities.Race;
 import model.domain.entities.Swimmer;
 import model.domain.entities.SwimmerRace;
 import model.domain.enums.SwimmingDistances;
 import model.domain.enums.SwimmingStyles;
+import model.service.ServiceException;
 import model.service.SwimmingRaceServices;
 import server.repository.interfaces.AdminRepository;
 import server.repository.interfaces.RaceRepository;
@@ -41,8 +43,20 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
         this.swimmerRaceRepository = swimmerRaceRepository;
     }
 
-    public boolean isExistingUser(String username, String password) throws NoSuchAlgorithmException {
-        return adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password)) != null;
+    @Override
+    public Admin login(String username, String password) throws NoSuchAlgorithmException, ServiceException {
+        Admin admin = adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password));
+        if (admin == null) {
+            throw new ServiceException("Incorrect username or password!");
+        }
+        else {
+            return admin;
+        }
+    }
+
+    @Override
+    public void logout(Admin admin) {
+
     }
 
     public List<RaceDTO> findAllRacesDetails() {

@@ -3,6 +3,8 @@ package client.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import client.Main;
+import model.domain.entities.Admin;
+import model.service.ServiceException;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -20,16 +22,18 @@ public class LoginController extends Controller {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
         if (username.isEmpty()) {
-            MessageAlert.showErrorMessage(null, "Introduceti un nume de utilizator!");
+            MessageAlert.showErrorMessage(null, "Username cannot be empty!");
         }
         else if (password.isEmpty()) {
-            MessageAlert.showErrorMessage(null, "Introduceti o parola!");
-        }
-        else if (service.isExistingUser(username, password)){
-            Main.changeSceneToMainView();
+            MessageAlert.showErrorMessage(null, "Password cannot be empty!");
         }
         else {
-            MessageAlert.showErrorMessage(null, "Username sau parola sunt gresite!");
+            try {
+                Admin loggedAdmin = this.service.login(username, password);
+                Main.changeSceneToMainView(loggedAdmin);
+            } catch (ServiceException e) {
+                MessageAlert.showErrorMessage(null, e.getMessage());
+            }
         }
     }
 }

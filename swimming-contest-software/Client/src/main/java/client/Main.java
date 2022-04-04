@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.domain.entities.Admin;
 import model.domain.enums.SwimmingDistances;
 import model.domain.enums.SwimmingStyles;
 import server.repository.dbRepository.AdminDBRepository;
@@ -81,9 +82,10 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
     }
 
-    public static void changeSceneToMainView() throws IOException {
+    public static void changeSceneToMainView(Admin loggedAdmin) throws IOException {
         currentController = new MainController();
         currentController.setService(service);
+        currentController.setLoggedAdmin(loggedAdmin);
         URL path = Main.class.getResource("/client/fxml/main-view.fxml");
         fxmlLoader = new FXMLLoader(path);
         fxmlLoader.setController(currentController);

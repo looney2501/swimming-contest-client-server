@@ -5,13 +5,13 @@ import server.service.ServerSwimmingRaceServices;
 
 public abstract class Controller {
     protected ServerSwimmingRaceServices service;
-    protected Admin loggedAdmin;
+    protected String loggedAdminUsername;
 
     public void setService(ServerSwimmingRaceServices service) {
         this.service = service;
     }
 
-    public void setLoggedAdmin(Admin loggedAdmin) {
-        this.loggedAdmin = loggedAdmin;
+    public void setLoggedAdminUsername(String loggedAdminUsername) {
+        this.loggedAdminUsername = loggedAdminUsername;
     }
 }

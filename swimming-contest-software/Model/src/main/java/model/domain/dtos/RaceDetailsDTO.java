@@ -3,7 +3,9 @@ package model.domain.dtos;
 import model.domain.enums.SwimmingDistances;
 import model.domain.enums.SwimmingStyles;
 
-public class RaceDetailsDTO {
+import java.io.Serializable;
+
+public class RaceDetailsDTO implements Serializable {
     SwimmingDistances swimmingDistance;
     SwimmingStyles swimmingStyle;
 

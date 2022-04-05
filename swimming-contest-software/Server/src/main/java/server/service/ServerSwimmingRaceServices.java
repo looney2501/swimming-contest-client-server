@@ -9,6 +9,7 @@ import model.domain.entities.Swimmer;
 import model.domain.entities.SwimmerRace;
 import model.domain.enums.SwimmingDistances;
 import model.domain.enums.SwimmingStyles;
+import model.observer.SwimmingRaceObserver;
 import model.service.ServiceException;
 import model.service.SwimmingRaceServices;
 import server.repository.interfaces.AdminRepository;
@@ -19,6 +20,8 @@ import server.repository.interfaces.SwimmerRepository;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class ServerSwimmingRaceServices implements SwimmingRaceServices {
 
@@ -26,6 +29,11 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
     private RaceRepository raceRepository;
     private SwimmerRepository swimmerRepository;
     private SwimmerRaceRepository swimmerRaceRepository;
+    private Map<String, SwimmingRaceObserver> loggedClients;
+
+    public ServerSwimmingRaceServices() {
+        loggedClients = new ConcurrentHashMap<>();
+    }
 
     public void setAdminRepository(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
@@ -44,22 +52,27 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
     }
 
     @Override
-    public Admin login(String username, String password) throws NoSuchAlgorithmException, ServiceException {
+    public synchronized void login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServiceException {
         Admin admin = adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password));
-        if (admin == null) {
-            throw new ServiceException("Incorrect username or password!");
+        if (admin != null) {
+            if (loggedClients.get(admin.getUsername()) != null) {
+                throw new ServiceException("User already logged in!");
+            }
+            loggedClients.put(username, client);
         }
         else {
-            return admin;
+            throw new ServiceException("Incorrect username or password!");
         }
     }
 
     @Override
-    public void logout(Admin admin) {
-
+    public synchronized void logout(String username) throws ServiceException {
+        if (loggedClients.remove(username) == null) {
+            throw new ServiceException("User is not logged in!");
+        }
     }
 
-    public List<RaceDTO> findAllRacesDetails() {
+    public synchronized List<RaceDTO> findAllRacesDetails() {
         List<RaceDTO> raceDTOS = new ArrayList<>();
         for (Race race: raceRepository.findAllRaces()) {
             raceDTOS.add(new RaceDTO(race.getDistance(), race.getStyle(), swimmerRaceRepository.getNumberOfSwimmersForRace(race)));
@@ -67,7 +80,7 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
         return raceDTOS;
     }
 
-    public List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
+    public synchronized List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
         List<SwimmerDTO> swimmerDTOS = new ArrayList<>();
         Race race = raceRepository.findRaceByDistanceAndStyle(swimmingDistance, swimmingStyle);
         for (Swimmer swimmer: swimmerRaceRepository.findAllSwimmersForRace(race)) {
@@ -80,7 +93,7 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
         return swimmerDTOS;
     }
 
-    public void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOS) {
+    public synchronized void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOS) {
         Swimmer swimmer = new Swimmer(firstName, lastName, age);
         Integer swimmerID = swimmerRepository.add(swimmer);
         swimmer.setID(swimmerID);
@@ -89,6 +102,14 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
             Race race = raceRepository.findRaceByDistanceAndStyle(raceDetailDTO.getSwimmingDistance(), raceDetailDTO.getSwimmingStyle());
             SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
             swimmerRaceRepository.add(swimmerRace);
+        }
+
+        notifyAddedSwimmer();
+    }
+
+    private void notifyAddedSwimmer() {
+        for (var client: loggedClients.values()) {
+            client.raceUpdated();
         }
     }
 }

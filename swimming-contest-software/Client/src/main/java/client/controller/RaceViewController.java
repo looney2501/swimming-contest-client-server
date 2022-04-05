@@ -37,7 +37,7 @@ public class RaceViewController extends Controller {
 
     @FXML
     public void goBackAction() throws IOException {
-        Main.changeSceneToMainView(loggedAdmin);
+        Main.changeSceneToMainView(loggedAdminUsername);
     }
 
     public void initialize() {

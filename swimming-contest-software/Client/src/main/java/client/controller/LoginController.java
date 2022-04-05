@@ -3,7 +3,6 @@ package client.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import client.Main;
-import model.domain.entities.Admin;
 import model.service.ServiceException;
 
 import java.io.IOException;
@@ -29,8 +28,8 @@ public class LoginController extends Controller {
         }
         else {
             try {
-                Admin loggedAdmin = this.service.login(username, password);
-                Main.changeSceneToMainView(loggedAdmin);
+                this.service.login(username, password);
+                Main.changeSceneToMainView(loggedAdminUsername);
             } catch (ServiceException e) {
                 MessageAlert.showErrorMessage(null, e.getMessage());
             }

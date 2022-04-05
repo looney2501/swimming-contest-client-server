@@ -54,7 +54,7 @@ public class Main extends Application {
     private Properties loadProperties() {
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader("D:\\Proiecte\\Java\\MPP-lab-project\\swimming-contest-software\\Server\\bd.config"));
+            properties.load(new FileReader("D:\\Proiecte\\Java\\MPP-lab-project\\swimming-contest-software\\Server\\server.config"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -85,7 +85,7 @@ public class Main extends Application {
     public static void changeSceneToMainView(Admin loggedAdmin) throws IOException {
         currentController = new MainController();
         currentController.setService(service);
-        currentController.setLoggedAdmin(loggedAdmin);
+        currentController.setLoggedAdminUsername(loggedAdmin);
         URL path = Main.class.getResource("/client/fxml/main-view.fxml");
         fxmlLoader = new FXMLLoader(path);
         fxmlLoader.setController(currentController);

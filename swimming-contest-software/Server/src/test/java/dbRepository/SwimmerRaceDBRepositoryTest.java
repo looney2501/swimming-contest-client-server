@@ -1,15 +1,15 @@
 package dbRepository;
 
 import org.junit.jupiter.api.Test;
-import model.domain.entities.Race;
-import model.domain.entities.Swimmer;
-import model.domain.entities.SwimmerRace;
-import model.domain.enums.SwimmingDistances;
-import model.domain.enums.SwimmingStyles;
-import server.repository.dbRepository.JdbcUtils;
-import server.repository.dbRepository.RaceDBRepository;
-import server.repository.dbRepository.SwimmerDBRepository;
-import server.repository.dbRepository.SwimmerRaceDBRepository;
+import domain.entities.Race;
+import domain.entities.Swimmer;
+import domain.entities.SwimmerRace;
+import domain.enums.SwimmingDistances;
+import domain.enums.SwimmingStyles;
+import repository.dbRepository.JdbcUtils;
+import repository.dbRepository.RaceDBRepository;
+import repository.dbRepository.SwimmerDBRepository;
+import repository.dbRepository.SwimmerRaceDBRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

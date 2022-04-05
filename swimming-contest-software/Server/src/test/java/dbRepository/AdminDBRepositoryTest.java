@@ -1,9 +1,9 @@
 package dbRepository;
 
-import model.domain.entities.Admin;
+import domain.entities.Admin;
 import org.junit.jupiter.api.Test;
-import server.repository.dbRepository.AdminDBRepository;
-import server.repository.dbRepository.JdbcUtils;
+import repository.dbRepository.AdminDBRepository;
+import repository.dbRepository.JdbcUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

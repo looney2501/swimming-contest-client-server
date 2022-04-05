@@ -1,11 +1,11 @@
 package dbRepository;
 
-import model.domain.entities.Race;
-import model.domain.enums.SwimmingDistances;
-import model.domain.enums.SwimmingStyles;
+import domain.entities.Race;
+import domain.enums.SwimmingDistances;
+import domain.enums.SwimmingStyles;
 import org.junit.jupiter.api.Test;
-import server.repository.dbRepository.JdbcUtils;
-import server.repository.dbRepository.RaceDBRepository;
+import repository.dbRepository.JdbcUtils;
+import repository.dbRepository.RaceDBRepository;
 
 import java.util.List;
 import java.util.Properties;

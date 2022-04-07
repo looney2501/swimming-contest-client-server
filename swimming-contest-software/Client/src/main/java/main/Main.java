@@ -15,7 +15,7 @@ import repository.dbRepository.AdminDBRepository;
 import repository.dbRepository.RaceDBRepository;
 import repository.dbRepository.SwimmerDBRepository;
 import repository.dbRepository.SwimmerRaceDBRepository;
-import service.ServerSwimmingRaceServices;
+import services.SwimmingRaceServicesServer;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import java.util.Properties;
 
 public class Main extends Application {
 
-    private static ServerSwimmingRaceServices service;
+    private static SwimmingRaceServicesServer service;
     private static Stage primaryStage;
     private static FXMLLoader fxmlLoader;
     private static Controller currentController;
@@ -36,13 +36,13 @@ public class Main extends Application {
         initView();
     }
 
-    private ServerSwimmingRaceServices loadService() {
+    private SwimmingRaceServicesServer loadService() {
         Properties properties = loadProperties();
         AdminDBRepository adminDBRepository = new AdminDBRepository(properties);
         RaceDBRepository raceDBRepository = new RaceDBRepository(properties);
         SwimmerDBRepository swimmerDBRepository = new SwimmerDBRepository(properties);
         SwimmerRaceDBRepository swimmerRaceDBRepository = new SwimmerRaceDBRepository(properties, swimmerDBRepository, raceDBRepository);
-        ServerSwimmingRaceServices service = new ServerSwimmingRaceServices();
+        SwimmingRaceServicesServer service = new SwimmingRaceServicesServer();
         service.setAdminRepository(adminDBRepository);
         service.setRaceRepository(raceDBRepository);
         service.setSwimmerRepository(swimmerDBRepository);

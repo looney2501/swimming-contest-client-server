@@ -1,12 +1,12 @@
 package controller;
 
-import service.ServerSwimmingRaceServices;
+import services.SwimmingRaceServicesServer;
 
 public abstract class Controller {
-    protected ServerSwimmingRaceServices service;
+    protected SwimmingRaceServicesServer service;
     protected String loggedAdminUsername;
 
-    public void setService(ServerSwimmingRaceServices service) {
+    public void setService(SwimmingRaceServicesServer service) {
         this.service = service;
     }
 

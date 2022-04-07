@@ -22,3 +22,9 @@
 05 apr. 2022 12:49:48,378 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {server.port=55555, jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project.db}
 05 apr. 2022 12:49:48,378 INFO  network.AbstractConcurrentServer 9 <init> - Server type: concurrent
 05 apr. 2022 12:49:48,394 INFO  network.AbstractServer 23 start - Waiting for clients...
+05 apr. 2022 13:55:29,853 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {server.port=55555, jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project.db}
+05 apr. 2022 13:55:29,866 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {server.port=55555, jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project.db}
+05 apr. 2022 13:55:29,867 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {server.port=55555, jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project.db}
+05 apr. 2022 13:55:29,868 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {server.port=55555, jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project.db}
+05 apr. 2022 13:55:29,869 INFO  network.SwimmingRacesConcurrentServer 13 <init> - Server name: SwimmingRacesServer; Server type: concurrent
+05 apr. 2022 13:55:29,872 INFO  network.AbstractServer 23 start - Waiting for clients...

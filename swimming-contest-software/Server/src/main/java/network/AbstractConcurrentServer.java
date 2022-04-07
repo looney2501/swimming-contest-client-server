@@ -6,7 +6,6 @@ public abstract class AbstractConcurrentServer extends AbstractServer{
 
     public AbstractConcurrentServer(int port) {
         super(port);
-        logger.info("Server type: concurrent");
     }
 
     public void processRequest(Socket client) {

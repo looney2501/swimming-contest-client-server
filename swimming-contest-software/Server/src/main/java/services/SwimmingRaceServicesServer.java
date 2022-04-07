@@ -1,4 +1,4 @@
-package service;
+package services;
 
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
@@ -10,6 +10,8 @@ import domain.entities.SwimmerRace;
 import domain.enums.SwimmingDistances;
 import domain.enums.SwimmingStyles;
 import observer.SwimmingRaceObserver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import repository.AdminRepository;
 import repository.RaceRepository;
 import repository.SwimmerRaceRepository;
@@ -23,15 +25,16 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class ServerSwimmingRaceServices implements SwimmingRaceServices {
+public class SwimmingRaceServicesServer implements SwimmingRaceServices {
 
     private AdminRepository adminRepository;
     private RaceRepository raceRepository;
     private SwimmerRepository swimmerRepository;
     private SwimmerRaceRepository swimmerRaceRepository;
-    private Map<String, SwimmingRaceObserver> loggedClients;
+    private final Map<String, SwimmingRaceObserver> loggedClients;
+    private static final Logger logger = LogManager.getLogger();
 
-    public ServerSwimmingRaceServices() {
+    public SwimmingRaceServicesServer() {
         loggedClients = new ConcurrentHashMap<>();
     }
 
@@ -52,26 +55,29 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
     }
 
     @Override
-    public synchronized void login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServiceException {
+    public synchronized void login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServicesException {
         Admin admin = adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password));
         if (admin != null) {
             if (loggedClients.get(admin.getUsername()) != null) {
-                throw new ServiceException("User already logged in!");
+                throw new ServicesException("User already logged in!");
             }
-            loggedClients.put(username, client);
+            else {
+                loggedClients.put(username, client);
+            }
         }
         else {
-            throw new ServiceException("Incorrect username or password!");
+            throw new ServicesException("Incorrect username or password!");
         }
     }
 
     @Override
-    public synchronized void logout(String username) throws ServiceException {
+    public synchronized void logout(String username) throws ServicesException {
         if (loggedClients.remove(username) == null) {
-            throw new ServiceException("User is not logged in!");
+            throw new ServicesException("User is not logged in!");
         }
     }
 
+    @Override
     public synchronized List<RaceDTO> findAllRacesDetails() {
         List<RaceDTO> raceDTOS = new ArrayList<>();
         for (Race race: raceRepository.findAllRaces()) {
@@ -80,6 +86,7 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
         return raceDTOS;
     }
 
+    @Override
     public synchronized List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
         List<SwimmerDTO> swimmerDTOS = new ArrayList<>();
         Race race = raceRepository.findRaceByDistanceAndStyle(swimmingDistance, swimmingStyle);
@@ -93,6 +100,7 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
         return swimmerDTOS;
     }
 
+    @Override
     public synchronized void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOS) {
         Swimmer swimmer = new Swimmer(firstName, lastName, age);
         Integer swimmerID = swimmerRepository.add(swimmer);
@@ -108,10 +116,11 @@ public class ServerSwimmingRaceServices implements SwimmingRaceServices {
     }
 
     private void notifyAddedSwimmer() {
+        logger.info("Sending RaceUpdateResponse to all connected clients...");
         ExecutorService executorService = Executors.newFixedThreadPool(5);
 
         for (var client: loggedClients.values()) {
-            executorService.execute(client::raceUpdated);
+            executorService.execute(client::racesUpdated);
         }
     }
 }

@@ -30,5 +30,5 @@ ext {
 }
 
 application {
-    mainClass = 'StartServer'
+    mainClass = 'main.StartServer'
 }

@@ -3,7 +3,7 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import main.Main;
-import service.ServiceException;
+import services.ServicesException;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -28,9 +28,12 @@ public class LoginController extends Controller {
         }
         else {
             try {
-                this.service.login(username, password);
-                Main.changeSceneToMainView(loggedAdminUsername);
-            } catch (ServiceException e) {
+                MainController mainController = new MainController();
+                mainController.setService(service);
+                mainController.setLoggedAdminUsername(loggedAdminUsername);
+                this.service.login(username, password, mainController);
+                Main.changeSceneToMainView(mainController);
+            } catch (ServicesException e) {
                 MessageAlert.showErrorMessage(null, e.getMessage());
             }
         }

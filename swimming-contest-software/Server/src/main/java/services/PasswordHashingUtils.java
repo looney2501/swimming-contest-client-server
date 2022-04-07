@@ -1,4 +1,4 @@
-package service;
+package services;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

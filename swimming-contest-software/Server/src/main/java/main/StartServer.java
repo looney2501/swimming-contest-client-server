@@ -1,6 +1,6 @@
 package main;
 
-import service.SwimmingRaceServices;
+import services.SwimmingRaceServices;
 import network.AbstractServer;
 import network.SwimmingRacesConcurrentServer;
 import repository.dbRepository.AdminDBRepository;
@@ -11,7 +11,7 @@ import repository.AdminRepository;
 import repository.RaceRepository;
 import repository.SwimmerRaceRepository;
 import repository.SwimmerRepository;
-import service.ServerSwimmingRaceServices;
+import services.SwimmingRaceServicesServer;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -20,15 +20,10 @@ public class StartServer {
 
     public static void main(String[] args) {
         Properties serverProperties = loadProperties();
-
         int serverPort = Integer.parseInt(serverProperties.getProperty("server.port"));
-
         SwimmingRaceServices swimmingRaceServices = loadServices(serverProperties);
-
         AbstractServer server = new SwimmingRacesConcurrentServer(serverPort, swimmingRaceServices);
-
         server.start();
-
     }
 
     private static Properties loadProperties() {
@@ -47,7 +42,7 @@ public class StartServer {
         RaceRepository raceRepository = new RaceDBRepository(properties);
         SwimmerRaceRepository swimmerRaceRepository = new SwimmerRaceDBRepository(properties, swimmerRepository, raceRepository);
 
-        ServerSwimmingRaceServices swimmingRaceServices = new ServerSwimmingRaceServices();
+        SwimmingRaceServicesServer swimmingRaceServices = new SwimmingRaceServicesServer();
         swimmingRaceServices.setRaceRepository(raceRepository);
         swimmingRaceServices.setAdminRepository(adminRepository);
         swimmingRaceServices.setSwimmerRepository(swimmerRepository);

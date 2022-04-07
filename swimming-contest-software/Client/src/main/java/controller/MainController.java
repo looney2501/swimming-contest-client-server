@@ -11,6 +11,7 @@ import domain.enums.SwimmingDistances;
 import domain.enums.SwimmingStyles;
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
+import observer.SwimmingRaceObserver;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.function.UnaryOperator;
 
 
-public class MainController extends Controller {
+public class MainController extends Controller implements SwimmingRaceObserver {
 
     @FXML
     private ComboBox<SwimmingDistances> distanceComboBox;

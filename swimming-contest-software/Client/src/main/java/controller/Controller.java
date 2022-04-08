@@ -1,16 +1,19 @@
 package controller;
 
-import services.SwimmingRaceServicesServer;
+import javafx.fxml.FXML;
+import javafx.stage.Stage;
+import services.SwimmingRaceServices;
 
 public abstract class Controller {
-    protected SwimmingRaceServicesServer service;
-    protected String loggedAdminUsername;
+    protected SwimmingRaceServices service;
+    @FXML
+    protected Stage stage;
 
-    public void setService(SwimmingRaceServicesServer service) {
+    public void setService(SwimmingRaceServices service) {
         this.service = service;
     }
 
-    public void setLoggedAdminUsername(String loggedAdminUsername) {
-        this.loggedAdminUsername = loggedAdminUsername;
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 }

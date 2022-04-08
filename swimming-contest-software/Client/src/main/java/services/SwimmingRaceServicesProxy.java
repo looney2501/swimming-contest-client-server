@@ -7,6 +7,7 @@ import domain.dtos.SwimmerDTO;
 import domain.entities.Swimmer;
 import domain.enums.SwimmingDistances;
 import domain.enums.SwimmingStyles;
+import javafx.application.Platform;
 import observer.SwimmingRaceObserver;
 import protocol.requests.*;
 import protocol.responses.*;
@@ -138,9 +139,11 @@ public class SwimmingRaceServicesProxy implements SwimmingRaceServices {
     }
 
     private void handleUpdate(UpdateResponse updateResponse) {
-        if (updateResponse instanceof RacesUpdatedResponse racesUpdatedResponse) {
-            client.racesUpdated();
-        }
+        Platform.runLater(() -> {
+            if (updateResponse instanceof RacesUpdatedResponse) {
+                client.racesUpdated();
+            }
+        });
     }
 
     private class ReaderThread implements Runnable {

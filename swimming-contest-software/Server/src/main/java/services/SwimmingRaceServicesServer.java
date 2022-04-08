@@ -56,7 +56,7 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
 
     @Override
     public synchronized void login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServicesException {
-        Admin admin = adminRepository.findByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password));
+        Admin admin = adminRepository.findByUsernameAndPassword(username, password);
         if (admin != null) {
             if (loggedClients.get(admin.getUsername()) != null) {
                 throw new ServicesException("User already logged in!");

@@ -17,9 +17,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'client.Main'
-    mainModule = 'client'
-
+    mainClass = 'main.StartClient'
 }
 
 javafx {

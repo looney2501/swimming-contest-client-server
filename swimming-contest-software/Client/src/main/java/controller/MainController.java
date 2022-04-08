@@ -3,15 +3,17 @@ package controller;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
-import main.Main;
 import domain.enums.SwimmingDistances;
 import domain.enums.SwimmingStyles;
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
 import observer.SwimmingRaceObserver;
+import services.ServicesException;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -45,26 +47,28 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     private TextField lastNameTextField;
     @FXML
     private TextField ageTextField;
+    @FXML
+    private Stage loginStage;
+    private String loggedUsername;
 
     @FXML
-    public void logoutButtonAction() throws IOException {
-        Main.changeSceneToLogin();
-    }
-
-    @FXML
-    public void raceSearchAction() throws IOException {
-        SwimmingDistances swimmingDistance = distanceComboBox.getValue();
-        SwimmingStyles swimmingStyle = styleComboBox.getValue();
-        if (swimmingDistance == null || swimmingStyle == null) {
-            MessageAlert.showErrorMessage(null, "Valori invalide!");
-        }
-        else {
-            Main.changeSceneToRaceView(swimmingDistance, swimmingStyle);
+    public void logoutButtonAction(ActionEvent actionEvent) throws IOException {
+        try {
+            service.logout(loggedUsername);
+            stage.close();
+            loginStage.show();
+        } catch (ServicesException e) {
+            MessageAlert.showErrorMessage(null, e.getMessage());
         }
     }
 
     @FXML
-    public void addSwimmerAction() {
+    public void raceSearchAction(ActionEvent actionEvent) throws IOException {
+
+    }
+
+    @FXML
+    public void addSwimmerAction(ActionEvent actionEvent) {
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         String age = ageTextField.getText();
@@ -86,7 +90,6 @@ public class MainController extends Controller implements SwimmingRaceObserver {
                             .map(raceDTO -> new RaceDetailsDTO(raceDTO.getDistance(), raceDTO.getStyle()))
                             .toList();
             service.addSwimmer(firstName, lastName, Integer.parseInt(age), raceDetailsDTOs);
-            initializeModels();
             firstNameTextField.clear();
             lastNameTextField.clear();
             ageTextField.clear();
@@ -94,7 +97,7 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     }
 
     public void initialize() {
-        initializeModels();
+        updateModels();
         initializeRacesTableView();
         initializeComboBoxes();
         UnaryOperator<TextFormatter.Change> integerFilter = change -> {
@@ -107,7 +110,6 @@ public class MainController extends Controller implements SwimmingRaceObserver {
 
         ageTextField.setTextFormatter(
                 new TextFormatter<>(new IntegerStringConverter(), 0, integerFilter));
-        ageTextField.clear();
     }
 
     private void initializeRacesTableView() {
@@ -118,7 +120,7 @@ public class MainController extends Controller implements SwimmingRaceObserver {
         raceSwimmersNoColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getNoSwimmers().toString()));
     }
 
-    private void initializeModels() {
+    private void updateModels() {
         raceDTOsModel.setAll(service.findAllRacesDetails());
         distances.setAll(Arrays.asList(SwimmingDistances._50m, SwimmingDistances._200m, SwimmingDistances._800m, SwimmingDistances._1500m));
         styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
@@ -127,5 +129,18 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     private void initializeComboBoxes() {
         distanceComboBox.setItems(distances);
         styleComboBox.setItems(styles);
+    }
+
+    public void setLoggedUsername(String loggedUsername) {
+        this.loggedUsername = loggedUsername;
+    }
+
+    public void setLoginStage(Stage loginStage) {
+        this.loginStage = loginStage;
+    }
+
+    @Override
+    public void racesUpdated() {
+        updateModels();
     }
 }

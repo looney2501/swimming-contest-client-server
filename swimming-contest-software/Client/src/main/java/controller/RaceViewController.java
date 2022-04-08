@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import main.Main;
 import domain.enums.SwimmingDistances;
 import domain.enums.SwimmingStyles;
 import domain.dtos.SwimmerDTO;
@@ -37,7 +36,6 @@ public class RaceViewController extends Controller {
 
     @FXML
     public void goBackAction() throws IOException {
-        Main.changeSceneToMainView(loggedAdminUsername);
     }
 
     public void initialize() {

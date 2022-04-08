@@ -1,8 +1,13 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import main.Main;
+import javafx.stage.Stage;
 import services.ServicesException;
 
 import java.io.IOException;
@@ -17,7 +22,7 @@ public class LoginController extends Controller {
     private TextField passwordField;
 
     @FXML
-    public void loginButtonAction() throws NoSuchAlgorithmException, IOException {
+    public void loginButtonAction(ActionEvent actionEvent) throws NoSuchAlgorithmException, IOException {
         String username = usernameTextField.getText();
         String password = passwordField.getText();
         if (username.isEmpty()) {
@@ -30,9 +35,22 @@ public class LoginController extends Controller {
             try {
                 MainController mainController = new MainController();
                 mainController.setService(service);
-                mainController.setLoggedAdminUsername(loggedAdminUsername);
-                this.service.login(username, password, mainController);
-                Main.changeSceneToMainView(mainController);
+                mainController.setLoggedUsername(username);
+                mainController.setLoginStage(stage);
+
+                service.login(username, password, mainController);
+
+                FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("../client/fxml/main-view.fxml"));
+                fxmlLoader.setController(mainController);
+                Parent root = fxmlLoader.load();
+
+                Stage mainStage = new Stage();
+                mainStage.setTitle("Swimming races administration");
+                mainStage.setScene(new Scene(root));
+                mainController.setStage(mainStage);
+                mainStage.show();
+
+                stage.hide();
             } catch (ServicesException e) {
                 MessageAlert.showErrorMessage(null, e.getMessage());
             }

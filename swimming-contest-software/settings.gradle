@@ -1,2 +1,5 @@
 rootProject.name = 'swimming-contest-software'
+include 'Model'
+include 'Client'
+include 'Server'
 

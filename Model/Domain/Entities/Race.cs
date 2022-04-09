@@ -3,7 +3,7 @@ using Model.Domain.Enums;
 
 namespace Model.Domain.Entities;
 
-[Serializable()]
+[Serializable]
 public class Race: Identifiable<Int32>
 {
     public int ID { get; set; }

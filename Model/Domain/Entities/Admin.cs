@@ -2,7 +2,7 @@
 
 namespace Model.Domain.Entities;
 
-[Serializable()]
+[Serializable]
 public class Admin: Identifiable<Int32>
 {
     public Int32 ID { get; set; }

@@ -2,6 +2,7 @@
 
 namespace Model.Domain.Enums;
 
+[Serializable]
 public enum SwimmingStyles
 {
     Mixed,

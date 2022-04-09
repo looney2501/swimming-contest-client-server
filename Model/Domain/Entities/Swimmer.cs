@@ -2,7 +2,7 @@
 
 namespace Model.Domain.Entities;
 
-[Serializable()]
+[Serializable]
 public class Swimmer: Identifiable<Int32>
 {
     public int ID { get; set; }

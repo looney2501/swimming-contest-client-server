@@ -1,7 +1,9 @@
-﻿using Model.Domain.Enums;
+﻿using System;
+using Model.Domain.Enums;
 
 namespace Model.Domain.DTOs;
 
+[Serializable]
 public class RaceDTO
 {
     public SwimmingDistances SwimmingDistance { get; }

@@ -124,7 +124,6 @@
         <Compile Include="src\Repository\Interfaces\ISwimmerRepository.cs" />
         <Compile Include="src\Service\Service.cs" />
         <Compile Include="src\Utils\DbUtils.cs" />
-        <Compile Include="src\Utils\PasswordHashingUtils.cs" />
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>

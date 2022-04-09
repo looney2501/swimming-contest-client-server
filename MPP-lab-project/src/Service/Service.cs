@@ -24,7 +24,7 @@ public class Service
 
     public bool IsExistingUser(string username, string password)
     {
-        return AdminRepository.FindByUsernameAndPassword(username, PasswordHashingUtils.MD5Hashing(password)) != null;
+        return AdminRepository.FindByUsernameAndPassword(username, password) != null;
     }
 
     public List<RaceDTO> FindAllRacesDetails()

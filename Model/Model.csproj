@@ -54,17 +54,18 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Protocol\Requests\AddSwimmerRequest.cs" />
         <Compile Include="Protocol\Requests\FindAllRacesDetailsRequest.cs" />
-        <Compile Include="Protocol\Requests\FindAllSwimmersDetailsForRace.cs" />
+        <Compile Include="Protocol\Requests\FindAllSwimmersDetailsForRaceRequest.cs" />
         <Compile Include="Protocol\Requests\IRequest.cs" />
         <Compile Include="Protocol\Requests\LoginRequest.cs" />
         <Compile Include="Protocol\Requests\LogoutRequest.cs" />
         <Compile Include="Protocol\Responses\ErrorResponse.cs" />
         <Compile Include="Protocol\Responses\FindAllRacesDetailsResponse.cs" />
-        <Compile Include="Protocol\Responses\FindAllSwimmersDetailsForRace.cs" />
+        <Compile Include="Protocol\Responses\FindAllSwimmersDetailsForRaceResponse.cs" />
         <Compile Include="Protocol\Responses\OkResponse.cs" />
         <Compile Include="Protocol\Responses\IResponse.cs" />
         <Compile Include="Protocol\Responses\RacesUpdatedResponse.cs" />
         <Compile Include="Protocol\Responses\UpdateResponse.cs" />
+        <Compile Include="Services\ISwimmingRaceServices.cs" />
         <Compile Include="Services\ServicesException.cs" />
     </ItemGroup>
     <ItemGroup>

@@ -8,17 +8,16 @@ public class SwimmerDTO
 {
     private readonly Swimmer _swimmer;
     private readonly List<RaceDetailsDTO> _raceDetailsDTOs;
-
     public string FirstName => _swimmer.FirstName;
-
-    public override string ToString()
-    {
-        return $"{nameof(_swimmer)}: {_swimmer}, {nameof(_raceDetailsDTOs)}: {_raceDetailsDTOs}";
-    }
-
     public string LastName => _swimmer.LastName;
-
     public int Age => _swimmer.Age;
+    public List<RaceDetailsDTO> RaceDetailsDTOs => _raceDetailsDTOs;
+
+    public SwimmerDTO(Swimmer swimmer, List<RaceDetailsDTO> raceDetailsDtOs)
+    {
+        _swimmer = swimmer;
+        _raceDetailsDTOs = raceDetailsDtOs;
+    }
 
     public string Races
     {
@@ -28,11 +27,8 @@ public class SwimmerDTO
         }
     }
 
-    public SwimmerDTO(Swimmer swimmer, List<RaceDetailsDTO> raceDetailsDtOs)
+    public override string ToString()
     {
-        _swimmer = swimmer;
-        _raceDetailsDTOs = raceDetailsDtOs;
+        return $"{nameof(_swimmer)}: {_swimmer}, {nameof(_raceDetailsDTOs)}: {_raceDetailsDTOs}";
     }
-
-    
 }

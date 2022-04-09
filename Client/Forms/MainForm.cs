@@ -48,14 +48,14 @@ public partial class MainForm : GenericForm
 
     private void UpdateGridViews()
     {
-        racesDataGridView.DataSource = Services.FindAllRacesDetails();
+        racesDataGridView.DataSource = SwimmingRaceServicesServer.FindAllRacesDetails();
         racesDataGridView.ClearSelection();
         if (_swimmingDistance != null)
         {
             if (_swimmingStyle != null)
             {
                 raceDetailsDataGridView.DataSource =
-                    Services.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
+                    SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
                         (SwimmingStyles) _swimmingStyle);
             }
         }
@@ -83,7 +83,7 @@ public partial class MainForm : GenericForm
     {
         try
         {
-            Services.Logout(LoggedUsername);
+            SwimmingRaceServicesServer.Logout(LoggedUsername);
             Close();
             LoginForm.Show();
         }
@@ -132,7 +132,7 @@ public partial class MainForm : GenericForm
                 int index = selectedRow.Index;
                 raceDetailsDTOs.Add(new RaceDetailsDTO(allRaces[index].SwimmingDistance, allRaces[index].SwimmingStyle));
             }
-            Services.AddSwimmer(firstName, lastName, Int32.Parse(age), raceDetailsDTOs);
+            SwimmingRaceServicesServer.AddSwimmer(firstName, lastName, Int32.Parse(age), raceDetailsDTOs);
             UpdateGridViews();
             RefreshTextBoxes();
         }
@@ -151,7 +151,7 @@ public partial class MainForm : GenericForm
             _swimmingDistance = (SwimmingDistances?) selectedDistance;
             _swimmingStyle = (SwimmingStyles?) selectedStyle;
             raceDetailsDataGridView.DataSource =
-                Services.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
+                SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
                     (SwimmingStyles) _swimmingStyle);
             raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }

@@ -4,11 +4,11 @@ using Model.Domain.DTOs;
 namespace Model.Protocol.Requests;
 
 [Serializable]
-public class FindAllSwimmersDetailsForRace: IRequest
+public class FindAllSwimmersDetailsForRaceRequest: IRequest
 {
     public RaceDetailsDTO RaceDetailsDTO { get; }
 
-    public FindAllSwimmersDetailsForRace(RaceDetailsDTO raceDetailsDto)
+    public FindAllSwimmersDetailsForRaceRequest(RaceDetailsDTO raceDetailsDto)
     {
         RaceDetailsDTO = raceDetailsDto;
     }

@@ -12,7 +12,7 @@ namespace Client
     static class Program
     {
         
-        static Services LoadServices()
+        static SwimmingRaceServicesServer LoadServices()
         {
             var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project.db");
             IAdminRepository adminRepository = new AdminDBRepository(properties);
@@ -20,21 +20,21 @@ namespace Client
             ISwimmerRepository swimmerRepository = new SwimmerDBRepository(properties);
             ISwimmerRaceRepository swimmerRaceRepository =
                 new SwimmerRaceDBRepository(swimmerRepository, raceRepository, properties);
-            Services services = new Services(adminRepository, swimmerRepository, raceRepository,
+            SwimmingRaceServicesServer swimmingRaceServicesServer = new SwimmingRaceServicesServer(adminRepository, swimmerRepository, raceRepository,
                 swimmerRaceRepository);
-            return services;
+            return swimmingRaceServicesServer;
         }
         
         [STAThread]
         static void Main()
         {
             XmlConfigurator.Configure();
-            Services services = LoadServices();
+            SwimmingRaceServicesServer swimmingRaceServicesServer = LoadServices();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoginForm loginForm = new LoginForm();
-            loginForm.Services = services;
+            loginForm.SwimmingRaceServicesServer = swimmingRaceServicesServer;
             Application.Run(loginForm);
         }
     }

@@ -29,11 +29,11 @@ namespace Client.Forms
                 try
                 {
                     MainForm mainForm = new MainForm();
-                    mainForm.Services = Services;
+                    mainForm.SwimmingRaceServicesServer = SwimmingRaceServicesServer;
                     mainForm.LoginForm = this;
                     mainForm.LoggedUsername = username;
                     
-                    Services.Login(username, password);
+                    SwimmingRaceServicesServer.Login(username, password);
                     mainForm.Show();
 
                     resetTextBoxes();

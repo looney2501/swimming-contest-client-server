@@ -5,11 +5,11 @@ using Model.Domain.DTOs;
 namespace Model.Protocol.Responses;
 
 [Serializable]
-public class FindAllSwimmersDetailsForRace: IResponse
+public class FindAllSwimmersDetailsForRaceResponse: IResponse
 {
     public List<SwimmerDTO> AllSwimmersDetailsForRace { get; }
 
-    public FindAllSwimmersDetailsForRace(List<SwimmerDTO> allSwimmersDetailsForRace)
+    public FindAllSwimmersDetailsForRaceResponse(List<SwimmerDTO> allSwimmersDetailsForRace)
     {
         AllSwimmersDetailsForRace = allSwimmersDetailsForRace;
     }

@@ -6,7 +6,7 @@ namespace Client.Forms;
 
 public partial class GenericForm : Form
 {
-    public Services Services { get; set; }
+    public SwimmingRaceServicesServer SwimmingRaceServicesServer { get; set; }
 
     public GenericForm()
     {

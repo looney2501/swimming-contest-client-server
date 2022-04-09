@@ -3,37 +3,42 @@ using System.Linq;
 using Model.Domain.DTOs;
 using Model.Domain.Entities;
 using Model.Domain.Enums;
+using Model.Observer;
 using Model.Services;
 using Server.Repository;
 
 namespace Server.Services;
 
-public class Services
+public class SwimmingRaceServicesServer: ISwimmingRaceServices
 {
     public IAdminRepository AdminRepository { get; set; }
     public ISwimmerRepository SwimmerRepository { get; set; }
     public IRaceRepository RaceRepository { get; set; }
     public ISwimmerRaceRepository SwimmerRaceRepository { get; set; }
+    private readonly IDictionary<string, ISwimmingRaceObserver> _loggedClients;
 
-    public Services(IAdminRepository adminRepository, ISwimmerRepository swimmerRepository, IRaceRepository raceRepository, ISwimmerRaceRepository swimmerRaceRepository)
+    public SwimmingRaceServicesServer(IAdminRepository adminRepository, ISwimmerRepository swimmerRepository, IRaceRepository raceRepository, ISwimmerRaceRepository swimmerRaceRepository)
     {
         AdminRepository = adminRepository;
         SwimmerRepository = swimmerRepository;
         RaceRepository = raceRepository;
         SwimmerRaceRepository = swimmerRaceRepository;
+        _loggedClients = new Dictionary<string, ISwimmingRaceObserver>();
     }
 
-    public bool IsExistingUser(string username, string password)
-    {
-        return AdminRepository.FindByUsernameAndPassword(username, password) != null;
-    }
-
-    public void Login(string username, string password)
+    public void Login(string username, string password, ISwimmingRaceObserver client)
     {
         Admin admin = AdminRepository.FindByUsernameAndPassword(username, password);
         if (admin != null)
         {
-            //ceva
+            if (_loggedClients.ContainsKey(admin.Username))
+            {
+                throw new ServicesException("User already logged in!");
+            }
+            else
+            {
+                _loggedClients[admin.Username] = client;
+            }
         }
         else
         {
@@ -43,7 +48,10 @@ public class Services
 
     public void Logout(string username)
     {
-        //ceva
+        if (_loggedClients.Remove(username) == false)
+        {
+            throw new ServicesException("User is not logged in!");
+        }
     }
 
     public List<RaceDTO> FindAllRacesDetails()

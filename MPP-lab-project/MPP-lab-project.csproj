@@ -6,7 +6,7 @@
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{43B1FD13-1ACE-449C-8214-5D23F28453AE}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
+        <OutputType>Exe</OutputType>
         <RootNamespace>MPP_lab_project</RootNamespace>
         <AssemblyName>MPP_lab_project</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -160,6 +160,10 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\ConnectionUtils\ConnectionUtils.csproj">
+        <Project>{e2261b52-613a-4f13-83fa-28c671e73fc9}</Project>
+        <Name>ConnectionUtils</Name>
+      </ProjectReference>
       <ProjectReference Include="..\ConnectionUtils\ConnectionUtils.csproj">
         <Project>{49a98d04-9bad-4c21-b481-06bde1d5fe1f}</Project>
         <Name>ConnectionUtils</Name>

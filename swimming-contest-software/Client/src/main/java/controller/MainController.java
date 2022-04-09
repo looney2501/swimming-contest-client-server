@@ -16,7 +16,6 @@ import domain.dtos.RaceDetailsDTO;
 import observer.SwimmingRaceObserver;
 import services.ServicesException;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -64,8 +63,8 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     @FXML
     private final ObservableList<SwimmerDTO> swimmerDTOsModel = FXCollections.observableArrayList();
     private String loggedUsername;
-    private SwimmingDistances comboBoxSwimmingDistance;
-    private SwimmingStyles comboBoxSwimmingStyle;
+    private SwimmingDistances swimmingDistance;
+    private SwimmingStyles swimmingStyle;
 
     @FXML
     public void logoutButtonAction(ActionEvent actionEvent) {
@@ -80,9 +79,9 @@ public class MainController extends Controller implements SwimmingRaceObserver {
 
     @FXML
     public void raceSearchAction(ActionEvent actionEvent) {
-        comboBoxSwimmingDistance = distanceComboBox.getValue();
-        comboBoxSwimmingStyle = styleComboBox.getValue();
-        swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.comboBoxSwimmingDistance, this.comboBoxSwimmingStyle));
+        swimmingDistance = distanceComboBox.getValue();
+        swimmingStyle = styleComboBox.getValue();
+        swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.swimmingDistance, this.swimmingStyle));
     }
 
     @FXML
@@ -146,8 +145,8 @@ public class MainController extends Controller implements SwimmingRaceObserver {
 
     private void updateModels() {
         raceDTOsModel.setAll(service.findAllRacesDetails());
-        if (comboBoxSwimmingStyle != null && comboBoxSwimmingDistance != null) {
-            swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.comboBoxSwimmingDistance, this.comboBoxSwimmingStyle));
+        if (swimmingStyle != null && swimmingDistance != null) {
+            swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.swimmingDistance, this.swimmingStyle));
         }
         else {
             swimmerDTOsModel.setAll(new ArrayList<>());
@@ -159,8 +158,8 @@ public class MainController extends Controller implements SwimmingRaceObserver {
         distanceComboBox.setItems(distances);
         styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
         styleComboBox.setItems(styles);
-        comboBoxSwimmingDistance = null;
-        comboBoxSwimmingStyle = null;
+        swimmingDistance = null;
+        swimmingStyle = null;
     }
 
     public void setLoggedUsername(String loggedUsername) {

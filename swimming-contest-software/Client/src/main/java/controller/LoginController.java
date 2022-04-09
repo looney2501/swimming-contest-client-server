@@ -50,10 +50,16 @@ public class LoginController extends Controller {
                 mainController.setStage(mainStage);
                 mainStage.show();
 
+                resetTextFields();
                 stage.hide();
             } catch (ServicesException e) {
                 MessageAlert.showErrorMessage(null, e.getMessage());
             }
         }
+    }
+
+    private void resetTextFields() {
+        usernameTextField.clear();
+        passwordField.clear();
     }
 }

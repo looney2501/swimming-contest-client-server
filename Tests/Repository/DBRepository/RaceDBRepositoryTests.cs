@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using MPP_lab_project.Domain;
-using MPP_lab_project.Repository.Interfaces;
-using MPP_lab_project.Repository.DBRepository;
-using MPP_lab_project.Utils;
+using Model.Domain.Entities;
+using Model.Domain.Enums;
 using NUnit.Framework;
+using Server.Repository;
+using Server.Repository.DBRepository;
+using Server.Utils;
 
-namespace Tests.tests.Repository.DBRepository
+namespace Tests.Repository.DBRepository
 {
     [TestFixture]
     public class RaceDBRepositoryTests

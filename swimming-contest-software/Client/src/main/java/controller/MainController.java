@@ -1,5 +1,6 @@
 package controller;
 
+import domain.dtos.SwimmerDTO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +17,7 @@ import observer.SwimmingRaceObserver;
 import services.ServicesException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.UnaryOperator;
@@ -49,10 +51,24 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     private TextField ageTextField;
     @FXML
     private Stage loginStage;
+    @FXML
+    private TableView<SwimmerDTO> raceSwimmersTableView;
+    @FXML
+    private TableColumn<SwimmerDTO, String> firstNameColumn;
+    @FXML
+    private TableColumn<SwimmerDTO, String> lastNameColumn;
+    @FXML
+    private TableColumn<SwimmerDTO, String> ageColumn;
+    @FXML
+    private TableColumn<SwimmerDTO, String> racesEnrolledColumn;
+    @FXML
+    private final ObservableList<SwimmerDTO> swimmerDTOsModel = FXCollections.observableArrayList();
     private String loggedUsername;
+    private SwimmingDistances comboBoxSwimmingDistance;
+    private SwimmingStyles comboBoxSwimmingStyle;
 
     @FXML
-    public void logoutButtonAction(ActionEvent actionEvent) throws IOException {
+    public void logoutButtonAction(ActionEvent actionEvent) {
         try {
             service.logout(loggedUsername);
             stage.close();
@@ -63,8 +79,10 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     }
 
     @FXML
-    public void raceSearchAction(ActionEvent actionEvent) throws IOException {
-
+    public void raceSearchAction(ActionEvent actionEvent) {
+        comboBoxSwimmingDistance = distanceComboBox.getValue();
+        comboBoxSwimmingStyle = styleComboBox.getValue();
+        swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.comboBoxSwimmingDistance, this.comboBoxSwimmingStyle));
     }
 
     @FXML
@@ -110,6 +128,7 @@ public class MainController extends Controller implements SwimmingRaceObserver {
 
         ageTextField.setTextFormatter(
                 new TextFormatter<>(new IntegerStringConverter(), 0, integerFilter));
+        ageTextField.clear();
     }
 
     private void initializeRacesTableView() {
@@ -118,17 +137,30 @@ public class MainController extends Controller implements SwimmingRaceObserver {
         raceDistanceColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getDistance().toString()));
         raceStyleColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getStyle().toString()));
         raceSwimmersNoColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getNoSwimmers().toString()));
+        raceSwimmersTableView.setItems(swimmerDTOsModel);
+        firstNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getFirstName()));
+        lastNameColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getLastName()));
+        ageColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getSwimmer().getAge().toString()));
+        racesEnrolledColumn.setCellValueFactory(param -> new SimpleStringProperty(param.getValue().getRaces()));
     }
 
     private void updateModels() {
         raceDTOsModel.setAll(service.findAllRacesDetails());
-        distances.setAll(Arrays.asList(SwimmingDistances._50m, SwimmingDistances._200m, SwimmingDistances._800m, SwimmingDistances._1500m));
-        styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
+        if (comboBoxSwimmingStyle != null && comboBoxSwimmingDistance != null) {
+            swimmerDTOsModel.setAll(service.findAllSwimmersDetailsForRace(this.comboBoxSwimmingDistance, this.comboBoxSwimmingStyle));
+        }
+        else {
+            swimmerDTOsModel.setAll(new ArrayList<>());
+        }
     }
 
     private void initializeComboBoxes() {
+        distances.setAll(Arrays.asList(SwimmingDistances._50m, SwimmingDistances._200m, SwimmingDistances._800m, SwimmingDistances._1500m));
         distanceComboBox.setItems(distances);
+        styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
         styleComboBox.setItems(styles);
+        comboBoxSwimmingDistance = null;
+        comboBoxSwimmingStyle = null;
     }
 
     public void setLoggedUsername(String loggedUsername) {

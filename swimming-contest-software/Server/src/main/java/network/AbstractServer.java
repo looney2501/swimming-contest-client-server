@@ -19,6 +19,7 @@ public abstract class AbstractServer {
     public void start() {
         try {
             server = new ServerSocket(port);
+            logger.info("Server started successfully!");
             while (true) {
                 logger.info("Waiting for clients...");
                 Socket client = server.accept();

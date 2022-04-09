@@ -10,7 +10,7 @@ public class SwimmingRacesConcurrentServer extends AbstractConcurrentServer {
 
     public SwimmingRacesConcurrentServer(int port, SwimmingRaceServices swimmingRaceServices) {
         super(port);
-        logger.info("Server name: SwimmingRacesServer; Server type: concurrent");
+        logger.info("Server name: SwimmingRacesServer; Server type: concurrent; Port: {}", port);
         this.services = swimmingRaceServices;
     }
 

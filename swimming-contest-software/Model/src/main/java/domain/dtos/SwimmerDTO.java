@@ -27,4 +27,12 @@ public class SwimmerDTO implements Serializable {
                 .map(RaceDetailsDTO::toString)
                 .reduce("", (subtotal, element) -> subtotal + element);
     }
+
+    @Override
+    public String toString() {
+        return "SwimmerDTO{" +
+                "swimmer=" + swimmer +
+                ", raceDetailsDTOS=" + raceDetailsDTOS +
+                '}';
+    }
 }

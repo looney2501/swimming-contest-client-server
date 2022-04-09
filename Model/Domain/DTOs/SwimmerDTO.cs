@@ -11,6 +11,11 @@ public class SwimmerDTO
 
     public string FirstName => _swimmer.FirstName;
 
+    public override string ToString()
+    {
+        return $"{nameof(_swimmer)}: {_swimmer}, {nameof(_raceDetailsDTOs)}: {_raceDetailsDTOs}";
+    }
+
     public string LastName => _swimmer.LastName;
 
     public int Age => _swimmer.Age;
@@ -28,4 +33,6 @@ public class SwimmerDTO
         _swimmer = swimmer;
         _raceDetailsDTOs = raceDetailsDtOs;
     }
+
+    
 }

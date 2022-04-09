@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Model.Services;
 using Server.Services;
 
 namespace Client.Forms
@@ -23,18 +24,32 @@ namespace Client.Forms
             {
                 MessageBox.Show(@"Introduceti o parola!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Services.IsExistingUser(username, password))
-            {
-                MainForm mainForm = new MainForm();
-                mainForm.Services = Services;
-                mainForm.LoginForm = this;
-                Hide();
-                mainForm.Show();
-            }
             else
             {
-                MessageBox.Show(@"Username sau parola sunt gresite!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    MainForm mainForm = new MainForm();
+                    mainForm.Services = Services;
+                    mainForm.LoginForm = this;
+                    mainForm.LoggedUsername = username;
+                    
+                    Services.Login(username, password);
+                    mainForm.Show();
+
+                    resetTextBoxes();
+                    Hide();
+                }
+                catch (ServicesException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+        }
+
+        private void resetTextBoxes()
+        {
+            usernameTextBox.Clear();
+            passwordTextBox.Clear();
         }
     }
 }

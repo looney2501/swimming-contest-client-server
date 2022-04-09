@@ -3,6 +3,7 @@ using System.Linq;
 using Model.Domain.DTOs;
 using Model.Domain.Entities;
 using Model.Domain.Enums;
+using Model.Services;
 using Server.Repository;
 
 namespace Server.Services;
@@ -25,6 +26,24 @@ public class Services
     public bool IsExistingUser(string username, string password)
     {
         return AdminRepository.FindByUsernameAndPassword(username, password) != null;
+    }
+
+    public void Login(string username, string password)
+    {
+        Admin admin = AdminRepository.FindByUsernameAndPassword(username, password);
+        if (admin != null)
+        {
+            //ceva
+        }
+        else
+        {
+            throw new ServicesException("Incorrect username or password!");
+        }
+    }
+
+    public void Logout(string username)
+    {
+        //ceva
     }
 
     public List<RaceDTO> FindAllRacesDetails()

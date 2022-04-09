@@ -47,6 +47,7 @@ partial class MainForm
         this.styleComboBox = new System.Windows.Forms.ComboBox();
         this.searchRaceButton = new System.Windows.Forms.Button();
         this.raceDetailsDataGridView = new System.Windows.Forms.DataGridView();
+        this.label6 = new System.Windows.Forms.Label();
         ((System.ComponentModel.ISupportInitialize) (this.racesDataGridView)).BeginInit();
         ((System.ComponentModel.ISupportInitialize) (this.raceDetailsDataGridView)).BeginInit();
         this.SuspendLayout();
@@ -203,12 +204,23 @@ partial class MainForm
         this.raceDetailsDataGridView.Size = new System.Drawing.Size(727, 502);
         this.raceDetailsDataGridView.TabIndex = 16;
         // 
+        // label6
+        // 
+        this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (238)));
+        this.label6.Location = new System.Drawing.Point(1161, 9);
+        this.label6.Name = "label6";
+        this.label6.Size = new System.Drawing.Size(278, 44);
+        this.label6.TabIndex = 17;
+        this.label6.Text = "Race details";
+        this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        // 
         // MainForm
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.AutoSize = true;
         this.ClientSize = new System.Drawing.Size(1688, 581);
+        this.Controls.Add(this.label6);
         this.Controls.Add(this.raceDetailsDataGridView);
         this.Controls.Add(this.searchRaceButton);
         this.Controls.Add(this.styleComboBox);
@@ -233,6 +245,8 @@ partial class MainForm
         this.ResumeLayout(false);
         this.PerformLayout();
     }
+
+    private System.Windows.Forms.Label label6;
 
     private System.Windows.Forms.DataGridView raceDetailsDataGridView;
 

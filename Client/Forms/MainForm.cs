@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Model.Domain.DTOs;
 using Model.Domain.Enums;
+using Model.Services;
 using Server.Services;
 
 namespace Client.Forms;
@@ -10,6 +11,7 @@ namespace Client.Forms;
 public partial class MainForm : GenericForm
 {
     public LoginForm LoginForm { get; set; }
+    public string LoggedUsername { get; set; }
     private SwimmingDistances? _swimmingDistance;
     private SwimmingStyles? _swimmingStyle;
 
@@ -79,8 +81,16 @@ public partial class MainForm : GenericForm
 
     private void logoutButton_Click(object sender, EventArgs e)
     {
-        Close();
-        LoginForm.Show();
+        try
+        {
+            Services.Logout(LoggedUsername);
+            Close();
+            LoginForm.Show();
+        }
+        catch (ServicesException ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
     }
 
     private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)

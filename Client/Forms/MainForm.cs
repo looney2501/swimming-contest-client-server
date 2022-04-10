@@ -135,7 +135,6 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
                 raceDetailsDTOs.Add(new RaceDetailsDTO(allRaces[index].SwimmingDistance, allRaces[index].SwimmingStyle));
             }
             SwimmingRaceServicesServer.AddSwimmer(firstName, lastName, Int32.Parse(age), raceDetailsDTOs);
-            UpdateGridViews();
             RefreshTextBoxes();
         }
     }
@@ -161,6 +160,9 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
 
     public void RacesUpdated()
     {
-        throw new NotImplementedException();
+        BeginInvoke(() =>
+        {
+            UpdateGridViews();
+        });
     }
 }

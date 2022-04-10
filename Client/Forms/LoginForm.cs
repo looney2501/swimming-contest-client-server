@@ -10,7 +10,7 @@ namespace Client.Forms
         public LoginForm()
         {
             InitializeComponent();
-            ResetText();
+            Text = @"Login";
         }
 
         private void loginButton_Click(object sender, EventArgs e)

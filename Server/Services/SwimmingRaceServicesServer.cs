@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using log4net;
+using log4net.Repository.Hierarchy;
 using Model.Domain.DTOs;
 using Model.Domain.Entities;
 using Model.Domain.Enums;
@@ -16,6 +19,7 @@ public class SwimmingRaceServicesServer: ISwimmingRaceServices
     public IRaceRepository RaceRepository { get; set; }
     public ISwimmerRaceRepository SwimmerRaceRepository { get; set; }
     private readonly IDictionary<string, ISwimmingRaceObserver> _loggedClients;
+    private static readonly ILog Logger = LogManager.GetLogger("Services");
 
     public SwimmingRaceServicesServer(IAdminRepository adminRepository, ISwimmerRepository swimmerRepository, IRaceRepository raceRepository, ISwimmerRaceRepository swimmerRaceRepository)
     {
@@ -89,6 +93,17 @@ public class SwimmingRaceServicesServer: ISwimmingRaceServices
                 raceDetailDTO.SwimmingStyle);
             SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
             SwimmerRaceRepository.Add(swimmerRace);
+        }
+        
+        NotifyAddedSwimmer();
+    }
+
+    private void NotifyAddedSwimmer()
+    {
+        Logger.Info("Sending RaceUpdateResponse to all connected clients...");
+        foreach (var client in _loggedClients.Values)
+        {
+            Task.Run(() => client.RacesUpdated());
         }
     }
 }

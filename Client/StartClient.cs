@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using Client.Forms;
+using Client.Services;
 using log4net.Config;
+using Model.Services;
 using Server.Repository;
 using Server.Repository.DBRepository;
 using Server.Services;
@@ -11,30 +13,17 @@ namespace Client
 {
     static class Program
     {
-        
-        static SwimmingRaceServicesServer LoadServices()
-        {
-            var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project.db");
-            IAdminRepository adminRepository = new AdminDBRepository(properties);
-            IRaceRepository raceRepository = new RaceDBRepository(properties);
-            ISwimmerRepository swimmerRepository = new SwimmerDBRepository(properties);
-            ISwimmerRaceRepository swimmerRaceRepository =
-                new SwimmerRaceDBRepository(swimmerRepository, raceRepository, properties);
-            SwimmingRaceServicesServer swimmingRaceServicesServer = new SwimmingRaceServicesServer(adminRepository, swimmerRepository, raceRepository,
-                swimmerRaceRepository);
-            return swimmingRaceServicesServer;
-        }
-        
         [STAThread]
         static void Main()
         {
             XmlConfigurator.Configure();
-            SwimmingRaceServicesServer swimmingRaceServicesServer = LoadServices();
-            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            ISwimmingRaceServices services = new SwimmingRaceServicesProxy("127.0.0.1", 55556);
             LoginForm loginForm = new LoginForm();
-            loginForm.SwimmingRaceServicesServer = swimmingRaceServicesServer;
+            loginForm.SwimmingRaceServicesServer = services;
             Application.Run(loginForm);
         }
     }

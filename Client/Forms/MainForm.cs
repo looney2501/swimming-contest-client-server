@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Model.Domain.DTOs;
 using Model.Domain.Enums;
+using Model.Observer;
 using Model.Services;
 using Server.Services;
 
 namespace Client.Forms;
 
-public partial class MainForm : GenericForm
+public partial class MainForm : GenericForm, ISwimmingRaceObserver
 {
     public LoginForm LoginForm { get; set; }
     public string LoggedUsername { get; set; }
@@ -18,6 +19,7 @@ public partial class MainForm : GenericForm
     public MainForm()
     {
         InitializeComponent();
+        Text = @"Swimming races administration";
     }
 
     private void InitializeGridViews()
@@ -155,5 +157,10 @@ public partial class MainForm : GenericForm
                     (SwimmingStyles) _swimmingStyle);
             raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+    }
+
+    public void RacesUpdated()
+    {
+        throw new NotImplementedException();
     }
 }

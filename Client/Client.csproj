@@ -87,6 +87,7 @@
         <Compile Include="Forms\MainForm.Designer.cs">
           <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="Services\SwimmingRaceServicesProxy.cs" />
         <Compile Include="StartClient.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Forms\GenericForm.resx">

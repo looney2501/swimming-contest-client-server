@@ -5,7 +5,7 @@ namespace Model.Domain.Entities;
 [Serializable]
 public class Swimmer: Identifiable<Int32>
 {
-    public int ID { get; set; }
+    public Int32 ID { get; set; }
     public String FirstName { get; set; }
     public String LastName { get; set; }
     public Int32 Age { get; set; }

@@ -164,8 +164,8 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
                 allSwimmersDetailsForRace = _services.FindAllSwimmersDetailsForRace(raceDetailsDTO.SwimmingDistance,
                     raceDetailsDTO.SwimmingStyle);
             }
-            Logger.Info("Result: response = OkResponse");
-            return new OkResponse();
+            Logger.Info("Result: response = FindAllSwimmersDeailsForRaceResponse");
+            return new FindAllSwimmersDetailsForRaceResponse(allSwimmersDetailsForRace);
         }
 
         if (request is AddSwimmerRequest addSwimmerRequest)

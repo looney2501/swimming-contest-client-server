@@ -10,8 +10,8 @@ public class SwimmerDTO
 {
     private readonly Swimmer _swimmer;
     private readonly List<RaceDetailsDTO> _raceDetailsDTOs;
-    public string FirstName => _swimmer.FirstName;
-    public string LastName => _swimmer.LastName;
+    public String FirstName => _swimmer.FirstName;
+    public String LastName => _swimmer.LastName;
     public int Age => _swimmer.Age;
     public List<RaceDetailsDTO> RaceDetailsDTOs => _raceDetailsDTOs;
 

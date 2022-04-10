@@ -10,6 +10,7 @@ namespace Client.Forms
         public LoginForm()
         {
             InitializeComponent();
+            ResetText();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -33,10 +34,10 @@ namespace Client.Forms
                     mainForm.LoginForm = this;
                     mainForm.LoggedUsername = username;
                     
-                    SwimmingRaceServicesServer.Login(username, password);
+                    SwimmingRaceServicesServer.Login(username, password, mainForm);
                     mainForm.Show();
 
-                    resetTextBoxes();
+                    ResetTextBoxes();
                     Hide();
                 }
                 catch (ServicesException ex)
@@ -46,7 +47,7 @@ namespace Client.Forms
             }
         }
 
-        private void resetTextBoxes()
+        private void ResetTextBoxes()
         {
             usernameTextBox.Clear();
             passwordTextBox.Clear();

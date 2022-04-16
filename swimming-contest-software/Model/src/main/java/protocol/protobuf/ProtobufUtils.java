@@ -11,6 +11,9 @@ import java.util.List;
 
 public final class ProtobufUtils {
 
+    private static SwimmingContestProtobuf.AdminDTO adminDTOToProtobuf(AdminDTO adminDTO) {
+        return SwimmingContestProtobuf.AdminDTO.newBuilder().setUsername(adminDTO.getUsername()).setPassword(adminDTO.getPassword()).build();
+    }
     private static SwimmingContestProtobuf.SwimmingDistance swimmingDistanceToProtobuf(SwimmingDistance swimmingDistance) {
         return switch (swimmingDistance) {
             case _50m -> SwimmingContestProtobuf.SwimmingDistance._50m;
@@ -68,15 +71,16 @@ public final class ProtobufUtils {
     }
 
     public static SwimmingContestProtobuf.LoginRequest createLoginRequest(AdminDTO adminDTO) {
-        return null;
+        SwimmingContestProtobuf.AdminDTO adminDTOProtobuf = adminDTOToProtobuf(adminDTO);
+        return SwimmingContestProtobuf.LoginRequest.newBuilder().setAdminDTO(adminDTOProtobuf).build();
     }
 
     public static SwimmingContestProtobuf.LogoutRequest createLogoutRequest(String username) {
-        return null;
+        return SwimmingContestProtobuf.LogoutRequest.newBuilder().setUsername(username).build();
     }
 
     public static SwimmingContestProtobuf.FindAllRacesDetailsRequest createFindAllRacesDetailsRequest() {
-        return null;
+        return SwimmingContestProtobuf.FindAllRacesDetailsRequest.newBuilder().build();
     }
 
     public static SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceRequest createFindAllSwimmersDetailsForRaceRequest(RaceDetailsDTO raceDetailsDTO) {

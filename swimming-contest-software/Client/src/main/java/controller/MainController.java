@@ -9,8 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
 import observer.SwimmingRaceObserver;
@@ -25,9 +25,9 @@ import java.util.function.UnaryOperator;
 public class MainController extends Controller implements SwimmingRaceObserver {
 
     @FXML
-    private ComboBox<SwimmingDistances> distanceComboBox;
+    private ComboBox<SwimmingDistance> distanceComboBox;
     @FXML
-    private ComboBox<SwimmingStyles> styleComboBox;
+    private ComboBox<SwimmingStyle> styleComboBox;
     @FXML
     private TableView<RaceDTO> racesTableView;
     @FXML
@@ -39,9 +39,9 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     @FXML
     private final ObservableList<RaceDTO> raceDTOsModel = FXCollections.observableArrayList();
     @FXML
-    private final ObservableList<SwimmingDistances> distances = FXCollections.observableArrayList();
+    private final ObservableList<SwimmingDistance> distances = FXCollections.observableArrayList();
     @FXML
-    private final ObservableList<SwimmingStyles> styles = FXCollections.observableArrayList();
+    private final ObservableList<SwimmingStyle> styles = FXCollections.observableArrayList();
     @FXML
     private TextField firstNameTextField;
     @FXML
@@ -63,8 +63,8 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     @FXML
     private final ObservableList<SwimmerDTO> swimmerDTOsModel = FXCollections.observableArrayList();
     private String loggedUsername;
-    private SwimmingDistances swimmingDistance;
-    private SwimmingStyles swimmingStyle;
+    private SwimmingDistance swimmingDistance;
+    private SwimmingStyle swimmingStyle;
 
     @FXML
     public void logoutButtonAction(ActionEvent actionEvent) {
@@ -154,9 +154,9 @@ public class MainController extends Controller implements SwimmingRaceObserver {
     }
 
     private void initializeComboBoxes() {
-        distances.setAll(Arrays.asList(SwimmingDistances._50m, SwimmingDistances._200m, SwimmingDistances._800m, SwimmingDistances._1500m));
+        distances.setAll(Arrays.asList(SwimmingDistance._50m, SwimmingDistance._200m, SwimmingDistance._800m, SwimmingDistance._1500m));
         distanceComboBox.setItems(distances);
-        styles.setAll(Arrays.asList(SwimmingStyles._FREESTYLE, SwimmingStyles._BACKSTROKE, SwimmingStyles._BUTTERFLY, SwimmingStyles._MIXED));
+        styles.setAll(Arrays.asList(SwimmingStyle.Freestyle, SwimmingStyle.Backstroke, SwimmingStyle.Butterfly, SwimmingStyle.Mixed));
         styleComboBox.setItems(styles);
         swimmingDistance = null;
         swimmingStyle = null;

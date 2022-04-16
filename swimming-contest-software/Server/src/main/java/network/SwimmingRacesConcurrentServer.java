@@ -16,7 +16,7 @@ public class SwimmingRacesConcurrentServer extends AbstractConcurrentServer {
 
     @Override
     protected Thread createWorker(Socket client) {
-        logger.info("Creating worker to handle request...");
+        logger.info("Creating worker to handle client...");
         SwimmingRacesClientWorker clientWorker = new SwimmingRacesClientWorker(services, client);
         return new Thread(clientWorker);
     }

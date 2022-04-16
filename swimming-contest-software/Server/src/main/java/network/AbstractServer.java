@@ -23,7 +23,7 @@ public abstract class AbstractServer {
             while (true) {
                 logger.info("Waiting for clients...");
                 Socket client = server.accept();
-                logger.info("Client connected...");
+                logger.info("Client connected!");
                 processRequest(client);
             }
         } catch (IOException e) {

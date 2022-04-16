@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Test;
 import domain.entities.Race;
 import domain.entities.Swimmer;
 import domain.entities.SwimmerRace;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import repository.dbRepository.JdbcUtils;
 import repository.dbRepository.RaceDBRepository;
 import repository.dbRepository.SwimmerDBRepository;
@@ -36,7 +36,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id = swimmerDBRepository.add(swimmer);
         swimmer.setID(id);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
         SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
         swimmerRaceDBRepository.add(swimmerRace);
@@ -84,7 +84,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id = swimmerDBRepository.add(swimmer);
         swimmer.setID(id);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
         assertEquals(0, swimmerRaceDBRepository.getNumberOfSwimmersForRace(race));
 
@@ -126,7 +126,7 @@ class SwimmerRaceDBRepositoryTest {
         Integer id2 = swimmerDBRepository.add(swimmer2);
         swimmer2.setID(id2);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
         SwimmerRace swimmerRace1 = new SwimmerRace(swimmer1, race);
         swimmerRaceDBRepository.add(swimmerRace1);
@@ -166,8 +166,8 @@ class SwimmerRaceDBRepositoryTest {
         Integer id1 = swimmerDBRepository.add(swimmer1);
         swimmer1.setID(id1);
 
-        Race race1 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles._BACKSTROKE);
-        Race race2 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles._BACKSTROKE);
+        Race race1 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
+        Race race2 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._50m, SwimmingStyle.Backstroke);
 
         SwimmerRace swimmerRace1 = new SwimmerRace(swimmer1, race1);
         swimmerRaceDBRepository.add(swimmerRace1);

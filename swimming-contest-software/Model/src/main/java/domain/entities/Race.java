@@ -1,7 +1,7 @@
 package domain.entities;
 
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -9,18 +9,18 @@ import java.util.Objects;
 public class Race implements Identifiable<Integer>, Serializable {
 
     private Integer ID;
-    private SwimmingDistances distance;
-    private SwimmingStyles style;
+    private SwimmingDistance distance;
+    private SwimmingStyle style;
     private Integer swimmersNumber;
 
-    public Race(Integer ID, SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
+    public Race(Integer ID, SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
         this.ID = ID;
         this.distance = distance;
         this.style = style;
         this.swimmersNumber = swimmersNumber;
     }
 
-    public Race(SwimmingDistances distance, SwimmingStyles style, Integer swimmersNumber) {
+    public Race(SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
         this.ID = null;
         this.distance = distance;
         this.style = style;
@@ -37,19 +37,19 @@ public class Race implements Identifiable<Integer>, Serializable {
         ID = id;
     }
 
-    public SwimmingDistances getDistance() {
+    public SwimmingDistance getDistance() {
         return distance;
     }
 
-    public void setDistance(SwimmingDistances distance) {
+    public void setDistance(SwimmingDistance distance) {
         this.distance = distance;
     }
 
-    public SwimmingStyles getStyle() {
+    public SwimmingStyle getStyle() {
         return style;
     }
 
-    public void setStyle(SwimmingStyles style) {
+    public void setStyle(SwimmingStyle style) {
         this.style = style;
     }
 

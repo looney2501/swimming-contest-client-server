@@ -7,23 +7,23 @@ import java.util.List;
 
 public class SwimmerDTO implements Serializable {
     private final Swimmer swimmer;
-    private final List<RaceDetailsDTO> raceDetailsDTOS;
+    private final List<RaceDetailsDTO> raceDetailsDTOs;
 
     public SwimmerDTO(Swimmer swimmer, List<RaceDetailsDTO> races) {
         this.swimmer = swimmer;
-        this.raceDetailsDTOS = races;
+        this.raceDetailsDTOs = races;
     }
 
     public Swimmer getSwimmer() {
         return swimmer;
     }
 
-    public List<RaceDetailsDTO> getRaceDetailsDTOS() {
-        return raceDetailsDTOS;
+    public List<RaceDetailsDTO> getRaceDetailsDTOs() {
+        return raceDetailsDTOs;
     }
 
     public String getRaces() {
-        return raceDetailsDTOS.stream()
+        return raceDetailsDTOs.stream()
                 .map(RaceDetailsDTO::toString)
                 .reduce("", (subtotal, element) -> subtotal + element);
     }
@@ -32,7 +32,7 @@ public class SwimmerDTO implements Serializable {
     public String toString() {
         return "SwimmerDTO{" +
                 "swimmer=" + swimmer +
-                ", raceDetailsDTOS=" + raceDetailsDTOS +
+                ", raceDetailsDTOS=" + raceDetailsDTOs +
                 '}';
     }
 }

@@ -1,8 +1,8 @@
 package repository.dbRepository;
 
 import domain.entities.Race;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import repository.RaceRepository;
@@ -26,7 +26,7 @@ public class RaceDBRepository implements RaceRepository {
     }
 
     @Override
-    public Race findRaceByDistanceAndStyle(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
+    public Race findRaceByDistanceAndStyle(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle) {
         logger.traceEntry("findRaceByDistanceAndStyle(swimmingDistance = {}, swimmingStyle = {})",
                 swimmingDistance,
                 swimmingStyle);
@@ -37,8 +37,8 @@ public class RaceDBRepository implements RaceRepository {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
                 "select id, swimmersNumber from main.Races where distance = ? and style = ?;"
         )) {
-            preparedStatement.setInt(1, SwimmingDistances.integerFromDistance(swimmingDistance));
-            preparedStatement.setInt(2, SwimmingStyles.integerFromStyle(swimmingStyle));
+            preparedStatement.setInt(1, SwimmingDistance.integerFromDistance(swimmingDistance));
+            preparedStatement.setInt(2, SwimmingStyle.integerFromStyle(swimmingStyle));
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             Integer id = resultSet.getInt("id");
@@ -67,8 +67,8 @@ public class RaceDBRepository implements RaceRepository {
                 Integer swimmingStyle = resultSet.getInt("style");
                 Integer swimmersNumber = resultSet.getInt("swimmersNumber");
                 Race race = new Race(id,
-                        SwimmingDistances.distanceFromInteger(swimmingDistance),
-                        SwimmingStyles.styleFromInteger(swimmingStyle),
+                        SwimmingDistance.distanceFromInteger(swimmingDistance),
+                        SwimmingStyle.styleFromInteger(swimmingStyle),
                         swimmersNumber);
                 races.add(race);
             }
@@ -109,7 +109,7 @@ public class RaceDBRepository implements RaceRepository {
                 Integer distance = resultSet.getInt("distance");
                 Integer style = resultSet.getInt("style");
                 Integer swimmersNo = resultSet.getInt("swimmersNumber");
-                race = new Race(id, SwimmingDistances.distanceFromInteger(distance), SwimmingStyles.styleFromInteger(style), swimmersNo);
+                race = new Race(id, SwimmingDistance.distanceFromInteger(distance), SwimmingStyle.styleFromInteger(style), swimmersNo);
             }
         } catch (SQLException e) {
             e.printStackTrace();

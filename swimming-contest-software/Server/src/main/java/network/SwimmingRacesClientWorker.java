@@ -23,13 +23,13 @@ public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver
     private volatile boolean connected;
     private static final Logger logger = LogManager.getLogger();
 
-    public SwimmingRacesClientWorker(SwimmingRaceServices services, Socket socket) {
+    public SwimmingRacesClientWorker(SwimmingRaceServices services, Socket clientSocket) {
         this.services = services;
-        this.clientSocket = socket;
+        this.clientSocket = clientSocket;
         try {
-            objectOutputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+            objectOutputStream = new ObjectOutputStream(this.clientSocket.getOutputStream());
             objectOutputStream.flush();
-            objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
+            objectInputStream = new ObjectInputStream(this.clientSocket.getInputStream());
             connected = true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,10 +71,9 @@ public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver
 
     @Override
     public void racesUpdated() {
-        var allRacesDetails = services.findAllRacesDetails();
         try {
-            sendResponse(new RacesUpdatedResponse(allRacesDetails));
-            logger.info("RacesUpdateResponse sent to client = {}", clientSocket);
+            sendResponse(new RacesUpdatedResponse());
+            logger.info("RacesUpdateResponse sent to client: {}", clientSocket);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -86,7 +85,7 @@ public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver
             var adminDTO = loginRequest.getAdmin();
             try {
                 services.login(adminDTO.getUsername(), adminDTO.getPassword(), this);
-                return logger.traceExit("Result: response = OKResponse", new OkResponse());
+                return logger.traceExit("Result: response = OkResponse", new OkResponse());
             } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             } catch (ServicesException e) {
@@ -129,7 +128,7 @@ public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver
             services.addSwimmer(swimmerDTO.getSwimmer().getFirstName(),
                     swimmerDTO.getSwimmer().getLastName(),
                     swimmerDTO.getSwimmer().getAge(),
-                    swimmerDTO.getRaceDetailsDTOS());
+                    swimmerDTO.getRaceDetailsDTOs());
             return logger.traceExit("Result: response = OkResponse", new OkResponse());
         }
         return null;

@@ -5,8 +5,8 @@ import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
 import domain.dtos.SwimmerDTO;
 import domain.entities.Swimmer;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import javafx.application.Platform;
 import observer.SwimmingRaceObserver;
 import org.apache.logging.log4j.LogManager;
@@ -100,7 +100,7 @@ public class SwimmingRaceServicesProxy implements SwimmingRaceServices {
         try {
             outputStream.writeObject(request);
             outputStream.flush();
-            logger.info("Request send successfully!");
+            logger.info("Request sent successfully!");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -150,7 +150,7 @@ public class SwimmingRaceServicesProxy implements SwimmingRaceServices {
     }
 
     @Override
-    public List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
+    public List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle) {
         RaceDetailsDTO raceDetailsDTO = new RaceDetailsDTO(swimmingDistance, swimmingStyle);
         logger.info("Sending FindAllSwimmersDetailsForRaceRequest: raceDetails: {}", raceDetailsDTO);
         sendRequest(new FindAllSwimmersDetailsForRaceRequest(raceDetailsDTO));
@@ -166,8 +166,8 @@ public class SwimmingRaceServicesProxy implements SwimmingRaceServices {
     }
 
     @Override
-    public void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOS) {
-        SwimmerDTO swimmerDTO = new SwimmerDTO(new Swimmer(firstName, lastName, age), raceDetailsDTOS);
+    public void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOs) {
+        SwimmerDTO swimmerDTO = new SwimmerDTO(new Swimmer(firstName, lastName, age), raceDetailsDTOs);
         logger.info("Sending AddSwimmerRequest: swimmerDetails: {}", swimmerDTO);
         sendRequest(new AddSwimmerRequest(swimmerDTO));
         logger.info("Waiting for response...");

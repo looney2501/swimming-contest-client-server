@@ -5,8 +5,8 @@ import org.apache.logging.log4j.Logger;
 import domain.entities.Race;
 import domain.entities.Swimmer;
 import domain.entities.SwimmerRace;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import repository.SwimmerRepository;
 import repository.RaceRepository;
 import repository.SwimmerRaceRepository;
@@ -146,8 +146,8 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
                 Integer style = resultSet.getInt(3);
                 Integer age = resultSet.getInt(4);
                 Race race = new Race(id,
-                        SwimmingDistances.distanceFromInteger(distance),
-                        SwimmingStyles.styleFromInteger(style),
+                        SwimmingDistance.distanceFromInteger(distance),
+                        SwimmingStyle.styleFromInteger(style),
                         age);
                 allRacesForSwimmer.add(race);
             }

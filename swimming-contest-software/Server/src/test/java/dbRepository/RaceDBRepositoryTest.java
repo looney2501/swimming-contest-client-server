@@ -1,8 +1,8 @@
 package dbRepository;
 
 import domain.entities.Race;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import org.junit.jupiter.api.Test;
 import repository.dbRepository.JdbcUtils;
 import repository.dbRepository.RaceDBRepository;
@@ -21,9 +21,9 @@ class RaceDBRepositoryTest {
 
         RaceDBRepository raceDBRepository = new RaceDBRepository(properties);
 
-        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles._FREESTYLE);
-        assertEquals(SwimmingDistances._50m, race.getDistance());
-        assertEquals(SwimmingStyles._FREESTYLE, race.getStyle());
+        Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._50m, SwimmingStyle.Freestyle);
+        assertEquals(SwimmingDistance._50m, race.getDistance());
+        assertEquals(SwimmingStyle.Freestyle, race.getStyle());
     }
 
     @Test
@@ -44,7 +44,7 @@ class RaceDBRepositoryTest {
         RaceDBRepository raceDBRepository = new RaceDBRepository(properties);
         assertNull(raceDBRepository.findById(30));
 
-        Race race = new Race(SwimmingDistances._50m, SwimmingStyles._MIXED, 0);
+        Race race = new Race(SwimmingDistance._50m, SwimmingStyle.Mixed, 0);
         assertEquals(race, raceDBRepository.findById(1));
     }
 }

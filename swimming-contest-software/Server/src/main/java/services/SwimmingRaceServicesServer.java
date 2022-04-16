@@ -7,8 +7,8 @@ import domain.entities.Admin;
 import domain.entities.Race;
 import domain.entities.Swimmer;
 import domain.entities.SwimmerRace;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 import observer.SwimmingRaceObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,7 +55,7 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
     }
 
     @Override
-    public synchronized void    login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServicesException {
+    public synchronized void login(String username, String password, SwimmingRaceObserver client) throws NoSuchAlgorithmException, ServicesException {
         Admin admin = adminRepository.findByUsernameAndPassword(username, password);
         if (admin != null) {
             if (loggedClients.get(admin.getUsername()) != null) {
@@ -87,7 +87,7 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
     }
 
     @Override
-    public synchronized List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
+    public synchronized List<SwimmerDTO> findAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle) {
         List<SwimmerDTO> swimmerDTOS = new ArrayList<>();
         Race race = raceRepository.findRaceByDistanceAndStyle(swimmingDistance, swimmingStyle);
         for (Swimmer swimmer: swimmerRaceRepository.findAllSwimmersForRace(race)) {
@@ -101,12 +101,12 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
     }
 
     @Override
-    public synchronized void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOS) {
+    public synchronized void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOs) {
         Swimmer swimmer = new Swimmer(firstName, lastName, age);
         Integer swimmerID = swimmerRepository.add(swimmer);
         swimmer.setID(swimmerID);
 
-        for (var raceDetailDTO : raceDetailsDTOS) {
+        for (var raceDetailDTO : raceDetailsDTOs) {
             Race race = raceRepository.findRaceByDistanceAndStyle(raceDetailDTO.getSwimmingDistance(), raceDetailDTO.getSwimmingStyle());
             SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
             swimmerRaceRepository.add(swimmerRace);
@@ -122,5 +122,7 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
         for (var client: loggedClients.values()) {
             executorService.execute(client::racesUpdated);
         }
+
+        executorService.shutdown();
     }
 }

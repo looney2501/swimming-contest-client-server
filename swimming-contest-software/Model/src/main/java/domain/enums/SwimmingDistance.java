@@ -3,13 +3,13 @@ package domain.enums;
 /**
  * Available swimming distances for races.
  */
-public enum SwimmingDistances {
+public enum SwimmingDistance {
     _50m,
     _200m,
     _800m,
     _1500m;
 
-    public static SwimmingDistances distanceFromInteger(Integer value) {
+    public static SwimmingDistance distanceFromInteger(Integer value) {
         return switch (value) {
             case 1 -> _50m;
             case 2 -> _200m;
@@ -19,7 +19,7 @@ public enum SwimmingDistances {
         };
     }
 
-    public static Integer integerFromDistance(SwimmingDistances swimmingDistance) {
+    public static Integer integerFromDistance(SwimmingDistance swimmingDistance) {
         return switch (swimmingDistance) {
             case _50m -> 1;
             case _200m -> 2;

@@ -1,26 +1,26 @@
 package domain.dtos;
 
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 
 import java.io.Serializable;
 
 public class RaceDTO implements Serializable {
-    private final SwimmingDistances swimmingDistance;
-    private final SwimmingStyles swimmingStyle;
+    private final SwimmingDistance swimmingDistance;
+    private final SwimmingStyle swimmingStyle;
     private final Integer noSwimmers;
 
-    public RaceDTO(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle, Integer noSwimmers) {
+    public RaceDTO(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle, Integer noSwimmers) {
         this.swimmingDistance = swimmingDistance;
         this.swimmingStyle = swimmingStyle;
         this.noSwimmers = noSwimmers;
     }
 
-    public SwimmingDistances getDistance() {
+    public SwimmingDistance getDistance() {
         return swimmingDistance;
     }
 
-    public SwimmingStyles getStyle() {
+    public SwimmingStyle getStyle() {
         return swimmingStyle;
     }
 

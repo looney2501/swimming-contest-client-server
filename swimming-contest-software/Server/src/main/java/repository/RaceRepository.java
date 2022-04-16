@@ -1,12 +1,12 @@
 package repository;
 
 import domain.entities.Race;
-import domain.enums.SwimmingDistances;
-import domain.enums.SwimmingStyles;
+import domain.enums.SwimmingDistance;
+import domain.enums.SwimmingStyle;
 
 import java.util.List;
 
 public interface RaceRepository extends Repository<Integer, Race> {
-    Race findRaceByDistanceAndStyle(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle);
+    Race findRaceByDistanceAndStyle(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle);
     List<Race> findAllRaces();
 }

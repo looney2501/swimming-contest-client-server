@@ -23,11 +23,11 @@ public class StartServer
         return swimmingRaceServiceServer;
     }
     
-    public static void Main(string[] args)
-    {
-        XmlConfigurator.Configure();
-        ISwimmingRaceServices services = LoadServices();
-        SwimmingRacesConcurrentServer server = new SwimmingRacesConcurrentServer("127.0.0.1", 55556, services);
-        server.Start();
-    }
+    // public static void Main(string[] args)
+    // {
+    //     XmlConfigurator.Configure();
+    //     ISwimmingRaceServices services = LoadServices();
+    //     SwimmingRacesConcurrentServer server = new SwimmingRacesConcurrentServer("127.0.0.1", 55556, services);
+    //     server.Start();
+    // }
 }

@@ -7,6 +7,6 @@ namespace Server.Repository;
 
 public interface IRaceRepository: IRepository<Int32, Race>
 {
-    Race FindRaceByDistanceAndStyle(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle);
+    Race FindRaceByDistanceAndStyle(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle);
     List<Race> FindAllRaces();
 }

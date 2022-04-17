@@ -27,7 +27,7 @@ namespace Tests.Repository.DBRepository
             int id = swimmerRepository.Add(swimmer);
             swimmer.ID = id;
 
-            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles.Backstroke);
+            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
             SwimmerRace swimmerRace = new SwimmerRace(swimmer, race);
             swimmerRaceRepository.Add(swimmerRace);
@@ -75,7 +75,7 @@ namespace Tests.Repository.DBRepository
             int id = swimmerRepository.Add(swimmer);
             swimmer.ID = id;
 
-            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles.Backstroke);
+            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
             Assert.AreEqual(0, swimmerRaceRepository.GetNumberOfSwimmersForRace(race));
             
@@ -114,7 +114,7 @@ namespace Tests.Repository.DBRepository
             int id2 = swimmerRepository.Add(swimmer2);
             swimmer2.ID = id2;
             
-            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles.Backstroke);
+            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
             SwimmerRace swimmerRace1 = new SwimmerRace(swimmer1, race);
             swimmerRaceRepository.Add(swimmerRace1);
@@ -150,8 +150,8 @@ namespace Tests.Repository.DBRepository
             int id = swimmerRepository.Add(swimmer);
             swimmer.ID = id;
             
-            Race race1 = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._200m, SwimmingStyles.Backstroke);
-            Race race2 = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles.Backstroke);
+            Race race1 = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
+            Race race2 = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._50m, SwimmingStyle.Backstroke);
             
             SwimmerRace swimmerRace1 = new SwimmerRace(swimmer, race1);
             swimmerRaceRepository.Add(swimmerRace1);

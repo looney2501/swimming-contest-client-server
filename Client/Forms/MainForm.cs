@@ -13,8 +13,8 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
 {
     public LoginForm LoginForm { get; set; }
     public string LoggedUsername { get; set; }
-    private SwimmingDistances? _swimmingDistance;
-    private SwimmingStyles? _swimmingStyle;
+    private SwimmingDistance? _swimmingDistance;
+    private SwimmingStyle? _swimmingStyle;
 
     public MainForm()
     {
@@ -32,16 +32,16 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
     private void InitializeComboBoxes()
     {
         distanceComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-        distanceComboBox.Items.Add(SwimmingDistances._50m);
-        distanceComboBox.Items.Add(SwimmingDistances._200m);
-        distanceComboBox.Items.Add(SwimmingDistances._800m);
-        distanceComboBox.Items.Add(SwimmingDistances._1500m);
+        distanceComboBox.Items.Add(SwimmingDistance._50m);
+        distanceComboBox.Items.Add(SwimmingDistance._200m);
+        distanceComboBox.Items.Add(SwimmingDistance._800m);
+        distanceComboBox.Items.Add(SwimmingDistance._1500m);
 
         styleComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-        styleComboBox.Items.Add(SwimmingStyles.Freestyle);
-        styleComboBox.Items.Add(SwimmingStyles.Backstroke);
-        styleComboBox.Items.Add(SwimmingStyles.Butterfly);
-        styleComboBox.Items.Add(SwimmingStyles.Mixed);
+        styleComboBox.Items.Add(SwimmingStyle.Freestyle);
+        styleComboBox.Items.Add(SwimmingStyle.Backstroke);
+        styleComboBox.Items.Add(SwimmingStyle.Butterfly);
+        styleComboBox.Items.Add(SwimmingStyle.Mixed);
 
         _swimmingDistance = null;
         _swimmingStyle = null;
@@ -57,8 +57,8 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
             if (_swimmingStyle != null)
             {
                 raceDetailsDataGridView.DataSource =
-                    SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
-                        (SwimmingStyles) _swimmingStyle);
+                    SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistance) _swimmingDistance,
+                        (SwimmingStyle) _swimmingStyle);
             }
         }
         else
@@ -149,11 +149,11 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
         }
         else
         {
-            _swimmingDistance = (SwimmingDistances?) selectedDistance;
-            _swimmingStyle = (SwimmingStyles?) selectedStyle;
+            _swimmingDistance = (SwimmingDistance?) selectedDistance;
+            _swimmingStyle = (SwimmingStyle?) selectedStyle;
             raceDetailsDataGridView.DataSource =
-                SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistances) _swimmingDistance,
-                    (SwimmingStyles) _swimmingStyle);
+                SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistance) _swimmingDistance,
+                    (SwimmingStyle) _swimmingStyle);
             raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }

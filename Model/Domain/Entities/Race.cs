@@ -7,11 +7,11 @@ namespace Model.Domain.Entities;
 public class Race: Identifiable<Int32>
 {
     public Int32 ID { get; set; }
-    public SwimmingDistances Distance { get; set; }
-    public SwimmingStyles Style { get; set; }
+    public SwimmingDistance Distance { get; set; }
+    public SwimmingStyle Style { get; set; }
     public Int32 SwimmersNumber { get; set; }
 
-    public Race(int id, SwimmingDistances distance, SwimmingStyles style, int swimmersNumber)
+    public Race(int id, SwimmingDistance distance, SwimmingStyle style, int swimmersNumber)
     {
         ID = id;
         Distance = distance;
@@ -19,7 +19,7 @@ public class Race: Identifiable<Int32>
         SwimmersNumber = swimmersNumber;
     }
 
-    public Race(SwimmingDistances distance, SwimmingStyles style, int swimmersNumber)
+    public Race(SwimmingDistance distance, SwimmingStyle style, int swimmersNumber)
     {
         Distance = distance;
         Style = style;

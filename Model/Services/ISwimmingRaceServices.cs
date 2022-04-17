@@ -10,6 +10,6 @@ public interface ISwimmingRaceServices
     void Login(string username, string password, ISwimmingRaceObserver client);
     void Logout(string username);
     List<RaceDTO> FindAllRacesDetails();
-    List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle);
+    List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle);
     void AddSwimmer(string firstName, string lastName, int age, List<RaceDetailsDTO> raceDetailsDTOs);
 }

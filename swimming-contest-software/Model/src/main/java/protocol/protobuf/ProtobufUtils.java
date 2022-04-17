@@ -97,7 +97,12 @@ public final class ProtobufUtils {
     }
 
     public static SwimmingContestProtobuf.Swimmer swimmerToProtobuf(Swimmer swimmer) {
-        return SwimmingContestProtobuf.Swimmer.newBuilder().setID(swimmer.getID()).setFirstName(swimmer.getFirstName()).setLastName(swimmer.getLastName()).setAge(swimmer.getAge()).build();
+
+        SwimmingContestProtobuf.Swimmer.Builder swimmerBuilder = SwimmingContestProtobuf.Swimmer.newBuilder().setFirstName(swimmer.getFirstName()).setLastName(swimmer.getLastName()).setAge(swimmer.getAge());
+        if (swimmer.getID() != null){
+            swimmerBuilder.setID(swimmer.getID());
+        }
+        return swimmerBuilder.build();
     }
 
     public static SwimmingContestProtobuf.Request createLoginRequest(AdminDTO adminDTO) {

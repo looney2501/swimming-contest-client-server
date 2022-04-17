@@ -21,7 +21,8 @@ dependencies {
 }
 
 application {
-    mainClass = 'main.StartClient'
+//    mainClass = 'main.StartClient'
+    mainClass = 'main.StartClientProtobuf'
 }
 
 javafx {

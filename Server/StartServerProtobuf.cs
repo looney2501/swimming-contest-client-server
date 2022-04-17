@@ -8,7 +8,7 @@ using Server.Services;
 
 namespace Server;
 
-public class StartServer
+public class StartServerProtobuf
 {
     static SwimmingRaceServicesServer LoadServices()
     {
@@ -23,11 +23,11 @@ public class StartServer
         return swimmingRaceServiceServer;
     }
     
-    // public static void Main(string[] args)
-    // {
-    //     XmlConfigurator.Configure();
-    //     ISwimmingRaceServices services = LoadServices();
-    //     SwimmingRacesConcurrentServer server = new SwimmingRacesConcurrentServer("127.0.0.1", 55556, services);
-    //     server.Start();
-    // }
+    public static void Main(string[] args)
+    {
+        XmlConfigurator.Configure();
+        ISwimmingRaceServices services = LoadServices();
+        SwimmingRacesConcurrentServerProtobuf server = new SwimmingRacesConcurrentServerProtobuf("127.0.0.1", 55555, services);
+        server.Start();
+    }
 }

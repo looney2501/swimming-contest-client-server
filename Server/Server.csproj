@@ -108,6 +108,7 @@
         <Compile Include="Services\SwimmingRaceServicesServer.cs" />
         <Compile Include="StartServer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="StartServerProtobuf.cs" />
         <Compile Include="Utils\DbUtils.cs" />
     </ItemGroup>
     <ItemGroup>

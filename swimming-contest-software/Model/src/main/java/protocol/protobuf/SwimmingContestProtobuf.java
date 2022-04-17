@@ -7059,6 +7059,1647 @@ public final class SwimmingContestProtobuf {
 
   }
 
+  public interface RequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.protocol.protobuf.Request)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     * @return Whether the loginRequest field is set.
+     */
+    boolean hasLoginRequest();
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     * @return The loginRequest.
+     */
+    LoginRequest getLoginRequest();
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     */
+    LoginRequestOrBuilder getLoginRequestOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     * @return Whether the logoutRequest field is set.
+     */
+    boolean hasLogoutRequest();
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     * @return The logoutRequest.
+     */
+    LogoutRequest getLogoutRequest();
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     */
+    LogoutRequestOrBuilder getLogoutRequestOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     * @return Whether the findAllRacesDetailsRequest field is set.
+     */
+    boolean hasFindAllRacesDetailsRequest();
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     * @return The findAllRacesDetailsRequest.
+     */
+    FindAllRacesDetailsRequest getFindAllRacesDetailsRequest();
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     */
+    FindAllRacesDetailsRequestOrBuilder getFindAllRacesDetailsRequestOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     * @return Whether the findAllSwimmersDetailsForRaceRequest field is set.
+     */
+    boolean hasFindAllSwimmersDetailsForRaceRequest();
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     * @return The findAllSwimmersDetailsForRaceRequest.
+     */
+    FindAllSwimmersDetailsForRaceRequest getFindAllSwimmersDetailsForRaceRequest();
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     */
+    FindAllSwimmersDetailsForRaceRequestOrBuilder getFindAllSwimmersDetailsForRaceRequestOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     * @return Whether the addSwimmerRequest field is set.
+     */
+    boolean hasAddSwimmerRequest();
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     * @return The addSwimmerRequest.
+     */
+    AddSwimmerRequest getAddSwimmerRequest();
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     */
+    AddSwimmerRequestOrBuilder getAddSwimmerRequestOrBuilder();
+
+    public Request.RequestTypeCase getRequestTypeCase();
+  }
+  /**
+   * Protobuf type {@code model.protocol.protobuf.Request}
+   */
+  public static final class Request extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.protocol.protobuf.Request)
+      RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Request.newBuilder() to construct.
+    private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Request() {
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Request();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              LoginRequest.Builder subBuilder = null;
+              if (requestTypeCase_ == 1) {
+                subBuilder = ((LoginRequest) requestType_).toBuilder();
+              }
+              requestType_ =
+                  input.readMessage(LoginRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((LoginRequest) requestType_);
+                requestType_ = subBuilder.buildPartial();
+              }
+              requestTypeCase_ = 1;
+              break;
+            }
+            case 18: {
+              LogoutRequest.Builder subBuilder = null;
+              if (requestTypeCase_ == 2) {
+                subBuilder = ((LogoutRequest) requestType_).toBuilder();
+              }
+              requestType_ =
+                  input.readMessage(LogoutRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((LogoutRequest) requestType_);
+                requestType_ = subBuilder.buildPartial();
+              }
+              requestTypeCase_ = 2;
+              break;
+            }
+            case 26: {
+              FindAllRacesDetailsRequest.Builder subBuilder = null;
+              if (requestTypeCase_ == 3) {
+                subBuilder = ((FindAllRacesDetailsRequest) requestType_).toBuilder();
+              }
+              requestType_ =
+                  input.readMessage(FindAllRacesDetailsRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((FindAllRacesDetailsRequest) requestType_);
+                requestType_ = subBuilder.buildPartial();
+              }
+              requestTypeCase_ = 3;
+              break;
+            }
+            case 34: {
+              FindAllSwimmersDetailsForRaceRequest.Builder subBuilder = null;
+              if (requestTypeCase_ == 4) {
+                subBuilder = ((FindAllSwimmersDetailsForRaceRequest) requestType_).toBuilder();
+              }
+              requestType_ =
+                  input.readMessage(FindAllSwimmersDetailsForRaceRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((FindAllSwimmersDetailsForRaceRequest) requestType_);
+                requestType_ = subBuilder.buildPartial();
+              }
+              requestTypeCase_ = 4;
+              break;
+            }
+            case 42: {
+              AddSwimmerRequest.Builder subBuilder = null;
+              if (requestTypeCase_ == 5) {
+                subBuilder = ((AddSwimmerRequest) requestType_).toBuilder();
+              }
+              requestType_ =
+                  input.readMessage(AddSwimmerRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((AddSwimmerRequest) requestType_);
+                requestType_ = subBuilder.buildPartial();
+              }
+              requestTypeCase_ = 5;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Request_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Request.class, Builder.class);
+    }
+
+    private int requestTypeCase_ = 0;
+    private Object requestType_;
+    public enum RequestTypeCase
+        implements com.google.protobuf.Internal.EnumLite,
+            InternalOneOfEnum {
+      LOGIN_REQUEST(1),
+      LOGOUT_REQUEST(2),
+      FIND_ALL_RACES_DETAILS_REQUEST(3),
+      FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_REQUEST(4),
+      ADD_SWIMMER_REQUEST(5),
+      REQUESTTYPE_NOT_SET(0);
+      private final int value;
+      private RequestTypeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @Deprecated
+      public static RequestTypeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RequestTypeCase forNumber(int value) {
+        switch (value) {
+          case 1: return LOGIN_REQUEST;
+          case 2: return LOGOUT_REQUEST;
+          case 3: return FIND_ALL_RACES_DETAILS_REQUEST;
+          case 4: return FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_REQUEST;
+          case 5: return ADD_SWIMMER_REQUEST;
+          case 0: return REQUESTTYPE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RequestTypeCase
+    getRequestTypeCase() {
+      return RequestTypeCase.forNumber(
+          requestTypeCase_);
+    }
+
+    public static final int LOGIN_REQUEST_FIELD_NUMBER = 1;
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     * @return Whether the loginRequest field is set.
+     */
+    @Override
+    public boolean hasLoginRequest() {
+      return requestTypeCase_ == 1;
+    }
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     * @return The loginRequest.
+     */
+    @Override
+    public LoginRequest getLoginRequest() {
+      if (requestTypeCase_ == 1) {
+         return (LoginRequest) requestType_;
+      }
+      return LoginRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+     */
+    @Override
+    public LoginRequestOrBuilder getLoginRequestOrBuilder() {
+      if (requestTypeCase_ == 1) {
+         return (LoginRequest) requestType_;
+      }
+      return LoginRequest.getDefaultInstance();
+    }
+
+    public static final int LOGOUT_REQUEST_FIELD_NUMBER = 2;
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     * @return Whether the logoutRequest field is set.
+     */
+    @Override
+    public boolean hasLogoutRequest() {
+      return requestTypeCase_ == 2;
+    }
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     * @return The logoutRequest.
+     */
+    @Override
+    public LogoutRequest getLogoutRequest() {
+      if (requestTypeCase_ == 2) {
+         return (LogoutRequest) requestType_;
+      }
+      return LogoutRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+     */
+    @Override
+    public LogoutRequestOrBuilder getLogoutRequestOrBuilder() {
+      if (requestTypeCase_ == 2) {
+         return (LogoutRequest) requestType_;
+      }
+      return LogoutRequest.getDefaultInstance();
+    }
+
+    public static final int FIND_ALL_RACES_DETAILS_REQUEST_FIELD_NUMBER = 3;
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     * @return Whether the findAllRacesDetailsRequest field is set.
+     */
+    @Override
+    public boolean hasFindAllRacesDetailsRequest() {
+      return requestTypeCase_ == 3;
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     * @return The findAllRacesDetailsRequest.
+     */
+    @Override
+    public FindAllRacesDetailsRequest getFindAllRacesDetailsRequest() {
+      if (requestTypeCase_ == 3) {
+         return (FindAllRacesDetailsRequest) requestType_;
+      }
+      return FindAllRacesDetailsRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+     */
+    @Override
+    public FindAllRacesDetailsRequestOrBuilder getFindAllRacesDetailsRequestOrBuilder() {
+      if (requestTypeCase_ == 3) {
+         return (FindAllRacesDetailsRequest) requestType_;
+      }
+      return FindAllRacesDetailsRequest.getDefaultInstance();
+    }
+
+    public static final int FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_REQUEST_FIELD_NUMBER = 4;
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     * @return Whether the findAllSwimmersDetailsForRaceRequest field is set.
+     */
+    @Override
+    public boolean hasFindAllSwimmersDetailsForRaceRequest() {
+      return requestTypeCase_ == 4;
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     * @return The findAllSwimmersDetailsForRaceRequest.
+     */
+    @Override
+    public FindAllSwimmersDetailsForRaceRequest getFindAllSwimmersDetailsForRaceRequest() {
+      if (requestTypeCase_ == 4) {
+         return (FindAllSwimmersDetailsForRaceRequest) requestType_;
+      }
+      return FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+     */
+    @Override
+    public FindAllSwimmersDetailsForRaceRequestOrBuilder getFindAllSwimmersDetailsForRaceRequestOrBuilder() {
+      if (requestTypeCase_ == 4) {
+         return (FindAllSwimmersDetailsForRaceRequest) requestType_;
+      }
+      return FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+    }
+
+    public static final int ADD_SWIMMER_REQUEST_FIELD_NUMBER = 5;
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     * @return Whether the addSwimmerRequest field is set.
+     */
+    @Override
+    public boolean hasAddSwimmerRequest() {
+      return requestTypeCase_ == 5;
+    }
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     * @return The addSwimmerRequest.
+     */
+    @Override
+    public AddSwimmerRequest getAddSwimmerRequest() {
+      if (requestTypeCase_ == 5) {
+         return (AddSwimmerRequest) requestType_;
+      }
+      return AddSwimmerRequest.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+     */
+    @Override
+    public AddSwimmerRequestOrBuilder getAddSwimmerRequestOrBuilder() {
+      if (requestTypeCase_ == 5) {
+         return (AddSwimmerRequest) requestType_;
+      }
+      return AddSwimmerRequest.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (requestTypeCase_ == 1) {
+        output.writeMessage(1, (LoginRequest) requestType_);
+      }
+      if (requestTypeCase_ == 2) {
+        output.writeMessage(2, (LogoutRequest) requestType_);
+      }
+      if (requestTypeCase_ == 3) {
+        output.writeMessage(3, (FindAllRacesDetailsRequest) requestType_);
+      }
+      if (requestTypeCase_ == 4) {
+        output.writeMessage(4, (FindAllSwimmersDetailsForRaceRequest) requestType_);
+      }
+      if (requestTypeCase_ == 5) {
+        output.writeMessage(5, (AddSwimmerRequest) requestType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (requestTypeCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (LoginRequest) requestType_);
+      }
+      if (requestTypeCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (LogoutRequest) requestType_);
+      }
+      if (requestTypeCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (FindAllRacesDetailsRequest) requestType_);
+      }
+      if (requestTypeCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (FindAllSwimmersDetailsForRaceRequest) requestType_);
+      }
+      if (requestTypeCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (AddSwimmerRequest) requestType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Request)) {
+        return super.equals(obj);
+      }
+      Request other = (Request) obj;
+
+      if (!getRequestTypeCase().equals(other.getRequestTypeCase())) return false;
+      switch (requestTypeCase_) {
+        case 1:
+          if (!getLoginRequest()
+              .equals(other.getLoginRequest())) return false;
+          break;
+        case 2:
+          if (!getLogoutRequest()
+              .equals(other.getLogoutRequest())) return false;
+          break;
+        case 3:
+          if (!getFindAllRacesDetailsRequest()
+              .equals(other.getFindAllRacesDetailsRequest())) return false;
+          break;
+        case 4:
+          if (!getFindAllSwimmersDetailsForRaceRequest()
+              .equals(other.getFindAllSwimmersDetailsForRaceRequest())) return false;
+          break;
+        case 5:
+          if (!getAddSwimmerRequest()
+              .equals(other.getAddSwimmerRequest())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (requestTypeCase_) {
+        case 1:
+          hash = (37 * hash) + LOGIN_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getLoginRequest().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + LOGOUT_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getLogoutRequest().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + FIND_ALL_RACES_DETAILS_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getFindAllRacesDetailsRequest().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getFindAllSwimmersDetailsForRaceRequest().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + ADD_SWIMMER_REQUEST_FIELD_NUMBER;
+          hash = (53 * hash) + getAddSwimmerRequest().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Request prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.protocol.protobuf.Request}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.protocol.protobuf.Request)
+        RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Request_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Request.class, Builder.class);
+      }
+
+      // Construct using protocol.protobuf.SwimmingContestProtobuf.Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        requestTypeCase_ = 0;
+        requestType_ = null;
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Request_descriptor;
+      }
+
+      @Override
+      public Request getDefaultInstanceForType() {
+        return Request.getDefaultInstance();
+      }
+
+      @Override
+      public Request build() {
+        Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Request buildPartial() {
+        Request result = new Request(this);
+        if (requestTypeCase_ == 1) {
+          if (loginRequestBuilder_ == null) {
+            result.requestType_ = requestType_;
+          } else {
+            result.requestType_ = loginRequestBuilder_.build();
+          }
+        }
+        if (requestTypeCase_ == 2) {
+          if (logoutRequestBuilder_ == null) {
+            result.requestType_ = requestType_;
+          } else {
+            result.requestType_ = logoutRequestBuilder_.build();
+          }
+        }
+        if (requestTypeCase_ == 3) {
+          if (findAllRacesDetailsRequestBuilder_ == null) {
+            result.requestType_ = requestType_;
+          } else {
+            result.requestType_ = findAllRacesDetailsRequestBuilder_.build();
+          }
+        }
+        if (requestTypeCase_ == 4) {
+          if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+            result.requestType_ = requestType_;
+          } else {
+            result.requestType_ = findAllSwimmersDetailsForRaceRequestBuilder_.build();
+          }
+        }
+        if (requestTypeCase_ == 5) {
+          if (addSwimmerRequestBuilder_ == null) {
+            result.requestType_ = requestType_;
+          } else {
+            result.requestType_ = addSwimmerRequestBuilder_.build();
+          }
+        }
+        result.requestTypeCase_ = requestTypeCase_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Request) {
+          return mergeFrom((Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Request other) {
+        if (other == Request.getDefaultInstance()) return this;
+        switch (other.getRequestTypeCase()) {
+          case LOGIN_REQUEST: {
+            mergeLoginRequest(other.getLoginRequest());
+            break;
+          }
+          case LOGOUT_REQUEST: {
+            mergeLogoutRequest(other.getLogoutRequest());
+            break;
+          }
+          case FIND_ALL_RACES_DETAILS_REQUEST: {
+            mergeFindAllRacesDetailsRequest(other.getFindAllRacesDetailsRequest());
+            break;
+          }
+          case FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_REQUEST: {
+            mergeFindAllSwimmersDetailsForRaceRequest(other.getFindAllSwimmersDetailsForRaceRequest());
+            break;
+          }
+          case ADD_SWIMMER_REQUEST: {
+            mergeAddSwimmerRequest(other.getAddSwimmerRequest());
+            break;
+          }
+          case REQUESTTYPE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Request) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int requestTypeCase_ = 0;
+      private Object requestType_;
+      public RequestTypeCase
+          getRequestTypeCase() {
+        return RequestTypeCase.forNumber(
+            requestTypeCase_);
+      }
+
+      public Builder clearRequestType() {
+        requestTypeCase_ = 0;
+        requestType_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LoginRequest, LoginRequest.Builder, LoginRequestOrBuilder> loginRequestBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       * @return Whether the loginRequest field is set.
+       */
+      @Override
+      public boolean hasLoginRequest() {
+        return requestTypeCase_ == 1;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       * @return The loginRequest.
+       */
+      @Override
+      public LoginRequest getLoginRequest() {
+        if (loginRequestBuilder_ == null) {
+          if (requestTypeCase_ == 1) {
+            return (LoginRequest) requestType_;
+          }
+          return LoginRequest.getDefaultInstance();
+        } else {
+          if (requestTypeCase_ == 1) {
+            return loginRequestBuilder_.getMessage();
+          }
+          return LoginRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      public Builder setLoginRequest(LoginRequest value) {
+        if (loginRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestType_ = value;
+          onChanged();
+        } else {
+          loginRequestBuilder_.setMessage(value);
+        }
+        requestTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      public Builder setLoginRequest(
+          LoginRequest.Builder builderForValue) {
+        if (loginRequestBuilder_ == null) {
+          requestType_ = builderForValue.build();
+          onChanged();
+        } else {
+          loginRequestBuilder_.setMessage(builderForValue.build());
+        }
+        requestTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      public Builder mergeLoginRequest(LoginRequest value) {
+        if (loginRequestBuilder_ == null) {
+          if (requestTypeCase_ == 1 &&
+              requestType_ != LoginRequest.getDefaultInstance()) {
+            requestType_ = LoginRequest.newBuilder((LoginRequest) requestType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            requestType_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestTypeCase_ == 1) {
+            loginRequestBuilder_.mergeFrom(value);
+          } else {
+            loginRequestBuilder_.setMessage(value);
+          }
+        }
+        requestTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      public Builder clearLoginRequest() {
+        if (loginRequestBuilder_ == null) {
+          if (requestTypeCase_ == 1) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestTypeCase_ == 1) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+          }
+          loginRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      public LoginRequest.Builder getLoginRequestBuilder() {
+        return getLoginRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      @Override
+      public LoginRequestOrBuilder getLoginRequestOrBuilder() {
+        if ((requestTypeCase_ == 1) && (loginRequestBuilder_ != null)) {
+          return loginRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestTypeCase_ == 1) {
+            return (LoginRequest) requestType_;
+          }
+          return LoginRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.LoginRequest login_request = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LoginRequest, LoginRequest.Builder, LoginRequestOrBuilder>
+          getLoginRequestFieldBuilder() {
+        if (loginRequestBuilder_ == null) {
+          if (!(requestTypeCase_ == 1)) {
+            requestType_ = LoginRequest.getDefaultInstance();
+          }
+          loginRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              LoginRequest, LoginRequest.Builder, LoginRequestOrBuilder>(
+                  (LoginRequest) requestType_,
+                  getParentForChildren(),
+                  isClean());
+          requestType_ = null;
+        }
+        requestTypeCase_ = 1;
+        onChanged();;
+        return loginRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LogoutRequest, LogoutRequest.Builder, LogoutRequestOrBuilder> logoutRequestBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       * @return Whether the logoutRequest field is set.
+       */
+      @Override
+      public boolean hasLogoutRequest() {
+        return requestTypeCase_ == 2;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       * @return The logoutRequest.
+       */
+      @Override
+      public LogoutRequest getLogoutRequest() {
+        if (logoutRequestBuilder_ == null) {
+          if (requestTypeCase_ == 2) {
+            return (LogoutRequest) requestType_;
+          }
+          return LogoutRequest.getDefaultInstance();
+        } else {
+          if (requestTypeCase_ == 2) {
+            return logoutRequestBuilder_.getMessage();
+          }
+          return LogoutRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      public Builder setLogoutRequest(LogoutRequest value) {
+        if (logoutRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestType_ = value;
+          onChanged();
+        } else {
+          logoutRequestBuilder_.setMessage(value);
+        }
+        requestTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      public Builder setLogoutRequest(
+          LogoutRequest.Builder builderForValue) {
+        if (logoutRequestBuilder_ == null) {
+          requestType_ = builderForValue.build();
+          onChanged();
+        } else {
+          logoutRequestBuilder_.setMessage(builderForValue.build());
+        }
+        requestTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      public Builder mergeLogoutRequest(LogoutRequest value) {
+        if (logoutRequestBuilder_ == null) {
+          if (requestTypeCase_ == 2 &&
+              requestType_ != LogoutRequest.getDefaultInstance()) {
+            requestType_ = LogoutRequest.newBuilder((LogoutRequest) requestType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            requestType_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestTypeCase_ == 2) {
+            logoutRequestBuilder_.mergeFrom(value);
+          } else {
+            logoutRequestBuilder_.setMessage(value);
+          }
+        }
+        requestTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      public Builder clearLogoutRequest() {
+        if (logoutRequestBuilder_ == null) {
+          if (requestTypeCase_ == 2) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestTypeCase_ == 2) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+          }
+          logoutRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      public LogoutRequest.Builder getLogoutRequestBuilder() {
+        return getLogoutRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      @Override
+      public LogoutRequestOrBuilder getLogoutRequestOrBuilder() {
+        if ((requestTypeCase_ == 2) && (logoutRequestBuilder_ != null)) {
+          return logoutRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestTypeCase_ == 2) {
+            return (LogoutRequest) requestType_;
+          }
+          return LogoutRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.LogoutRequest logout_request = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          LogoutRequest, LogoutRequest.Builder, LogoutRequestOrBuilder>
+          getLogoutRequestFieldBuilder() {
+        if (logoutRequestBuilder_ == null) {
+          if (!(requestTypeCase_ == 2)) {
+            requestType_ = LogoutRequest.getDefaultInstance();
+          }
+          logoutRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              LogoutRequest, LogoutRequest.Builder, LogoutRequestOrBuilder>(
+                  (LogoutRequest) requestType_,
+                  getParentForChildren(),
+                  isClean());
+          requestType_ = null;
+        }
+        requestTypeCase_ = 2;
+        onChanged();;
+        return logoutRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllRacesDetailsRequest, FindAllRacesDetailsRequest.Builder, FindAllRacesDetailsRequestOrBuilder> findAllRacesDetailsRequestBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       * @return Whether the findAllRacesDetailsRequest field is set.
+       */
+      @Override
+      public boolean hasFindAllRacesDetailsRequest() {
+        return requestTypeCase_ == 3;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       * @return The findAllRacesDetailsRequest.
+       */
+      @Override
+      public FindAllRacesDetailsRequest getFindAllRacesDetailsRequest() {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          if (requestTypeCase_ == 3) {
+            return (FindAllRacesDetailsRequest) requestType_;
+          }
+          return FindAllRacesDetailsRequest.getDefaultInstance();
+        } else {
+          if (requestTypeCase_ == 3) {
+            return findAllRacesDetailsRequestBuilder_.getMessage();
+          }
+          return FindAllRacesDetailsRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      public Builder setFindAllRacesDetailsRequest(FindAllRacesDetailsRequest value) {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestType_ = value;
+          onChanged();
+        } else {
+          findAllRacesDetailsRequestBuilder_.setMessage(value);
+        }
+        requestTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      public Builder setFindAllRacesDetailsRequest(
+          FindAllRacesDetailsRequest.Builder builderForValue) {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          requestType_ = builderForValue.build();
+          onChanged();
+        } else {
+          findAllRacesDetailsRequestBuilder_.setMessage(builderForValue.build());
+        }
+        requestTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      public Builder mergeFindAllRacesDetailsRequest(FindAllRacesDetailsRequest value) {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          if (requestTypeCase_ == 3 &&
+              requestType_ != FindAllRacesDetailsRequest.getDefaultInstance()) {
+            requestType_ = FindAllRacesDetailsRequest.newBuilder((FindAllRacesDetailsRequest) requestType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            requestType_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestTypeCase_ == 3) {
+            findAllRacesDetailsRequestBuilder_.mergeFrom(value);
+          } else {
+            findAllRacesDetailsRequestBuilder_.setMessage(value);
+          }
+        }
+        requestTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      public Builder clearFindAllRacesDetailsRequest() {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          if (requestTypeCase_ == 3) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestTypeCase_ == 3) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+          }
+          findAllRacesDetailsRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      public FindAllRacesDetailsRequest.Builder getFindAllRacesDetailsRequestBuilder() {
+        return getFindAllRacesDetailsRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      @Override
+      public FindAllRacesDetailsRequestOrBuilder getFindAllRacesDetailsRequestOrBuilder() {
+        if ((requestTypeCase_ == 3) && (findAllRacesDetailsRequestBuilder_ != null)) {
+          return findAllRacesDetailsRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestTypeCase_ == 3) {
+            return (FindAllRacesDetailsRequest) requestType_;
+          }
+          return FindAllRacesDetailsRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsRequest find_all_races_details_request = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllRacesDetailsRequest, FindAllRacesDetailsRequest.Builder, FindAllRacesDetailsRequestOrBuilder>
+          getFindAllRacesDetailsRequestFieldBuilder() {
+        if (findAllRacesDetailsRequestBuilder_ == null) {
+          if (!(requestTypeCase_ == 3)) {
+            requestType_ = FindAllRacesDetailsRequest.getDefaultInstance();
+          }
+          findAllRacesDetailsRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              FindAllRacesDetailsRequest, FindAllRacesDetailsRequest.Builder, FindAllRacesDetailsRequestOrBuilder>(
+                  (FindAllRacesDetailsRequest) requestType_,
+                  getParentForChildren(),
+                  isClean());
+          requestType_ = null;
+        }
+        requestTypeCase_ = 3;
+        onChanged();;
+        return findAllRacesDetailsRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllSwimmersDetailsForRaceRequest, FindAllSwimmersDetailsForRaceRequest.Builder, FindAllSwimmersDetailsForRaceRequestOrBuilder> findAllSwimmersDetailsForRaceRequestBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       * @return Whether the findAllSwimmersDetailsForRaceRequest field is set.
+       */
+      @Override
+      public boolean hasFindAllSwimmersDetailsForRaceRequest() {
+        return requestTypeCase_ == 4;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       * @return The findAllSwimmersDetailsForRaceRequest.
+       */
+      @Override
+      public FindAllSwimmersDetailsForRaceRequest getFindAllSwimmersDetailsForRaceRequest() {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          if (requestTypeCase_ == 4) {
+            return (FindAllSwimmersDetailsForRaceRequest) requestType_;
+          }
+          return FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+        } else {
+          if (requestTypeCase_ == 4) {
+            return findAllSwimmersDetailsForRaceRequestBuilder_.getMessage();
+          }
+          return FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      public Builder setFindAllSwimmersDetailsForRaceRequest(FindAllSwimmersDetailsForRaceRequest value) {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestType_ = value;
+          onChanged();
+        } else {
+          findAllSwimmersDetailsForRaceRequestBuilder_.setMessage(value);
+        }
+        requestTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      public Builder setFindAllSwimmersDetailsForRaceRequest(
+          FindAllSwimmersDetailsForRaceRequest.Builder builderForValue) {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          requestType_ = builderForValue.build();
+          onChanged();
+        } else {
+          findAllSwimmersDetailsForRaceRequestBuilder_.setMessage(builderForValue.build());
+        }
+        requestTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      public Builder mergeFindAllSwimmersDetailsForRaceRequest(FindAllSwimmersDetailsForRaceRequest value) {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          if (requestTypeCase_ == 4 &&
+              requestType_ != FindAllSwimmersDetailsForRaceRequest.getDefaultInstance()) {
+            requestType_ = FindAllSwimmersDetailsForRaceRequest.newBuilder((FindAllSwimmersDetailsForRaceRequest) requestType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            requestType_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestTypeCase_ == 4) {
+            findAllSwimmersDetailsForRaceRequestBuilder_.mergeFrom(value);
+          } else {
+            findAllSwimmersDetailsForRaceRequestBuilder_.setMessage(value);
+          }
+        }
+        requestTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      public Builder clearFindAllSwimmersDetailsForRaceRequest() {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          if (requestTypeCase_ == 4) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestTypeCase_ == 4) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+          }
+          findAllSwimmersDetailsForRaceRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      public FindAllSwimmersDetailsForRaceRequest.Builder getFindAllSwimmersDetailsForRaceRequestBuilder() {
+        return getFindAllSwimmersDetailsForRaceRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      @Override
+      public FindAllSwimmersDetailsForRaceRequestOrBuilder getFindAllSwimmersDetailsForRaceRequestOrBuilder() {
+        if ((requestTypeCase_ == 4) && (findAllSwimmersDetailsForRaceRequestBuilder_ != null)) {
+          return findAllSwimmersDetailsForRaceRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestTypeCase_ == 4) {
+            return (FindAllSwimmersDetailsForRaceRequest) requestType_;
+          }
+          return FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceRequest find_all_swimmers_details_for_race_request = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllSwimmersDetailsForRaceRequest, FindAllSwimmersDetailsForRaceRequest.Builder, FindAllSwimmersDetailsForRaceRequestOrBuilder>
+          getFindAllSwimmersDetailsForRaceRequestFieldBuilder() {
+        if (findAllSwimmersDetailsForRaceRequestBuilder_ == null) {
+          if (!(requestTypeCase_ == 4)) {
+            requestType_ = FindAllSwimmersDetailsForRaceRequest.getDefaultInstance();
+          }
+          findAllSwimmersDetailsForRaceRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              FindAllSwimmersDetailsForRaceRequest, FindAllSwimmersDetailsForRaceRequest.Builder, FindAllSwimmersDetailsForRaceRequestOrBuilder>(
+                  (FindAllSwimmersDetailsForRaceRequest) requestType_,
+                  getParentForChildren(),
+                  isClean());
+          requestType_ = null;
+        }
+        requestTypeCase_ = 4;
+        onChanged();;
+        return findAllSwimmersDetailsForRaceRequestBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          AddSwimmerRequest, AddSwimmerRequest.Builder, AddSwimmerRequestOrBuilder> addSwimmerRequestBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       * @return Whether the addSwimmerRequest field is set.
+       */
+      @Override
+      public boolean hasAddSwimmerRequest() {
+        return requestTypeCase_ == 5;
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       * @return The addSwimmerRequest.
+       */
+      @Override
+      public AddSwimmerRequest getAddSwimmerRequest() {
+        if (addSwimmerRequestBuilder_ == null) {
+          if (requestTypeCase_ == 5) {
+            return (AddSwimmerRequest) requestType_;
+          }
+          return AddSwimmerRequest.getDefaultInstance();
+        } else {
+          if (requestTypeCase_ == 5) {
+            return addSwimmerRequestBuilder_.getMessage();
+          }
+          return AddSwimmerRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      public Builder setAddSwimmerRequest(AddSwimmerRequest value) {
+        if (addSwimmerRequestBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          requestType_ = value;
+          onChanged();
+        } else {
+          addSwimmerRequestBuilder_.setMessage(value);
+        }
+        requestTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      public Builder setAddSwimmerRequest(
+          AddSwimmerRequest.Builder builderForValue) {
+        if (addSwimmerRequestBuilder_ == null) {
+          requestType_ = builderForValue.build();
+          onChanged();
+        } else {
+          addSwimmerRequestBuilder_.setMessage(builderForValue.build());
+        }
+        requestTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      public Builder mergeAddSwimmerRequest(AddSwimmerRequest value) {
+        if (addSwimmerRequestBuilder_ == null) {
+          if (requestTypeCase_ == 5 &&
+              requestType_ != AddSwimmerRequest.getDefaultInstance()) {
+            requestType_ = AddSwimmerRequest.newBuilder((AddSwimmerRequest) requestType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            requestType_ = value;
+          }
+          onChanged();
+        } else {
+          if (requestTypeCase_ == 5) {
+            addSwimmerRequestBuilder_.mergeFrom(value);
+          } else {
+            addSwimmerRequestBuilder_.setMessage(value);
+          }
+        }
+        requestTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      public Builder clearAddSwimmerRequest() {
+        if (addSwimmerRequestBuilder_ == null) {
+          if (requestTypeCase_ == 5) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+            onChanged();
+          }
+        } else {
+          if (requestTypeCase_ == 5) {
+            requestTypeCase_ = 0;
+            requestType_ = null;
+          }
+          addSwimmerRequestBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      public AddSwimmerRequest.Builder getAddSwimmerRequestBuilder() {
+        return getAddSwimmerRequestFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      @Override
+      public AddSwimmerRequestOrBuilder getAddSwimmerRequestOrBuilder() {
+        if ((requestTypeCase_ == 5) && (addSwimmerRequestBuilder_ != null)) {
+          return addSwimmerRequestBuilder_.getMessageOrBuilder();
+        } else {
+          if (requestTypeCase_ == 5) {
+            return (AddSwimmerRequest) requestType_;
+          }
+          return AddSwimmerRequest.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.AddSwimmerRequest add_swimmer_request = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          AddSwimmerRequest, AddSwimmerRequest.Builder, AddSwimmerRequestOrBuilder>
+          getAddSwimmerRequestFieldBuilder() {
+        if (addSwimmerRequestBuilder_ == null) {
+          if (!(requestTypeCase_ == 5)) {
+            requestType_ = AddSwimmerRequest.getDefaultInstance();
+          }
+          addSwimmerRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              AddSwimmerRequest, AddSwimmerRequest.Builder, AddSwimmerRequestOrBuilder>(
+                  (AddSwimmerRequest) requestType_,
+                  getParentForChildren(),
+                  isClean());
+          requestType_ = null;
+        }
+        requestTypeCase_ = 5;
+        onChanged();;
+        return addSwimmerRequestBuilder_;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.protocol.protobuf.Request)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.protocol.protobuf.Request)
+    private static final Request DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Request();
+    }
+
+    public static Request getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Request>
+        PARSER = new com.google.protobuf.AbstractParser<Request>() {
+      @Override
+      public Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Request(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Request> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Request> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Request getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface OkResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:model.protocol.protobuf.OkResponse)
       com.google.protobuf.MessageOrBuilder {
@@ -10059,6 +11700,1647 @@ public final class SwimmingContestProtobuf {
 
   }
 
+  public interface ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:model.protocol.protobuf.Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     * @return Whether the okResponse field is set.
+     */
+    boolean hasOkResponse();
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     * @return The okResponse.
+     */
+    OkResponse getOkResponse();
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     */
+    OkResponseOrBuilder getOkResponseOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     * @return Whether the errorResponse field is set.
+     */
+    boolean hasErrorResponse();
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     * @return The errorResponse.
+     */
+    ErrorResponse getErrorResponse();
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     */
+    ErrorResponseOrBuilder getErrorResponseOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     * @return Whether the findAllRacesDetailsResponse field is set.
+     */
+    boolean hasFindAllRacesDetailsResponse();
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     * @return The findAllRacesDetailsResponse.
+     */
+    FindAllRacesDetailsResponse getFindAllRacesDetailsResponse();
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     */
+    FindAllRacesDetailsResponseOrBuilder getFindAllRacesDetailsResponseOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     * @return Whether the findAllSwimmersDetailsForRaceResponse field is set.
+     */
+    boolean hasFindAllSwimmersDetailsForRaceResponse();
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     * @return The findAllSwimmersDetailsForRaceResponse.
+     */
+    FindAllSwimmersDetailsForRaceResponse getFindAllSwimmersDetailsForRaceResponse();
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     */
+    FindAllSwimmersDetailsForRaceResponseOrBuilder getFindAllSwimmersDetailsForRaceResponseOrBuilder();
+
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     * @return Whether the racesUpdatedResponse field is set.
+     */
+    boolean hasRacesUpdatedResponse();
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     * @return The racesUpdatedResponse.
+     */
+    RacesUpdatedResponse getRacesUpdatedResponse();
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     */
+    RacesUpdatedResponseOrBuilder getRacesUpdatedResponseOrBuilder();
+
+    public Response.ResponseTypeCase getResponseTypeCase();
+  }
+  /**
+   * Protobuf type {@code model.protocol.protobuf.Response}
+   */
+  public static final class Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:model.protocol.protobuf.Response)
+      ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Response.newBuilder() to construct.
+    private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Response() {
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Response();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              OkResponse.Builder subBuilder = null;
+              if (responseTypeCase_ == 1) {
+                subBuilder = ((OkResponse) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(OkResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((OkResponse) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 1;
+              break;
+            }
+            case 18: {
+              ErrorResponse.Builder subBuilder = null;
+              if (responseTypeCase_ == 2) {
+                subBuilder = ((ErrorResponse) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(ErrorResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((ErrorResponse) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 2;
+              break;
+            }
+            case 26: {
+              FindAllRacesDetailsResponse.Builder subBuilder = null;
+              if (responseTypeCase_ == 3) {
+                subBuilder = ((FindAllRacesDetailsResponse) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(FindAllRacesDetailsResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((FindAllRacesDetailsResponse) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 3;
+              break;
+            }
+            case 34: {
+              FindAllSwimmersDetailsForRaceResponse.Builder subBuilder = null;
+              if (responseTypeCase_ == 4) {
+                subBuilder = ((FindAllSwimmersDetailsForRaceResponse) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(FindAllSwimmersDetailsForRaceResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((FindAllSwimmersDetailsForRaceResponse) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 4;
+              break;
+            }
+            case 42: {
+              RacesUpdatedResponse.Builder subBuilder = null;
+              if (responseTypeCase_ == 5) {
+                subBuilder = ((RacesUpdatedResponse) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(RacesUpdatedResponse.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((RacesUpdatedResponse) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 5;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Response_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Response.class, Builder.class);
+    }
+
+    private int responseTypeCase_ = 0;
+    private Object responseType_;
+    public enum ResponseTypeCase
+        implements com.google.protobuf.Internal.EnumLite,
+            InternalOneOfEnum {
+      OK_RESPONSE(1),
+      ERROR_RESPONSE(2),
+      FIND_ALL_RACES_DETAILS_RESPONSE(3),
+      FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_RESPONSE(4),
+      RACES_UPDATED_RESPONSE(5),
+      RESPONSETYPE_NOT_SET(0);
+      private final int value;
+      private ResponseTypeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @Deprecated
+      public static ResponseTypeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseTypeCase forNumber(int value) {
+        switch (value) {
+          case 1: return OK_RESPONSE;
+          case 2: return ERROR_RESPONSE;
+          case 3: return FIND_ALL_RACES_DETAILS_RESPONSE;
+          case 4: return FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_RESPONSE;
+          case 5: return RACES_UPDATED_RESPONSE;
+          case 0: return RESPONSETYPE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseTypeCase
+    getResponseTypeCase() {
+      return ResponseTypeCase.forNumber(
+          responseTypeCase_);
+    }
+
+    public static final int OK_RESPONSE_FIELD_NUMBER = 1;
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     * @return Whether the okResponse field is set.
+     */
+    @Override
+    public boolean hasOkResponse() {
+      return responseTypeCase_ == 1;
+    }
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     * @return The okResponse.
+     */
+    @Override
+    public OkResponse getOkResponse() {
+      if (responseTypeCase_ == 1) {
+         return (OkResponse) responseType_;
+      }
+      return OkResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+     */
+    @Override
+    public OkResponseOrBuilder getOkResponseOrBuilder() {
+      if (responseTypeCase_ == 1) {
+         return (OkResponse) responseType_;
+      }
+      return OkResponse.getDefaultInstance();
+    }
+
+    public static final int ERROR_RESPONSE_FIELD_NUMBER = 2;
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     * @return Whether the errorResponse field is set.
+     */
+    @Override
+    public boolean hasErrorResponse() {
+      return responseTypeCase_ == 2;
+    }
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     * @return The errorResponse.
+     */
+    @Override
+    public ErrorResponse getErrorResponse() {
+      if (responseTypeCase_ == 2) {
+         return (ErrorResponse) responseType_;
+      }
+      return ErrorResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+     */
+    @Override
+    public ErrorResponseOrBuilder getErrorResponseOrBuilder() {
+      if (responseTypeCase_ == 2) {
+         return (ErrorResponse) responseType_;
+      }
+      return ErrorResponse.getDefaultInstance();
+    }
+
+    public static final int FIND_ALL_RACES_DETAILS_RESPONSE_FIELD_NUMBER = 3;
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     * @return Whether the findAllRacesDetailsResponse field is set.
+     */
+    @Override
+    public boolean hasFindAllRacesDetailsResponse() {
+      return responseTypeCase_ == 3;
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     * @return The findAllRacesDetailsResponse.
+     */
+    @Override
+    public FindAllRacesDetailsResponse getFindAllRacesDetailsResponse() {
+      if (responseTypeCase_ == 3) {
+         return (FindAllRacesDetailsResponse) responseType_;
+      }
+      return FindAllRacesDetailsResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+     */
+    @Override
+    public FindAllRacesDetailsResponseOrBuilder getFindAllRacesDetailsResponseOrBuilder() {
+      if (responseTypeCase_ == 3) {
+         return (FindAllRacesDetailsResponse) responseType_;
+      }
+      return FindAllRacesDetailsResponse.getDefaultInstance();
+    }
+
+    public static final int FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_RESPONSE_FIELD_NUMBER = 4;
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     * @return Whether the findAllSwimmersDetailsForRaceResponse field is set.
+     */
+    @Override
+    public boolean hasFindAllSwimmersDetailsForRaceResponse() {
+      return responseTypeCase_ == 4;
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     * @return The findAllSwimmersDetailsForRaceResponse.
+     */
+    @Override
+    public FindAllSwimmersDetailsForRaceResponse getFindAllSwimmersDetailsForRaceResponse() {
+      if (responseTypeCase_ == 4) {
+         return (FindAllSwimmersDetailsForRaceResponse) responseType_;
+      }
+      return FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+     */
+    @Override
+    public FindAllSwimmersDetailsForRaceResponseOrBuilder getFindAllSwimmersDetailsForRaceResponseOrBuilder() {
+      if (responseTypeCase_ == 4) {
+         return (FindAllSwimmersDetailsForRaceResponse) responseType_;
+      }
+      return FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+    }
+
+    public static final int RACES_UPDATED_RESPONSE_FIELD_NUMBER = 5;
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     * @return Whether the racesUpdatedResponse field is set.
+     */
+    @Override
+    public boolean hasRacesUpdatedResponse() {
+      return responseTypeCase_ == 5;
+    }
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     * @return The racesUpdatedResponse.
+     */
+    @Override
+    public RacesUpdatedResponse getRacesUpdatedResponse() {
+      if (responseTypeCase_ == 5) {
+         return (RacesUpdatedResponse) responseType_;
+      }
+      return RacesUpdatedResponse.getDefaultInstance();
+    }
+    /**
+     * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+     */
+    @Override
+    public RacesUpdatedResponseOrBuilder getRacesUpdatedResponseOrBuilder() {
+      if (responseTypeCase_ == 5) {
+         return (RacesUpdatedResponse) responseType_;
+      }
+      return RacesUpdatedResponse.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (responseTypeCase_ == 1) {
+        output.writeMessage(1, (OkResponse) responseType_);
+      }
+      if (responseTypeCase_ == 2) {
+        output.writeMessage(2, (ErrorResponse) responseType_);
+      }
+      if (responseTypeCase_ == 3) {
+        output.writeMessage(3, (FindAllRacesDetailsResponse) responseType_);
+      }
+      if (responseTypeCase_ == 4) {
+        output.writeMessage(4, (FindAllSwimmersDetailsForRaceResponse) responseType_);
+      }
+      if (responseTypeCase_ == 5) {
+        output.writeMessage(5, (RacesUpdatedResponse) responseType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (responseTypeCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (OkResponse) responseType_);
+      }
+      if (responseTypeCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (ErrorResponse) responseType_);
+      }
+      if (responseTypeCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (FindAllRacesDetailsResponse) responseType_);
+      }
+      if (responseTypeCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (FindAllSwimmersDetailsForRaceResponse) responseType_);
+      }
+      if (responseTypeCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (RacesUpdatedResponse) responseType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Response)) {
+        return super.equals(obj);
+      }
+      Response other = (Response) obj;
+
+      if (!getResponseTypeCase().equals(other.getResponseTypeCase())) return false;
+      switch (responseTypeCase_) {
+        case 1:
+          if (!getOkResponse()
+              .equals(other.getOkResponse())) return false;
+          break;
+        case 2:
+          if (!getErrorResponse()
+              .equals(other.getErrorResponse())) return false;
+          break;
+        case 3:
+          if (!getFindAllRacesDetailsResponse()
+              .equals(other.getFindAllRacesDetailsResponse())) return false;
+          break;
+        case 4:
+          if (!getFindAllSwimmersDetailsForRaceResponse()
+              .equals(other.getFindAllSwimmersDetailsForRaceResponse())) return false;
+          break;
+        case 5:
+          if (!getRacesUpdatedResponse()
+              .equals(other.getRacesUpdatedResponse())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseTypeCase_) {
+        case 1:
+          hash = (37 * hash) + OK_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getOkResponse().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getErrorResponse().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + FIND_ALL_RACES_DETAILS_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getFindAllRacesDetailsResponse().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getFindAllSwimmersDetailsForRaceResponse().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + RACES_UPDATED_RESPONSE_FIELD_NUMBER;
+          hash = (53 * hash) + getRacesUpdatedResponse().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code model.protocol.protobuf.Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:model.protocol.protobuf.Response)
+        ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Response_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Response.class, Builder.class);
+      }
+
+      // Construct using protocol.protobuf.SwimmingContestProtobuf.Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        responseTypeCase_ = 0;
+        responseType_ = null;
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SwimmingContestProtobuf.internal_static_model_protocol_protobuf_Response_descriptor;
+      }
+
+      @Override
+      public Response getDefaultInstanceForType() {
+        return Response.getDefaultInstance();
+      }
+
+      @Override
+      public Response build() {
+        Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Response buildPartial() {
+        Response result = new Response(this);
+        if (responseTypeCase_ == 1) {
+          if (okResponseBuilder_ == null) {
+            result.responseType_ = responseType_;
+          } else {
+            result.responseType_ = okResponseBuilder_.build();
+          }
+        }
+        if (responseTypeCase_ == 2) {
+          if (errorResponseBuilder_ == null) {
+            result.responseType_ = responseType_;
+          } else {
+            result.responseType_ = errorResponseBuilder_.build();
+          }
+        }
+        if (responseTypeCase_ == 3) {
+          if (findAllRacesDetailsResponseBuilder_ == null) {
+            result.responseType_ = responseType_;
+          } else {
+            result.responseType_ = findAllRacesDetailsResponseBuilder_.build();
+          }
+        }
+        if (responseTypeCase_ == 4) {
+          if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+            result.responseType_ = responseType_;
+          } else {
+            result.responseType_ = findAllSwimmersDetailsForRaceResponseBuilder_.build();
+          }
+        }
+        if (responseTypeCase_ == 5) {
+          if (racesUpdatedResponseBuilder_ == null) {
+            result.responseType_ = responseType_;
+          } else {
+            result.responseType_ = racesUpdatedResponseBuilder_.build();
+          }
+        }
+        result.responseTypeCase_ = responseTypeCase_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Response) {
+          return mergeFrom((Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Response other) {
+        if (other == Response.getDefaultInstance()) return this;
+        switch (other.getResponseTypeCase()) {
+          case OK_RESPONSE: {
+            mergeOkResponse(other.getOkResponse());
+            break;
+          }
+          case ERROR_RESPONSE: {
+            mergeErrorResponse(other.getErrorResponse());
+            break;
+          }
+          case FIND_ALL_RACES_DETAILS_RESPONSE: {
+            mergeFindAllRacesDetailsResponse(other.getFindAllRacesDetailsResponse());
+            break;
+          }
+          case FIND_ALL_SWIMMERS_DETAILS_FOR_RACE_RESPONSE: {
+            mergeFindAllSwimmersDetailsForRaceResponse(other.getFindAllSwimmersDetailsForRaceResponse());
+            break;
+          }
+          case RACES_UPDATED_RESPONSE: {
+            mergeRacesUpdatedResponse(other.getRacesUpdatedResponse());
+            break;
+          }
+          case RESPONSETYPE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int responseTypeCase_ = 0;
+      private Object responseType_;
+      public ResponseTypeCase
+          getResponseTypeCase() {
+        return ResponseTypeCase.forNumber(
+            responseTypeCase_);
+      }
+
+      public Builder clearResponseType() {
+        responseTypeCase_ = 0;
+        responseType_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          OkResponse, OkResponse.Builder, OkResponseOrBuilder> okResponseBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       * @return Whether the okResponse field is set.
+       */
+      @Override
+      public boolean hasOkResponse() {
+        return responseTypeCase_ == 1;
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       * @return The okResponse.
+       */
+      @Override
+      public OkResponse getOkResponse() {
+        if (okResponseBuilder_ == null) {
+          if (responseTypeCase_ == 1) {
+            return (OkResponse) responseType_;
+          }
+          return OkResponse.getDefaultInstance();
+        } else {
+          if (responseTypeCase_ == 1) {
+            return okResponseBuilder_.getMessage();
+          }
+          return OkResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      public Builder setOkResponse(OkResponse value) {
+        if (okResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseType_ = value;
+          onChanged();
+        } else {
+          okResponseBuilder_.setMessage(value);
+        }
+        responseTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      public Builder setOkResponse(
+          OkResponse.Builder builderForValue) {
+        if (okResponseBuilder_ == null) {
+          responseType_ = builderForValue.build();
+          onChanged();
+        } else {
+          okResponseBuilder_.setMessage(builderForValue.build());
+        }
+        responseTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      public Builder mergeOkResponse(OkResponse value) {
+        if (okResponseBuilder_ == null) {
+          if (responseTypeCase_ == 1 &&
+              responseType_ != OkResponse.getDefaultInstance()) {
+            responseType_ = OkResponse.newBuilder((OkResponse) responseType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            responseType_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseTypeCase_ == 1) {
+            okResponseBuilder_.mergeFrom(value);
+          } else {
+            okResponseBuilder_.setMessage(value);
+          }
+        }
+        responseTypeCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      public Builder clearOkResponse() {
+        if (okResponseBuilder_ == null) {
+          if (responseTypeCase_ == 1) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseTypeCase_ == 1) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+          }
+          okResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      public OkResponse.Builder getOkResponseBuilder() {
+        return getOkResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      @Override
+      public OkResponseOrBuilder getOkResponseOrBuilder() {
+        if ((responseTypeCase_ == 1) && (okResponseBuilder_ != null)) {
+          return okResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseTypeCase_ == 1) {
+            return (OkResponse) responseType_;
+          }
+          return OkResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.OkResponse ok_response = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          OkResponse, OkResponse.Builder, OkResponseOrBuilder>
+          getOkResponseFieldBuilder() {
+        if (okResponseBuilder_ == null) {
+          if (!(responseTypeCase_ == 1)) {
+            responseType_ = OkResponse.getDefaultInstance();
+          }
+          okResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              OkResponse, OkResponse.Builder, OkResponseOrBuilder>(
+                  (OkResponse) responseType_,
+                  getParentForChildren(),
+                  isClean());
+          responseType_ = null;
+        }
+        responseTypeCase_ = 1;
+        onChanged();;
+        return okResponseBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ErrorResponse, ErrorResponse.Builder, ErrorResponseOrBuilder> errorResponseBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       * @return Whether the errorResponse field is set.
+       */
+      @Override
+      public boolean hasErrorResponse() {
+        return responseTypeCase_ == 2;
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       * @return The errorResponse.
+       */
+      @Override
+      public ErrorResponse getErrorResponse() {
+        if (errorResponseBuilder_ == null) {
+          if (responseTypeCase_ == 2) {
+            return (ErrorResponse) responseType_;
+          }
+          return ErrorResponse.getDefaultInstance();
+        } else {
+          if (responseTypeCase_ == 2) {
+            return errorResponseBuilder_.getMessage();
+          }
+          return ErrorResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      public Builder setErrorResponse(ErrorResponse value) {
+        if (errorResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseType_ = value;
+          onChanged();
+        } else {
+          errorResponseBuilder_.setMessage(value);
+        }
+        responseTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      public Builder setErrorResponse(
+          ErrorResponse.Builder builderForValue) {
+        if (errorResponseBuilder_ == null) {
+          responseType_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorResponseBuilder_.setMessage(builderForValue.build());
+        }
+        responseTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      public Builder mergeErrorResponse(ErrorResponse value) {
+        if (errorResponseBuilder_ == null) {
+          if (responseTypeCase_ == 2 &&
+              responseType_ != ErrorResponse.getDefaultInstance()) {
+            responseType_ = ErrorResponse.newBuilder((ErrorResponse) responseType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            responseType_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseTypeCase_ == 2) {
+            errorResponseBuilder_.mergeFrom(value);
+          } else {
+            errorResponseBuilder_.setMessage(value);
+          }
+        }
+        responseTypeCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      public Builder clearErrorResponse() {
+        if (errorResponseBuilder_ == null) {
+          if (responseTypeCase_ == 2) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseTypeCase_ == 2) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+          }
+          errorResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      public ErrorResponse.Builder getErrorResponseBuilder() {
+        return getErrorResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      @Override
+      public ErrorResponseOrBuilder getErrorResponseOrBuilder() {
+        if ((responseTypeCase_ == 2) && (errorResponseBuilder_ != null)) {
+          return errorResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseTypeCase_ == 2) {
+            return (ErrorResponse) responseType_;
+          }
+          return ErrorResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.ErrorResponse error_response = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          ErrorResponse, ErrorResponse.Builder, ErrorResponseOrBuilder>
+          getErrorResponseFieldBuilder() {
+        if (errorResponseBuilder_ == null) {
+          if (!(responseTypeCase_ == 2)) {
+            responseType_ = ErrorResponse.getDefaultInstance();
+          }
+          errorResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              ErrorResponse, ErrorResponse.Builder, ErrorResponseOrBuilder>(
+                  (ErrorResponse) responseType_,
+                  getParentForChildren(),
+                  isClean());
+          responseType_ = null;
+        }
+        responseTypeCase_ = 2;
+        onChanged();;
+        return errorResponseBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllRacesDetailsResponse, FindAllRacesDetailsResponse.Builder, FindAllRacesDetailsResponseOrBuilder> findAllRacesDetailsResponseBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       * @return Whether the findAllRacesDetailsResponse field is set.
+       */
+      @Override
+      public boolean hasFindAllRacesDetailsResponse() {
+        return responseTypeCase_ == 3;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       * @return The findAllRacesDetailsResponse.
+       */
+      @Override
+      public FindAllRacesDetailsResponse getFindAllRacesDetailsResponse() {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          if (responseTypeCase_ == 3) {
+            return (FindAllRacesDetailsResponse) responseType_;
+          }
+          return FindAllRacesDetailsResponse.getDefaultInstance();
+        } else {
+          if (responseTypeCase_ == 3) {
+            return findAllRacesDetailsResponseBuilder_.getMessage();
+          }
+          return FindAllRacesDetailsResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      public Builder setFindAllRacesDetailsResponse(FindAllRacesDetailsResponse value) {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseType_ = value;
+          onChanged();
+        } else {
+          findAllRacesDetailsResponseBuilder_.setMessage(value);
+        }
+        responseTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      public Builder setFindAllRacesDetailsResponse(
+          FindAllRacesDetailsResponse.Builder builderForValue) {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          responseType_ = builderForValue.build();
+          onChanged();
+        } else {
+          findAllRacesDetailsResponseBuilder_.setMessage(builderForValue.build());
+        }
+        responseTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      public Builder mergeFindAllRacesDetailsResponse(FindAllRacesDetailsResponse value) {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          if (responseTypeCase_ == 3 &&
+              responseType_ != FindAllRacesDetailsResponse.getDefaultInstance()) {
+            responseType_ = FindAllRacesDetailsResponse.newBuilder((FindAllRacesDetailsResponse) responseType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            responseType_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseTypeCase_ == 3) {
+            findAllRacesDetailsResponseBuilder_.mergeFrom(value);
+          } else {
+            findAllRacesDetailsResponseBuilder_.setMessage(value);
+          }
+        }
+        responseTypeCase_ = 3;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      public Builder clearFindAllRacesDetailsResponse() {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          if (responseTypeCase_ == 3) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseTypeCase_ == 3) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+          }
+          findAllRacesDetailsResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      public FindAllRacesDetailsResponse.Builder getFindAllRacesDetailsResponseBuilder() {
+        return getFindAllRacesDetailsResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      @Override
+      public FindAllRacesDetailsResponseOrBuilder getFindAllRacesDetailsResponseOrBuilder() {
+        if ((responseTypeCase_ == 3) && (findAllRacesDetailsResponseBuilder_ != null)) {
+          return findAllRacesDetailsResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseTypeCase_ == 3) {
+            return (FindAllRacesDetailsResponse) responseType_;
+          }
+          return FindAllRacesDetailsResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllRacesDetailsResponse find_all_races_details_response = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllRacesDetailsResponse, FindAllRacesDetailsResponse.Builder, FindAllRacesDetailsResponseOrBuilder>
+          getFindAllRacesDetailsResponseFieldBuilder() {
+        if (findAllRacesDetailsResponseBuilder_ == null) {
+          if (!(responseTypeCase_ == 3)) {
+            responseType_ = FindAllRacesDetailsResponse.getDefaultInstance();
+          }
+          findAllRacesDetailsResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              FindAllRacesDetailsResponse, FindAllRacesDetailsResponse.Builder, FindAllRacesDetailsResponseOrBuilder>(
+                  (FindAllRacesDetailsResponse) responseType_,
+                  getParentForChildren(),
+                  isClean());
+          responseType_ = null;
+        }
+        responseTypeCase_ = 3;
+        onChanged();;
+        return findAllRacesDetailsResponseBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllSwimmersDetailsForRaceResponse, FindAllSwimmersDetailsForRaceResponse.Builder, FindAllSwimmersDetailsForRaceResponseOrBuilder> findAllSwimmersDetailsForRaceResponseBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       * @return Whether the findAllSwimmersDetailsForRaceResponse field is set.
+       */
+      @Override
+      public boolean hasFindAllSwimmersDetailsForRaceResponse() {
+        return responseTypeCase_ == 4;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       * @return The findAllSwimmersDetailsForRaceResponse.
+       */
+      @Override
+      public FindAllSwimmersDetailsForRaceResponse getFindAllSwimmersDetailsForRaceResponse() {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          if (responseTypeCase_ == 4) {
+            return (FindAllSwimmersDetailsForRaceResponse) responseType_;
+          }
+          return FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+        } else {
+          if (responseTypeCase_ == 4) {
+            return findAllSwimmersDetailsForRaceResponseBuilder_.getMessage();
+          }
+          return FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      public Builder setFindAllSwimmersDetailsForRaceResponse(FindAllSwimmersDetailsForRaceResponse value) {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseType_ = value;
+          onChanged();
+        } else {
+          findAllSwimmersDetailsForRaceResponseBuilder_.setMessage(value);
+        }
+        responseTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      public Builder setFindAllSwimmersDetailsForRaceResponse(
+          FindAllSwimmersDetailsForRaceResponse.Builder builderForValue) {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          responseType_ = builderForValue.build();
+          onChanged();
+        } else {
+          findAllSwimmersDetailsForRaceResponseBuilder_.setMessage(builderForValue.build());
+        }
+        responseTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      public Builder mergeFindAllSwimmersDetailsForRaceResponse(FindAllSwimmersDetailsForRaceResponse value) {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          if (responseTypeCase_ == 4 &&
+              responseType_ != FindAllSwimmersDetailsForRaceResponse.getDefaultInstance()) {
+            responseType_ = FindAllSwimmersDetailsForRaceResponse.newBuilder((FindAllSwimmersDetailsForRaceResponse) responseType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            responseType_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseTypeCase_ == 4) {
+            findAllSwimmersDetailsForRaceResponseBuilder_.mergeFrom(value);
+          } else {
+            findAllSwimmersDetailsForRaceResponseBuilder_.setMessage(value);
+          }
+        }
+        responseTypeCase_ = 4;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      public Builder clearFindAllSwimmersDetailsForRaceResponse() {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          if (responseTypeCase_ == 4) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseTypeCase_ == 4) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+          }
+          findAllSwimmersDetailsForRaceResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      public FindAllSwimmersDetailsForRaceResponse.Builder getFindAllSwimmersDetailsForRaceResponseBuilder() {
+        return getFindAllSwimmersDetailsForRaceResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      @Override
+      public FindAllSwimmersDetailsForRaceResponseOrBuilder getFindAllSwimmersDetailsForRaceResponseOrBuilder() {
+        if ((responseTypeCase_ == 4) && (findAllSwimmersDetailsForRaceResponseBuilder_ != null)) {
+          return findAllSwimmersDetailsForRaceResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseTypeCase_ == 4) {
+            return (FindAllSwimmersDetailsForRaceResponse) responseType_;
+          }
+          return FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.FindAllSwimmersDetailsForRaceResponse find_all_swimmers_details_for_race_response = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          FindAllSwimmersDetailsForRaceResponse, FindAllSwimmersDetailsForRaceResponse.Builder, FindAllSwimmersDetailsForRaceResponseOrBuilder>
+          getFindAllSwimmersDetailsForRaceResponseFieldBuilder() {
+        if (findAllSwimmersDetailsForRaceResponseBuilder_ == null) {
+          if (!(responseTypeCase_ == 4)) {
+            responseType_ = FindAllSwimmersDetailsForRaceResponse.getDefaultInstance();
+          }
+          findAllSwimmersDetailsForRaceResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              FindAllSwimmersDetailsForRaceResponse, FindAllSwimmersDetailsForRaceResponse.Builder, FindAllSwimmersDetailsForRaceResponseOrBuilder>(
+                  (FindAllSwimmersDetailsForRaceResponse) responseType_,
+                  getParentForChildren(),
+                  isClean());
+          responseType_ = null;
+        }
+        responseTypeCase_ = 4;
+        onChanged();;
+        return findAllSwimmersDetailsForRaceResponseBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          RacesUpdatedResponse, RacesUpdatedResponse.Builder, RacesUpdatedResponseOrBuilder> racesUpdatedResponseBuilder_;
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       * @return Whether the racesUpdatedResponse field is set.
+       */
+      @Override
+      public boolean hasRacesUpdatedResponse() {
+        return responseTypeCase_ == 5;
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       * @return The racesUpdatedResponse.
+       */
+      @Override
+      public RacesUpdatedResponse getRacesUpdatedResponse() {
+        if (racesUpdatedResponseBuilder_ == null) {
+          if (responseTypeCase_ == 5) {
+            return (RacesUpdatedResponse) responseType_;
+          }
+          return RacesUpdatedResponse.getDefaultInstance();
+        } else {
+          if (responseTypeCase_ == 5) {
+            return racesUpdatedResponseBuilder_.getMessage();
+          }
+          return RacesUpdatedResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      public Builder setRacesUpdatedResponse(RacesUpdatedResponse value) {
+        if (racesUpdatedResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          responseType_ = value;
+          onChanged();
+        } else {
+          racesUpdatedResponseBuilder_.setMessage(value);
+        }
+        responseTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      public Builder setRacesUpdatedResponse(
+          RacesUpdatedResponse.Builder builderForValue) {
+        if (racesUpdatedResponseBuilder_ == null) {
+          responseType_ = builderForValue.build();
+          onChanged();
+        } else {
+          racesUpdatedResponseBuilder_.setMessage(builderForValue.build());
+        }
+        responseTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      public Builder mergeRacesUpdatedResponse(RacesUpdatedResponse value) {
+        if (racesUpdatedResponseBuilder_ == null) {
+          if (responseTypeCase_ == 5 &&
+              responseType_ != RacesUpdatedResponse.getDefaultInstance()) {
+            responseType_ = RacesUpdatedResponse.newBuilder((RacesUpdatedResponse) responseType_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            responseType_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseTypeCase_ == 5) {
+            racesUpdatedResponseBuilder_.mergeFrom(value);
+          } else {
+            racesUpdatedResponseBuilder_.setMessage(value);
+          }
+        }
+        responseTypeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      public Builder clearRacesUpdatedResponse() {
+        if (racesUpdatedResponseBuilder_ == null) {
+          if (responseTypeCase_ == 5) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseTypeCase_ == 5) {
+            responseTypeCase_ = 0;
+            responseType_ = null;
+          }
+          racesUpdatedResponseBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      public RacesUpdatedResponse.Builder getRacesUpdatedResponseBuilder() {
+        return getRacesUpdatedResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      @Override
+      public RacesUpdatedResponseOrBuilder getRacesUpdatedResponseOrBuilder() {
+        if ((responseTypeCase_ == 5) && (racesUpdatedResponseBuilder_ != null)) {
+          return racesUpdatedResponseBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseTypeCase_ == 5) {
+            return (RacesUpdatedResponse) responseType_;
+          }
+          return RacesUpdatedResponse.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.model.protocol.protobuf.RacesUpdatedResponse races_updated_response = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          RacesUpdatedResponse, RacesUpdatedResponse.Builder, RacesUpdatedResponseOrBuilder>
+          getRacesUpdatedResponseFieldBuilder() {
+        if (racesUpdatedResponseBuilder_ == null) {
+          if (!(responseTypeCase_ == 5)) {
+            responseType_ = RacesUpdatedResponse.getDefaultInstance();
+          }
+          racesUpdatedResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              RacesUpdatedResponse, RacesUpdatedResponse.Builder, RacesUpdatedResponseOrBuilder>(
+                  (RacesUpdatedResponse) responseType_,
+                  getParentForChildren(),
+                  isClean());
+          responseType_ = null;
+        }
+        responseTypeCase_ = 5;
+        onChanged();;
+        return racesUpdatedResponseBuilder_;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:model.protocol.protobuf.Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:model.protocol.protobuf.Response)
+    private static final Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Response();
+    }
+
+    public static Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Response>
+        PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      @Override
+      public Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Response> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Response> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_protocol_protobuf_Swimmer_descriptor;
   private static final 
@@ -10110,6 +13392,11 @@ public final class SwimmingContestProtobuf {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_protocol_protobuf_AddSwimmerRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_protocol_protobuf_Request_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_protocol_protobuf_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_model_protocol_protobuf_OkResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -10134,6 +13421,11 @@ public final class SwimmingContestProtobuf {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_model_protocol_protobuf_RacesUpdatedResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_model_protocol_protobuf_Response_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_model_protocol_protobuf_Response_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10166,20 +13458,42 @@ public final class SwimmingContestProtobuf {
       "eRequest\022A\n\020race_details_DTO\030\001 \001(\0132\'.mod" +
       "el.protocol.protobuf.RaceDetailsDTO\"M\n\021A" +
       "ddSwimmerRequest\0228\n\013swimmer_DTO\030\001 \001(\0132#." +
-      "model.protocol.protobuf.SwimmerDTO\"\014\n\nOk" +
-      "Response\"&\n\rErrorResponse\022\025\n\rerror_messa" +
-      "ge\030\001 \001(\t\"Z\n\033FindAllRacesDetailsResponse\022" +
-      ";\n\021all_races_details\030\001 \003(\0132 .model.proto" +
-      "col.protobuf.RaceDTO\"s\n%FindAllSwimmersD" +
-      "etailsForRaceResponse\022J\n\035all_swimmers_de" +
-      "tails_for_race\030\001 \003(\0132#.model.protocol.pr" +
-      "otobuf.SwimmerDTO\"\026\n\024RacesUpdatedRespons" +
-      "e*Z\n\rSwimmingStyle\022\020\n\014UnknownStyle\020\000\022\t\n\005" +
-      "Mixed\020\001\022\r\n\tFreestyle\020\002\022\r\n\tButterfly\020\003\022\016\n" +
-      "\nBackstroke\020\004*S\n\020SwimmingDistance\022\023\n\017Unk" +
-      "nownDistance\020\000\022\010\n\004_50m\020\001\022\t\n\005_200m\020\002\022\t\n\005_" +
-      "800m\020\003\022\n\n\006_1500m\020\004B\023\n\021protocol.protobufb" +
-      "\006proto3"
+      "model.protocol.protobuf.SwimmerDTO\"\272\003\n\007R" +
+      "equest\022>\n\rlogin_request\030\001 \001(\0132%.model.pr" +
+      "otocol.protobuf.LoginRequestH\000\022@\n\016logout" +
+      "_request\030\002 \001(\0132&.model.protocol.protobuf" +
+      ".LogoutRequestH\000\022]\n\036find_all_races_detai" +
+      "ls_request\030\003 \001(\01323.model.protocol.protob" +
+      "uf.FindAllRacesDetailsRequestH\000\022s\n*find_" +
+      "all_swimmers_details_for_race_request\030\004 " +
+      "\001(\0132=.model.protocol.protobuf.FindAllSwi" +
+      "mmersDetailsForRaceRequestH\000\022I\n\023add_swim" +
+      "mer_request\030\005 \001(\0132*.model.protocol.proto" +
+      "buf.AddSwimmerRequestH\000B\016\n\014request_type\"" +
+      "\014\n\nOkResponse\"&\n\rErrorResponse\022\025\n\rerror_" +
+      "message\030\001 \001(\t\"Z\n\033FindAllRacesDetailsResp" +
+      "onse\022;\n\021all_races_details\030\001 \003(\0132 .model." +
+      "protocol.protobuf.RaceDTO\"s\n%FindAllSwim" +
+      "mersDetailsForRaceResponse\022J\n\035all_swimme" +
+      "rs_details_for_race\030\001 \003(\0132#.model.protoc" +
+      "ol.protobuf.SwimmerDTO\"\026\n\024RacesUpdatedRe" +
+      "sponse\"\302\003\n\010Response\022:\n\013ok_response\030\001 \001(\013" +
+      "2#.model.protocol.protobuf.OkResponseH\000\022" +
+      "@\n\016error_response\030\002 \001(\0132&.model.protocol" +
+      ".protobuf.ErrorResponseH\000\022_\n\037find_all_ra" +
+      "ces_details_response\030\003 \001(\01324.model.proto" +
+      "col.protobuf.FindAllRacesDetailsResponse" +
+      "H\000\022u\n+find_all_swimmers_details_for_race" +
+      "_response\030\004 \001(\0132>.model.protocol.protobu" +
+      "f.FindAllSwimmersDetailsForRaceResponseH" +
+      "\000\022O\n\026races_updated_response\030\005 \001(\0132-.mode" +
+      "l.protocol.protobuf.RacesUpdatedResponse" +
+      "H\000B\017\n\rresponse_type*Z\n\rSwimmingStyle\022\020\n\014" +
+      "UnknownStyle\020\000\022\t\n\005Mixed\020\001\022\r\n\tFreestyle\020\002" +
+      "\022\r\n\tButterfly\020\003\022\016\n\nBackstroke\020\004*S\n\020Swimm" +
+      "ingDistance\022\023\n\017UnknownDistance\020\000\022\010\n\004_50m" +
+      "\020\001\022\t\n\005_200m\020\002\022\t\n\005_800m\020\003\022\n\n\006_1500m\020\004B\023\n\021" +
+      "protocol.protobufb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -10245,36 +13559,48 @@ public final class SwimmingContestProtobuf {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_AddSwimmerRequest_descriptor,
         new String[] { "SwimmerDTO", });
-    internal_static_model_protocol_protobuf_OkResponse_descriptor =
+    internal_static_model_protocol_protobuf_Request_descriptor =
       getDescriptor().getMessageTypes().get(10);
+    internal_static_model_protocol_protobuf_Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_protocol_protobuf_Request_descriptor,
+        new String[] { "LoginRequest", "LogoutRequest", "FindAllRacesDetailsRequest", "FindAllSwimmersDetailsForRaceRequest", "AddSwimmerRequest", "RequestType", });
+    internal_static_model_protocol_protobuf_OkResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_model_protocol_protobuf_OkResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_OkResponse_descriptor,
         new String[] { });
     internal_static_model_protocol_protobuf_ErrorResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_model_protocol_protobuf_ErrorResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_ErrorResponse_descriptor,
         new String[] { "ErrorMessage", });
     internal_static_model_protocol_protobuf_FindAllRacesDetailsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_model_protocol_protobuf_FindAllRacesDetailsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_FindAllRacesDetailsResponse_descriptor,
         new String[] { "AllRacesDetails", });
     internal_static_model_protocol_protobuf_FindAllSwimmersDetailsForRaceResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_model_protocol_protobuf_FindAllSwimmersDetailsForRaceResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_FindAllSwimmersDetailsForRaceResponse_descriptor,
         new String[] { "AllSwimmersDetailsForRace", });
     internal_static_model_protocol_protobuf_RacesUpdatedResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_model_protocol_protobuf_RacesUpdatedResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_model_protocol_protobuf_RacesUpdatedResponse_descriptor,
         new String[] { });
+    internal_static_model_protocol_protobuf_Response_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_model_protocol_protobuf_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_model_protocol_protobuf_Response_descriptor,
+        new String[] { "OkResponse", "ErrorResponse", "FindAllRacesDetailsResponse", "FindAllSwimmersDetailsForRaceResponse", "RacesUpdatedResponse", "ResponseType", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -1,6 +1,7 @@
 package protocol.protobuf;
 
 import domain.dtos.AdminDTO;
+import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
 import domain.dtos.SwimmerDTO;
 import domain.entities.Swimmer;
@@ -11,10 +12,11 @@ import java.util.List;
 
 public final class ProtobufUtils {
 
-    private static SwimmingContestProtobuf.AdminDTO adminDTOToProtobuf(AdminDTO adminDTO) {
+    public static SwimmingContestProtobuf.AdminDTO adminDTOToProtobuf(AdminDTO adminDTO) {
         return SwimmingContestProtobuf.AdminDTO.newBuilder().setUsername(adminDTO.getUsername()).setPassword(adminDTO.getPassword()).build();
     }
-    private static SwimmingContestProtobuf.SwimmingDistance swimmingDistanceToProtobuf(SwimmingDistance swimmingDistance) {
+
+    public static SwimmingContestProtobuf.SwimmingDistance swimmingDistanceToProtobuf(SwimmingDistance swimmingDistance) {
         return switch (swimmingDistance) {
             case _50m -> SwimmingContestProtobuf.SwimmingDistance._50m;
             case _200m -> SwimmingContestProtobuf.SwimmingDistance._200m;
@@ -23,7 +25,7 @@ public final class ProtobufUtils {
         };
     }
 
-    private static SwimmingDistance swimmingDistanceFromProtobuf(SwimmingContestProtobuf.SwimmingDistance swimmingDistance) {
+    public static SwimmingDistance swimmingDistanceFromProtobuf(SwimmingContestProtobuf.SwimmingDistance swimmingDistance) {
         return switch (swimmingDistance) {
             case _50m -> SwimmingDistance._50m;
             case _200m -> SwimmingDistance._200m;
@@ -33,7 +35,7 @@ public final class ProtobufUtils {
         };
     }
 
-    private static SwimmingContestProtobuf.SwimmingStyle swimmingStyleToProtobuf(SwimmingStyle swimmingStyle) {
+    public static SwimmingContestProtobuf.SwimmingStyle swimmingStyleToProtobuf(SwimmingStyle swimmingStyle) {
         return switch (swimmingStyle) {
             case Mixed -> SwimmingContestProtobuf.SwimmingStyle.Mixed;
             case Butterfly -> SwimmingContestProtobuf.SwimmingStyle.Butterfly;
@@ -42,7 +44,7 @@ public final class ProtobufUtils {
         };
     }
 
-    private static SwimmingStyle swimmingStyleFromProtobuf(SwimmingContestProtobuf.SwimmingStyle swimmingStyle) {
+    public static SwimmingStyle swimmingStyleFromProtobuf(SwimmingContestProtobuf.SwimmingStyle swimmingStyle) {
         return switch (swimmingStyle) {
             case Mixed -> SwimmingStyle.Mixed;
             case Butterfly -> SwimmingStyle.Butterfly;
@@ -52,13 +54,34 @@ public final class ProtobufUtils {
         };
     }
 
-    private static SwimmingContestProtobuf.RaceDetailsDTO raceDetailsDTOToProtobuf(RaceDetailsDTO raceDetailsDTO) {
+    public static RaceDetailsDTO raceDetailsDTOFromProtobuf(SwimmingContestProtobuf.RaceDetailsDTO raceDetailsDTOProtobuf) {
+        SwimmingDistance swimmingDistance = swimmingDistanceFromProtobuf(raceDetailsDTOProtobuf.getSwimmingDistance());
+        SwimmingStyle swimmingStyle = swimmingStyleFromProtobuf(raceDetailsDTOProtobuf.getSwimmingStyle());
+        return new RaceDetailsDTO(swimmingDistance, swimmingStyle);
+    }
+
+    public static SwimmingContestProtobuf.RaceDetailsDTO raceDetailsDTOToProtobuf(RaceDetailsDTO raceDetailsDTO) {
         SwimmingContestProtobuf.SwimmingDistance swimmingDistance = swimmingDistanceToProtobuf(raceDetailsDTO.getSwimmingDistance());
         SwimmingContestProtobuf.SwimmingStyle swimmingStyle = swimmingStyleToProtobuf(raceDetailsDTO.getSwimmingStyle());
         return SwimmingContestProtobuf.RaceDetailsDTO.newBuilder().setSwimmingDistance(swimmingDistance).setSwimmingStyle(swimmingStyle).build();
     }
 
-    private static SwimmingContestProtobuf.SwimmerDTO swimmerDTOToProtobuf(SwimmerDTO swimmerDTO) {
+    public static RaceDTO raceDTOFromProtobuf(SwimmingContestProtobuf.RaceDTO raceDTOProtobuf) {
+        SwimmingDistance swimmingDistance = swimmingDistanceFromProtobuf(raceDTOProtobuf.getSwimmingDistance());
+        SwimmingStyle swimmingStyle = swimmingStyleFromProtobuf(raceDTOProtobuf.getSwimmingStyle());
+        int noSwimmers = raceDTOProtobuf.getNoSwimmers();
+        return new RaceDTO(swimmingDistance, swimmingStyle, noSwimmers);
+    }
+
+    public static SwimmerDTO swimmerDTOFromProtobuf(SwimmingContestProtobuf.SwimmerDTO swimmerDTOProtobuf) {
+        Swimmer swimmer = swimmerFromProtobuf(swimmerDTOProtobuf.getSwimmer());
+        List<RaceDetailsDTO> raceDetailsDTOs = swimmerDTOProtobuf.getRaceDetailsDTOsList().stream()
+                .map(ProtobufUtils::raceDetailsDTOFromProtobuf)
+                .toList();
+        return new SwimmerDTO(swimmer, raceDetailsDTOs);
+    }
+
+    public static SwimmingContestProtobuf.SwimmerDTO swimmerDTOToProtobuf(SwimmerDTO swimmerDTO) {
         SwimmingContestProtobuf.Swimmer swimmer = swimmerToProtobuf(swimmerDTO.getSwimmer());
         List<SwimmingContestProtobuf.RaceDetailsDTO> allRaceDetailsDTOs = swimmerDTO.getRaceDetailsDTOs().stream()
                 .map(ProtobufUtils::raceDetailsDTOToProtobuf)
@@ -66,30 +89,42 @@ public final class ProtobufUtils {
         return SwimmingContestProtobuf.SwimmerDTO.newBuilder().setSwimmer(swimmer).addAllRaceDetailsDTOs(allRaceDetailsDTOs).build();
     }
 
-    private static SwimmingContestProtobuf.Swimmer swimmerToProtobuf(Swimmer swimmer) {
+    public static Swimmer swimmerFromProtobuf(SwimmingContestProtobuf.Swimmer swimmerProtobuf) {
+        return new Swimmer(swimmerProtobuf.getID(),
+                swimmerProtobuf.getFirstName(),
+                swimmerProtobuf.getLastName(),
+                swimmerProtobuf.getAge());
+    }
+
+    public static SwimmingContestProtobuf.Swimmer swimmerToProtobuf(Swimmer swimmer) {
         return SwimmingContestProtobuf.Swimmer.newBuilder().setID(swimmer.getID()).setFirstName(swimmer.getFirstName()).setLastName(swimmer.getLastName()).setAge(swimmer.getAge()).build();
     }
 
-    public static SwimmingContestProtobuf.LoginRequest createLoginRequest(AdminDTO adminDTO) {
+    public static SwimmingContestProtobuf.Request createLoginRequest(AdminDTO adminDTO) {
         SwimmingContestProtobuf.AdminDTO adminDTOProtobuf = adminDTOToProtobuf(adminDTO);
-        return SwimmingContestProtobuf.LoginRequest.newBuilder().setAdminDTO(adminDTOProtobuf).build();
+        SwimmingContestProtobuf.LoginRequest loginRequest = SwimmingContestProtobuf.LoginRequest.newBuilder().setAdminDTO(adminDTOProtobuf).build();
+        return SwimmingContestProtobuf.Request.newBuilder().setLoginRequest(loginRequest).build();
     }
 
-    public static SwimmingContestProtobuf.LogoutRequest createLogoutRequest(String username) {
-        return SwimmingContestProtobuf.LogoutRequest.newBuilder().setUsername(username).build();
+    public static SwimmingContestProtobuf.Request createLogoutRequest(String username) {
+        SwimmingContestProtobuf.LogoutRequest logoutRequest = SwimmingContestProtobuf.LogoutRequest.newBuilder().setUsername(username).build();
+        return SwimmingContestProtobuf.Request.newBuilder().setLogoutRequest(logoutRequest).build();
     }
 
-    public static SwimmingContestProtobuf.FindAllRacesDetailsRequest createFindAllRacesDetailsRequest() {
-        return SwimmingContestProtobuf.FindAllRacesDetailsRequest.newBuilder().build();
+    public static SwimmingContestProtobuf.Request createFindAllRacesDetailsRequest() {
+        SwimmingContestProtobuf.FindAllRacesDetailsRequest findAllRacesDetailsRequest = SwimmingContestProtobuf.FindAllRacesDetailsRequest.newBuilder().build();
+        return SwimmingContestProtobuf.Request.newBuilder().setFindAllRacesDetailsRequest(findAllRacesDetailsRequest).build();
     }
 
-    public static SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceRequest createFindAllSwimmersDetailsForRaceRequest(RaceDetailsDTO raceDetailsDTO) {
+    public static SwimmingContestProtobuf.Request createFindAllSwimmersDetailsForRaceRequest(RaceDetailsDTO raceDetailsDTO) {
         SwimmingContestProtobuf.RaceDetailsDTO raceDetailsDTOProtobuf = raceDetailsDTOToProtobuf(raceDetailsDTO);
-        return SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceRequest.newBuilder().setRaceDetailsDTO(raceDetailsDTOProtobuf).build();
+        SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceRequest findAllSwimmersDetailsForRaceRequest = SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceRequest.newBuilder().setRaceDetailsDTO(raceDetailsDTOProtobuf).build();
+        return SwimmingContestProtobuf.Request.newBuilder().setFindAllSwimmersDetailsForRaceRequest(findAllSwimmersDetailsForRaceRequest).build();
     }
 
-    public static SwimmingContestProtobuf.AddSwimmerRequest createAddSwimmerRequest(SwimmerDTO swimmerDTO) {
+    public static SwimmingContestProtobuf.Request createAddSwimmerRequest(SwimmerDTO swimmerDTO) {
         SwimmingContestProtobuf.SwimmerDTO swimmerDTOProtobuf = swimmerDTOToProtobuf(swimmerDTO);
-        return SwimmingContestProtobuf.AddSwimmerRequest.newBuilder().setSwimmerDTO(swimmerDTOProtobuf).build();
+        SwimmingContestProtobuf.AddSwimmerRequest addSwimmerRequest = SwimmingContestProtobuf.AddSwimmerRequest.newBuilder().setSwimmerDTO(swimmerDTOProtobuf).build();
+        return SwimmingContestProtobuf.Request.newBuilder().setAddSwimmerRequest(addSwimmerRequest).build();
     }
 }

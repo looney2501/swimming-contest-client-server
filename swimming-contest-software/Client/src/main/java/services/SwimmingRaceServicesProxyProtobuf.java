@@ -1,5 +1,7 @@
 package services;
 
+import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Descriptors;
 import domain.dtos.AdminDTO;
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
@@ -32,7 +34,7 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
     private OutputStream outputStream;
     private InputStream inputStream;
     private Socket socket;
-    private final BlockingQueue<Response> qresponses;
+    private final BlockingQueue<SwimmingContestProtobuf.Response> qresponses;
     private volatile boolean finished;
     private final static Logger logger = LogManager.getLogger();
 
@@ -49,15 +51,15 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         logger.info("Sending login request: username: {}, password: {}...", username, password);
         sendRequest(ProtobufUtils.createLoginRequest(adminDTO));
         logger.info("Waiting for response...");
-        Object response = readResponse();
-        if (response instanceof SwimmingContestProtobuf.OkResponse) {
+        SwimmingContestProtobuf.Response response = readResponse();
+        if (response.hasOkResponse()) {
             logger.info("OkResponse received!");
             this.client = client;
         }
-        if (response instanceof SwimmingContestProtobuf.ErrorResponse errorResponse) {
+        if (response.hasErrorResponse()) {
             logger.info("ErrorResponse received!");
             closeConnection();
-            throw new ServicesException(errorResponse.getErrorMessage());
+            throw new ServicesException(response.getErrorResponse().getErrorMessage());
         }
     }
 
@@ -95,21 +97,17 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         }
     }
 
-    private void sendRequest(Object request) {
-
+    private void sendRequest(SwimmingContestProtobuf.Request request) {
         try {
-            if (request instanceof SwimmingContestProtobuf.LoginRequest loginRequest) {
-                loginRequest.writeDelimitedTo(outputStream);
-                outputStream.flush();
-            }
+            request.writeDelimitedTo(outputStream);
             logger.info("Request sent successfully!");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private Response readResponse() {
-        Response response = null;
+    private SwimmingContestProtobuf.Response readResponse() {
+        SwimmingContestProtobuf.Response response = null;
         try {
             response = qresponses.take();
             logger.info("Response read successfully!");
@@ -124,14 +122,14 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         logger.info("Sending logout request: username: {}", username);
         sendRequest(ProtobufUtils.createLogoutRequest(username));
         logger.info("Waiting for response...");
-        Object response = readResponse();
-        if (response instanceof SwimmingContestProtobuf.OkResponse) {
+        SwimmingContestProtobuf.Response response = readResponse();
+        if (response.hasOkResponse()) {
             logger.info("OkResponse received!");
             closeConnection();
         }
-        if (response instanceof SwimmingContestProtobuf.ErrorResponse errorResponse) {
+        if (response.hasErrorResponse()) {
             logger.info("ErrorResponse received!");
-            throw new ServicesException(errorResponse.getErrorMessage());
+            throw new ServicesException(response.getErrorResponse().getErrorMessage());
         }
     }
 
@@ -140,11 +138,13 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         logger.info("Sending FindAllRacesDetailsRequest...");
         sendRequest(ProtobufUtils.createFindAllRacesDetailsRequest());
         logger.info("Waiting for response...");
-        Object response = readResponse();
-        if (response instanceof SwimmingContestProtobuf.FindAllRacesDetailsResponse findAllRacesDetailsResponse) {
+        SwimmingContestProtobuf.Response response = readResponse();
+        if (response.hasFindAllRacesDetailsResponse()) {
             logger.info("FindAllRacesDetailsResponse received!");
             //TODO
-            return findAllRacesDetailsResponse.getAllRacesDetails();
+            return response.getFindAllRacesDetailsResponse().getAllRacesDetailsList().stream()
+                    .map(ProtobufUtils::raceDTOFromProtobuf)
+                    .toList();
         }
         else {
             logger.info("Wrong response received!");
@@ -158,10 +158,12 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         logger.info("Sending FindAllSwimmersDetailsForRaceRequest: raceDetails: {}", raceDetailsDTO);
         sendRequest(ProtobufUtils.createFindAllSwimmersDetailsForRaceRequest(raceDetailsDTO));
         logger.info("Waiting for response...");
-        Object response = readResponse();
-        if (response instanceof SwimmingContestProtobuf.FindAllSwimmersDetailsForRaceResponse findAllSwimmersDetailsForRaceResponse) {
+        SwimmingContestProtobuf.Response response = readResponse();
+        if (response.hasFindAllSwimmersDetailsForRaceResponse()) {
             //TODO
-            return findAllSwimmersDetailsForRaceResponse.getAllSwimmersDetailsForRace();
+            return response.getFindAllSwimmersDetailsForRaceResponse().getAllSwimmersDetailsForRaceList().stream()
+                    .map(ProtobufUtils::swimmerDTOFromProtobuf)
+                    .toList();
         }
         else {
             logger.info("Wrong response received!");
@@ -175,8 +177,8 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         logger.info("Sending AddSwimmerRequest: swimmerDetails: {}", swimmerDTO);
         sendRequest(ProtobufUtils.createAddSwimmerRequest(swimmerDTO));
         logger.info("Waiting for response...");
-        Object response = readResponse();
-        if (response instanceof SwimmingContestProtobuf.OkResponse) {
+        SwimmingContestProtobuf.Response response = readResponse();
+        if (response.hasOkResponse()) {
             logger.info("OkResponse received!");
         }
         else {
@@ -184,9 +186,9 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         }
     }
 
-    private void handleUpdate(UpdateResponse updateResponse) {
+    private void handleUpdate(SwimmingContestProtobuf.Response updateResponse) {
         Platform.runLater(() -> {
-            if (updateResponse instanceof RacesUpdatedResponse) {
+            if (updateResponse.hasRacesUpdatedResponse()) {
                 logger.info("Updating UI...");
                 client.racesUpdated();
                 logger.info("UI updated successfully!");
@@ -199,15 +201,14 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
         public void run() {
             while (!finished) {
                 try {
-                    //TODO fa wrapper class
-                    Object response = inputStream.readObject();
-                    if (response instanceof UpdateResponse) {
+                    SwimmingContestProtobuf.Response response = SwimmingContestProtobuf.Response.parseDelimitedFrom(inputStream);
+                    if (response.hasRacesUpdatedResponse()) {
                         logger.info("UpdateResponse received. Handling response...");
-                        handleUpdate((UpdateResponse) response);
+                        handleUpdate(response);
                     }
                     else {
                         try {
-                            qresponses.put((Response) response);
+                            qresponses.put(response);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
@@ -216,7 +217,7 @@ public class SwimmingRaceServicesProxyProtobuf implements SwimmingRaceServices {
                 catch (SocketException e) {
                     //e.printStackTrace();
                 }
-                catch (IOException | ClassNotFoundException e) {
+                catch (IOException e) {
                     e.printStackTrace();
                 }
             }

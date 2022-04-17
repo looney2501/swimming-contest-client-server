@@ -8,17 +8,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import services.SwimmingRaceServices;
 import services.SwimmingRaceServicesProxy;
+import services.SwimmingRaceServicesProxyProtobuf;
 
 import java.net.URL;
 
-public class StartClient extends Application {
+public class StartClientProtobuf extends Application {
 
     private static final int defaultPort = 55555;
     private static final String defaultServer = "localhost";
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        SwimmingRaceServices services = new SwimmingRaceServicesProxy(defaultServer, defaultPort);
+        SwimmingRaceServices services = new SwimmingRaceServicesProxyProtobuf(defaultServer, defaultPort);
 
         LoginController loginController = new LoginController();
         loginController.setService(services);

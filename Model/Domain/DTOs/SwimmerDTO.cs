@@ -21,6 +21,8 @@ public class SwimmerDTO
         _raceDetailsDTOs = raceDetailsDtOs;
     }
 
+    public Swimmer Swimmer => _swimmer;
+    
     public string Races
     {
         get

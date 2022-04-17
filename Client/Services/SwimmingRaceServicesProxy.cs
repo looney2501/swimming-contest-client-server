@@ -182,7 +182,7 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
         }
     }
 
-    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle)
+    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle)
     {
         RaceDetailsDTO raceDetailsDto = new RaceDetailsDTO(swimmingDistance, swimmingStyle);
         Logger.InfoFormat("Sending FindAllSwimmersDetailsForRaceRequest: raceDetails: {0}", raceDetailsDto);

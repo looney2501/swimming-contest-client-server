@@ -6,7 +6,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using log4net;
 using Model.Domain.DTOs;
-using Model.Domain.Entities;
 using Model.Observer;
 using Model.Protocol.Requests;
 using Model.Protocol.Responses;

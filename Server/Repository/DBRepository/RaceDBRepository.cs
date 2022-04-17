@@ -54,11 +54,11 @@ public class RaceDBRepository : IRaceRepository
             {
                 if (dataReader.Read())
                 {
-                    SwimmingDistances swimmingDistances =
+                    SwimmingDistance swimmingDistance =
                         SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(0));
-                    SwimmingStyles swimmingStyles = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(1));
+                    SwimmingStyle swimmingStyle = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(1));
                     Int32 swimmersNumber = dataReader.GetInt32(2);
-                    race = new Race(id, swimmingDistances, swimmingStyles, swimmersNumber);
+                    race = new Race(id, swimmingDistance, swimmingStyle, swimmersNumber);
                 }
             }
         }
@@ -68,7 +68,7 @@ public class RaceDBRepository : IRaceRepository
         return race;
     }
 
-    public Race FindRaceByDistanceAndStyle(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle)
+    public Race FindRaceByDistanceAndStyle(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle)
     {
         Logger.InfoFormat("FindRaceByDistanceAndStyle(distance = {0}, style = {1})", swimmingDistance, swimmingStyle);
         Race race = null;
@@ -118,8 +118,8 @@ public class RaceDBRepository : IRaceRepository
                 while (dataReader.Read())
                 {
                     Int32 id = dataReader.GetInt32(0);
-                    SwimmingDistances distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
-                    SwimmingStyles style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
+                    SwimmingDistance distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
+                    SwimmingStyle style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
                     Int32 swimmersNumber = dataReader.GetInt32(3);
                     races.Add(new Race(id, distance, style, swimmersNumber));
                 }

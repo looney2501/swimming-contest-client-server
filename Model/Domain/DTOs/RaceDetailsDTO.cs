@@ -6,10 +6,10 @@ namespace Model.Domain.DTOs;
 [Serializable]
 public class RaceDetailsDTO
 {
-    public SwimmingDistances SwimmingDistance { get; }
-    public SwimmingStyles SwimmingStyle { get; }
+    public SwimmingDistance SwimmingDistance { get; }
+    public SwimmingStyle SwimmingStyle { get; }
 
-    public RaceDetailsDTO(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle)
+    public RaceDetailsDTO(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle)
     {
         SwimmingDistance = swimmingDistance;
         SwimmingStyle = swimmingStyle;

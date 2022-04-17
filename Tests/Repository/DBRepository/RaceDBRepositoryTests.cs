@@ -19,7 +19,7 @@ namespace Tests.Repository.DBRepository
             IRaceRepository raceRepository = new RaceDBRepository(properties);
             Assert.IsNull(raceRepository.FindById(30));
             
-            Race race = new Race(SwimmingDistances._50m, SwimmingStyles.Mixed, 0);
+            Race race = new Race(SwimmingDistance._50m, SwimmingStyle.Mixed, 0);
             Assert.AreEqual(race, raceRepository.FindById(1));
         }
 
@@ -30,9 +30,9 @@ namespace Tests.Repository.DBRepository
 
             IRaceRepository raceRepository = new RaceDBRepository(properties);
 
-            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistances._50m, SwimmingStyles.Freestyle);
-            Assert.AreEqual(SwimmingDistances._50m, race.Distance);
-            Assert.AreEqual(SwimmingStyles.Freestyle, race.Style);
+            Race race = raceRepository.FindRaceByDistanceAndStyle(SwimmingDistance._50m, SwimmingStyle.Freestyle);
+            Assert.AreEqual(SwimmingDistance._50m, race.Distance);
+            Assert.AreEqual(SwimmingStyle.Freestyle, race.Style);
         }
 
         [Test]

@@ -69,7 +69,7 @@ public class SwimmingRaceServicesServer: ISwimmingRaceServices
         return raceDTOs;
     }
     
-    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistances swimmingDistance, SwimmingStyles swimmingStyle) {
+    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle) {
         List<SwimmerDTO> swimmerDTos = new List<SwimmerDTO>();
         Race race = RaceRepository.FindRaceByDistanceAndStyle(swimmingDistance, swimmingStyle);
         foreach (Swimmer swimmer in SwimmerRaceRepository.FindAllSwimmersForRace(race)) {

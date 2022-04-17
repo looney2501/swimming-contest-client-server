@@ -152,11 +152,11 @@ public class SwimmerRaceDBRepository : ISwimmerRaceRepository
                 while (dataReader.Read())
                 {
                     int id = dataReader.GetInt32(0);
-                    SwimmingDistances swimmingDistances =
+                    SwimmingDistance swimmingDistance =
                         SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
-                    SwimmingStyles swimmingStyles = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
+                    SwimmingStyle swimmingStyle = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
                     int swimmersNumber = dataReader.GetInt32(3);
-                    allRaces.Add(new Race(id, swimmingDistances, swimmingStyles, swimmersNumber));
+                    allRaces.Add(new Race(id, swimmingDistance, swimmingStyle, swimmersNumber));
                 }
             }
         }

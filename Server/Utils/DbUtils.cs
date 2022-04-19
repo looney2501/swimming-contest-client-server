@@ -34,7 +34,7 @@ public static class DbUtils
         return ConnectionUtils.ConnectionFactory.GetInstance().CreateConnection(props);
     }
     
-    private static string GetConnectionStringByName(string name)
+    public static string GetConnectionStringByName(string name)
     {
         // Assume failure.
         string returnValue = null;

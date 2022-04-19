@@ -1,8 +1,10 @@
 ﻿using log4net.Config;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Model.Services;
 using Server.Network;
 using Server.Repository;
 using Server.Repository.DBRepository;
+using Server.Repository.DBRepositoryORM;
 using Server.Utils;
 using Server.Services;
 
@@ -15,7 +17,7 @@ public class StartServerProtobuf
         var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project.db");
         IAdminRepository adminRepository = new AdminDBRepository(properties);
         IRaceRepository raceRepository = new RaceDBRepository(properties);
-        ISwimmerRepository swimmerRepository = new SwimmerDBRepository(properties);
+        ISwimmerRepository swimmerRepository = new SwimmerDBRepositoryORM(properties);
         ISwimmerRaceRepository swimmerRaceRepository =
             new SwimmerRaceDBRepository(swimmerRepository, raceRepository, properties);
         SwimmingRaceServicesServer swimmingRaceServiceServer = new SwimmingRaceServicesServer(adminRepository, swimmerRepository, raceRepository,

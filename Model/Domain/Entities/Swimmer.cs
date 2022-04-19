@@ -1,14 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model.Domain.Entities;
 
 [Serializable]
-public class Swimmer: Identifiable<Int32>
+public class Swimmer: Identifiable<int>
 {
-    public Int32 ID { get; set; }
-    public String FirstName { get; set; }
-    public String LastName { get; set; }
-    public Int32 Age { get; set; }
+    [Key]
+    public int ID { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
 
     public Swimmer(int id, string firstName, string lastName, int age)
     {

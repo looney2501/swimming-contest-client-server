@@ -5,7 +5,7 @@ namespace Model.Domain.Entities;
 [Serializable]
 public class Admin: Identifiable<Int32>
 {
-    public Int32 ID { get; set; }
+    public int ID { get; set; }
     public String Username { get; set; }
     public String Password { get; set; }
 

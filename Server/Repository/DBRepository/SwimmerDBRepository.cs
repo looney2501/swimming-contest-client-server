@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using log4net;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Model.Domain.Entities;
 using Server.Utils;
 
@@ -23,7 +24,7 @@ public class SwimmerDBRepository : ISwimmerRepository
         Logger.InfoFormat("Add(swimmer = {0})", elem);
 
         int id = -1;
-        
+
         IDbConnection connection = DbUtils.GetConnection(properties);
         using (IDbCommand comm = connection.CreateCommand())
         {
@@ -43,7 +44,7 @@ public class SwimmerDBRepository : ISwimmerRepository
             paramAge.ParameterName = "@age";
             paramAge.Value = elem.Age;
             comm.Parameters.Add(paramAge);
-
+        
             id = Convert.ToInt32(comm.ExecuteScalar());
         }
         
@@ -65,7 +66,7 @@ public class SwimmerDBRepository : ISwimmerRepository
     {
         Logger.InfoFormat("FindById(id = {0})", id);
         Swimmer swimmer = null;
-        
+
         IDbConnection connection = DbUtils.GetConnection(properties);
         using (IDbCommand command = connection.CreateCommand())
         {

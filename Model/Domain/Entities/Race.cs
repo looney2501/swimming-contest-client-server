@@ -6,7 +6,7 @@ namespace Model.Domain.Entities;
 [Serializable]
 public class Race: Identifiable<Int32>
 {
-    public Int32 ID { get; set; }
+    public int ID { get; set; }
     public SwimmingDistance Distance { get; set; }
     public SwimmingStyle Style { get; set; }
     public Int32 SwimmersNumber { get; set; }

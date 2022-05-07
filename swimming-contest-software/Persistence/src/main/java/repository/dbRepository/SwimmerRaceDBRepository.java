@@ -67,13 +67,13 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
     }
 
     @Override
-    public void delete(SwimmerRace elem) {
-
+    public SwimmerRace delete(Integer id) {
+        return null;
     }
 
     @Override
-    public void update(SwimmerRace elem, Integer id) {
-
+    public SwimmerRace update(SwimmerRace elem, Integer id) {
+        return null;
     }
 
     @Override

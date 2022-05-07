@@ -106,13 +106,78 @@ public class RaceDBRepository implements RaceRepository {
     }
 
     @Override
-    public void delete(Race elem) {
+    public Race delete(Integer id) {
+        logger.traceEntry("delete(id = {})");
 
+        Race deletedRace = null;
+
+        Connection connection = jdbcUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "select distance, style, swimmersNumber from main.Races where id = ?;"
+        )) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                Integer distance = resultSet.getInt("distance");
+                Integer style = resultSet.getInt("style");
+                Integer swimmersNo = resultSet.getInt("swimmersNumber");
+                deletedRace = new Race(id, SwimmingDistance.distanceFromInteger(distance), SwimmingStyle.styleFromInteger(style), swimmersNo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (deletedRace != null) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(
+                    "delete from Races where id = ?"
+            )) {
+                preparedStatement.setInt(1, id);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return logger.traceExit("Result: deletedRace = {}", deletedRace);
     }
 
     @Override
-    public void update(Race elem, Integer id) {
+    public Race update(Race elem, Integer id) {
+        logger.traceEntry("update(elem = {}, id = {})", elem, id);
 
+        Race oldRace = null;
+
+        Connection connection = jdbcUtils.getConnection();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "select distance, style, swimmersNumber from main.Races where id = ?;"
+        )) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                Integer distance = resultSet.getInt("distance");
+                Integer style = resultSet.getInt("style");
+                Integer swimmersNo = resultSet.getInt("swimmersNumber");
+                oldRace = new Race(id, SwimmingDistance.distanceFromInteger(distance), SwimmingStyle.styleFromInteger(style), swimmersNo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (oldRace != null) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement(
+                    "update Races set distance = ?, style = ?, swimmersNumber = ? where id = ?"
+            )) {
+                preparedStatement.setInt(1, SwimmingDistance.integerFromDistance(elem.getDistance()));
+                preparedStatement.setInt(2, SwimmingStyle.integerFromStyle(elem.getStyle()));
+                preparedStatement.setInt(3, elem.getSwimmersNumber());
+                preparedStatement.setInt(4, elem.getID());
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return logger.traceExit("Result: oldRace = {}", oldRace);
     }
 
     @Override

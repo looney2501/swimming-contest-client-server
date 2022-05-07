@@ -46,11 +46,13 @@ public class SwimmerDBRepository implements SwimmerRepository {
     }
 
     @Override
-    public void delete(Swimmer elem) {
+    public Swimmer delete(Integer id) {
+        return null;
     }
 
     @Override
-    public void update(Swimmer elem, Integer id) {
+    public Swimmer update(Swimmer elem, Integer id) {
+        return null;
     }
 
     @Override

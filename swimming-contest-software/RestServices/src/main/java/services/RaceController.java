@@ -44,4 +44,28 @@ public class RaceController {
         raceRepository.add(raceRequestEntity.getBody());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> modifyRace(@PathVariable Integer id,  RequestEntity<Race> raceRequestEntity) {
+        Race race = raceRequestEntity.getBody();
+        race.setID(id);
+        Race oldRace = raceRepository.update(race, id);
+        if (oldRace == null) {
+            return new ResponseEntity<>("Race not found!", HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<>(race, HttpStatus.OK);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteRace(@PathVariable Integer id) {
+        Race deletedRace = raceRepository.delete(id);
+        if (deletedRace == null) {
+            return new ResponseEntity<>("Race not found!", HttpStatus.NOT_FOUND);
+        }
+        else {
+            return new ResponseEntity<>(deletedRace, HttpStatus.OK);
+        }
+    }
 }

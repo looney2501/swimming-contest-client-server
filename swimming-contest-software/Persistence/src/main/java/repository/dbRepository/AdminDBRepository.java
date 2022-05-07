@@ -27,13 +27,13 @@ public class AdminDBRepository implements AdminRepository {
     }
 
     @Override
-    public void delete(Admin elem) {
-
+    public Admin delete(Integer id) {
+        return null;
     }
 
     @Override
-    public void update(Admin elem, Integer id) {
-
+    public Admin update(Admin elem, Integer id) {
+        return null;
     }
 
     @Override

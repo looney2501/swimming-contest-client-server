@@ -7,7 +7,7 @@ package repository;
  */
 public interface Repository<Tid, T> {
     Tid add(T elem);
-    void delete(T elem);
-    void update(T elem, Tid id);
+    T delete(Tid id);
+    T update(T elem, Tid id);
     T findById(Tid id);
 }

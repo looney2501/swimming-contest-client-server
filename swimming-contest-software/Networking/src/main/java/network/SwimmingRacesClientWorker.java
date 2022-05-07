@@ -3,10 +3,10 @@ package network;
 import observer.SwimmingRaceObserver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import services.ServicesException;
-import services.SwimmingRaceServices;
 import protocol.requests.*;
 import protocol.responses.*;
+import services.ServicesException;
+import services.SwimmingRaceServices;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

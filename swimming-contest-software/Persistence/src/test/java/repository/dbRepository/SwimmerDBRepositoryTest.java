@@ -1,9 +1,7 @@
-package dbRepository;
+package repository.dbRepository;
 
 import domain.entities.Swimmer;
 import org.junit.jupiter.api.Test;
-import repository.dbRepository.JdbcUtils;
-import repository.dbRepository.SwimmerDBRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 class       SwimmerDBRepositoryTest {
     @Test
     void add() {
-        Properties properties = PropertiesDB.getDBProperties("bd_test.config");
+        Properties properties = PropertiesDB.getDBProperties("/bd_test.config");
         SwimmerDBRepository swimmerDBRepository = new SwimmerDBRepository(properties);
         swimmerDBRepository.add(new Swimmer("Gigi", "Ursu", 43));
 
@@ -66,7 +64,7 @@ class       SwimmerDBRepositoryTest {
 
     @Test
     void findById() {
-        Properties properties = PropertiesDB.getDBProperties("bd_test.config");
+        Properties properties = PropertiesDB.getDBProperties("/bd_test.config");
         SwimmerDBRepository swimmerDBRepository = new SwimmerDBRepository(properties);
         JdbcUtils jdbcUtils = new JdbcUtils(properties);
 

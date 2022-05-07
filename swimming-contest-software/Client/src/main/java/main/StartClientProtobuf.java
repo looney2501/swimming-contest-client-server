@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import services.SwimmingRaceServices;
-import services.SwimmingRaceServicesProxy;
 import services.SwimmingRaceServicesProxyProtobuf;
 
 import java.net.URL;
@@ -31,6 +30,7 @@ public class StartClientProtobuf extends Application {
 
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
+        primaryStage.setTitle("Login");
         primaryStage.show();
     }
 }

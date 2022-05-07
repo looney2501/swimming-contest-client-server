@@ -3,6 +3,8 @@
 
 package protocol.protobuf;
 
+import com.google.protobuf.AbstractMessageLite;
+
 public final class SwimmingContestProtobuf {
   private SwimmingContestProtobuf() {}
   public static void registerAllExtensions(
@@ -775,7 +777,7 @@ public final class SwimmingContestProtobuf {
       public Swimmer build() {
         Swimmer result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -978,7 +980,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         firstName_ = value;
         onChanged();
@@ -1054,7 +1056,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         lastName_ = value;
         onChanged();
@@ -1565,7 +1567,7 @@ public final class SwimmingContestProtobuf {
       public AdminDTO build() {
         AdminDTO result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -1729,7 +1731,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         username_ = value;
         onChanged();
@@ -1805,7 +1807,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         password_ = value;
         onChanged();
@@ -2245,7 +2247,7 @@ public final class SwimmingContestProtobuf {
       public RaceDetailsDTO build() {
         RaceDetailsDTO result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -2914,7 +2916,7 @@ public final class SwimmingContestProtobuf {
       public RaceDTO build() {
         RaceDTO result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -3659,7 +3661,7 @@ public final class SwimmingContestProtobuf {
       public SwimmerDTO build() {
         SwimmerDTO result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -4559,7 +4561,7 @@ public final class SwimmingContestProtobuf {
       public LoginRequest build() {
         LoginRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -5175,7 +5177,7 @@ public final class SwimmingContestProtobuf {
       public LogoutRequest build() {
         LogoutRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -5334,7 +5336,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         username_ = value;
         onChanged();
@@ -5676,7 +5678,7 @@ public final class SwimmingContestProtobuf {
       public FindAllRacesDetailsRequest build() {
         FindAllRacesDetailsRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -6172,7 +6174,7 @@ public final class SwimmingContestProtobuf {
       public FindAllSwimmersDetailsForRaceRequest build() {
         FindAllSwimmersDetailsForRaceRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -6795,7 +6797,7 @@ public final class SwimmingContestProtobuf {
       public AddSwimmerRequest build() {
         AddSwimmerRequest result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -7777,7 +7779,7 @@ public final class SwimmingContestProtobuf {
       public Request build() {
         Request result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -8983,7 +8985,7 @@ public final class SwimmingContestProtobuf {
       public OkResponse build() {
         OkResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -9472,7 +9474,7 @@ public final class SwimmingContestProtobuf {
       public ErrorResponse build() {
         ErrorResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -9631,7 +9633,7 @@ public final class SwimmingContestProtobuf {
         if (value == null) {
     throw new NullPointerException();
   }
-  checkByteStringIsUtf8(value);
+  AbstractMessageLite.checkByteStringIsUtf8(value);
         
         errorMessage_ = value;
         onChanged();
@@ -10071,7 +10073,7 @@ public final class SwimmingContestProtobuf {
       public FindAllRacesDetailsResponse build() {
         FindAllRacesDetailsResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -10866,7 +10868,7 @@ public final class SwimmingContestProtobuf {
       public FindAllSwimmersDetailsForRaceResponse build() {
         FindAllSwimmersDetailsForRaceResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -11563,7 +11565,7 @@ public final class SwimmingContestProtobuf {
       public RacesUpdatedResponse build() {
         RacesUpdatedResponse result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }
@@ -12418,7 +12420,7 @@ public final class SwimmingContestProtobuf {
       public Response build() {
         Response result = buildPartial();
         if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
+          throw Builder.newUninitializedMessageException(result);
         }
         return result;
       }

@@ -1,0 +1,506 @@
+07 mai 2022 11:22:17,079 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {}
+07 mai 2022 11:22:17,082 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:22:17,082 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,083 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,083 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,083 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,083 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,085 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,085 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,097 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,098 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _50m, swimmingStyle = Freestyle)
+07 mai 2022 11:22:17,098 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,098 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,098 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,098 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,099 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,099 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,099 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,102 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,102 TRACE repository.dbRepository.RaceDBRepository 99 findById - Enter findById(id = 30)
+07 mai 2022 11:22:17,103 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,103 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,103 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,103 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,103 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,103 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,103 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,107 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,107 TRACE repository.dbRepository.RaceDBRepository 55 findAllRaces - Enter findAllRaces()
+07 mai 2022 11:22:17,108 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,108 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,108 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,108 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,108 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,108 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,109 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,114 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,115 TRACE repository.dbRepository.SwimmerDBRepository 58 findById - Enter findById(id = -2)
+07 mai 2022 11:22:17,115 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,115 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,115 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,115 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,115 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,116 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,116 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,119 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,124 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43})
+07 mai 2022 11:22:17,124 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,125 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,125 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,125 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,125 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,125 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,126 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,132 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,133 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,136 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:22:17,136 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:22:17,136 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,136 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,137 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,137 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,137 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,137 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,138 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,141 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,142 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,142 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:22:17,142 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:22:17,142 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,142 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,142 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,143 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,143 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,143 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,144 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,147 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,148 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,148 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:22:17,148 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:22:17,148 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,148 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,148 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,148 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,149 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,149 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,149 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:22:17,152 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:22:17,152 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:22:17,152 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:22:17,152 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:22:17,153 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:22:17,153 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:22:17,153 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:22:17,153 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:22:17,153 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:22:17,153 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:22:17,153 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,654 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {}
+07 mai 2022 11:23:04,657 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:23:04,657 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,657 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,658 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,658 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,658 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,659 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,660 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,672 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,673 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _50m, swimmingStyle = Freestyle)
+07 mai 2022 11:23:04,673 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,673 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,674 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,674 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,674 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,674 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,675 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,679 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,679 TRACE repository.dbRepository.RaceDBRepository 99 findById - Enter findById(id = 30)
+07 mai 2022 11:23:04,679 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,679 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,679 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,679 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,680 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,680 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,680 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,682 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,683 TRACE repository.dbRepository.RaceDBRepository 55 findAllRaces - Enter findAllRaces()
+07 mai 2022 11:23:04,683 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,683 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,683 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,684 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,684 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,684 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,684 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,690 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,691 TRACE repository.dbRepository.SwimmerDBRepository 58 findById - Enter findById(id = -2)
+07 mai 2022 11:23:04,691 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,691 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,691 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,691 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,691 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,692 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,692 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,695 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,700 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43})
+07 mai 2022 11:23:04,701 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,701 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,701 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,701 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,702 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,702 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,702 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,709 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,710 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,713 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:23:04,713 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:23:04,714 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,714 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,714 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,714 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,714 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,715 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,715 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,718 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,718 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,718 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:23:04,718 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:23:04,718 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,718 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,719 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,719 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,719 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,719 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,720 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,722 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,723 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,723 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:23:04,723 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:23:04,723 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,723 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,723 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,723 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,724 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,724 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,724 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:04,727 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {}
+07 mai 2022 11:23:04,727 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {}
+07 mai 2022 11:23:04,727 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {}
+07 mai 2022 11:23:04,728 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:23:04,728 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:04,728 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:04,728 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:04,728 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:04,728 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:04,728 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:04,728 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:23:29,285 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {}
+07 mai 2022 11:23:29,289 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:23:29,289 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:23:29,289 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:23:29,289 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:23:29,290 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:23:29,290 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:23:29,291 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:23:29,292 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:24:02,423 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {}
+07 mai 2022 11:24:02,426 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:24:02,426 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:24:02,426 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:24:02,426 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:24:02,427 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:24:02,427 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:24:02,428 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:24:02,429 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:27:07,596 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {}
+07 mai 2022 11:27:07,600 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:27:07,600 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:27:07,600 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:27:07,600 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... null
+07 mai 2022 11:27:07,601 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:27:07,601 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:27:07,602 ERROR repository.dbRepository.JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+07 mai 2022 11:27:07,602 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit
+07 mai 2022 11:29:49,027 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:29:49,031 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:29:49,032 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:29:49,032 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:29:49,032 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:29:49,033 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:29:49,033 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:29:49,100 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@6928f576)
+07 mai 2022 11:29:49,102 TRACE repository.dbRepository.AdminDBRepository 66 findByUsernameAndPassword - Exit: Result: admin = {}
+07 mai 2022 11:29:49,104 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:29:49,104 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:29:49,104 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:29:49,105 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:29:49,105 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:29:49,106 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@1ee4730)
+07 mai 2022 11:29:49,114 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = gigi, password ursu)
+07 mai 2022 11:29:49,114 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:29:49,114 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@6928f576)
+07 mai 2022 11:29:49,115 TRACE repository.dbRepository.AdminDBRepository 66 findByUsernameAndPassword - Exit: Result: admin = Admin{ID=56, username='gigi', password='ursu'}
+07 mai 2022 11:30:29,523 INFO  repository.dbRepository.AdminDBRepository 20 <init> - Initialising AdminDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,527 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = giig, password aaa)
+07 mai 2022 11:30:29,527 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,528 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,528 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,528 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,528 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,588 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@e24ddd0)
+07 mai 2022 11:30:29,592 TRACE repository.dbRepository.AdminDBRepository 66 findByUsernameAndPassword - Exit: Result: admin = {}
+07 mai 2022 11:30:29,593 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,593 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,594 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,594 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,594 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,595 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@64f857e7)
+07 mai 2022 11:30:29,603 TRACE repository.dbRepository.AdminDBRepository 47 findByUsernameAndPassword - Enter findByUsernameAndPassword(username = gigi, password ursu)
+07 mai 2022 11:30:29,604 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,604 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@e24ddd0)
+07 mai 2022 11:30:29,605 TRACE repository.dbRepository.AdminDBRepository 66 findByUsernameAndPassword - Exit: Result: admin = Admin{ID=57, username='gigi', password='ursu'}
+07 mai 2022 11:30:29,622 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,623 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _50m, swimmingStyle = Freestyle)
+07 mai 2022 11:30:29,623 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,623 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,623 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,623 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,623 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,624 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@71a9b4c7)
+07 mai 2022 11:30:29,629 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=2, distance=_50m, style=Freestyle, swimmersNumber=0}
+07 mai 2022 11:30:29,630 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,630 TRACE repository.dbRepository.RaceDBRepository 99 findById - Enter findById(id = 30)
+07 mai 2022 11:30:29,630 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,630 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,631 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,631 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,631 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,632 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@411341bd)
+07 mai 2022 11:30:29,632 TRACE repository.dbRepository.RaceDBRepository 118 findById - Exit: Result: race = {}
+07 mai 2022 11:30:29,633 TRACE repository.dbRepository.RaceDBRepository 99 findById - Enter findById(id = 1)
+07 mai 2022 11:30:29,633 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,633 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@411341bd)
+07 mai 2022 11:30:29,633 TRACE repository.dbRepository.RaceDBRepository 118 findById - Exit: Result: race = Race{ID=1, distance=_50m, style=Mixed, swimmersNumber=0}
+07 mai 2022 11:30:29,635 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,635 TRACE repository.dbRepository.RaceDBRepository 55 findAllRaces - Enter findAllRaces()
+07 mai 2022 11:30:29,636 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,636 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,636 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,636 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,636 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,637 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5400db36)
+07 mai 2022 11:30:29,638 TRACE repository.dbRepository.RaceDBRepository 79 findAllRaces - Exit: Result: allRaces  = [Race{ID=1, distance=_50m, style=Mixed, swimmersNumber=0}, Race{ID=2, distance=_50m, style=Freestyle, swimmersNumber=0}, Race{ID=3, distance=_50m, style=Butterfly, swimmersNumber=0}, Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}, Race{ID=5, distance=_200m, style=Mixed, swimmersNumber=0}, Race{ID=6, distance=_200m, style=Freestyle, swimmersNumber=0}, Race{ID=7, distance=_200m, style=Butterfly, swimmersNumber=0}, Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}, Race{ID=9, distance=_800m, style=Mixed, swimmersNumber=0}, Race{ID=10, distance=_800m, style=Freestyle, swimmersNumber=0}, Race{ID=11, distance=_800m, style=Butterfly, swimmersNumber=0}, Race{ID=12, distance=_800m, style=Backstroke, swimmersNumber=0}, Race{ID=13, distance=_1500m, style=Mixed, swimmersNumber=0}, Race{ID=14, distance=_1500m, style=Freestyle, swimmersNumber=0}, Race{ID=15, distance=_1500m, style=Butterfly, swimmersNumber=0}, Race{ID=16, distance=_1500m, style=Backstroke, swimmersNumber=0}]
+07 mai 2022 11:30:29,641 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,641 TRACE repository.dbRepository.SwimmerDBRepository 58 findById - Enter findById(id = -2)
+07 mai 2022 11:30:29,642 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,642 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,642 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,642 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,642 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,643 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@16afbd92)
+07 mai 2022 11:30:29,644 TRACE repository.dbRepository.SwimmerDBRepository 78 findById - Exit: Result: Swimmer = {}
+07 mai 2022 11:30:29,645 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43})
+07 mai 2022 11:30:29,645 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,645 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@16afbd92)
+07 mai 2022 11:30:29,655 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 53
+07 mai 2022 11:30:29,655 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,656 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,656 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,656 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,656 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,657 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2db2dd9d)
+07 mai 2022 11:30:29,658 TRACE repository.dbRepository.SwimmerDBRepository 58 findById - Enter findById(id = 53)
+07 mai 2022 11:30:29,658 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,658 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@16afbd92)
+07 mai 2022 11:30:29,658 TRACE repository.dbRepository.SwimmerDBRepository 78 findById - Exit: Result: Swimmer = Swimmer{ID=53, firstName='Gigi', lastName='Ursu', age=43}
+07 mai 2022 11:30:29,662 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,662 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=43})
+07 mai 2022 11:30:29,663 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,663 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,663 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,663 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,663 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,664 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@4d411036)
+07 mai 2022 11:30:29,672 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 54
+07 mai 2022 11:30:29,673 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,673 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,673 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,673 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,673 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,674 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@7adbd080)
+07 mai 2022 11:30:29,675 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='aaa', lastName='aaa', age=21})
+07 mai 2022 11:30:29,675 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,675 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@4d411036)
+07 mai 2022 11:30:29,678 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 55
+07 mai 2022 11:30:29,689 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,689 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,691 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,691 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,691 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,692 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,692 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,692 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,692 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,693 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@54afd745)
+07 mai 2022 11:30:29,695 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 56
+07 mai 2022 11:30:29,696 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _200m, swimmingStyle = Backstroke)
+07 mai 2022 11:30:29,696 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,696 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,696 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,696 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,696 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,697 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@677dbd89)
+07 mai 2022 11:30:29,697 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+07 mai 2022 11:30:29,697 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _50m, swimmingStyle = Backstroke)
+07 mai 2022 11:30:29,698 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,698 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@677dbd89)
+07 mai 2022 11:30:29,698 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=4, distance=_50m, style=Backstroke, swimmersNumber=0}
+07 mai 2022 11:30:29,699 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=56, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,699 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,699 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,699 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,699 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,699 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,700 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2ca47471)
+07 mai 2022 11:30:29,703 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 248
+07 mai 2022 11:30:29,703 TRACE repository.dbRepository.SwimmerRaceDBRepository 133 findAllRacesForSwimmer - Enter findAllRacesForSwimmer(swimmer = Swimmer{ID=56, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,703 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,703 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2ca47471)
+07 mai 2022 11:30:29,704 TRACE repository.dbRepository.SwimmerRaceDBRepository 158 findAllRacesForSwimmer - Exit: Result: allRacesForSwimmer = [Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}]
+07 mai 2022 11:30:29,704 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=56, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,704 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,704 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2ca47471)
+07 mai 2022 11:30:29,707 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 249
+07 mai 2022 11:30:29,707 TRACE repository.dbRepository.SwimmerRaceDBRepository 133 findAllRacesForSwimmer - Enter findAllRacesForSwimmer(swimmer = Swimmer{ID=56, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,707 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,707 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2ca47471)
+07 mai 2022 11:30:29,708 TRACE repository.dbRepository.SwimmerRaceDBRepository 158 findAllRacesForSwimmer - Exit: Result: allRacesForSwimmer = [Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}, Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}]
+07 mai 2022 11:30:29,708 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,708 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,708 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,708 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,708 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,709 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@f31c0c6)
+07 mai 2022 11:30:29,715 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,715 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,715 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,715 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,715 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,716 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,716 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,716 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,716 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,717 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@4a9419d7)
+07 mai 2022 11:30:29,719 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 57
+07 mai 2022 11:30:29,719 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _200m, swimmingStyle = Backstroke)
+07 mai 2022 11:30:29,720 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,720 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,720 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,720 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,720 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,721 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2f3c6ac4)
+07 mai 2022 11:30:29,721 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+07 mai 2022 11:30:29,721 TRACE repository.dbRepository.SwimmerRaceDBRepository 86 getNumberOfSwimmersForRace - Enter getNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+07 mai 2022 11:30:29,721 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,721 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,721 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,722 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,722 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,722 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2e8ab815)
+07 mai 2022 11:30:29,723 TRACE repository.dbRepository.SwimmerRaceDBRepository 102 getNumberOfSwimmersForRace - Exit: Result: numberOfSwimmers = 0
+07 mai 2022 11:30:29,723 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=57, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,723 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,723 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2e8ab815)
+07 mai 2022 11:30:29,725 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 250
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.SwimmerRaceDBRepository 86 getNumberOfSwimmersForRace - Enter getNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@2e8ab815)
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.SwimmerRaceDBRepository 102 getNumberOfSwimmersForRace - Exit: Result: numberOfSwimmers = 1
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,726 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,726 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,727 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,727 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,727 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@67af833b)
+07 mai 2022 11:30:29,733 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,733 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,734 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,734 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,734 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,734 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,734 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,734 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,734 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,735 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@41394595)
+07 mai 2022 11:30:29,738 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 58
+07 mai 2022 11:30:29,738 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi2', lastName='Ursu2', age=33})
+07 mai 2022 11:30:29,738 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,738 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@41394595)
+07 mai 2022 11:30:29,740 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 59
+07 mai 2022 11:30:29,741 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _200m, swimmingStyle = Backstroke)
+07 mai 2022 11:30:29,741 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,741 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,741 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,741 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,741 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,742 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3a0807b7)
+07 mai 2022 11:30:29,742 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+07 mai 2022 11:30:29,743 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=58, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,743 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,743 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,743 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,743 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,743 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,744 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@21a5fd96)
+07 mai 2022 11:30:29,746 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 251
+07 mai 2022 11:30:29,746 TRACE repository.dbRepository.SwimmerRaceDBRepository 107 findAllSwimmersForRace - Enter getNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+07 mai 2022 11:30:29,746 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,747 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@21a5fd96)
+07 mai 2022 11:30:29,747 TRACE repository.dbRepository.SwimmerRaceDBRepository 128 findAllSwimmersForRace - Exit: Result: allSwimmersForRace = [Swimmer{ID=58, firstName='Gigi', lastName='Ursu', age=32}]
+07 mai 2022 11:30:29,747 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=58, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,747 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,747 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@21a5fd96)
+07 mai 2022 11:30:29,749 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 252
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.SwimmerRaceDBRepository 107 findAllSwimmersForRace - Enter getNumberOfSwimmersForRace(race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0})
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@21a5fd96)
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.SwimmerRaceDBRepository 128 findAllSwimmersForRace - Exit: Result: allSwimmersForRace = [Swimmer{ID=58, firstName='Gigi', lastName='Ursu', age=32}, Swimmer{ID=58, firstName='Gigi', lastName='Ursu', age=32}]
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,750 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,750 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,751 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,751 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,751 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@26b894bd)
+07 mai 2022 11:30:29,757 INFO  repository.dbRepository.SwimmerDBRepository 20 <init> - Initialising SwimmerDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,758 INFO  repository.dbRepository.RaceDBRepository 24 <init> - Initialising RaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,758 INFO  repository.dbRepository.SwimmerRaceDBRepository 30 <init> - Initialising SwimmerRaceDBRepository with properties {jdbc.url=jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db}
+07 mai 2022 11:30:29,758 TRACE repository.dbRepository.SwimmerDBRepository 26 add - Enter add(Swimmer = Swimmer{ID=null, firstName='Gigi', lastName='Ursu', age=32})
+07 mai 2022 11:30:29,758 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,758 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,758 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,758 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,758 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,759 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@30b34287)
+07 mai 2022 11:30:29,761 TRACE repository.dbRepository.SwimmerDBRepository 45 add - Exit: Result: id = 60
+07 mai 2022 11:30:29,762 TRACE repository.dbRepository.RaceDBRepository 30 findRaceByDistanceAndStyle - Enter findRaceByDistanceAndStyle(swimmingDistance = _200m, swimmingStyle = Backstroke)
+07 mai 2022 11:30:29,762 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,762 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,762 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,762 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,762 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,763 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5489c777)
+07 mai 2022 11:30:29,763 TRACE repository.dbRepository.RaceDBRepository 50 findRaceByDistanceAndStyle - Exit: Result: race = Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}
+07 mai 2022 11:30:29,763 TRACE repository.dbRepository.SwimmerRaceDBRepository 46 add - Enter add(SwimmerRace = SwimmerRace{ID=null, swimmer=Swimmer{ID=60, firstName='Gigi', lastName='Ursu', age=32}, race=Race{ID=8, distance=_200m, style=Backstroke, swimmersNumber=0}})
+07 mai 2022 11:30:29,763 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,763 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,763 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,764 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,764 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,764 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@3676ac27)
+07 mai 2022 11:30:29,767 TRACE repository.dbRepository.SwimmerRaceDBRepository 66 add - Exit: Result: id = 253
+07 mai 2022 11:30:29,768 TRACE repository.dbRepository.JdbcUtils 46 getConnection - Enter
+07 mai 2022 11:30:29,768 TRACE repository.dbRepository.JdbcUtils 22 getNewConnection - Enter
+07 mai 2022 11:30:29,768 INFO  repository.dbRepository.JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:D:\Proiecte\databases\mpp_lab_project_test.db
+07 mai 2022 11:30:29,768 INFO  repository.dbRepository.JdbcUtils 29 getNewConnection - user: null
+07 mai 2022 11:30:29,768 INFO  repository.dbRepository.JdbcUtils 30 getNewConnection - pass: null
+07 mai 2022 11:30:29,769 TRACE repository.dbRepository.JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@62f87c44)

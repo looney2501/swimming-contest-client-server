@@ -1,7 +1,5 @@
 package services;
 
-import com.google.protobuf.DescriptorProtos;
-import com.google.protobuf.Descriptors;
 import domain.dtos.AdminDTO;
 import domain.dtos.RaceDTO;
 import domain.dtos.RaceDetailsDTO;
@@ -15,8 +13,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import protocol.protobuf.ProtobufUtils;
 import protocol.protobuf.SwimmingContestProtobuf;
-import protocol.requests.*;
-import protocol.responses.*;
 
 import java.io.*;
 import java.net.Socket;

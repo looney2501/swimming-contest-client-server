@@ -30,6 +30,7 @@ public class StartClient extends Application {
 
         Parent root = fxmlLoader.load();
         primaryStage.setScene(new Scene(root));
+        primaryStage.setTitle("Login");
         primaryStage.show();
     }
 }

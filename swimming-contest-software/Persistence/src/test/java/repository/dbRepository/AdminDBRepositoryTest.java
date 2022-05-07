@@ -1,9 +1,7 @@
-package dbRepository;
+package repository.dbRepository;
 
 import domain.entities.Admin;
 import org.junit.jupiter.api.Test;
-import repository.dbRepository.AdminDBRepository;
-import repository.dbRepository.JdbcUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,7 +14,7 @@ class AdminDBRepositoryTest {
 
     @Test
     void findByUsernameAndPassword() {
-        Properties properties = PropertiesDB.getDBProperties("bd_test.config");
+        Properties properties = PropertiesDB.getDBProperties("/bd_test.config");
         JdbcUtils jdbcUtils = new JdbcUtils(properties);
         AdminDBRepository adminDBRepository = new AdminDBRepository(properties);
 

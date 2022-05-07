@@ -1,15 +1,12 @@
-package dbRepository;
+package repository.dbRepository;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import domain.entities.Race;
 import domain.entities.Swimmer;
 import domain.entities.SwimmerRace;
 import domain.enums.SwimmingDistance;
 import domain.enums.SwimmingStyle;
-import repository.dbRepository.JdbcUtils;
-import repository.dbRepository.RaceDBRepository;
-import repository.dbRepository.SwimmerDBRepository;
-import repository.dbRepository.SwimmerRaceDBRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SwimmerRaceDBRepositoryTest {
 
-    Properties properties = PropertiesDB.getDBProperties("bd_test.config");
+    Properties properties = PropertiesDB.getDBProperties("/bd_test.config");
     JdbcUtils jdbcUtils = new JdbcUtils(properties);
 
     @Test
@@ -49,8 +46,8 @@ class SwimmerRaceDBRepositoryTest {
             resultSet.next();
             Integer id_swimmer = resultSet.getInt(1);
             Integer id_race = resultSet.getInt(2);
-            assertEquals(swimmer.getID(), id_swimmer);
-            assertEquals(race.getID(), id_race);
+            Assertions.assertEquals(swimmer.getID(), id_swimmer);
+            Assertions.assertEquals(race.getID(), id_race);
         } catch (SQLException e) {
             e.printStackTrace();
         }

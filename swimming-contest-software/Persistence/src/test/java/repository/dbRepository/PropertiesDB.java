@@ -1,4 +1,4 @@
-package dbRepository;
+package repository.dbRepository;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ public class PropertiesDB {
     public static Properties getDBProperties(String DBPath) {
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader(DBPath));
+            properties.load(PropertiesDB.class.getResourceAsStream(DBPath));
         } catch (IOException e) {
             e.printStackTrace();
         }

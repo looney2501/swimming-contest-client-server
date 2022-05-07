@@ -2,4 +2,7 @@ rootProject.name = 'swimming-contest-software'
 include 'Model'
 include 'Client'
 include 'Server'
+include 'Services'
+include 'Persistence'
+include 'Networking'
 

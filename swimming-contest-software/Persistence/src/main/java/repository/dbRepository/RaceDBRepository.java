@@ -5,6 +5,7 @@ import domain.enums.SwimmingDistance;
 import domain.enums.SwimmingStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 import repository.RaceRepository;
 
 import java.sql.Connection;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+@Component
 public class RaceDBRepository implements RaceRepository {
 
     private final JdbcUtils jdbcUtils;
@@ -81,7 +83,26 @@ public class RaceDBRepository implements RaceRepository {
 
     @Override
     public Integer add(Race elem) {
-        return null;
+        logger.traceEntry("add(race = {})", elem);
+
+        Connection connection = jdbcUtils.getConnection();
+        Integer id = null;
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(
+                "insert into Races (distance, style, swimmersNumber) values (?, ?, ?);"
+        )) {
+            preparedStatement.setInt(1, SwimmingDistance.integerFromDistance(elem.getDistance()));
+            preparedStatement.setInt(2, SwimmingStyle.integerFromStyle(elem.getStyle()));
+            preparedStatement.setInt(3, elem.getSwimmersNumber());
+            preparedStatement.executeUpdate();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            resultSet.next();
+            id = resultSet.getInt(1);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return logger.traceExit("Result: id = {}", id);
     }
 
     @Override

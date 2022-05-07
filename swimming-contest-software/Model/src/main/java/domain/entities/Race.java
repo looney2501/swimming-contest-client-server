@@ -13,6 +13,8 @@ public class Race implements Identifiable<Integer>, Serializable {
     private SwimmingStyle style;
     private Integer swimmersNumber;
 
+    public Race() {}
+
     public Race(Integer ID, SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
         this.ID = ID;
         this.distance = distance;

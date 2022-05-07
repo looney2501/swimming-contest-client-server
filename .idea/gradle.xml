@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/swimming-contest-software/Model" />
             <option value="$PROJECT_DIR$/swimming-contest-software/Networking" />
             <option value="$PROJECT_DIR$/swimming-contest-software/Persistence" />
+            <option value="$PROJECT_DIR$/swimming-contest-software/RestServices" />
             <option value="$PROJECT_DIR$/swimming-contest-software/Server" />
             <option value="$PROJECT_DIR$/swimming-contest-software/Services" />
           </set>

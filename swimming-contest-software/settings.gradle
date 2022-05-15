@@ -6,4 +6,5 @@ include 'Services'
 include 'Persistence'
 include 'Networking'
 include 'RestServices'
+include 'RestClient'
 

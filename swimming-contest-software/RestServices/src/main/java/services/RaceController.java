@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import repository.RaceRepository;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("swimming-contest/races")
@@ -41,13 +42,17 @@ public class RaceController {
 
     @PostMapping
     public ResponseEntity<?> addRace(RequestEntity<Race> raceRequestEntity) {
-        raceRepository.add(raceRequestEntity.getBody());
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        Integer addedRaceID = raceRepository.add(raceRequestEntity.getBody());
+        Race addedRace = raceRepository.findById(addedRaceID);
+        return new ResponseEntity<>(addedRace, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> modifyRace(@PathVariable Integer id,  RequestEntity<Race> raceRequestEntity) {
         Race race = raceRequestEntity.getBody();
+        if (!Objects.equals(race.getID(), id)) {
+            return new ResponseEntity<>("ID not matching!", HttpStatus.BAD_REQUEST);
+        }
         race.setID(id);
         Race oldRace = raceRepository.update(race, id);
         if (oldRace == null) {

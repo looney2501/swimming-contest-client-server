@@ -6,6 +6,7 @@ import domain.enums.SwimmingStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import repository.RaceRepository;
 
 import java.sql.Connection;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-@Component
+@Repository
 public class RaceDBRepository implements RaceRepository {
 
     private final JdbcUtils jdbcUtils;

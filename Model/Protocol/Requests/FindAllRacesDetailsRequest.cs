@@ -3,7 +3,6 @@
 namespace Model.Protocol.Requests;
 
 [Serializable]
-public class FindAllRacesDetailsRequest: IRequest
+public class FindAllRacesDetailsRequest : IRequest
 {
-    
 }

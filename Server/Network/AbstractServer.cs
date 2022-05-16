@@ -6,10 +6,10 @@ namespace Server.Network;
 
 public abstract class AbstractServer
 {
-    private TcpListener _socket;
-    private string _host;
-    private int _port;
     protected static readonly ILog Logger = LogManager.GetLogger("Server");
+    private readonly string _host;
+    private readonly int _port;
+    private TcpListener _socket;
 
     public AbstractServer(string host, int port)
     {
@@ -19,15 +19,15 @@ public abstract class AbstractServer
 
     public void Start()
     {
-        IPAddress ipAddress = IPAddress.Parse(_host);
-        IPEndPoint ipEndPoint = new IPEndPoint(ipAddress, _port);
+        var ipAddress = IPAddress.Parse(_host);
+        var ipEndPoint = new IPEndPoint(ipAddress, _port);
         _socket = new TcpListener(ipEndPoint);
         _socket.Start();
         Logger.Info("Server started successfully!");
         while (true)
         {
             Logger.Info("Waiting for clients...");
-            TcpClient client = _socket.AcceptTcpClient();
+            var client = _socket.AcceptTcpClient();
             Logger.Info("Client connected!");
             ProcessRequest(client);
         }

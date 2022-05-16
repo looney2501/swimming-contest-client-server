@@ -7,8 +7,9 @@ namespace Model.Protocol.Protobuf;
 public static class ProtoUtils
 {
     public static Domain.Enums.SwimmingDistance
-        SwimmingDistanceFromProtobuf(SwimmingDistance swimmingDistanceProtobuf) =>
-        swimmingDistanceProtobuf switch
+        SwimmingDistanceFromProtobuf(SwimmingDistance swimmingDistanceProtobuf)
+    {
+        return swimmingDistanceProtobuf switch
         {
             SwimmingDistance._50M => Domain.Enums.SwimmingDistance._50m,
             SwimmingDistance._200M => Domain.Enums.SwimmingDistance._200m,
@@ -16,9 +17,11 @@ public static class ProtoUtils
             SwimmingDistance._1500M => Domain.Enums.SwimmingDistance._1500m,
             _ => throw new ArgumentOutOfRangeException(nameof(swimmingDistanceProtobuf), swimmingDistanceProtobuf, null)
         };
+    }
 
-    public static SwimmingDistance SwimmingDistanceToProtobuf(Domain.Enums.SwimmingDistance swimmingDistance) =>
-        swimmingDistance switch
+    public static SwimmingDistance SwimmingDistanceToProtobuf(Domain.Enums.SwimmingDistance swimmingDistance)
+    {
+        return swimmingDistance switch
         {
             Domain.Enums.SwimmingDistance._50m => SwimmingDistance._50M,
             Domain.Enums.SwimmingDistance._200m => SwimmingDistance._200M,
@@ -26,9 +29,11 @@ public static class ProtoUtils
             Domain.Enums.SwimmingDistance._1500m => SwimmingDistance._1500M,
             _ => throw new ArgumentOutOfRangeException(nameof(swimmingDistance), swimmingDistance, null)
         };
+    }
 
-    public static Domain.Enums.SwimmingStyle SwimmingStyleFromProtobuf(SwimmingStyle swimmingStyleProtobuf) =>
-        swimmingStyleProtobuf switch
+    public static Domain.Enums.SwimmingStyle SwimmingStyleFromProtobuf(SwimmingStyle swimmingStyleProtobuf)
+    {
+        return swimmingStyleProtobuf switch
         {
             SwimmingStyle.Mixed => Domain.Enums.SwimmingStyle.Mixed,
             SwimmingStyle.Butterfly => Domain.Enums.SwimmingStyle.Butterfly,
@@ -36,9 +41,11 @@ public static class ProtoUtils
             SwimmingStyle.Backstroke => Domain.Enums.SwimmingStyle.Backstroke,
             _ => throw new ArgumentOutOfRangeException(nameof(swimmingStyleProtobuf), swimmingStyleProtobuf, null)
         };
+    }
 
-    public static SwimmingStyle SwimmingStyleToProtobuf(Domain.Enums.SwimmingStyle swimmingStyle) =>
-        swimmingStyle switch
+    public static SwimmingStyle SwimmingStyleToProtobuf(Domain.Enums.SwimmingStyle swimmingStyle)
+    {
+        return swimmingStyle switch
         {
             Domain.Enums.SwimmingStyle.Mixed => SwimmingStyle.Mixed,
             Domain.Enums.SwimmingStyle.Butterfly => SwimmingStyle.Butterfly,
@@ -46,6 +53,7 @@ public static class ProtoUtils
             Domain.Enums.SwimmingStyle.Backstroke => SwimmingStyle.Backstroke,
             _ => throw new ArgumentOutOfRangeException(nameof(swimmingStyle), swimmingStyle, null)
         };
+    }
 
     public static Domain.DTOs.AdminDTO AdminDTOFromProtobuf(AdminDTO adminDTOProtobuf)
     {
@@ -64,12 +72,12 @@ public static class ProtoUtils
 
     public static Domain.DTOs.RaceDetailsDTO RaceDetailsDTOFromProtobuf(RaceDetailsDTO raceDetailsDTOProtobuf)
     {
-        Domain.Enums.SwimmingDistance swimmingDistance =
+        var swimmingDistance =
             SwimmingDistanceFromProtobuf(raceDetailsDTOProtobuf.SwimmingDistance);
-        Domain.Enums.SwimmingStyle swimmingStyle = SwimmingStyleFromProtobuf(raceDetailsDTOProtobuf.SwimmingStyle);
+        var swimmingStyle = SwimmingStyleFromProtobuf(raceDetailsDTOProtobuf.SwimmingStyle);
         return new Domain.DTOs.RaceDetailsDTO(swimmingDistance, swimmingStyle);
     }
-    
+
     public static RaceDetailsDTO RaceDetailsDTOToProtobuf(Domain.DTOs.RaceDetailsDTO raceDetailsDTO)
     {
         return new RaceDetailsDTO
@@ -88,7 +96,7 @@ public static class ProtoUtils
     {
         return new Swimmer
         {
-            ID = swimmer.ID,
+            ID = swimmer.id,
             FirstName = swimmer.FirstName,
             LastName = swimmer.LastName,
             Age = swimmer.Age
@@ -97,16 +105,16 @@ public static class ProtoUtils
 
     public static Domain.DTOs.SwimmerDTO SwimmerDTOFromProtobuf(SwimmerDTO swimmerDTOProtobuf)
     {
-        Domain.Entities.Swimmer swimmer = SwimmerFromProtobuf(swimmerDTOProtobuf.Swimmer);
-        List<Domain.DTOs.RaceDetailsDTO> allRacesDetails =
+        var swimmer = SwimmerFromProtobuf(swimmerDTOProtobuf.Swimmer);
+        var allRacesDetails =
             swimmerDTOProtobuf.RaceDetailsDTOs.Select(RaceDetailsDTOFromProtobuf).ToList();
         return new Domain.DTOs.SwimmerDTO(swimmer, allRacesDetails);
     }
 
     public static SwimmerDTO SwimmerDTOToProtobuf(Domain.DTOs.SwimmerDTO swimmerDTO)
     {
-        Swimmer swimmer = SwimmerToProtobuf(swimmerDTO.Swimmer);
-        List<RaceDetailsDTO> allRaceDetails = swimmerDTO.RaceDetailsDTOs.Select(RaceDetailsDTOToProtobuf).ToList();
+        var swimmer = SwimmerToProtobuf(swimmerDTO.Swimmer);
+        var allRaceDetails = swimmerDTO.RaceDetailsDTOs.Select(RaceDetailsDTOToProtobuf).ToList();
         return new SwimmerDTO
         {
             Swimmer = swimmer,
@@ -116,7 +124,7 @@ public static class ProtoUtils
 
     public static Response CreateRacesUpdatedResponse()
     {
-        RacesUpdatedResponse racesUpdatedResponse = new RacesUpdatedResponse();
+        var racesUpdatedResponse = new RacesUpdatedResponse();
         return new Response
         {
             RacesUpdatedResponse = racesUpdatedResponse
@@ -125,7 +133,7 @@ public static class ProtoUtils
 
     public static Response CreateOkResponse()
     {
-        OkResponse okResponse = new OkResponse();
+        var okResponse = new OkResponse();
         return new Response
         {
             OkResponse = okResponse
@@ -134,7 +142,7 @@ public static class ProtoUtils
 
     public static Response CreateErrorResponse(string message)
     {
-        ErrorResponse errorResponse = new ErrorResponse
+        var errorResponse = new ErrorResponse
         {
             ErrorMessage = message
         };
@@ -150,7 +158,7 @@ public static class ProtoUtils
         {
             FindAllRacesDetailsResponse = new FindAllRacesDetailsResponse
             {
-                AllRacesDetails = { allRacesDetails.Select(RaceDTOToProtobuf).ToList() }
+                AllRacesDetails = {allRacesDetails.Select(RaceDTOToProtobuf).ToList()}
             }
         };
     }
@@ -162,7 +170,7 @@ public static class ProtoUtils
         {
             FindAllSwimmersDetailsForRaceResponse = new FindAllSwimmersDetailsForRaceResponse
             {
-                AllSwimmersDetailsForRace = { allSwimmersDetailsForRace.Select(SwimmerDTOToProtobuf).ToList() }
+                AllSwimmersDetailsForRace = {allSwimmersDetailsForRace.Select(SwimmerDTOToProtobuf).ToList()}
             }
         };
     }

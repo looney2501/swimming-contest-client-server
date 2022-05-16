@@ -5,12 +5,12 @@ using Model.Domain.DTOs;
 namespace Model.Protocol.Responses;
 
 [Serializable]
-public class FindAllRacesDetailsResponse: IResponse
+public class FindAllRacesDetailsResponse : IResponse
 {
-    public List<RaceDTO> AllRacesDetails { get; }
-
     public FindAllRacesDetailsResponse(List<RaceDTO> allRacesDetails)
     {
         AllRacesDetails = allRacesDetails;
     }
+
+    public List<RaceDTO> AllRacesDetails { get; }
 }

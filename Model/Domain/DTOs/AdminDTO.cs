@@ -5,12 +5,12 @@ namespace Model.Domain.DTOs;
 [Serializable]
 public class AdminDTO
 {
-    public String Username { get; }
-    public String Password { get; }
-
-    public AdminDTO(String username, String password)
+    public AdminDTO(string username, string password)
     {
         Username = username;
         Password = password;
     }
+
+    public string Username { get; }
+    public string Password { get; }
 }

@@ -4,17 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace Model.Domain.Entities;
 
 [Serializable]
-public class Swimmer: Identifiable<int>
+public class Swimmer : Identifiable<int>
 {
-    [Key]
-    public int ID { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
-
     public Swimmer(int id, string firstName, string lastName, int age)
     {
-        ID = id;
+        this.id = id;
         FirstName = firstName;
         LastName = lastName;
         Age = age;
@@ -27,33 +21,30 @@ public class Swimmer: Identifiable<int>
         Age = age;
     }
 
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+
+    [Key] public int id { get; set; }
+
     public override bool Equals(object obj)
     {
-        if (obj == null)
-        {
-            return false;
-        }
-        Swimmer other = obj as Swimmer;
-        if (other == null)
-        {
-            return false;
-        }
+        if (obj == null) return false;
+        var other = obj as Swimmer;
+        if (other == null) return false;
         return other.FirstName == FirstName && other.LastName == LastName && other.Age == Age;
     }
 
     public bool Equals(Swimmer other)
     {
-        if (other == null)
-        {
-            return false;
-        }
+        if (other == null) return false;
         return other.FirstName == FirstName && other.LastName == LastName && other.Age == Age;
     }
 
     public override string ToString()
     {
         return "Swimmer{" +
-               "ID=" + ID +
+               "ID=" + id +
                ", firstName='" + FirstName + '\'' +
                ", lastName='" + LastName + '\'' +
                ", age=" + Age +

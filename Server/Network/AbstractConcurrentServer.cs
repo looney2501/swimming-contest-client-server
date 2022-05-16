@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace Server.Network;
 
-public abstract class AbstractConcurrentServer: AbstractServer
+public abstract class AbstractConcurrentServer : AbstractServer
 {
     protected AbstractConcurrentServer(string host, int port) : base(host, port)
     {
@@ -11,7 +11,7 @@ public abstract class AbstractConcurrentServer: AbstractServer
 
     public override void ProcessRequest(TcpClient client)
     {
-        Thread t = createWorker(client);
+        var t = createWorker(client);
         t.Start();
     }
 

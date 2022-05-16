@@ -13,8 +13,9 @@ public enum SwimmingStyle
 
 public static class SwimmingStylesMethods
 {
-    public static SwimmingStyle StyleFromInteger(Int32 value) =>
-        value switch
+    public static SwimmingStyle StyleFromInteger(int value)
+    {
+        return value switch
         {
             1 => SwimmingStyle.Mixed,
             2 => SwimmingStyle.Freestyle,
@@ -22,9 +23,11 @@ public static class SwimmingStylesMethods
             4 => SwimmingStyle.Backstroke,
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };
+    }
 
-    public static Int32 IntegerFromStyle(SwimmingStyle style) =>
-        style switch
+    public static int IntegerFromStyle(SwimmingStyle style)
+    {
+        return style switch
         {
             SwimmingStyle.Mixed => 1,
             SwimmingStyle.Freestyle => 2,
@@ -32,5 +35,5 @@ public static class SwimmingStylesMethods
             SwimmingStyle.Backstroke => 4,
             _ => throw new ArgumentOutOfRangeException(nameof(style), style, null)
         };
+    }
 }
-

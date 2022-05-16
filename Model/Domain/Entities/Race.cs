@@ -4,16 +4,15 @@ using Model.Domain.Enums;
 namespace Model.Domain.Entities;
 
 [Serializable]
-public class Race: Identifiable<Int32>
+public class Race : Identifiable<int>
 {
-    public int ID { get; set; }
-    public SwimmingDistance Distance { get; set; }
-    public SwimmingStyle Style { get; set; }
-    public Int32 SwimmersNumber { get; set; }
+    public Race()
+    {
+    }
 
     public Race(int id, SwimmingDistance distance, SwimmingStyle style, int swimmersNumber)
     {
-        ID = id;
+        this.id = id;
         Distance = distance;
         Style = style;
         SwimmersNumber = swimmersNumber;
@@ -26,33 +25,29 @@ public class Race: Identifiable<Int32>
         SwimmersNumber = swimmersNumber;
     }
 
+    public SwimmingDistance Distance { get; set; }
+    public SwimmingStyle Style { get; set; }
+    public int SwimmersNumber { get; set; }
+    public int id { get; set; }
+
     public override bool Equals(object obj)
     {
-        if (obj == null)
-        {
-            return false;
-        }
-        Race other = obj as Race;
-        if (other == null)
-        {
-            return false;
-        }
+        if (obj == null) return false;
+        var other = obj as Race;
+        if (other == null) return false;
         return other.Distance == Distance && other.Style == Style && other.SwimmersNumber == SwimmersNumber;
     }
 
     public bool Equals(Race other)
     {
-        if (other == null)
-        {
-            return false;
-        }
+        if (other == null) return false;
         return other.Distance == Distance && other.Style == Style && other.SwimmersNumber == SwimmersNumber;
     }
 
     public override string ToString()
     {
         return "Race{" +
-               "ID=" + ID +
+               "ID=" + id +
                ", distance=" + Distance +
                ", style=" + Style +
                ", swimmersNumber=" + SwimmersNumber +

@@ -3,7 +3,6 @@
 namespace Model.Protocol.Responses;
 
 [Serializable]
-public class RacesUpdatedResponse: IUpdateResponse
+public class RacesUpdatedResponse : IUpdateResponse
 {
-    
 }

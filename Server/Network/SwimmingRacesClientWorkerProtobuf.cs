@@ -5,22 +5,20 @@ using System.Threading;
 using Google.Protobuf;
 using log4net;
 using Model.Observer;
-using Model.Services;
 using Model.Protocol.Protobuf;
-using AdminDTO = Model.Domain.DTOs.AdminDTO;
-using RaceDetailsDTO = Model.Domain.DTOs.RaceDetailsDTO;
+using Model.Services;
 using RaceDTO = Model.Domain.DTOs.RaceDTO;
 using SwimmerDTO = Model.Domain.DTOs.SwimmerDTO;
 
 namespace Server.Network;
 
-public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
+public class SwimmingRacesClientWorkerProtobuf : ISwimmingRaceObserver
 {
-    private ISwimmingRaceServices _services;
-    private TcpClient _clientSocket;
-    private NetworkStream _stream;
-    private volatile bool _connected;
     private static readonly ILog Logger = LogManager.GetLogger("Worker");
+    private readonly TcpClient _clientSocket;
+    private volatile bool _connected;
+    private readonly ISwimmingRaceServices _services;
+    private readonly NetworkStream _stream;
 
     public SwimmingRacesClientWorkerProtobuf(ISwimmingRaceServices services, TcpClient clientSocket)
     {
@@ -37,14 +35,27 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
         }
     }
 
+    public void RacesUpdated()
+    {
+        try
+        {
+            SendResponse(ProtoUtils.CreateRacesUpdatedResponse());
+            Logger.Info("RacesUpdateResponse sent to client: " + _clientSocket);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.StackTrace);
+        }
+    }
+
     public void Run()
     {
         while (_connected)
         {
             try
             {
-                Request request = Request.Parser.ParseDelimitedFrom(_stream);
-                Response response = HandleRequest(request);
+                var request = Request.Parser.ParseDelimitedFrom(_stream);
+                var response = HandleRequest(request);
                 if (response != null)
                 {
                     SendResponse(response);
@@ -80,32 +91,20 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
             Console.WriteLine(ex.StackTrace);
         }
     }
-    
-    public void RacesUpdated()
-    {
-        try
-        {
-            SendResponse(ProtoUtils.CreateRacesUpdatedResponse());
-            Logger.Info("RacesUpdateResponse sent to client: " + _clientSocket);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.StackTrace);
-        }
-    }
 
     private Response HandleRequest(Request request)
     {
         if (request.RequestTypeCase == Request.RequestTypeOneofCase.LoginRequest)
         {
             Logger.Info("HandleRequest(request = LoginRequest)");
-            AdminDTO adminDTO = ProtoUtils.AdminDTOFromProtobuf(request.LoginRequest.AdminDTO);
+            var adminDTO = ProtoUtils.AdminDTOFromProtobuf(request.LoginRequest.AdminDTO);
             try
             {
                 lock (_services)
                 {
                     _services.Login(adminDTO.Username, adminDTO.Password, this);
                 }
+
                 Logger.Info("Result: response = OkResponse");
                 return ProtoUtils.CreateOkResponse();
             }
@@ -120,7 +119,7 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
         if (request.RequestTypeCase == Request.RequestTypeOneofCase.LogoutRequest)
         {
             Logger.Info("HandleRequest(request = LogoutRequest)");
-            string adminUsername = request.LogoutRequest.Username;
+            var adminUsername = request.LogoutRequest.Username;
             try
             {
                 lock (_services)
@@ -147,6 +146,7 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
             {
                 allRacesDetails = _services.FindAllRacesDetails();
             }
+
             Logger.Info("Result: response = FindAllRacesDetailsResponse");
             return ProtoUtils.CreateFindAllRacesDetailsReponse(allRacesDetails);
         }
@@ -154,13 +154,15 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
         if (request.RequestTypeCase == Request.RequestTypeOneofCase.FindAllSwimmersDetailsForRaceRequest)
         {
             Logger.Info("HandleRequest(request = FindAllSwimmersDetailsForRaceRequest)");
-            RaceDetailsDTO raceDetailsDTO = ProtoUtils.RaceDetailsDTOFromProtobuf(request.FindAllSwimmersDetailsForRaceRequest.RaceDetailsDTO);
+            var raceDetailsDTO =
+                ProtoUtils.RaceDetailsDTOFromProtobuf(request.FindAllSwimmersDetailsForRaceRequest.RaceDetailsDTO);
             List<SwimmerDTO> allSwimmersDetailsForRace;
             lock (_services)
             {
                 allSwimmersDetailsForRace = _services.FindAllSwimmersDetailsForRace(raceDetailsDTO.SwimmingDistance,
                     raceDetailsDTO.SwimmingStyle);
             }
+
             Logger.Info("Result: response = FindAllSwimmersDeailsForRaceResponse");
             return ProtoUtils.CreateFindAllSwimmersDetailsForRaceResponse(allSwimmersDetailsForRace);
         }
@@ -168,11 +170,13 @@ public class SwimmingRacesClientWorkerProtobuf: ISwimmingRaceObserver
         if (request.RequestTypeCase == Request.RequestTypeOneofCase.AddSwimmerRequest)
         {
             Logger.Info("HandleRequest(request = AddSwimmerRequest)");
-            SwimmerDTO swimmerDTO = ProtoUtils.SwimmerDTOFromProtobuf(request.AddSwimmerRequest.SwimmerDTO);
+            var swimmerDTO = ProtoUtils.SwimmerDTOFromProtobuf(request.AddSwimmerRequest.SwimmerDTO);
             lock (_services)
             {
-                _services.AddSwimmer(swimmerDTO.FirstName, swimmerDTO.LastName, swimmerDTO.Age, swimmerDTO.RaceDetailsDTOs);
+                _services.AddSwimmer(swimmerDTO.FirstName, swimmerDTO.LastName, swimmerDTO.Age,
+                    swimmerDTO.RaceDetailsDTOs);
             }
+
             Logger.Info("Result: response = OkResponse");
             return ProtoUtils.CreateOkResponse();
         }

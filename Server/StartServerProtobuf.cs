@@ -1,18 +1,17 @@
 ﻿using log4net.Config;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Model.Services;
 using Server.Network;
 using Server.Repository;
 using Server.Repository.DBRepository;
 using Server.Repository.DBRepositoryORM;
-using Server.Utils;
 using Server.Services;
+using Server.Utils;
 
 namespace Server;
 
 public class StartServerProtobuf
 {
-    static SwimmingRaceServicesServer LoadServices()
+    private static SwimmingRaceServicesServer LoadServices()
     {
         var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project.db");
         IAdminRepository adminRepository = new AdminDBRepository(properties);
@@ -20,16 +19,17 @@ public class StartServerProtobuf
         ISwimmerRepository swimmerRepository = new SwimmerDBRepositoryORM(properties);
         ISwimmerRaceRepository swimmerRaceRepository =
             new SwimmerRaceDBRepository(swimmerRepository, raceRepository, properties);
-        SwimmingRaceServicesServer swimmingRaceServiceServer = new SwimmingRaceServicesServer(adminRepository, swimmerRepository, raceRepository,
+        var swimmingRaceServiceServer = new SwimmingRaceServicesServer(adminRepository, swimmerRepository,
+            raceRepository,
             swimmerRaceRepository);
         return swimmingRaceServiceServer;
     }
-    
+
     public static void Main(string[] args)
     {
         XmlConfigurator.Configure();
         ISwimmingRaceServices services = LoadServices();
-        SwimmingRacesConcurrentServerProtobuf server = new SwimmingRacesConcurrentServerProtobuf("127.0.0.1", 55555, services);
+        var server = new SwimmingRacesConcurrentServerProtobuf("127.0.0.1", 55555, services);
         server.Start();
     }
 }

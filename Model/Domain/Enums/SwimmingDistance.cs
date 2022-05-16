@@ -13,8 +13,9 @@ public enum SwimmingDistance
 
 public static class SwimmingDistancesMethods
 {
-    public static SwimmingDistance DistanceFromInteger(Int32 value) =>
-        value switch 
+    public static SwimmingDistance DistanceFromInteger(int value)
+    {
+        return value switch
         {
             1 => SwimmingDistance._50m,
             2 => SwimmingDistance._200m,
@@ -22,9 +23,11 @@ public static class SwimmingDistancesMethods
             4 => SwimmingDistance._1500m,
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };
+    }
 
-    public static Int32 IntegerFromDistance(SwimmingDistance swimmingDistance) =>
-        swimmingDistance switch
+    public static int IntegerFromDistance(SwimmingDistance swimmingDistance)
+    {
+        return swimmingDistance switch
         {
             SwimmingDistance._50m => 1,
             SwimmingDistance._200m => 2,
@@ -32,4 +35,5 @@ public static class SwimmingDistancesMethods
             SwimmingDistance._1500m => 4,
             _ => throw new ArgumentOutOfRangeException(nameof(swimmingDistance), swimmingDistance, null)
         };
+    }
 }

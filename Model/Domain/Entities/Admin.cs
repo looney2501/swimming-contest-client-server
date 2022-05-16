@@ -3,16 +3,12 @@
 namespace Model.Domain.Entities;
 
 [Serializable]
-public class Admin: Identifiable<Int32>
+public class Admin : Identifiable<int>
 {
-    public int ID { get; set; }
-    public String Username { get; set; }
-    public String Password { get; set; }
-
     public Admin(int id, string username, string password)
     {
-        ID = id;
-        this.Username = username;
+        this.id = id;
+        Username = username;
         Password = password;
     }
 
@@ -22,34 +18,29 @@ public class Admin: Identifiable<Int32>
         Password = password;
     }
 
+    public string Username { get; set; }
+    public string Password { get; set; }
+    public int id { get; set; }
+
     public override bool Equals(object obj)
     {
-        if (obj == null)
-        {
-            return false;
-        }
-        Admin other = obj as Admin;
-        if (other == null)
-        {
-            return false;
-        }
+        if (obj == null) return false;
+        var other = obj as Admin;
+        if (other == null) return false;
         return Username == other.Username && Password == other.Password;
     }
 
     public bool Equals(Admin other)
     {
-        if (other == null)
-        {
-            return false;
-        }
-        
+        if (other == null) return false;
+
         return Username == other.Username && Password == other.Password;
     }
 
     public override string ToString()
     {
         return "Admin{" +
-               "ID=" + ID +
+               "ID=" + id +
                ", username='" + Username + '\'' +
                ", password='" + Password + '\'' +
                '}';

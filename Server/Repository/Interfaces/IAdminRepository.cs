@@ -1,9 +1,8 @@
-﻿using System;
-using Model.Domain.Entities;
+﻿using Model.Domain.Entities;
 
 namespace Server.Repository;
 
-public interface IAdminRepository : IRepository<Int32, Admin>
+public interface IAdminRepository : IRepository<int, Admin>
 {
-    public Admin FindByUsernameAndPassword(String username, String password);
+    public Admin FindByUsernameAndPassword(string username, string password);
 }

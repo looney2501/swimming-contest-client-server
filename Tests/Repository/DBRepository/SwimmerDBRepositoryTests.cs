@@ -1,5 +1,4 @@
-﻿using System.Data;
-using Model.Domain.Entities;
+﻿using Model.Domain.Entities;
 using NUnit.Framework;
 using Server.Repository;
 using Server.Repository.DBRepository;
@@ -18,12 +17,12 @@ namespace Tests.Repository.DBRepository
             ISwimmerRepository swimmerRepository = new SwimmerDBRepository(properties);
             swimmerRepository.Add(new Swimmer("Gigi", "Ursu", 43));
 
-            IDbConnection connection = DbUtils.GetConnection(properties);
+            var connection = DbUtils.GetConnection(properties);
 
-            using (IDbCommand command = connection.CreateCommand())
+            using (var command = connection.CreateCommand())
             {
                 command.CommandText = "select * from Swimmers;";
-                using (IDataReader dataReader = command.ExecuteReader())
+                using (var dataReader = command.ExecuteReader())
                 {
                     if (dataReader.Read())
                     {
@@ -34,33 +33,27 @@ namespace Tests.Repository.DBRepository
                 }
             }
 
-            using (IDbCommand command = connection.CreateCommand())
+            using (var command = connection.CreateCommand())
             {
                 command.CommandText = "select count(*) from Swimmers;";
-                using (IDataReader dataReader = command.ExecuteReader())
+                using (var dataReader = command.ExecuteReader())
                 {
-                    if (dataReader.Read())
-                    {
-                        Assert.AreEqual(1, dataReader.GetInt32(0));
-                    }
+                    if (dataReader.Read()) Assert.AreEqual(1, dataReader.GetInt32(0));
                 }
             }
 
             swimmerRepository.Add(new Swimmer("aaa", "aaa", 21));
-            
-            using (IDbCommand command = connection.CreateCommand())
+
+            using (var command = connection.CreateCommand())
             {
                 command.CommandText = "select count(*) from Swimmers;";
-                using (IDataReader dataReader = command.ExecuteReader())
+                using (var dataReader = command.ExecuteReader())
                 {
-                    if (dataReader.Read())
-                    {
-                        Assert.AreEqual(2, dataReader.GetInt32(0));
-                    }
+                    if (dataReader.Read()) Assert.AreEqual(2, dataReader.GetInt32(0));
                 }
             }
-            
-            using (IDbCommand command = connection.CreateCommand())
+
+            using (var command = connection.CreateCommand())
             {
                 command.CommandText = "delete from Swimmers;";
                 command.ExecuteNonQuery();
@@ -73,12 +66,12 @@ namespace Tests.Repository.DBRepository
             var properties = DbUtils.GetDBPropertiesByName("mpp_lab_project_test.db");
 
             ISwimmerRepository swimmerRepository = new SwimmerDBRepository(properties);
-            int id = swimmerRepository.Add(new Swimmer("Gigi", "Ursu", 43));
-            
+            var id = swimmerRepository.Add(new Swimmer("Gigi", "Ursu", 43));
+
             Assert.AreEqual(new Swimmer(id, "Gigi", "Ursu", 43), swimmerRepository.FindById(id));
 
-            IDbConnection connection = DbUtils.GetConnection(properties);
-            using (IDbCommand command = connection.CreateCommand())
+            var connection = DbUtils.GetConnection(properties);
+            using (var command = connection.CreateCommand())
             {
                 command.CommandText = "delete from Swimmers;";
                 command.ExecuteNonQuery();

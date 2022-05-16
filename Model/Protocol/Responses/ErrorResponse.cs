@@ -3,12 +3,12 @@
 namespace Model.Protocol.Responses;
 
 [Serializable]
-public class ErrorResponse: IResponse
+public class ErrorResponse : IResponse
 {
-    public string ErrorMessage { get; }
-
     public ErrorResponse(string errorMessage)
     {
         ErrorMessage = errorMessage;
     }
+
+    public string ErrorMessage { get; }
 }

@@ -8,27 +8,21 @@ namespace ConnectionUtils
     public abstract class ConnectionFactory
     {
         private static ConnectionFactory _instance;
-        
-        protected ConnectionFactory()
-        {
-        }
-        
+
         public static ConnectionFactory GetInstance()
         {
             if (_instance == null)
             {
-                Assembly assem = Assembly.GetExecutingAssembly();
-                Type[] types = assem.GetTypes();
+                var assem = Assembly.GetExecutingAssembly();
+                var types = assem.GetTypes();
                 foreach (var type in types)
-                {
                     if (type.IsSubclassOf(typeof(ConnectionFactory)))
-                        _instance = (ConnectionFactory)Activator.CreateInstance(type);
-                }
+                        _instance = (ConnectionFactory) Activator.CreateInstance(type);
             }
+
             return _instance;
         }
-        
-        public abstract IDbConnection CreateConnection(IDictionary<string,string> props);
-        
+
+        public abstract IDbConnection CreateConnection(IDictionary<string, string> props);
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using log4net;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 using Model.Domain.Entities;
 using Server.Utils;
 
@@ -11,7 +9,7 @@ namespace Server.Repository.DBRepository;
 public class SwimmerDBRepository : ISwimmerRepository
 {
     private static readonly ILog Logger = LogManager.GetLogger("RaceDbRepository");
-    IDictionary<String, String> properties;
+    private readonly IDictionary<string, string> properties;
 
     public SwimmerDBRepository(IDictionary<string, string> properties)
     {
@@ -23,43 +21,44 @@ public class SwimmerDBRepository : ISwimmerRepository
     {
         Logger.InfoFormat("Add(swimmer = {0})", elem);
 
-        int id = -1;
+        var id = -1;
 
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand comm = connection.CreateCommand())
+        var connection = DbUtils.GetConnection(properties);
+        using (var comm = connection.CreateCommand())
         {
-            comm.CommandText = "insert into Swimmers (firstName, lastName, age) values (@firstName, @lastName, @age) returning id;";
-            
-            IDbDataParameter paramFirstName = comm.CreateParameter();
+            comm.CommandText =
+                "insert into Swimmers (firstName, lastName, age) values (@firstName, @lastName, @age) returning id;";
+
+            var paramFirstName = comm.CreateParameter();
             paramFirstName.ParameterName = "@firstName";
             paramFirstName.Value = elem.FirstName;
             comm.Parameters.Add(paramFirstName);
-            
-            IDbDataParameter paramLastName = comm.CreateParameter();
+
+            var paramLastName = comm.CreateParameter();
             paramLastName.ParameterName = "@lastName";
             paramLastName.Value = elem.LastName;
             comm.Parameters.Add(paramLastName);
-            
-            IDbDataParameter paramAge = comm.CreateParameter();
+
+            var paramAge = comm.CreateParameter();
             paramAge.ParameterName = "@age";
             paramAge.Value = elem.Age;
             comm.Parameters.Add(paramAge);
-        
+
             id = Convert.ToInt32(comm.ExecuteScalar());
         }
-        
+
         Logger.InfoFormat("Result: id = {0}", id);
         return id;
     }
 
     public void Delete(Swimmer elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Update(Swimmer elem, int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Swimmer FindById(int id)
@@ -67,30 +66,30 @@ public class SwimmerDBRepository : ISwimmerRepository
         Logger.InfoFormat("FindById(id = {0})", id);
         Swimmer swimmer = null;
 
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand command = connection.CreateCommand())
+        var connection = DbUtils.GetConnection(properties);
+        using (var command = connection.CreateCommand())
         {
             command.CommandText = "select firstName, lastName, age from main.Swimmers where id = @id;";
 
-            IDbDataParameter paramID = command.CreateParameter();
+            var paramID = command.CreateParameter();
             paramID.ParameterName = "id";
             paramID.Value = id;
             command.Parameters.Add(paramID);
-            
-            using (IDataReader dataReader = command.ExecuteReader())
+
+            using (var dataReader = command.ExecuteReader())
             {
                 if (dataReader.Read())
                 {
-                    String firstName = dataReader.GetString(0);
-                    String lastName = dataReader.GetString(1);
-                    Int32 age = dataReader.GetInt32(2);
+                    var firstName = dataReader.GetString(0);
+                    var lastName = dataReader.GetString(1);
+                    var age = dataReader.GetInt32(2);
                     swimmer = new Swimmer(id, firstName, lastName, age);
                 }
             }
         }
-        
+
         Logger.InfoFormat("Result: swimmer = {0}", swimmer);
-        
+
         return swimmer;
     }
 }

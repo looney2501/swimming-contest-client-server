@@ -8,12 +8,8 @@ namespace Model.Domain.DTOs;
 [Serializable]
 public class SwimmerDTO
 {
-    private readonly Swimmer _swimmer;
     private readonly List<RaceDetailsDTO> _raceDetailsDTOs;
-    public String FirstName => _swimmer.FirstName;
-    public String LastName => _swimmer.LastName;
-    public int Age => _swimmer.Age;
-    public List<RaceDetailsDTO> RaceDetailsDTOs => _raceDetailsDTOs;
+    private readonly Swimmer _swimmer;
 
     public SwimmerDTO(Swimmer swimmer, List<RaceDetailsDTO> raceDetailsDtOs)
     {
@@ -21,14 +17,16 @@ public class SwimmerDTO
         _raceDetailsDTOs = raceDetailsDtOs;
     }
 
+    public string FirstName => _swimmer.FirstName;
+    public string LastName => _swimmer.LastName;
+    public int Age => _swimmer.Age;
+    public List<RaceDetailsDTO> RaceDetailsDTOs => _raceDetailsDTOs;
+
     public Swimmer Swimmer => _swimmer;
-    
+
     public string Races
     {
-        get
-        {
-            return _raceDetailsDTOs.Aggregate("", (subtotal, element) => subtotal + element);
-        }
+        get { return _raceDetailsDTOs.Aggregate("", (subtotal, element) => subtotal + element); }
     }
 
     public override string ToString()

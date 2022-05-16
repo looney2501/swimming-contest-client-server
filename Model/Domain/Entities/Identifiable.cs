@@ -2,5 +2,5 @@
 
 public interface Identifiable<Tid>
 {
-    public Tid ID { get; set; }
+    public Tid id { get; set; }
 }

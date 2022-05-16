@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using log4net;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Model.Domain.Entities;
-using Server.Utils;
 
 namespace Server.Repository.DBRepositoryORM;
 
 public class SwimmerDBRepositoryORM : ISwimmerRepository
 {
     private static readonly ILog Logger = LogManager.GetLogger("RaceDbRepository");
-    IDictionary<String, String> properties;
+    private readonly IDictionary<string, string> properties;
 
     public SwimmerDBRepositoryORM(IDictionary<string, string> properties)
     {
-        Logger.InfoFormat("Initialising SwimmerDBRepository...");
+        Logger.InfoFormat("Initialising SwimmerDBRepositoryORM...");
         this.properties = properties;
     }
 
@@ -24,49 +21,49 @@ public class SwimmerDBRepositoryORM : ISwimmerRepository
     {
         Logger.InfoFormat("Add(swimmer = {0})", elem);
 
-        int id = -1;
+        var id = -1;
 
-        using (DataContext dataContext =
+        using (var dataContext =
                new DataContext(properties["ConnectionString"]))
         {
-            DatabaseFacade facade = new DatabaseFacade(dataContext);
+            var facade = new DatabaseFacade(dataContext);
             facade.EnsureCreated();
             dataContext.Swimmers.Add(elem);
             dataContext.SaveChanges();
 
-            id = elem.ID;
+            id = elem.id;
         }
-        
+
         Logger.InfoFormat("Result: id = {0}", id);
         return id;
     }
 
     public void Delete(Swimmer elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Update(Swimmer elem, int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Swimmer FindById(int id)
     {
         Logger.InfoFormat("FindById(id = {0})", id);
         Swimmer swimmer = null;
-        
-        using (DataContext dataContext =
+
+        using (var dataContext =
                new DataContext(properties["ConnectionString"]))
         {
-            DatabaseFacade facade = new DatabaseFacade(dataContext);
+            var facade = new DatabaseFacade(dataContext);
             facade.EnsureCreated();
             swimmer = dataContext.Swimmers.Find(id);
             dataContext.SaveChanges();
         }
 
         Logger.InfoFormat("Result: swimmer = {0}", swimmer);
-        
+
         return swimmer;
     }
 }

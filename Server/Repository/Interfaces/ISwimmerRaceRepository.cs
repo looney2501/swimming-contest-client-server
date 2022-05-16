@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Model.Domain.Entities;
 
 namespace Server.Repository;
 
-public interface ISwimmerRaceRepository: IRepository<Int32, SwimmerRace>
+public interface ISwimmerRaceRepository : IRepository<int, SwimmerRace>
 {
-    Int32 GetNumberOfSwimmersForRace(Race race);
+    int GetNumberOfSwimmersForRace(Race race);
     List<Swimmer> FindAllSwimmersForRace(Race race);
     List<Race> FindAllRacesForSwimmer(Swimmer swimmer);
 }

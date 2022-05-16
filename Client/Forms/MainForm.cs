@@ -5,14 +5,11 @@ using Model.Domain.DTOs;
 using Model.Domain.Enums;
 using Model.Observer;
 using Model.Services;
-using Server.Services;
 
 namespace Client.Forms;
 
 public partial class MainForm : GenericForm, ISwimmingRaceObserver
 {
-    public LoginForm LoginForm { get; set; }
-    public string LoggedUsername { get; set; }
     private SwimmingDistance? _swimmingDistance;
     private SwimmingStyle? _swimmingStyle;
 
@@ -22,11 +19,19 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
         Text = @"Swimming races administration";
     }
 
+    public LoginForm LoginForm { get; set; }
+    public string LoggedUsername { get; set; }
+
+    public void RacesUpdated()
+    {
+        BeginInvoke(() => { UpdateGridViews(); });
+    }
+
     private void InitializeGridViews()
     {
         racesDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        UpdateGridViews(); 
+        UpdateGridViews();
     }
 
     private void InitializeComboBoxes()
@@ -45,7 +50,6 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
 
         _swimmingDistance = null;
         _swimmingStyle = null;
-
     }
 
     private void UpdateGridViews()
@@ -55,16 +59,15 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
         if (_swimmingDistance != null)
         {
             if (_swimmingStyle != null)
-            {
                 raceDetailsDataGridView.DataSource =
                     SwimmingRaceServicesServer.FindAllSwimmersDetailsForRace((SwimmingDistance) _swimmingDistance,
                         (SwimmingStyle) _swimmingStyle);
-            }
         }
         else
         {
             raceDetailsDataGridView.DataSource = new List<SwimmerDTO>();
         }
+
         raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
     }
 
@@ -97,17 +100,14 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
 
     private void ageTextBox_KeyPress(object sender, KeyPressEventArgs e)
     {
-        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-        {
-            e.Handled = true;
-        }
+        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)) e.Handled = true;
     }
 
     private void addSwimmerButton_Click(object sender, EventArgs e)
     {
-        string firstName = firstNameTextBox.Text;
-        string lastName = lastNameTextBox.Text;
-        string age = ageTextBox.Text;
+        var firstName = firstNameTextBox.Text;
+        var lastName = lastNameTextBox.Text;
+        var age = ageTextBox.Text;
         var selectedRows = racesDataGridView.SelectedRows;
         if (firstName.Length == 0)
         {
@@ -127,14 +127,16 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
         }
         else
         {
-            List<RaceDetailsDTO> raceDetailsDTOs = new List<RaceDetailsDTO>();
-            List<RaceDTO> allRaces = (List<RaceDTO>) racesDataGridView.DataSource;
+            var raceDetailsDTOs = new List<RaceDetailsDTO>();
+            var allRaces = (List<RaceDTO>) racesDataGridView.DataSource;
             foreach (DataGridViewRow selectedRow in selectedRows)
             {
-                int index = selectedRow.Index;
-                raceDetailsDTOs.Add(new RaceDetailsDTO(allRaces[index].SwimmingDistance, allRaces[index].SwimmingStyle));
+                var index = selectedRow.Index;
+                raceDetailsDTOs.Add(new RaceDetailsDTO(allRaces[index].SwimmingDistance,
+                    allRaces[index].SwimmingStyle));
             }
-            SwimmingRaceServicesServer.AddSwimmer(firstName, lastName, Int32.Parse(age), raceDetailsDTOs);
+
+            SwimmingRaceServicesServer.AddSwimmer(firstName, lastName, int.Parse(age), raceDetailsDTOs);
             RefreshTextBoxes();
         }
     }
@@ -156,13 +158,5 @@ public partial class MainForm : GenericForm, ISwimmingRaceObserver
                     (SwimmingStyle) _swimmingStyle);
             raceDetailsDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
-    }
-
-    public void RacesUpdated()
-    {
-        BeginInvoke(() =>
-        {
-            UpdateGridViews();
-        });
     }
 }

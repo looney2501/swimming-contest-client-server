@@ -13,14 +13,14 @@ using Model.Services;
 
 namespace Server.Network;
 
-public class SwimmingRacesClientWorker: ISwimmingRaceObserver
+public class SwimmingRacesClientWorker : ISwimmingRaceObserver
 {
-    private ISwimmingRaceServices _services;
-    private TcpClient _clientSocket;
-    private NetworkStream _stream;
-    private IFormatter _formatter;
-    private volatile bool _connected;
     private static readonly ILog Logger = LogManager.GetLogger("Worker");
+    private readonly TcpClient _clientSocket;
+    private volatile bool _connected;
+    private readonly IFormatter _formatter;
+    private readonly ISwimmingRaceServices _services;
+    private readonly NetworkStream _stream;
 
     public SwimmingRacesClientWorker(ISwimmingRaceServices services, TcpClient clientSocket)
     {
@@ -38,13 +38,27 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
         }
     }
 
+
+    public void RacesUpdated()
+    {
+        try
+        {
+            SendResponse(new RacesUpdatedResponse());
+            Logger.Info("RacesUpdateResponse sent to client: " + _clientSocket);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.StackTrace);
+        }
+    }
+
     public void Run()
     {
         while (_connected)
         {
             try
             {
-                object request = _formatter.Deserialize(_stream);
+                var request = _formatter.Deserialize(_stream);
                 object response = HandleRequest((IRequest) request);
                 if (response != null)
                 {
@@ -82,20 +96,6 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
         }
     }
 
-
-    public void RacesUpdated()
-    {
-        try
-        {
-            SendResponse(new RacesUpdatedResponse());
-            Logger.Info("RacesUpdateResponse sent to client: " + _clientSocket);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.StackTrace);
-        }
-    }
-
     private IResponse HandleRequest(IRequest request)
     {
         if (request is LoginRequest loginRequest)
@@ -108,6 +108,7 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
                 {
                     _services.Login(adminDTO.Username, adminDTO.Password, this);
                 }
+
                 Logger.Info("Result: response = OkResponse");
                 return new OkResponse();
             }
@@ -149,6 +150,7 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
             {
                 allRacesDetails = _services.FindAllRacesDetails();
             }
+
             Logger.Info("Result: response = FindAllRacesDetailsResponse");
             return new FindAllRacesDetailsResponse(allRacesDetails);
         }
@@ -163,6 +165,7 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
                 allSwimmersDetailsForRace = _services.FindAllSwimmersDetailsForRace(raceDetailsDTO.SwimmingDistance,
                     raceDetailsDTO.SwimmingStyle);
             }
+
             Logger.Info("Result: response = FindAllSwimmersDeailsForRaceResponse");
             return new FindAllSwimmersDetailsForRaceResponse(allSwimmersDetailsForRace);
         }
@@ -173,8 +176,10 @@ public class SwimmingRacesClientWorker: ISwimmingRaceObserver
             var swimmerDTO = addSwimmerRequest.SwimmerDTO;
             lock (_services)
             {
-                _services.AddSwimmer(swimmerDTO.FirstName, swimmerDTO.LastName, swimmerDTO.Age, swimmerDTO.RaceDetailsDTOs);
+                _services.AddSwimmer(swimmerDTO.FirstName, swimmerDTO.LastName, swimmerDTO.Age,
+                    swimmerDTO.RaceDetailsDTOs);
             }
+
             Logger.Info("Result: response = OkResponse");
             return new OkResponse();
         }

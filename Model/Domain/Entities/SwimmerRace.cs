@@ -5,15 +5,15 @@ namespace Model.Domain.Entities;
 [Serializable]
 public class SwimmerRace
 {
-    public Int32 ID { get; set; }
-    public Swimmer Swimmer { get; }
-    public Race Race { get;  }
-
     public SwimmerRace(Swimmer swimmer, Race race)
     {
         Swimmer = swimmer;
         Race = race;
     }
+
+    public int ID { get; set; }
+    public Swimmer Swimmer { get; }
+    public Race Race { get; }
 
     public override string ToString()
     {

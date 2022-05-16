@@ -16,18 +16,18 @@ using Model.Services;
 
 namespace Client.Services;
 
-public class SwimmingRaceServicesProxy: ISwimmingRaceServices
+public class SwimmingRaceServicesProxy : ISwimmingRaceServices
 {
+    private static readonly ILog Logger = LogManager.GetLogger("Proxy");
     private readonly string _host;
     private readonly int _port;
-    private ISwimmingRaceObserver _client;
-    private NetworkStream _networkStream;
-    private IFormatter _formatter;
-    private TcpClient _socketClient;
     private readonly Queue<IResponse> _qresponses;
+    private ISwimmingRaceObserver _client;
     private volatile bool _finished;
+    private IFormatter _formatter;
+    private NetworkStream _networkStream;
+    private TcpClient _socketClient;
     private EventWaitHandle _waitHandle;
-    private static readonly ILog Logger = LogManager.GetLogger("Proxy");
 
     public SwimmingRaceServicesProxy(string host, int port)
     {
@@ -39,11 +39,11 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
     public void Login(string username, string password, ISwimmingRaceObserver client)
     {
         InitializeConnection();
-        AdminDTO adminDTO = new AdminDTO(username, password);
+        var adminDTO = new AdminDTO(username, password);
         Logger.InfoFormat("Sending login request: username: {0}, password: {1}...", username, password);
         SendRequest(new LoginRequest(adminDTO));
         Logger.Info("Waiting for response...");
-        IResponse response = ReadResponse();
+        var response = ReadResponse();
         if (response is OkResponse)
         {
             Logger.Info("OkResponse received!");
@@ -56,6 +56,71 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
             CloseConnection();
             throw new ServicesException(errorResponse.ErrorMessage);
         }
+    }
+
+    public void Logout(string username)
+    {
+        Logger.InfoFormat("Sending logout request: username: {0}", username);
+        SendRequest(new LogoutRequest(username));
+        Logger.Info("Waiting for response...");
+        var response = ReadResponse();
+        if (response is OkResponse)
+        {
+            Logger.Info("Okresponse received!");
+            CloseConnection();
+        }
+
+        if (response is ErrorResponse errorResponse)
+        {
+            Logger.Info("ErrorResponse received!");
+            throw new ServerException(errorResponse.ErrorMessage);
+        }
+    }
+
+    public List<RaceDTO> FindAllRacesDetails()
+    {
+        Logger.Info("Sendinf FindAllRacesDetailsRequest...");
+        SendRequest(new FindAllRacesDetailsRequest());
+        Logger.Info("Waiting for response...");
+        var response = ReadResponse();
+        if (response is FindAllRacesDetailsResponse findAllRacesDetailsResponse)
+        {
+            Logger.Info("FindAllRacesDetailsResponse received!");
+            return findAllRacesDetailsResponse.AllRacesDetails;
+        }
+
+        Logger.Info("Wrong response received!");
+        return null;
+    }
+
+    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance,
+        SwimmingStyle swimmingStyle)
+    {
+        var raceDetailsDto = new RaceDetailsDTO(swimmingDistance, swimmingStyle);
+        Logger.InfoFormat("Sending FindAllSwimmersDetailsForRaceRequest: raceDetails: {0}", raceDetailsDto);
+        SendRequest(new FindAllSwimmersDetailsForRaceRequest(raceDetailsDto));
+        Logger.Info("Waiting for response...");
+        var response = ReadResponse();
+        if (response is FindAllSwimmersDetailsForRaceResponse findAllSwimmersDetailsForRaceResponse)
+        {
+            return findAllSwimmersDetailsForRaceResponse.AllSwimmersDetailsForRace;
+        }
+
+        Logger.Info("Wrong rasponse received!");
+        return null;
+    }
+
+    public void AddSwimmer(string firstName, string lastName, int age, List<RaceDetailsDTO> raceDetailsDTOs)
+    {
+        var swimmerDTO = new SwimmerDTO(new Swimmer(firstName, lastName, age), raceDetailsDTOs);
+        Logger.InfoFormat("Sending AddSwimmerRequest: swimmerDetails: {0}", swimmerDTO);
+        SendRequest(new AddSwimmerRequest(swimmerDTO));
+        Logger.Info("Waiting for response...");
+        var response = ReadResponse();
+        if (response is OkResponse)
+            Logger.Info("OkResponse received!");
+        else
+            Logger.Info("Wrong response received!");
     }
 
     private void InitializeConnection()
@@ -79,7 +144,7 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
 
     private void StartReader()
     {
-        Thread t = new Thread(Run);
+        var t = new Thread(Run);
         t.Start();
     }
 
@@ -139,91 +204,18 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.StackTrace);   
+            Console.WriteLine(ex.StackTrace);
         }
 
         return response;
     }
 
-    public void Logout(string username)
-    {
-        Logger.InfoFormat("Sending logout request: username: {0}", username);
-        SendRequest(new LogoutRequest(username));
-        Logger.Info("Waiting for response...");
-        IResponse response = ReadResponse();
-        if (response is OkResponse)
-        {
-            Logger.Info("Okresponse received!");
-            CloseConnection();
-        }
-
-        if (response is ErrorResponse errorResponse)
-        {
-            Logger.Info("ErrorResponse received!");
-            throw new ServerException(errorResponse.ErrorMessage);
-        }
-    }
-
-    public List<RaceDTO> FindAllRacesDetails()
-    {
-        Logger.Info("Sendinf FindAllRacesDetailsRequest...");
-        SendRequest(new FindAllRacesDetailsRequest());
-        Logger.Info("Waiting for response...");
-        IResponse response = ReadResponse();
-        if (response is FindAllRacesDetailsResponse findAllRacesDetailsResponse)
-        {
-            Logger.Info("FindAllRacesDetailsResponse received!");
-            return findAllRacesDetailsResponse.AllRacesDetails;
-        }
-        else
-        {
-            Logger.Info("Wrong response received!");
-            return null;
-        }
-    }
-
-    public List<SwimmerDTO> FindAllSwimmersDetailsForRace(SwimmingDistance swimmingDistance, SwimmingStyle swimmingStyle)
-    {
-        RaceDetailsDTO raceDetailsDto = new RaceDetailsDTO(swimmingDistance, swimmingStyle);
-        Logger.InfoFormat("Sending FindAllSwimmersDetailsForRaceRequest: raceDetails: {0}", raceDetailsDto);
-        SendRequest(new FindAllSwimmersDetailsForRaceRequest(raceDetailsDto));
-        Logger.Info("Waiting for response...");
-        IResponse response = ReadResponse();
-        if (response is FindAllSwimmersDetailsForRaceResponse findAllSwimmersDetailsForRaceResponse)
-        {
-            return findAllSwimmersDetailsForRaceResponse.AllSwimmersDetailsForRace;
-        }
-        else
-        {
-            Logger.Info("Wrong rasponse received!");
-            return null;
-        }
-    }
-
-    public void AddSwimmer(string firstName, string lastName, int age, List<RaceDetailsDTO> raceDetailsDTOs)
-    {
-        SwimmerDTO swimmerDTO = new SwimmerDTO(new Swimmer(firstName, lastName, age), raceDetailsDTOs);
-        Logger.InfoFormat("Sending AddSwimmerRequest: swimmerDetails: {0}", swimmerDTO);
-        SendRequest(new AddSwimmerRequest(swimmerDTO));
-        Logger.Info("Waiting for response...");
-        IResponse response = ReadResponse();
-        if (response is OkResponse)
-        {
-            Logger.Info("OkResponse received!");
-        }
-        else
-        {
-            Logger.Info("Wrong response received!");
-        }
-    }
-
     public void Run()
     {
         while (!_finished)
-        {
             try
             {
-                object response = _formatter.Deserialize(_networkStream);
+                var response = _formatter.Deserialize(_networkStream);
                 if (response is IUpdateResponse)
                 {
                     Logger.Info("UpdateResponse received. Handling response...");
@@ -243,6 +235,5 @@ public class SwimmingRaceServicesProxy: ISwimmingRaceServices
             {
                 Console.WriteLine(ex.StackTrace);
             }
-        }
     }
 }

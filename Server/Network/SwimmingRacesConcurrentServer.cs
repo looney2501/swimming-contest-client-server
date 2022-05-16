@@ -4,9 +4,9 @@ using Model.Services;
 
 namespace Server.Network;
 
-public class SwimmingRacesConcurrentServer: AbstractConcurrentServer
+public class SwimmingRacesConcurrentServer : AbstractConcurrentServer
 {
-    private ISwimmingRaceServices _services;
+    private readonly ISwimmingRaceServices _services;
 
     public SwimmingRacesConcurrentServer(string host, int port, ISwimmingRaceServices services) : base(host, port)
     {
@@ -17,7 +17,7 @@ public class SwimmingRacesConcurrentServer: AbstractConcurrentServer
     protected override Thread createWorker(TcpClient client)
     {
         Logger.Info("Creating worker to handle client...");
-        SwimmingRacesClientWorker clientWorker = new SwimmingRacesClientWorker(_services, client);
+        var clientWorker = new SwimmingRacesClientWorker(_services, client);
         return new Thread(clientWorker.Run);
     }
 }

@@ -4,27 +4,22 @@ using Client.Forms;
 using Client.Services;
 using log4net.Config;
 using Model.Services;
-using Server.Repository;
-using Server.Repository.DBRepository;
-using Server.Services;
-using Server.Utils;
 
-namespace Client
+namespace Client;
+
+internal static class Program
 {
-    static class Program
+    [STAThread]
+    private static void Main()
     {
-        [STAThread]
-        static void Main()
-        {
-            XmlConfigurator.Configure();
+        XmlConfigurator.Configure();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
 
-            ISwimmingRaceServices services = new SwimmingRaceServicesProxy("127.0.0.1", 55556);
-            LoginForm loginForm = new LoginForm();
-            loginForm.SwimmingRaceServicesServer = services;
-            Application.Run(loginForm);
-        }
+        ISwimmingRaceServices services = new SwimmingRaceServicesProxy("127.0.0.1", 55556);
+        var loginForm = new LoginForm();
+        loginForm.SwimmingRaceServicesServer = services;
+        Application.Run(loginForm);
     }
 }

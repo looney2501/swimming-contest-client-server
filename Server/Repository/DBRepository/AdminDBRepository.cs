@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using log4net;
 using Model.Domain.Entities;
 using Server.Utils;
@@ -10,9 +9,9 @@ namespace Server.Repository.DBRepository;
 public class AdminDBRepository : IAdminRepository
 {
     private static readonly ILog Logger = LogManager.GetLogger("AdminDBRepository");
-    IDictionary<String, String> properties;
+    private readonly IDictionary<string, string> properties;
 
-    public AdminDBRepository(IDictionary<String, String> properties)
+    public AdminDBRepository(IDictionary<string, string> properties)
     {
         Logger.InfoFormat("Initialising AdminDBRepository...");
         this.properties = properties;
@@ -20,55 +19,56 @@ public class AdminDBRepository : IAdminRepository
 
     public int Add(Admin elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Delete(Admin elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Update(Admin elem, int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Admin FindById(int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
-    public Admin FindByUsernameAndPassword(String username, String password)
+    public Admin FindByUsernameAndPassword(string username, string password)
     {
         Logger.InfoFormat("FindByUsernameAndPassword(username = {0}, password = {1})", username, password);
         Admin admin = null;
 
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand comm = connection.CreateCommand())
+        var connection = DbUtils.GetConnection(properties);
+        using (var comm = connection.CreateCommand())
         {
             comm.CommandText = "select id from Admins where username = @username and password = @password;";
-        
-            IDbDataParameter paramUsername = comm.CreateParameter();
+
+            var paramUsername = comm.CreateParameter();
             paramUsername.ParameterName = "@username";
             paramUsername.Value = username;
             comm.Parameters.Add(paramUsername);
-        
-            IDbDataParameter paramPassword = comm.CreateParameter();
+
+            var paramPassword = comm.CreateParameter();
             paramPassword.ParameterName = "@password";
             paramPassword.Value = password;
             comm.Parameters.Add(paramPassword);
 
-            using (IDataReader dataReader = comm.ExecuteReader())
+            using (var dataReader = comm.ExecuteReader())
             {
                 if (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(0);
+                    var id = dataReader.GetInt32(0);
                     admin = new Admin(id, username, password);
                 }
             }
         }
+
         Logger.InfoFormat("Result: admin = {0}", admin);
-        
+
         return admin;
     }
 }

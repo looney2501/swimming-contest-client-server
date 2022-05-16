@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using log4net;
 using Model.Domain.Entities;
 using Model.Domain.Enums;
@@ -11,7 +10,7 @@ namespace Server.Repository.DBRepository;
 public class RaceDBRepository : IRaceRepository
 {
     private static readonly ILog Logger = LogManager.GetLogger("RaceDbRepository");
-    IDictionary<String, String> properties;
+    private readonly IDictionary<string, string> properties;
 
     public RaceDBRepository(IDictionary<string, string> properties)
     {
@@ -21,17 +20,17 @@ public class RaceDBRepository : IRaceRepository
 
     public int Add(Race elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Delete(Race elem)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public void Update(Race elem, int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
 
     public Race FindById(int id)
@@ -39,32 +38,32 @@ public class RaceDBRepository : IRaceRepository
         Logger.InfoFormat("FindById(id = {0})", id);
         Race race = null;
 
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand command = connection.CreateCommand())
+        var connection = DbUtils.GetConnection(properties);
+        using (var command = connection.CreateCommand())
         {
             command.CommandText = "select distance, style, swimmersNumber from Races where id = @id;";
 
-            IDbDataParameter paramID = command.CreateParameter();
+            var paramID = command.CreateParameter();
             paramID.ParameterName = "id";
             paramID.Value = id;
             command.Parameters.Add(paramID);
 
 
-            using (IDataReader dataReader = command.ExecuteReader())
+            using (var dataReader = command.ExecuteReader())
             {
                 if (dataReader.Read())
                 {
-                    SwimmingDistance swimmingDistance =
+                    var swimmingDistance =
                         SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(0));
-                    SwimmingStyle swimmingStyle = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(1));
-                    Int32 swimmersNumber = dataReader.GetInt32(2);
+                    var swimmingStyle = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(1));
+                    var swimmersNumber = dataReader.GetInt32(2);
                     race = new Race(id, swimmingDistance, swimmingStyle, swimmersNumber);
                 }
             }
         }
 
         Logger.InfoFormat("Result: race = {0}", race);
-        
+
         return race;
     }
 
@@ -72,28 +71,28 @@ public class RaceDBRepository : IRaceRepository
     {
         Logger.InfoFormat("FindRaceByDistanceAndStyle(distance = {0}, style = {1})", swimmingDistance, swimmingStyle);
         Race race = null;
-        
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand command = connection.CreateCommand())
+
+        var connection = DbUtils.GetConnection(properties);
+        using (var command = connection.CreateCommand())
         {
             command.CommandText = "select id, swimmersNumber from Races where distance = @distance and style = @style;";
 
-            IDbDataParameter paramDistance = command.CreateParameter();
+            var paramDistance = command.CreateParameter();
             paramDistance.ParameterName = "distance";
             paramDistance.Value = SwimmingDistancesMethods.IntegerFromDistance(swimmingDistance);
             command.Parameters.Add(paramDistance);
 
-            IDbDataParameter paramStyle = command.CreateParameter();
+            var paramStyle = command.CreateParameter();
             paramStyle.ParameterName = "style";
             paramStyle.Value = SwimmingStylesMethods.IntegerFromStyle(swimmingStyle);
             command.Parameters.Add(paramStyle);
 
-            using (IDataReader dataReader = command.ExecuteReader())
+            using (var dataReader = command.ExecuteReader())
             {
                 if (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(0);
-                    Int32 swimmersNumber = dataReader.GetInt32(1);
+                    var id = dataReader.GetInt32(0);
+                    var swimmersNumber = dataReader.GetInt32(1);
                     race = new Race(id, swimmingDistance, swimmingStyle, swimmersNumber);
                 }
             }
@@ -106,21 +105,21 @@ public class RaceDBRepository : IRaceRepository
     public List<Race> FindAllRaces()
     {
         Logger.InfoFormat("FindAllRaces()");
-        List<Race> races = new List<Race>();
-        
-        IDbConnection connection = DbUtils.GetConnection(properties);
-        using (IDbCommand command = connection.CreateCommand())
+        var races = new List<Race>();
+
+        var connection = DbUtils.GetConnection(properties);
+        using (var command = connection.CreateCommand())
         {
             command.CommandText = "select id, distance, style, swimmersNumber from Races;";
 
-            using (IDataReader dataReader = command.ExecuteReader())
+            using (var dataReader = command.ExecuteReader())
             {
                 while (dataReader.Read())
                 {
-                    Int32 id = dataReader.GetInt32(0);
-                    SwimmingDistance distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
-                    SwimmingStyle style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
-                    Int32 swimmersNumber = dataReader.GetInt32(3);
+                    var id = dataReader.GetInt32(0);
+                    var distance = SwimmingDistancesMethods.DistanceFromInteger(dataReader.GetInt32(1));
+                    var style = SwimmingStylesMethods.StyleFromInteger(dataReader.GetInt32(2));
+                    var swimmersNumber = dataReader.GetInt32(3);
                     races.Add(new Race(id, distance, style, swimmersNumber));
                 }
             }

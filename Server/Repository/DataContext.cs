@@ -5,13 +5,14 @@ namespace Server.Repository;
 
 public class DataContext : DbContext
 {
-    private string _connectionString;
-    public DbSet<Swimmer> Swimmers { get; set; }
+    private readonly string _connectionString;
 
     public DataContext(string connectionString)
     {
         _connectionString = connectionString;
     }
+
+    public DbSet<Swimmer> Swimmers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

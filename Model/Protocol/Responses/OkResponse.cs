@@ -3,7 +3,6 @@
 namespace Model.Protocol.Responses;
 
 [Serializable]
-public class OkResponse: IResponse
+public class OkResponse : IResponse
 {
-    
 }

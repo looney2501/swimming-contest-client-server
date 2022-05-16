@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 
@@ -9,7 +8,7 @@ namespace ConnectionUtils
     {
         public override IDbConnection CreateConnection(IDictionary<string, string> props)
         {
-            String connectionString = props["ConnectionString"];
+            var connectionString = props["ConnectionString"];
             return new SQLiteConnection(connectionString);
         }
     }

@@ -39,21 +39,22 @@ internal class Program
 
     public static async Task Delete()
     {
-        Console.WriteLine(await _restClient.GetById("33"));
-        await _restClient.Delete("33");
-        Console.WriteLine(await _restClient.GetById("33"));
+        Console.WriteLine(await _restClient.GetById("40"));
+        await _restClient.Delete("40");
+        Console.WriteLine(await _restClient.GetById("40"));
     }
 
     public static void Main(string[] args)
     {
-        // GetAll().Wait();
-
         // GetById().Wait();
-        
+
         // Create().Wait();
 
-        Update().Wait();
 
-        // Delete().Wait();
+        // Update().Wait();
+
+
+        Delete().Wait();
+        GetAll().Wait();
     }
 }

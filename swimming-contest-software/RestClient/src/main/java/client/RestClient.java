@@ -37,7 +37,7 @@ public class RestClient {
 
     public void update(Race race) {
         execute(() -> {
-            restTemplate.put(String.format("%s/%s", URL, race.getID()), race);
+            restTemplate.put(String.format("%s/%s", URL, race.getId()), race);
             return null;
         });
     }

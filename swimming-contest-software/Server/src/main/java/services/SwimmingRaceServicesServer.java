@@ -104,7 +104,7 @@ public class SwimmingRaceServicesServer implements SwimmingRaceServices {
     public synchronized void addSwimmer(String firstName, String lastName, Integer age, List<RaceDetailsDTO> raceDetailsDTOs) {
         Swimmer swimmer = new Swimmer(firstName, lastName, age);
         Integer swimmerID = swimmerRepository.add(swimmer);
-        swimmer.setID(swimmerID);
+        swimmer.setId(swimmerID);
 
         for (var raceDetailDTO : raceDetailsDTOs) {
             Race race = raceRepository.findRaceByDistanceAndStyle(raceDetailDTO.getSwimmingDistance(), raceDetailDTO.getSwimmingStyle());

@@ -43,11 +43,11 @@ public class StartRestClient {
     }
 
     public static void main(String[] args) {
-//        getAll();
 
 //        getById();
 
-//        create();
+        create();
+        getAll();
 //        getAll();
 
 //        update();

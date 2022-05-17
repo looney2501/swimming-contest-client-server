@@ -52,8 +52,8 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
                 "insert into main.SwimmersRaces (id_swimmer, id_race) values (?, ?);"
         ))
         {
-            preparedStatement.setInt(1, elem.getSwimmer().getID());
-            preparedStatement.setInt(2, elem.getRace().getID());
+            preparedStatement.setInt(1, elem.getSwimmer().getId());
+            preparedStatement.setInt(2, elem.getRace().getId());
             int result = preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             resultSet.next();
@@ -91,7 +91,7 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
                 "select count(*) from main.SwimmersRaces where id_race = ?;"
         )) {
-            preparedStatement.setInt(1, race.getID());
+            preparedStatement.setInt(1, race.getId());
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             numberOfSwimmers = resultSet.getInt(1);
@@ -111,7 +111,7 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
                 "select S.id, S.firstName, S.lastName, S.age from main.Swimmers S inner join SwimmersRaces SR on S.id = SR.id_swimmer where SR.id_race = ?;"
         )) {
-            preparedStatement.setInt(1, race.getID());
+            preparedStatement.setInt(1, race.getId());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Integer id = resultSet.getInt(1);
@@ -138,7 +138,7 @@ public class SwimmerRaceDBRepository implements SwimmerRaceRepository {
         try (PreparedStatement preparedStatement = connection.prepareStatement(
                 "select R.id, R.distance, R.style, R.swimmersNumber from main.Races R inner join SwimmersRaces SR on R.id = SR.id_race where SR.id_swimmer = ?;"
         )) {
-            preparedStatement.setInt(1, swimmer.getID());
+            preparedStatement.setInt(1, swimmer.getId());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Integer id = resultSet.getInt(1);

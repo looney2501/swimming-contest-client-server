@@ -31,7 +31,7 @@ class SwimmerRaceDBRepositoryTest {
 
         Swimmer swimmer = new Swimmer("Gigi", "Ursu", 32);
         Integer id = swimmerDBRepository.add(swimmer);
-        swimmer.setID(id);
+        swimmer.setId(id);
 
         Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
@@ -46,8 +46,8 @@ class SwimmerRaceDBRepositoryTest {
             resultSet.next();
             Integer id_swimmer = resultSet.getInt(1);
             Integer id_race = resultSet.getInt(2);
-            Assertions.assertEquals(swimmer.getID(), id_swimmer);
-            Assertions.assertEquals(race.getID(), id_race);
+            Assertions.assertEquals(swimmer.getId(), id_swimmer);
+            Assertions.assertEquals(race.getId(), id_race);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ class SwimmerRaceDBRepositoryTest {
 
         Swimmer swimmer = new Swimmer("Gigi", "Ursu", 32);
         Integer id = swimmerDBRepository.add(swimmer);
-        swimmer.setID(id);
+        swimmer.setId(id);
 
         Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
@@ -118,10 +118,10 @@ class SwimmerRaceDBRepositoryTest {
 
         Swimmer swimmer1 = new Swimmer("Gigi", "Ursu", 32);
         Integer id1 = swimmerDBRepository.add(swimmer1);
-        swimmer1.setID(id1);
+        swimmer1.setId(id1);
         Swimmer swimmer2 = new Swimmer("Gigi2", "Ursu2", 33);
         Integer id2 = swimmerDBRepository.add(swimmer2);
-        swimmer2.setID(id2);
+        swimmer2.setId(id2);
 
         Race race = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
 
@@ -161,7 +161,7 @@ class SwimmerRaceDBRepositoryTest {
 
         Swimmer swimmer1 = new Swimmer("Gigi", "Ursu", 32);
         Integer id1 = swimmerDBRepository.add(swimmer1);
-        swimmer1.setID(id1);
+        swimmer1.setId(id1);
 
         Race race1 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._200m, SwimmingStyle.Backstroke);
         Race race2 = raceDBRepository.findRaceByDistanceAndStyle(SwimmingDistance._50m, SwimmingStyle.Backstroke);

@@ -40,12 +40,12 @@ public class Admin implements Identifiable<Integer>, Serializable {
     }
 
     @Override
-    public Integer getID() {
+    public Integer getId() {
         return ID;
     }
 
     @Override
-    public void setID(Integer id) {
+    public void setId(Integer id) {
        this.ID = id;
     }
 

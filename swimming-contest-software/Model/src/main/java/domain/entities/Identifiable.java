@@ -1,6 +1,6 @@
 package domain.entities;
 
 public interface Identifiable<Tid> {
-    Tid getID();
-    void setID(Tid id);
+    Tid getId();
+    void setId(Tid id);
 }

@@ -50,10 +50,10 @@ public class RaceController {
     @PutMapping("/{id}")
     public ResponseEntity<?> modifyRace(@PathVariable Integer id,  RequestEntity<Race> raceRequestEntity) {
         Race race = raceRequestEntity.getBody();
-        if (!Objects.equals(race.getID(), id)) {
+        if (!Objects.equals(race.getId(), id)) {
             return new ResponseEntity<>("ID not matching!", HttpStatus.BAD_REQUEST);
         }
-        race.setID(id);
+        race.setId(id);
         Race oldRace = raceRepository.update(race, id);
         if (oldRace == null) {
             return new ResponseEntity<>("Race not found!", HttpStatus.NOT_FOUND);

@@ -5,7 +5,6 @@ import domain.enums.SwimmingDistance;
 import domain.enums.SwimmingStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import repository.RaceRepository;
 
@@ -171,7 +170,7 @@ public class RaceDBRepository implements RaceRepository {
                 preparedStatement.setInt(1, SwimmingDistance.integerFromDistance(elem.getDistance()));
                 preparedStatement.setInt(2, SwimmingStyle.integerFromStyle(elem.getStyle()));
                 preparedStatement.setInt(3, elem.getSwimmersNumber());
-                preparedStatement.setInt(4, elem.getID());
+                preparedStatement.setInt(4, elem.getId());
                 preparedStatement.executeUpdate();
             } catch (SQLException e) {
                 e.printStackTrace();

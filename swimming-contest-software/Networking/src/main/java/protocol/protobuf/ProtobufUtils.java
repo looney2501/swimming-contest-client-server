@@ -99,8 +99,8 @@ public final class ProtobufUtils {
     public static SwimmingContestProtobuf.Swimmer swimmerToProtobuf(Swimmer swimmer) {
 
         SwimmingContestProtobuf.Swimmer.Builder swimmerBuilder = SwimmingContestProtobuf.Swimmer.newBuilder().setFirstName(swimmer.getFirstName()).setLastName(swimmer.getLastName()).setAge(swimmer.getAge());
-        if (swimmer.getID() != null){
-            swimmerBuilder.setID(swimmer.getID());
+        if (swimmer.getId() != null){
+            swimmerBuilder.setID(swimmer.getId());
         }
         return swimmerBuilder.build();
     }

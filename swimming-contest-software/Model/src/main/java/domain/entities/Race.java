@@ -8,35 +8,35 @@ import java.util.Objects;
 
 public class Race implements Identifiable<Integer>, Serializable {
 
-    private Integer ID;
+    private Integer id;
     private SwimmingDistance distance;
     private SwimmingStyle style;
     private Integer swimmersNumber;
 
     public Race() {}
 
-    public Race(Integer ID, SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
-        this.ID = ID;
+    public Race(Integer id, SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
+        this.id = id;
         this.distance = distance;
         this.style = style;
         this.swimmersNumber = swimmersNumber;
     }
 
     public Race(SwimmingDistance distance, SwimmingStyle style, Integer swimmersNumber) {
-        this.ID = null;
+        this.id = null;
         this.distance = distance;
         this.style = style;
         this.swimmersNumber = swimmersNumber;
     }
 
     @Override
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
     @Override
-    public void setID(Integer id) {
-        ID = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public SwimmingDistance getDistance() {
@@ -73,13 +73,13 @@ public class Race implements Identifiable<Integer>, Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ID);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         return "Race{" +
-                "ID=" + ID +
+                "ID=" + id +
                 ", distance=" + distance +
                 ", style=" + style +
                 ", swimmersNumber=" + swimmersNumber +

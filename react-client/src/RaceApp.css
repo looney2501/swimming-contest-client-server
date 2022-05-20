@@ -1,0 +1,25 @@
+.RaceApp {
+    text-align: center;
+    align-content: center;
+    color:green;
+}
+.RaceApp-h1{
+    text-align: center;
+
+    font-family:'Courier New';
+    font-size: large;
+
+}
+.RaceTable{
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: medium;
+    color: green;
+}
+.RaceApp-body{
+    align-content: center;
+}
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}

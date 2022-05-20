@@ -10,6 +10,7 @@ import repository.RaceRepository;
 import java.util.List;
 import java.util.Objects;
 
+@CrossOrigin
 @RestController
 @RequestMapping("swimming-contest/races")
 public class RaceController {

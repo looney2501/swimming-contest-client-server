@@ -14,7 +14,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.security.NoSuchAlgorithmException;
 
-public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver {
+public class SwimmingRaceClientWorker implements Runnable, SwimmingRaceObserver {
 
     private final SwimmingRaceServices services;
     private final Socket clientSocket;
@@ -23,7 +23,7 @@ public class SwimmingRacesClientWorker implements Runnable, SwimmingRaceObserver
     private volatile boolean connected;
     private static final Logger logger = LogManager.getLogger();
 
-    public SwimmingRacesClientWorker(SwimmingRaceServices services, Socket clientSocket) {
+    public SwimmingRaceClientWorker(SwimmingRaceServices services, Socket clientSocket) {
         this.services = services;
         this.clientSocket = clientSocket;
         try {

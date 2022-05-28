@@ -1,7 +1,7 @@
 package main;
 
 import network.AbstractServer;
-import network.SwimmingRacesConcurrentServer;
+import network.SwimmingRaceConcurrentServer;
 import repository.dbRepository.AdminDBRepository;
 import repository.dbRepository.RaceDBRepository;
 import repository.dbRepository.SwimmerDBRepository;
@@ -22,7 +22,7 @@ public class StartServer {
         Properties serverProperties = loadProperties();
         int serverPort = Integer.parseInt(serverProperties.getProperty("server.port"));
         SwimmingRaceServices swimmingRaceServices = loadServices(serverProperties);
-        AbstractServer server = new SwimmingRacesConcurrentServer(serverPort, swimmingRaceServices);
+        AbstractServer server = new SwimmingRaceConcurrentServer(serverPort, swimmingRaceServices);
         server.start();
     }
 

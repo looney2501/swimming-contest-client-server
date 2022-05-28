@@ -4,11 +4,11 @@ import services.SwimmingRaceServices;
 
 import java.net.Socket;
 
-public class SwimmingRacesConcurrentServer extends AbstractConcurrentServer {
+public class SwimmingRaceConcurrentServer extends AbstractConcurrentServer {
 
     private final SwimmingRaceServices services;
 
-    public SwimmingRacesConcurrentServer(int port, SwimmingRaceServices swimmingRaceServices) {
+    public SwimmingRaceConcurrentServer(int port, SwimmingRaceServices swimmingRaceServices) {
         super(port);
         logger.info("Server name: SwimmingRacesServer; Server type: concurrent; Port: {}", port);
         this.services = swimmingRaceServices;
@@ -17,7 +17,7 @@ public class SwimmingRacesConcurrentServer extends AbstractConcurrentServer {
     @Override
     protected Thread createWorker(Socket client) {
         logger.info("Creating worker to handle client...");
-        SwimmingRacesClientWorker clientWorker = new SwimmingRacesClientWorker(services, client);
+        SwimmingRaceClientWorker clientWorker = new SwimmingRaceClientWorker(services, client);
         return new Thread(clientWorker);
     }
 }

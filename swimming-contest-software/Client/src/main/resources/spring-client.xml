@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="clientProps" location="classpath:client.config"/>
+
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="trustedPackages">
+            <list>
+                <value>domain</value>
+                <value>notification</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="topic" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="SwimmingRacesTopic"/>
+    </bean>
+    <bean id="converter" class="org.springframework.jms.support.converter.MappingJackson2MessageConverter">
+        <property name="targetType" value="TEXT"/>
+        <property name="typeIdPropertyName" value="_notification"/>
+    </bean>
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <constructor-arg ref="connectionFactory"/>
+        <property name="defaultDestination" ref="topic"/>
+        <property name="messageConverter" ref="converter"/>
+    </bean>
+
+    <bean id="notificationReceiver" class="controller.SwimmingRaceNotificationReceiver">
+        <constructor-arg ref="jmsTemplate"/>
+    </bean>
+
+    <bean id="swimmingRaceServicesProxy" class="services.SwimmingRaceServicesProxyAMS">
+        <constructor-arg index="1" value="#{clientProps.getProperty('server.port')}"/>
+        <constructor-arg index="0" value="#{clientProps.getProperty('server.host')}"/>
+    </bean>
+
+    <bean id="loginController" class="controller.LoginControllerAMS">
+        <constructor-arg ref="swimmingRaceServicesProxy"/>
+    </bean>
+
+    <bean id="mainController" class="controller.MainControllerAMS">
+        <constructor-arg ref="swimmingRaceServicesProxy"/>
+        <constructor-arg ref="notificationReceiver"/>
+    </bean>
+</beans>

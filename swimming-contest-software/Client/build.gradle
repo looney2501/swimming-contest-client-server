@@ -18,11 +18,16 @@ dependencies {
 
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
     implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    implementation 'org.springframework:spring-context:5.3.18'
+    implementation 'org.springframework:spring-jms:5.3.18'
+    implementation 'org.apache.activemq:activemq-spring:5.17.1'
 }
 
 application {
-    mainClass = 'main.StartClient'
+//    mainClass = 'main.StartClient'
 //    mainClass = 'main.StartClientProtobuf'
+    mainClass = 'main.StartClientAMS'
 }
 
 javafx {

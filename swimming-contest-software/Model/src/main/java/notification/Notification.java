@@ -1,7 +1,9 @@
 package notification;
 
 public class Notification {
-    private final NotificationType notificationType;
+    private NotificationType notificationType;
+
+    public Notification() {}
 
     public Notification(NotificationType notificationType) {
         this.notificationType = notificationType;
@@ -9,6 +11,10 @@ public class Notification {
 
     public NotificationType getNotificationType() {
         return notificationType;
+    }
+
+    public void setNotificationType(NotificationType notificationType) {
+        this.notificationType = notificationType;
     }
 
     @Override
